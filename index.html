@@ -1,715 +1,95 @@
+/* RESPONSIVE NAVIGATION - ALL DEVICES */
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#082e59">
-<meta name="description" content="Sofia Jenny Taborda Official Website">
-<title>Sofia Jenny Taborda | Official Website</title>
-
-<style>
-:root{
-  --navy:#082e59;
-  --blue:#1769aa;
-  --silver:#dce7f2;
-  --light:#f4f8fc;
-}
-*{box-sizing:border-box}
-html{
-  scroll-behavior:smooth;
-  width:100%;
-  overflow-x:hidden;
-}
-body{
-  margin:0;
-  width:100%;
-  min-width:320px;
-  overflow-x:hidden;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--navy);
-  background:var(--light);
-}
-img{max-width:100%}
-.banner{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #082e59;
+  box-shadow: 0 4px 14px #001c3b35;
+  overflow: visible;
 }
 
-/* LANGUAGE BAR */
-.langbar{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  width:100%;
-  padding:12px clamp(12px,5vw,64px);
-  background:white;
-  border-bottom:1px solid var(--silver);
-}
-.langbar label{font-size:14px}
-.langbar select{
-  max-width:100%;
-  padding:10px 12px;
-  border:1px solid #b7cde2;
-  border-radius:9px;
-  color:var(--navy);
-  background:white;
-  font:inherit;
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 8px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 15px;
 }
 
-/* RESPONSIVE NAVIGATION */
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  width:100%;
-  background:var(--navy);
-  box-shadow:0 4px 14px #001c3b35;
+.navbar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 11px 12px;
+  border-radius: 8px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  transition: 0.2s;
 }
-.nav-inner{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  gap:4px 6px;
-  width:100%;
-  max-width:1600px;
-  margin:0 auto;
-  padding:8px clamp(8px,1.2vw,18px);
-}
-.navbar a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 1 auto;
-  min-height:38px;
-  max-width:100%;
-  padding:9px clamp(7px,0.8vw,12px);
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  white-space:normal;
-  overflow-wrap:anywhere;
-  font-size:clamp(11px,0.82vw,13px);
-  line-height:1.25;
-  font-weight:700;
-  transition:background .2s,color .2s;
-}
+
 .navbar a:hover,
-.navbar a:focus-visible,
-.navbar a.active{
-  background:#ffffff25;
-  color:#dcecff;
-  outline-offset:2px;
+.navbar a.active {
+  background: #ffffff25;
+  color: #dcecff;
 }
 
-/* INTRO */
-.intro{
-  width:100%;
-  max-width:940px;
-  margin:0 auto;
-  padding:clamp(26px,4vw,42px) 18px 15px;
-  text-align:center;
+.navbar::-webkit-scrollbar {
+  display: none;
 }
-.intro h1{
-  margin:0 0 16px;
-  font:700 clamp(27px,4vw,45px)/1.2 Georgia,serif;
-  overflow-wrap:anywhere;
-}
-.intro p{
-  margin:0;
-  color:#48617d;
-  line-height:1.7;
-  font-size:clamp(15px,1.5vw,17px);
-}
-
-/* LOGO AND IDENTITY */
-.identity{
-  width:100%;
-  padding:15px 20px 35px;
-  text-align:center;
-}
-.identity img{
-  display:block;
-  width:clamp(145px,23vw,245px);
-  max-width:80%;
-  height:auto;
-  margin:0 auto 15px;
-  filter:drop-shadow(0 8px 14px #b7cce0);
-}
-.identity h2{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:0;
-  font:700 clamp(25px,4vw,43px)/1.2 Georgia,serif;
-  overflow-wrap:anywhere;
-}
-.verify{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 26px;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  background:#1683df;
-  color:white;
-  font:700 17px Arial;
-}
-.identity small{
-  display:block;
-  margin-top:10px;
-  color:#647f9e;
-  letter-spacing:clamp(1px,0.4vw,3px);
-}
-
-/* SERVICES */
-.services{
-  width:100%;
-  max-width:1290px;
-  margin:0 auto;
-  padding:15px clamp(12px,2vw,22px) 60px;
-}
-.services h2{
-  margin:0 0 12px;
-  text-align:center;
-  font:700 clamp(27px,3vw,34px)/1.2 Georgia,serif;
-}
-.services>p{
-  margin:0 0 30px;
-  color:#637a91;
-  text-align:center;
-  line-height:1.6;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  align-items:stretch;
-  gap:clamp(14px,1.8vw,22px);
-}
-.card{
-  display:flex;
-  flex-direction:column;
-  min-width:0;
-  overflow:hidden;
-  border:1px solid var(--silver);
-  border-radius:17px;
-  background:white;
-  box-shadow:0 8px 22px #0b315a12;
-  transition:transform .25s,box-shadow .25s;
-}
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 28px #0b315a25;
-}
-.visual{
-  width:100%;
-  aspect-ratio:16/9;
-  min-height:150px;
-  overflow:hidden;
-  background:linear-gradient(135deg,#dce7f2,#9bbbd9);
-}
-.visual img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.card-content{
-  display:flex;
-  flex:1 1 auto;
-  flex-direction:column;
-  align-items:center;
-  padding:18px clamp(12px,1.5vw,20px) 20px;
-  text-align:center;
-}
-.card h3{
-  margin:0 0 10px;
-  font-size:clamp(17px,1.5vw,19px);
-  line-height:1.35;
-  overflow-wrap:anywhere;
-}
-.card p{
-  flex:1 1 auto;
-  min-height:42px;
-  margin:0 0 8px;
-  color:#64778c;
-  font-size:14px;
-  line-height:1.6;
-}
-.card a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  max-width:100%;
-  min-height:44px;
-  margin-top:8px;
-  padding:12px 20px;
-  border-radius:10px;
-  background:var(--navy);
-  color:white;
-  text-align:center;
-  text-decoration:none;
-  font-weight:bold;
-  line-height:1.3;
-  overflow-wrap:anywhere;
-}
-.card a:hover,
-.card a:focus-visible{background:var(--blue)}
-
-/* NOTICE AND FOOTER */
-.note{
-  width:calc(100% - 32px);
-  max-width:950px;
-  margin:0 auto 45px;
-  padding:16px 20px;
-  border-left:4px solid var(--blue);
-  background:#e9f2fa;
-  color:#45617d;
-  font-size:14px;
-  line-height:1.7;
-  overflow-wrap:anywhere;
-}
-footer{
-  width:100%;
-  padding:30px 15px;
-  background:#072b51;
-  color:white;
-  text-align:center;
-  font-size:14px;
-  line-height:1.6;
-}
-footer p{margin:5px 0}
 
 /* TABLETS */
-@media (max-width:1024px){
-  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nav-inner{gap:4px;padding:8px 10px}
-  .navbar a{font-size:12px;padding:9px 9px}
-}
-
-/* PHONES */
-@media (max-width:600px){
-  .langbar{
-    justify-content:center;
-    padding:10px 12px;
+@media (max-width: 850px) {
+  .nav-inner {
+    justify-content: center;
+    gap: 5px;
+    padding: 9px 8px;
   }
-  .nav-inner{
-    justify-content:center;
-    gap:4px;
-    padding:7px 6px;
+
+  .navbar a {
+    font-size: 12px;
+    padding: 10px;
   }
-  .navbar a{
-    flex:0 1 auto;
-    min-height:36px;
-    padding:8px 9px;
-    font-size:11px;
+}
+
+/* MOBILE */
+@media (max-width: 540px) {
+  .nav-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    padding: 9px;
   }
-  .intro{padding:26px 15px 12px}
-  .identity{padding:12px 14px 28px}
-  .services{padding:12px 14px 42px}
-  .services>p{margin-bottom:22px}
-  .cards{grid-template-columns:minmax(0,1fr);gap:17px}
-  .visual{aspect-ratio:16/9;min-height:0}
-  .card-content{padding:17px 16px 19px}
-  .card p{min-height:0}
-  .note{width:calc(100% - 28px);margin-bottom:30px;padding:14px 15px}
+
+  .navbar a {
+    width: 100%;
+    min-height: 40px;
+    font-size: 12px;
+    padding: 9px 5px;
+  }
 }
 
-/* VERY SMALL PHONES */
-@media (max-width:360px){
-  .navbar a{font-size:10px;padding:7px 7px}
-  .intro h1{font-size:26px}
-  .identity h2{font-size:24px}
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+  .nav-inner {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* RIGHT-TO-LEFT LANGUAGES */
-html[dir="rtl"] body{text-align:initial}
-html[dir="rtl"] .note{
-  border-left:0;
-  border-right:4px solid var(--blue);
+/* PREVENT HORIZONTAL PAGE SCROLL */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-html[dir="rtl"] .langbar{justify-content:flex-start}
-</style>
-</head>
-
-<body>
-
-<!-- ORIGINAL HEADER -->
-<header id="home">
-  <img class="banner"
-       src="assets/sofia-header-banner.png"
-       alt="Sofia Jenny Taborda">
-</header>
-
-<!-- LANGUAGE SELECTOR -->
-<div class="langbar">
-  <label for="language">🌐 <span data-i="language">Language:</span></label>
-  <select id="language">
-    <option value="en">🇬🇧 English</option>
-    <option value="ur">🇵🇰 اردو</option>
-    <option value="es">🇪🇸 Español</option>
-    <option value="it">🇮🇹 Italiano</option>
-    <option value="fr">🇫🇷 Français</option>
-    <option value="ar">🇸🇦 العربية</option>
-    <option value="pt">🇧🇷 Português</option>
-    <option value="de">🇩🇪 Deutsch</option>
-    <option value="hi">🇮🇳 हिन्दी</option>
-    <option value="zh">🇨🇳 中文</option>
-  </select>
-</div>
-
-<!-- MAIN NAVIGATION -->
-<nav class="navbar">
-  <div class="nav-inner" id="navigation">
-    <a href="index.html" data-n="0">Home</a>
-    <a href="premium-videos.html" data-n="1">Premium Videos</a>
-    <a href="photo-gallery.html" data-n="2">Photo Gallery</a>
-    <a href="fashion-store.html" data-n="3">Fashion Store</a>
-    <a href="visa-passport.html" data-n="4">Visa & Passport</a>
-    <a href="gifts-services.html" data-n="5">Gifts & Services</a>
-    <a href="long-packages.html" data-n="6">Long Package System</a>
-    <a href="herbal-wellness.html" data-n="7">Herbal Wellness</a>
-    <a href="whatsapp-premium.html" data-n="8">WhatsApp Premium</a>
-    <a href="work-permit-visa.html" data-n="9">Work Permit Visa</a>
-    <a href="garments-store.html" data-n="10">Garments Store</a>
-    <a href="lucky-draw.html" data-n="11">Lucky Draw</a>
-  </div>
-</nav>
-
-<main>
-
-<section class="intro">
-  <h1 data-i="welcome">Welcome to the Official Website</h1>
-  <p data-i="intro">
-    Discover premium media collections, fashion, travel information,
-    gifts, wellness products and personalized services — all in one place.
-  </p>
-</section>
-
-<!-- ORIGINAL LOGO -->
-<section class="identity">
-  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
-  <h2>
-    Sofia Jenny Taborda
-    <span class="verify" title="Decorative design mark">✓</span>
-  </h2>
-  <small>OFFICIAL WEBSITE</small>
-</section>
-
-<section class="services" id="services">
-  <h2 data-i="services">Explore Our Services</h2>
-  <p data-i="choose">Choose a category to explore our offerings.</p>
-
-  <div class="cards">
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/premium-videos.jpg" alt="Premium Videos">
-      </div>
-      <div class="card-content">
-        <h3 data-t="0">Premium Videos</h3>
-        <p data-d="0">Explore our exclusive video collection.</p>
-        <a href="premium-videos.html" data-b="0">Explore Videos</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/photo-gallery.jpg" alt="Photo Gallery">
-      </div>
-      <div class="card-content">
-        <h3 data-t="1">Photo Gallery</h3>
-        <p data-d="1">Discover featured photography collections.</p>
-        <a href="photo-gallery.html" data-b="1">View Gallery</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/fashion-store.jpg" alt="Fashion Store">
-      </div>
-      <div class="card-content">
-        <h3 data-t="2">Fashion Store</h3>
-        <p data-d="2">Clothing, shoes, bags and accessories.</p>
-        <a href="fashion-store.html" data-b="2">Shop Fashion</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/visa-passport.jpg" alt="Visa and Passport">
-      </div>
-      <div class="card-content">
-        <h3 data-t="3">Visa & Passport</h3>
-        <p data-d="3">Visa and passport information and services.</p>
-        <a href="visa-passport.html" data-b="3">Visa & Passport</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/gifts-services.jpg" alt="Gifts and Services">
-      </div>
-      <div class="card-content">
-        <h3 data-t="4">Gifts & Services</h3>
-        <p data-d="4">Explore gifts and personalized services.</p>
-        <a href="gifts-services.html" data-b="4">Explore Gifts</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/long-packages.jpg" alt="Long Package System">
-      </div>
-      <div class="card-content">
-        <h3 data-t="5">Long Package System</h3>
-        <p data-d="5">Browse available packages and details.</p>
-        <a href="long-packages.html" data-b="5">View Packages</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/herbal-wellness.jpg" alt="Herbal Wellness">
-      </div>
-      <div class="card-content">
-        <h3 data-t="6">Herbal Wellness</h3>
-        <p data-d="6">Discover herbal wellness products.</p>
-        <a href="herbal-wellness.html" data-b="6">Explore Wellness</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/whatsapp-premium.jpg" alt="WhatsApp Premium">
-      </div>
-      <div class="card-content">
-        <h3 data-t="7">WhatsApp Premium Subscription</h3>
-        <p data-d="7">Learn about private subscription-based contact.</p>
-        <a href="whatsapp-premium.html" data-b="7">Subscription Info</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/work-permit-visa.jpg" alt="Work Permit Visa">
-      </div>
-      <div class="card-content">
-        <h3 data-t="8">Work Permit Visa</h3>
-        <p data-d="8">Explore work permit information and services.</p>
-        <a href="work-permit-visa.html" data-b="8">Work Permit Details</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/garments-store.jpg" alt="Garments Store">
-      </div>
-      <div class="card-content">
-        <h3 data-t="9">Garments Store</h3>
-        <p data-d="9">Explore garments, clothing and products.</p>
-        <a href="garments-store.html" data-b="9">Shop Garments</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="visual">
-        <img src="assets/lucky-draw.jpg" alt="Lucky Draw">
-      </div>
-      <div class="card-content">
-        <h3 data-t="10">Lucky Draw</h3>
-        <p data-d="10">Discover lucky draw information and participation.</p>
-        <a href="lucky-draw.html" data-b="10">Explore Lucky Draw</a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<aside class="note" data-i="note">
-  Visa and passport decisions are made by relevant government authorities.
-  Herbal products are not guaranteed to treat medical conditions.
-</aside>
-
-</main>
-
-<footer>
-  <p>© <span id="year"></span> Sofia Jenny Taborda · Official Website</p>
-  <p>Global Services · Opportunities · Care</p>
-</footer>
-
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-const translations = {
-en:{
-language:"Language:",
-welcome:"Welcome to the Official Website",
-intro:"Discover premium media collections, fashion, travel information, gifts, wellness products and personalized services — all in one place.",
-services:"Explore Our Services",
-choose:"Choose a category to explore our offerings.",
-nav:["Home","Premium Videos","Photo Gallery","Fashion Store","Visa & Passport","Gifts & Services","Long Package System","Herbal Wellness","WhatsApp Premium","Work Permit Visa","Garments Store","Lucky Draw"],
-titles:["Premium Videos","Photo Gallery","Fashion Store","Visa & Passport","Gifts & Services","Long Package System","Herbal Wellness","WhatsApp Premium Subscription","Work Permit Visa","Garments Store","Lucky Draw"],
-descriptions:["Explore our exclusive video collection.","Discover featured photography collections.","Clothing, shoes, bags and accessories.","Visa and passport information and services.","Explore gifts and personalized services.","Browse available packages and details.","Discover herbal wellness products.","Learn about private subscription-based contact.","Explore work permit information and services.","Explore garments, clothing and products.","Discover lucky draw information and participation."],
-buttons:["Explore Videos","View Gallery","Shop Fashion","Visa & Passport","Explore Gifts","View Packages","Explore Wellness","Subscription Info","Work Permit Details","Shop Garments","Explore Lucky Draw"],
-note:"Visa and passport decisions are made by relevant government authorities. Herbal products are not guaranteed to treat medical conditions."
-},
-ur:{
-language:"زبان:",
-welcome:"آفیشل ویب سائٹ پر خوش آمدید",
-intro:"پریمیم ویڈیوز، تصاویر، فیشن، سفری معلومات، تحائف اور صحت کی مصنوعات ایک ہی جگہ دریافت کریں۔",
-services:"ہماری خدمات",
-choose:"اپنی پسند کی سروس منتخب کریں۔",
-nav:["ہوم","پریمیم ویڈیوز","تصویری گیلری","فیشن اسٹور","ویزا اور پاسپورٹ","تحائف اور خدمات","لانگ پیکیج سسٹم","ہربل ویلنیس","واٹس ایپ پریمیم","ورک پرمٹ ویزا","گارمنٹس اسٹور","لکی ڈرا"],
-titles:["پریمیم ویڈیوز","تصویری گیلری","فیشن اسٹور","ویزا اور پاسپورٹ","تحائف اور خدمات","لانگ پیکیج سسٹم","ہربل ویلنیس","واٹس ایپ پریمیم سبسکرپشن","ورک پرمٹ ویزا","گارمنٹس اسٹور","لکی ڈرا"],
-descriptions:["خصوصی ویڈیوز دیکھیں۔","تصاویر کی گیلری دیکھیں۔","کپڑے، جوتے، بیگ اور لوازمات۔","ویزا اور پاسپورٹ کی معلومات اور خدمات۔","تحائف اور ذاتی خدمات دریافت کریں۔","دستیاب پیکیجز اور تفصیلات دیکھیں۔","ہربل مصنوعات دریافت کریں۔","نجی رابطے کی سبسکرپشن کی معلومات۔","ورک پرمٹ ویزا کی معلومات اور خدمات۔","گارمنٹس اور ملبوسات دریافت کریں۔","لکی ڈرا کی معلومات اور شرکت۔"],
-buttons:["ویڈیوز دیکھیں","گیلری دیکھیں","فیشن خریدیں","ویزا اور پاسپورٹ","تحائف دیکھیں","پیکیجز دیکھیں","مصنوعات دیکھیں","سبسکرپشن معلومات","ورک پرمٹ کی تفصیلات","گارمنٹس دیکھیں","لکی ڈرا دیکھیں"],
-note:"ویزا اور پاسپورٹ کا فیصلہ متعلقہ سرکاری ادارے کرتے ہیں۔ ہربل مصنوعات بیماریوں کے علاج کی ضمانت نہیں دیتیں۔"
-},
-es:{
-language:"Idioma:",
-welcome:"Bienvenido al sitio web oficial",
-intro:"Descubre videos, fotos, moda, viajes, regalos y servicios de bienestar en un solo lugar.",
-services:"Explora nuestros servicios",
-choose:"Elige una categoría.",
-nav:["Inicio","Videos premium","Galería de fotos","Tienda de moda","Visas y pasaportes","Regalos y servicios","Paquetes largos","Bienestar herbal","WhatsApp Premium","Visa de trabajo","Tienda de ropa","Sorteo"],
-titles:["Videos premium","Galería de fotos","Tienda de moda","Visas y pasaportes","Regalos y servicios","Paquetes largos","Bienestar herbal","Suscripción WhatsApp Premium","Visa de trabajo","Tienda de ropa","Sorteo"],
-descriptions:["Explora nuestra colección de videos.","Descubre fotografías seleccionadas.","Ropa, zapatos, bolsos y accesorios.","Información y servicios de visas y pasaportes.","Regalos y servicios personalizados.","Consulta los paquetes disponibles.","Productos de bienestar herbal.","Información sobre contacto privado.","Información y servicios de permisos de trabajo.","Descubre ropa y productos.","Información sobre sorteos y participación."],
-buttons:["Ver videos","Ver galería","Comprar moda","Visas y pasaportes","Ver regalos","Ver paquetes","Ver productos","Información de suscripción","Detalles de visa de trabajo","Comprar ropa","Ver sorteo"],
-note:"Las decisiones sobre visas y pasaportes corresponden a las autoridades oficiales. Los productos herbales no garantizan tratamientos."
-},
-it:{
-language:"Lingua:",
-welcome:"Benvenuti sul sito ufficiale",
-intro:"Scopri video, foto, moda, viaggi, regali e servizi per il benessere.",
-services:"Scopri i nostri servizi",
-choose:"Scegli una categoria.",
-nav:["Home","Video premium","Galleria fotografica","Negozio di moda","Visti e passaporti","Regali e servizi","Pacchetti lunghi","Benessere naturale","WhatsApp Premium","Visto di lavoro","Negozio abbigliamento","Estrazione premi"],
-titles:["Video premium","Galleria fotografica","Negozio di moda","Visti e passaporti","Regali e servizi","Pacchetti lunghi","Benessere naturale","Abbonamento WhatsApp Premium","Visto di lavoro","Negozio abbigliamento","Estrazione premi"],
-descriptions:["Scopri la nostra raccolta di video.","Scopri le fotografie selezionate.","Abbigliamento, scarpe, borse e accessori.","Informazioni e servizi su visti e passaporti.","Regali e servizi personalizzati.","Consulta i pacchetti disponibili.","Prodotti per il benessere naturale.","Informazioni sul contatto privato.","Informazioni sui permessi di lavoro.","Scopri abbigliamento e prodotti.","Informazioni e partecipazione alle estrazioni."],
-buttons:["Guarda i video","Apri galleria","Acquista moda","Visti e passaporti","Scopri regali","Vedi pacchetti","Scopri prodotti","Info abbonamento","Dettagli visto lavoro","Acquista abbigliamento","Scopri estrazione"],
-note:"Le decisioni su visti e passaporti spettano alle autorità competenti. I prodotti naturali non garantiscono cure."
-},
-fr:{
-language:"Langue :",
-welcome:"Bienvenue sur le site officiel",
-intro:"Découvrez vidéos, photos, mode, voyages, cadeaux et services de bien-être.",
-services:"Découvrez nos services",
-choose:"Choisissez une catégorie.",
-nav:["Accueil","Vidéos premium","Galerie photo","Boutique de mode","Visas et passeports","Cadeaux et services","Forfaits longue durée","Bien-être naturel","WhatsApp Premium","Visa de travail","Boutique vêtements","Tirage au sort"],
-titles:["Vidéos premium","Galerie photo","Boutique de mode","Visas et passeports","Cadeaux et services","Forfaits longue durée","Bien-être naturel","Abonnement WhatsApp Premium","Visa de travail","Boutique vêtements","Tirage au sort"],
-descriptions:["Découvrez notre collection vidéo.","Découvrez nos photos sélectionnées.","Vêtements, chaussures, sacs et accessoires.","Informations et services sur les visas et passeports.","Cadeaux et services personnalisés.","Consultez les forfaits disponibles.","Produits de bien-être naturel.","Informations sur le contact privé.","Informations sur les permis de travail.","Découvrez vêtements et produits.","Informations et participation au tirage."],
-buttons:["Voir les vidéos","Voir la galerie","Acheter","Visas et passeports","Voir les cadeaux","Voir les forfaits","Voir les produits","Infos abonnement","Détails visa travail","Voir vêtements","Voir le tirage"],
-note:"Les décisions concernant les visas et passeports appartiennent aux autorités compétentes. Les produits naturels ne garantissent aucun traitement."
-},
-ar:{
-language:"اللغة:",
-welcome:"مرحباً بكم في الموقع الرسمي",
-intro:"اكتشفوا الفيديوهات والصور والأزياء والسفر والهدايا ومنتجات العناية.",
-services:"اكتشف خدماتنا",
-choose:"اختر الفئة المناسبة.",
-nav:["الرئيسية","فيديوهات مميزة","معرض الصور","متجر الأزياء","التأشيرات والجوازات","الهدايا والخدمات","الباقات الطويلة","العناية بالأعشاب","واتساب المميز","تأشيرة العمل","متجر الملابس","السحب"],
-titles:["فيديوهات مميزة","معرض الصور","متجر الأزياء","التأشيرات وجوازات السفر","الهدايا والخدمات","الباقات الطويلة","العناية بالأعشاب","اشتراك واتساب المميز","تأشيرة العمل","متجر الملابس","السحب"],
-descriptions:["اكتشف مجموعة الفيديوهات.","شاهد الصور المختارة.","ملابس وأحذية وحقائب وإكسسوارات.","معلومات وخدمات التأشيرات وجوازات السفر.","الهدايا والخدمات الشخصية.","تصفح الباقات المتاحة.","منتجات العناية بالأعشاب.","معلومات الاشتراك للتواصل الخاص.","معلومات وخدمات تصاريح العمل.","اكتشف الملابس والمنتجات.","معلومات المشاركة في السحب."],
-buttons:["عرض الفيديوهات","عرض الصور","تسوق الأزياء","التأشيرات والجوازات","عرض الهدايا","عرض الباقات","عرض المنتجات","معلومات الاشتراك","تفاصيل تأشيرة العمل","تسوق الملابس","عرض السحب"],
-note:"تتخذ الجهات الحكومية المختصة قرارات التأشيرات وجوازات السفر. المنتجات العشبية لا تضمن علاج الأمراض."
-},
-pt:{
-language:"Idioma:",
-welcome:"Bem-vindo ao site oficial",
-intro:"Explore vídeos, fotos, moda, viagens, presentes e produtos de bem-estar.",
-services:"Explore nossos serviços",
-choose:"Escolha uma categoria.",
-nav:["Início","Vídeos premium","Galeria de fotos","Loja de moda","Vistos e passaportes","Presentes e serviços","Pacotes longos","Bem-estar herbal","WhatsApp Premium","Visto de trabalho","Loja de roupas","Sorteio"],
-titles:["Vídeos premium","Galeria de fotos","Loja de moda","Vistos e passaportes","Presentes e serviços","Pacotes longos","Bem-estar herbal","Assinatura WhatsApp Premium","Visto de trabalho","Loja de roupas","Sorteio"],
-descriptions:["Explore nossa coleção de vídeos.","Descubra fotos selecionadas.","Roupas, sapatos, bolsas e acessórios.","Informações e serviços sobre vistos e passaportes.","Presentes e serviços personalizados.","Veja os pacotes disponíveis.","Produtos de bem-estar herbal.","Informações sobre contato privado.","Informações sobre permissões de trabalho.","Explore roupas e produtos.","Informações e participação no sorteio."],
-buttons:["Ver vídeos","Ver galeria","Comprar moda","Vistos e passaportes","Ver presentes","Ver pacotes","Ver produtos","Informações da assinatura","Detalhes do visto","Comprar roupas","Ver sorteio"],
-note:"As decisões sobre vistos e passaportes cabem às autoridades competentes. Produtos naturais não garantem tratamentos."
-},
-de:{
-language:"Sprache:",
-welcome:"Willkommen auf der offiziellen Website",
-intro:"Entdecken Sie Videos, Fotos, Mode, Reisen, Geschenke und Wellnessprodukte.",
-services:"Unsere Dienstleistungen",
-choose:"Wählen Sie eine Kategorie.",
-nav:["Startseite","Premium-Videos","Fotogalerie","Modeshop","Visa und Reisepässe","Geschenke und Services","Langzeitpakete","Pflanzliches Wohlbefinden","WhatsApp Premium","Arbeitsvisum","Bekleidungsgeschäft","Gewinnspiel"],
-titles:["Premium-Videos","Fotogalerie","Modeshop","Visa und Reisepässe","Geschenke und Services","Langzeitpakete","Pflanzliches Wohlbefinden","WhatsApp Premium-Abo","Arbeitsvisum","Bekleidungsgeschäft","Gewinnspiel"],
-descriptions:["Entdecken Sie unsere Videos.","Entdecken Sie ausgewählte Fotos.","Kleidung, Schuhe, Taschen und Accessoires.","Informationen und Services zu Visa und Pässen.","Geschenke und persönliche Services.","Verfügbare Pakete ansehen.","Pflanzliche Wellnessprodukte.","Informationen zum privaten Kontakt.","Informationen zu Arbeitserlaubnissen.","Entdecken Sie Kleidung und Produkte.","Informationen zur Teilnahme am Gewinnspiel."],
-buttons:["Videos ansehen","Galerie ansehen","Mode kaufen","Visa und Pässe","Geschenke ansehen","Pakete ansehen","Produkte ansehen","Abo-Informationen","Arbeitsvisum-Details","Kleidung kaufen","Gewinnspiel ansehen"],
-note:"Visa- und Passentscheidungen treffen die zuständigen Behörden. Pflanzliche Produkte garantieren keine Heilung."
-},
-hi:{
-language:"भाषा:",
-welcome:"आधिकारिक वेबसाइट पर आपका स्वागत है",
-intro:"वीडियो, फोटो, फैशन, यात्रा, उपहार और वेलनेस सेवाएँ एक ही जगह देखें।",
-services:"हमारी सेवाएँ",
-choose:"अपनी पसंद की श्रेणी चुनें।",
-nav:["होम","प्रीमियम वीडियो","फोटो गैलरी","फैशन स्टोर","वीज़ा और पासपोर्ट","उपहार और सेवाएँ","लंबे पैकेज","हर्बल वेलनेस","व्हाट्सऐप प्रीमियम","वर्क परमिट वीज़ा","गारमेंट्स स्टोर","लकी ड्रॉ"],
-titles:["प्रीमियम वीडियो","फोटो गैलरी","फैशन स्टोर","वीज़ा और पासपोर्ट","उपहार और सेवाएँ","लंबे पैकेज","हर्बल वेलनेस","व्हाट्सऐप प्रीमियम सदस्यता","वर्क परमिट वीज़ा","गारमेंट्स स्टोर","लकी ड्रॉ"],
-descriptions:["विशेष वीडियो देखें।","चुनिंदा फोटो देखें।","कपड़े, जूते, बैग और एक्सेसरीज़।","वीज़ा और पासपोर्ट की जानकारी और सेवाएँ।","उपहार और व्यक्तिगत सेवाएँ।","उपलब्ध पैकेज देखें।","हर्बल उत्पाद देखें।","निजी संपर्क सदस्यता की जानकारी।","वर्क परमिट की जानकारी और सेवाएँ।","कपड़े और उत्पाद देखें।","लकी ड्रॉ की जानकारी और भागीदारी।"],
-buttons:["वीडियो देखें","गैलरी देखें","फैशन खरीदें","वीज़ा और पासपोर्ट","उपहार देखें","पैकेज देखें","उत्पाद देखें","सदस्यता जानकारी","वर्क परमिट विवरण","कपड़े खरीदें","लकी ड्रॉ देखें"],
-note:"वीज़ा और पासपोर्ट का निर्णय सरकारी अधिकारी लेते हैं। हर्बल उत्पाद इलाज की गारंटी नहीं देते।"
-},
-zh:{
-language:"语言：",
-welcome:"欢迎访问官方网站",
-intro:"探索视频、照片、时尚、旅行、礼品和健康服务。",
-services:"探索我们的服务",
-choose:"请选择一个类别。",
-nav:["首页","精品视频","照片图库","时尚商店","签证与护照","礼品与服务","长期套餐","草本健康","WhatsApp高级订阅","工作许可签证","服装商店","抽奖"],
-titles:["精品视频","照片图库","时尚商店","签证与护照","礼品与服务","长期套餐","草本健康","WhatsApp高级订阅","工作许可签证","服装商店","抽奖"],
-descriptions:["浏览独家视频。","欣赏精选照片。","服装、鞋子、包袋和配饰。","签证与护照信息及服务。","礼品和个性化服务。","查看可用套餐。","探索草本健康产品。","了解私人联系订阅。","工作许可签证信息和服务。","探索服装和产品。","抽奖信息和参与方式。"],
-buttons:["浏览视频","查看图库","购买时尚","签证与护照","查看礼品","查看套餐","查看产品","订阅信息","工作许可详情","购买服装","查看抽奖"],
-note:"签证和护照由相关政府机构决定。草本产品不保证治疗疾病。"
-}
-};
-
-function applyLanguage(code){
-  const d=translations[code]||translations.en;
-  document.documentElement.lang=code;
-  document.documentElement.dir=["ur","ar"].includes(code)?"rtl":"ltr";
-
-  document.querySelector('[data-i="language"]').textContent=d.language;
-  document.querySelector('[data-i="welcome"]').textContent=d.welcome;
-  document.querySelector('[data-i="intro"]').textContent=d.intro;
-  document.querySelector('[data-i="services"]').textContent=d.services;
-  document.querySelector('[data-i="choose"]').textContent=d.choose;
-  document.querySelector('[data-i="note"]').textContent=d.note;
-
-  document.querySelectorAll("[data-n]").forEach(el=>{
-    el.textContent=d.nav[Number(el.dataset.n)];
-  });
-  document.querySelectorAll("[data-t]").forEach(el=>{
-    el.textContent=d.titles[Number(el.dataset.t)];
-  });
-  document.querySelectorAll("[data-d]").forEach(el=>{
-    el.textContent=d.descriptions[Number(el.dataset.d)];
-  });
-  document.querySelectorAll("[data-b]").forEach(el=>{
-    el.textContent=d.buttons[Number(el.dataset.b)];
-  });
-
-  try{localStorage.setItem("sofia-language",code)}catch(e){}
-}
-
-const picker=document.getElementById("language");
-picker.addEventListener("change",()=>applyLanguage(picker.value));
-
-let saved="en";
-try{saved=localStorage.getItem("sofia-language")||"en"}catch(e){}
-picker.value=translations[saved]?saved:"en";
-applyLanguage(picker.value);
-</script>
-
-</body>
-</html>
