@@ -1,614 +1,287 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#082e59">
-
 <title>Premium Videos | Sofia Jenny Taborda</title>
 
 <style>
-:root {
-  --navy: #082e59;
-  --blue: #1769aa;
-  --light: #f4f8fc;
-  --silver: #dce7f2;
-  --gold: #d9ad54;
-  --pink: #ed5ba6;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f3f7fc;
+ color:#082e59;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+header{
+ background:white;
+ padding:18px 5%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ box-shadow:0 2px 12px #0000000c;
 }
-
-body {
-  font-family: Arial, sans-serif;
-  background: var(--light);
-  color: var(--navy);
-  min-width: 320px;
+header strong{font-size:21px}
+header a{color:#082e59;text-decoration:none;font-weight:bold}
+.hero{
+ background:linear-gradient(115deg,#06264b,#173b70,#581653);
+ color:white;
+ padding:55px 6%;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ align-items:center;
+ gap:35px;
 }
-
-img {
-  max-width: 100%;
+.hero h1{font-size:clamp(38px,5vw,64px);margin:15px 0}
+.hero p{line-height:1.8;color:#e0eafa}
+.hero img{
+ width:100%;
+ max-height:380px;
+ object-fit:cover;
+ border-radius:20px;
+ border:3px solid #ed72bd;
+ box-shadow:0 12px 35px #0005;
 }
-
-/* HEADER */
-
-.topbar {
-  background: white;
-  padding: 17px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  border-bottom: 1px solid var(--silver);
+.tag{
+ color:#ffd078;
+ letter-spacing:3px;
+ font-weight:bold;
+ font-size:12px;
 }
-
-.brand {
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: bold;
+section{padding:48px 6%}
+.heading{text-align:center;margin-bottom:28px}
+.heading h2{font-size:32px;margin:0 0 12px}
+.heading p{color:#647b98;line-height:1.7}
+.membership{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:22px;
 }
-
-.topbar a {
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: bold;
+.panel{
+ background:white;
+ border:1px solid #dce7f3;
+ border-radius:18px;
+ padding:28px;
+ box-shadow:0 8px 25px #163b6510;
 }
-
-/* HERO */
-
-.hero {
-  background:
-    linear-gradient(
-      120deg,
-      #061d39,
-      #123e68 55%,
-      #6b245d
-    );
-
-  padding: 55px 5%;
-  color: white;
+.panel h3{font-size:22px;margin-top:8px}
+.panel p,.panel li{color:#607995;line-height:1.9}
+.price{font-size:32px;font-weight:bold;margin:15px 0}
+.btn{
+ display:inline-block;
+ padding:14px 24px;
+ border:0;
+ border-radius:10px;
+ background:#082e59;
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+ cursor:pointer;
 }
-
-.hero-inner {
-  max-width: 1200px;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
+.btn:hover{background:#174d83}
+.pending{
+ display:inline-block;
+ background:#fff3d8;
+ color:#96600a;
+ padding:9px 14px;
+ border-radius:30px;
+ font-size:13px;
+ margin-top:10px;
 }
-
-.eyebrow {
-  color: #f7d995;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.lock-icon{font-size:35px}
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:20px;
 }
-
-.hero h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(36px, 5vw, 60px);
-  margin-bottom: 20px;
+.video-card{
+ background:white;
+ border-radius:16px;
+ overflow:hidden;
+ border:1px solid #dce7f3;
+ box-shadow:0 7px 22px #173b6510;
 }
-
-.hero p {
-  color: #e4edf7;
-  line-height: 1.8;
-  font-size: 16px;
+.thumbnail{
+ aspect-ratio:16/9;
+ background:linear-gradient(135deg,#102e56,#54205b);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:white;
+ font-size:42px;
 }
-
-.hero-art {
-  border: 2px solid #ffffff55;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px #0005;
+.video-info{padding:18px}
+.video-info h3{margin:0 0 10px}
+.video-info p{color:#71839a;font-size:14px}
+.locked{
+ color:#a66b12;
+ font-weight:bold;
+ font-size:13px;
 }
-
-.hero-art img {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+.empty{
+ text-align:center;
+ background:white;
+ border:1px dashed #a8bfd9;
+ border-radius:18px;
+ padding:55px 20px;
+ color:#647b98;
 }
-
-/* MAIN */
-
-.main {
-  max-width: 1180px;
-  margin: auto;
-  padding: 40px 18px 60px;
+.empty .icon{font-size:45px}
+footer{
+ background:#082e59;
+ color:white;
+ text-align:center;
+ padding:27px;
+ line-height:1.8;
 }
-
-/* NOTICE */
-
-.notice {
-  background: white;
-  border-left: 5px solid var(--pink);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 40px;
-  line-height: 1.8;
-  color: #173653;
-  box-shadow: 0 5px 18px #00000008;
+@media(max-width:750px){
+ .hero,.membership{grid-template-columns:1fr}
+ .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{padding:35px 5%}
 }
-
-/* SECTION */
-
-.section-head {
-  text-align: center;
-  margin-bottom: 25px;
+@media(max-width:480px){
+ .gallery{grid-template-columns:1fr}
+ header{padding:15px 4%}
+ header strong{font-size:17px}
 }
-
-.section-head h2 {
-  font-family: Georgia, serif;
-  font-size: 34px;
-  margin-bottom: 12px;
-}
-
-.section-head p {
-  color: #61758b;
-  line-height: 1.8;
-}
-
-/* MEMBERSHIP */
-
-.membership {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-bottom: 55px;
-}
-
-.panel {
-  background: white;
-  border: 1px solid var(--silver);
-  border-radius: 17px;
-  padding: 28px;
-  box-shadow: 0 8px 24px #0b315c0b;
-}
-
-.panel h3 {
-  font-size: 21px;
-  margin-bottom: 15px;
-}
-
-.panel p {
-  color: #61758b;
-  line-height: 1.8;
-}
-
-.panel ul {
-  padding-left: 20px;
-  margin-top: 15px;
-}
-
-.panel li {
-  color: #61758b;
-  line-height: 1.9;
-}
-
-.lock-icon {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 15px 0;
-}
-
-.status {
-  display: inline-block;
-  background: #fff3d8;
-  color: #77520c;
-  border: 1px solid #f1d99e;
-  border-radius: 30px;
-  padding: 8px 13px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 18px;
-}
-
-/* VIDEO COLLECTION */
-
-.videos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.video-card {
-  background: white;
-  border: 1px solid var(--silver);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 7px 20px #0b315c0b;
-  transition: .25s;
-}
-
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px #0b315c20;
-}
-
-.video-thumb {
-  height: 200px;
-  background: linear-gradient(
-    135deg,
-    #dce7f2,
-    #a7c3df
-  );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-}
-
-.play {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #082e59e8;
-  color: white;
-
-  display: grid;
-  place-items: center;
-
-  font-size: 23px;
-  border: 2px solid white;
-}
-
-.video-info {
-  padding: 20px;
-}
-
-.video-info h3 {
-  margin-bottom: 10px;
-}
-
-.video-info p {
-  color: #61758b;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.locked {
-  display: inline-block;
-  margin-top: 15px;
-  color: #9a5a00;
-  background: #fff4df;
-  padding: 7px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* EMPTY COLLECTION */
-
-.empty {
-  grid-column: 1 / -1;
-  text-align: center;
-  background: white;
-  border: 1px dashed #a9bfd5;
-  border-radius: 16px;
-  padding: 40px 20px;
-  color: #61758b;
-  line-height: 1.9;
-}
-
-/* FOOTER */
-
-footer {
-  background: #072b51;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-/* TABLET */
-
-@media(max-width: 760px) {
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .membership {
-    grid-template-columns: 1fr;
-  }
-
-  .videos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-/* MOBILE */
-
-@media(max-width: 520px) {
-
-  .topbar {
-    flex-direction: column;
-  }
-
-  .hero {
-    padding: 35px 18px;
-  }
-
-  .hero-art img {
-    height: 240px;
-  }
-
-  .videos {
-    grid-template-columns: 1fr;
-  }
-
-  .section-head h2 {
-    font-size: 27px;
-  }
-
-}
-
-/* RTL */
-
-html[dir="rtl"] body {
-  text-align: right;
-}
-
-html[dir="rtl"] .notice {
-  border-left: 1px solid var(--silver);
-  border-right: 5px solid var(--pink);
-}
-
-html[dir="rtl"] .panel ul {
-  padding-left: 0;
-  padding-right: 20px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header class="topbar">
-
-  <div class="brand">
-    Sofia Jenny Taborda
-  </div>
-
-  <a href="index.html">
-    ← Back to Home
-  </a>
-
+<header>
+ <strong>Sofia Jenny Taborda</strong>
+ <a href="index.html">← Back to Home</a>
 </header>
 
+<div class="hero">
+ <div>
+  <div class="tag">MEMBERS ONLY COLLECTION</div>
+  <h1>Premium Videos</h1>
+  <p>
+   Explore our exclusive premium video collection.
+   Become a member to unlock access to our
+   special video library and premium content.
+  </p>
+ </div>
 
-<!-- HERO SECTION -->
+ <img src="assets/Premium Pink Play Preview.png"
+      alt="Premium Videos Preview">
+</div>
 
-<section class="hero">
+<section>
+ <div class="heading">
+  <h2>Premium Membership</h2>
+  <p>Join our membership to access exclusive content.</p>
+ </div>
 
-  <div class="hero-inner">
+ <div class="membership">
 
-    <div>
-
-      <div class="eyebrow">
-        Members Only Collection
-      </div>
-
-      <h1>
-        Premium Videos
-      </h1>
-
-      <p>
-        Explore our exclusive premium video collection.
-        Discover special content, premium entertainment
-        and members-only media experiences.
-      </p>
-
-    </div>
-
-    <div class="hero-art">
-
-      <img
-        src="assets/Premium%20Pink%20Play%20Preview.png"
-        alt="Premium Videos"
-      >
-
-    </div>
-
+  <div class="panel">
+   <div class="lock-icon">🔒</div>
+   <h3>Members Only Access</h3>
+   <p>Enjoy exclusive access after your membership
+   has been successfully verified.</p>
+   <ul>
+    <li>Exclusive premium video access</li>
+    <li>Monthly subscription membership</li>
+    <li>Access to the complete collection</li>
+    <li>Membership renewal management</li>
+   </ul>
+   <span class="pending">Membership Setup Pending</span>
   </div>
 
+  <div class="panel">
+   <h3>Monthly Subscription</h3>
+   <div class="price">Price To Be Announced</div>
+   <p>
+    Subscription price and payment instructions
+    will be displayed here after payment setup.
+   </p>
+   <a class="btn" href="#payment">
+    Get Membership
+   </a>
+   <div>
+    <span class="pending">Payment Setup Pending</span>
+   </div>
+  </div>
+
+ </div>
 </section>
 
+<section id="payment">
+ <div class="heading">
+  <h2>Membership Payment</h2>
+  <p>Payment information and verification will be connected here.</p>
+ </div>
+ <div class="panel" style="text-align:center">
+  <h3>Become a Premium Member</h3>
+  <p>
+   Secure payment, membership approval and account
+   verification will be configured in the next stage.
+  </p>
+  <span class="pending">Payment Integration Pending</span>
+ </div>
+</section>
 
-<!-- MAIN CONTENT -->
+<section id="collection">
+ <div class="heading">
+  <h2>Exclusive Video Collection</h2>
+  <p>
+   Your premium videos will appear here.
+   New videos will automatically be added to the collection
+   when published through the administrator dashboard.
+  </p>
+ </div>
 
-<main class="main">
-
-
-  <!-- MEMBERSHIP NOTICE -->
-
-  <div class="notice">
-
-    <strong>Premium Membership Access</strong>
-
-    <p>
-      Full access to premium videos is reserved
-      for members with an active subscription.
-      Visitors can explore the collection,
-      while protected content remains locked
-      until membership verification.
-    </p>
-
-  </div>
-
-
-  <!-- MEMBERSHIP SECTION -->
-
-  <div class="section-head">
-
-    <h2>
-      Premium Membership
-    </h2>
-
-    <p>
-      Enjoy exclusive access to our premium
-      video collection through membership.
-    </p>
-
-  </div>
-
-
-  <section class="membership">
-
-
-    <article class="panel">
-
-      <div class="lock-icon">
-        🔒
-      </div>
-
-      <h3>
-        Members Only Access
-      </h3>
-
-      <p>
-        An active membership will provide access
-        to the complete premium collection.
-      </p>
-
-      <ul>
-
-        <li>
-          Exclusive premium video access
-        </li>
-
-        <li>
-          Monthly subscription membership
-        </li>
-
-        <li>
-          Access during active subscription
-        </li>
-
-        <li>
-          Membership renewal management
-        </li>
-
-      </ul>
-
-      <span class="status">
-        Membership Setup Pending
-      </span>
-
-    </article>
-
-
-    <article class="panel">
-
-      <h3>
-        Monthly Subscription
-      </h3>
-
-      <div class="price">
-        Price To Be Announced
-      </div>
-
-      <p>
-        Monthly membership pricing and
-        payment instructions will be
-        displayed here.
-      </p>
-
-      <br>
-
-      <p>
-        Secure payment and subscription
-        verification will be connected
-        after payment system configuration.
-      </p>
-
-      <span class="status">
-        Payment Setup Pending
-      </span>
-
-    </article>
-
-  </section>
-
-
-  <!-- VIDEO COLLECTION -->
-
-  <div class="section-head">
-
-    <h2>
-      Exclusive Video Collection
-    </h2>
-
-    <p>
-      Explore our premium video categories.
-      New videos will appear here when published.
-    </p>
-
-  </div>
-
-
-  <section class="videos" id="video-list">
-
-    <div class="empty">
-
-      <h3>
-        Premium Collection Coming Soon
-      </h3>
-
-      <p>
-        Our exclusive video collection
-        will be available here.
-      </p>
-
-    </div>
-
-  </section>
-
-
-</main>
-
-
-<!-- FOOTER -->
+ <div id="videoGallery" class="empty">
+  <div class="icon">🎬</div>
+  <h3>Premium Collection Coming Soon</h3>
+  <p>Your exclusive video collection will be available here.</p>
+ </div>
+</section>
 
 <footer>
-
-  © <span id="year"></span>
-  Sofia Jenny Taborda
-
-  <br>
-
-  Official Website · Premium Collection
-
+ © 2026 Sofia Jenny Taborda<br>
+ Official Website · Premium Collection
 </footer>
 
-
 <script>
+// Video collection will be connected to the secure
+// administrator dashboard and database in the next stage.
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+const premiumVideos = [];
 
+const gallery = document.getElementById("videoGallery");
+
+if(premiumVideos.length > 0){
+ gallery.className = "gallery";
+
+ premiumVideos.forEach((video) => {
+  const card = document.createElement("div");
+  card.className = "video-card";
+
+  const thumbnail = document.createElement("div");
+  thumbnail.className = "thumbnail";
+  thumbnail.textContent = "▶";
+
+  const info = document.createElement("div");
+  info.className = "video-info";
+
+  const title = document.createElement("h3");
+  title.textContent = video.title;
+
+  const status = document.createElement("p");
+  status.className = "locked";
+  status.textContent = "🔒 Members Only";
+
+  info.append(title, status);
+  card.append(thumbnail, info);
+  gallery.appendChild(card);
+ });
+}
 </script>
 
 </body>
