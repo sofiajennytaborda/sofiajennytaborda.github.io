@@ -431,7 +431,116 @@ html[dir="rtl"] .note{
 html[dir="rtl"] .langbar{
   direction:rtl;
 }
+/* PREMIUM RESPONSIVE NAVIGATION BUTTONS */
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #082e59;
+  box-shadow: 0 5px 18px rgba(0,25,55,0.20);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.nav-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 15px;
+  min-width: max-content;
+}
+
+.navbar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  padding: 11px 16px;
+  color: #ffffff;
+  background: linear-gradient(145deg,#164879,#0b315c);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 11px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: all .25s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: linear-gradient(135deg,#ffffff,#dcecff);
+  color: #082e59;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 13px rgba(0,0,0,0.20);
+}
+
+/* TABLET */
+@media (max-width:850px) {
+  .nav-inner {
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 0;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .navbar a {
+    flex: 1 1 30%;
+    min-width: 0;
+    white-space: normal;
+    min-height: 48px;
+  }
+}
+
+/* MOBILE */
+@media (max-width:540px) {
+  .navbar {
+    overflow: visible;
+  }
+
+  .nav-inner {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 11px;
+    padding: 15px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .navbar a {
+    width: 100%;
+    min-width: 0;
+    min-height: 57px;
+    padding: 12px 7px;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border-radius: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width:350px) {
+  .nav-inner {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .navbar a {
+    font-size: 11px;
+    min-height: 52px;
+    padding: 9px 5px;
+  }
+}
 </style>
 </head>
 
