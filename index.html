@@ -1,61 +1,439 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sofia Jenny Taborda | Official Website</title>
-  <style>
-    :root { --navy:#082e59; --blue:#1769aa; --gold:#c7a45b; --ink:#17283b; --pale:#f4f8fc; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:#fff; }
-    .topbar { display:flex; align-items:center; gap:18px; padding:12px clamp(16px,4vw,54px); background:#fff; box-shadow:0 3px 18px #092b5014; position:relative; z-index:2; }
-    .logo { width:76px; height:76px; object-fit:contain; flex:0 0 auto; }
-    .brand { min-width:0; }
-    .brand h1 { margin:0; color:var(--navy); font-family:Georgia,serif; font-size:clamp(20px,3vw,30px); line-height:1.15; }
-    .verified { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#1877d2; color:white; font:bold 12px Arial; vertical-align:middle; margin-left:5px; }
-    .brand p { margin:5px 0 0; color:#64748b; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
-    nav { margin-left:auto; display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
-    nav a { color:var(--navy); text-decoration:none; font-size:14px; font-weight:600; padding:10px 12px; border-radius:22px; }
-    nav a:hover { background:#edf5fc; }
-    .hero { position:relative; width:100%; background:#eaf3fc; }
-    .hero img { display:block; width:100%; height:auto; max-height:560px; object-fit:cover; object-position:center; }
-    .intro { text-align:center; padding:36px 18px 42px; background:linear-gradient(180deg,#f7faff,#fff); }
-    .intro h2 { margin:0 0 10px; color:var(--navy); font: bold clamp(24px,4vw,38px) Georgia,serif; }
-    .intro p { margin:0 auto; max-width:760px; line-height:1.7; color:#52657a; }
-    .quicklinks { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:14px; max-width:1000px; margin:26px auto 0; padding:0 18px; }
-    .tile { border:1px solid #e2eaf2; border-radius:15px; padding:18px 12px; text-align:center; color:var(--navy); background:white; font-weight:700; box-shadow:0 5px 18px #0b31500b; }
-    footer { padding:22px; text-align:center; color:#718096; font-size:13px; border-top:1px solid #edf1f5; }
-    @media (max-width:760px) { .topbar { flex-wrap:wrap; } nav { width:100%; margin:0; justify-content:flex-start; } nav a { padding:8px 10px; } .logo { width:62px;height:62px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sofia Jenny Taborda Official Website">
+<title>Sofia Jenny Taborda | Official Website</title>
+
+<style>
+:root {
+  --navy:#082e59;
+  --blue:#1769aa;
+  --silver:#dce7f2;
+  --light:#f4f8fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--navy);
+  background:var(--light);
+}
+.banner{width:100%;display:block;height:auto}
+.langbar{
+  display:flex;justify-content:flex-end;align-items:center;
+  gap:10px;padding:13px 5%;
+  background:white;border-bottom:1px solid var(--silver);
+}
+.langbar select{
+  padding:10px;border:1px solid #b7cde2;
+  border-radius:9px;color:var(--navy);
+}
+.intro{
+  text-align:center;padding:40px 18px 20px;
+  max-width:900px;margin:auto;
+}
+.intro h1{
+  font:700 clamp(28px,4vw,45px) Georgia,serif;
+}
+.intro p{color:#48617d;line-height:1.7;font-size:17px}
+.identity{text-align:center;padding:15px 20px 40px}
+.identity img{
+  display:block;width:clamp(155px,23vw,245px);
+  margin:0 auto 15px;
+  filter:drop-shadow(0 8px 14px #b7cce0);
+}
+.identity h2{
+  font:700 clamp(27px,4vw,43px) Georgia,serif;
+  margin:0;display:flex;justify-content:center;
+  align-items:center;gap:10px;flex-wrap:wrap;
+}
+.verify{
+  background:#1683df;color:white;border-radius:50%;
+  width:26px;height:26px;display:inline-flex;
+  align-items:center;justify-content:center;
+  font:700 17px Arial;
+}
+.identity small{
+  display:block;letter-spacing:3px;
+  color:#647f9e;margin-top:10px;
+}
+.services{max-width:1200px;margin:auto;padding:15px 20px 60px}
+.services h2{
+  text-align:center;font:700 34px Georgia,serif;
+}
+.services>p{text-align:center;color:#637a91;margin-bottom:30px}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card{
+  background:white;border:1px solid var(--silver);
+  border-radius:17px;overflow:hidden;
+  box-shadow:0 8px 22px #0b315a12;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-4px)}
+.visual{height:175px;overflow:hidden;background:#e8f3ff}
+.visual img{width:100%;height:100%;object-fit:cover}
+.card-content{text-align:center;padding:18px}
+.card h3{font-size:19px;margin:0 0 10px}
+.card p{font-size:14px;color:#64778c;line-height:1.6;min-height:42px}
+.card a{
+  display:inline-block;background:var(--navy);
+  color:white;text-decoration:none;padding:12px 22px;
+  border-radius:10px;font-weight:bold;margin-top:8px;
+}
+.card a:hover{background:var(--blue)}
+.note{
+  max-width:950px;margin:0 auto 45px;
+  padding:16px 20px;background:#e9f2fa;
+  border-left:4px solid var(--blue);
+  font-size:14px;line-height:1.7;color:#45617d;
+}
+footer{
+  background:#072b51;color:white;
+  text-align:center;padding:30px 15px;font-size:14px;
+}
+@media(max-width:850px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:540px){
+  .cards{grid-template-columns:1fr}
+  .visual{height:190px}
+  .intro{padding-top:28px}
+}
+html[dir="rtl"] .note{
+  border-left:0;border-right:4px solid var(--blue);
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <img class="logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo">
-    <div class="brand">
-      <h1>Sofia Jenny Taborda <span class="verified" aria-label="Verified">✓</span></h1>
-      <p>Official Website</p>
-    </div>
-    <nav aria-label="Main navigation">
-      <a href="#">Home</a><a href="#">Videos</a><a href="#">Photos</a>
-      <a href="#">Fashion</a><a href="#">Visa</a><a href="#">Gifts</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero" aria-label="Website banner">
-      <img src="assets/sofia-header-banner.png" alt="Sofia Jenny Taborda global services banner">
-    </section>
-    <section class="intro">
-      <h2>Welcome to the Official Website</h2>
-      <p>Explore fashion, premium video and photo collections, opportunities, visa information, and featured services — all in one place.</p>
-      <div class="quicklinks">
-        <div class="tile">▶ Premium Videos</div>
-        <div class="tile">▧ Photo Gallery</div>
-        <div class="tile">✦ Fashion Store</div>
-        <div class="tile">✈ Visa Information</div>
-        <div class="tile">♡ Gifts & Services</div>
-      </div>
-    </section>
-  </main>
-  <footer>© Sofia Jenny Taborda · Official Website</footer>
+
+<!-- ORIGINAL HEADER IMAGE -->
+<header>
+<img class="banner"
+src="assets/sofia-header-banner.png"
+alt="Sofia Jenny Taborda">
+</header>
+
+<!-- LANGUAGE SELECTOR -->
+<div class="langbar">
+<label for="language">🌐 Language:</label>
+<select id="language">
+<option value="en">🇬🇧 English</option>
+<option value="ur">🇵🇰 اردو</option>
+<option value="es">🇪🇸 Español</option>
+<option value="it">🇮🇹 Italiano</option>
+<option value="fr">🇫🇷 Français</option>
+<option value="ar">🇸🇦 العربية</option>
+<option value="pt">🇧🇷 Português</option>
+<option value="de">🇩🇪 Deutsch</option>
+<option value="hi">🇮🇳 हिन्दी</option>
+<option value="zh">🇨🇳 中文</option>
+</select>
+</div>
+
+<main>
+
+<section class="intro">
+<h1 data-i="welcome">Welcome to the Official Website</h1>
+<p data-i="intro">
+Discover premium media collections, fashion, travel information,
+gifts, wellness products and personalized services — all in one place.
+</p>
+</section>
+
+<!-- ORIGINAL LOGO -->
+<section class="identity">
+<img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
+<h2>
+Sofia Jenny Taborda
+<span class="verify" title="Decorative design mark">✓</span>
+</h2>
+<small>OFFICIAL WEBSITE</small>
+</section>
+
+<section class="services">
+<h2 data-i="services">Explore Our Services</h2>
+<p data-i="choose">Choose a category to explore our offerings.</p>
+
+<div class="cards">
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Premium Videos">
+</div>
+<div class="card-content">
+<h3 data-i="t0">Premium Videos</h3>
+<p data-i="d0">Explore our exclusive video collection.</p>
+<a href="premium-videos.html" data-i="c0">Explore Videos</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="Photo Gallery">
+</div>
+<div class="card-content">
+<h3 data-i="t1">Photo Gallery</h3>
+<p data-i="d1">Discover featured photography collections.</p>
+<a href="photo-gallery.html" data-i="c1">View Gallery</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Fashion">
+</div>
+<div class="card-content">
+<h3 data-i="t2">Fashion Store</h3>
+<p data-i="d2">Clothing, shoes, bags and accessories.</p>
+<a href="fashion-store.html" data-i="c2">Shop Fashion</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80" alt="Travel">
+</div>
+<div class="card-content">
+<h3 data-i="t3">Visa & Passport</h3>
+<p data-i="d3">Visa and passport information for USA, Colombia and Italy.</p>
+<a href="visa-passport.html" data-i="c3">Visa & Passport</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1513201099705-a9746e1e200f?auto=format&fit=crop&w=900&q=80" alt="Gifts">
+</div>
+<div class="card-content">
+<h3 data-i="t4">Gifts & Services</h3>
+<p data-i="d4">Explore gifts and personalized services.</p>
+<a href="gifts-services.html" data-i="c4">Explore Gifts</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=80" alt="Packages">
+</div>
+<div class="card-content">
+<h3 data-i="t5">Long Package System</h3>
+<p data-i="d5">Browse available packages and details.</p>
+<a href="long-packages.html" data-i="c5">View Packages</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80" alt="Herbal Wellness">
+</div>
+<div class="card-content">
+<h3 data-i="t6">Herbal Wellness</h3>
+<p data-i="d6">Discover herbal wellness products.</p>
+<a href="herbal-wellness.html" data-i="c6">Explore Wellness</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="WhatsApp Subscription">
+</div>
+<div class="card-content">
+<h3 data-i="t7">WhatsApp Premium Subscription</h3>
+<p data-i="d7">Learn about private subscription-based contact.</p>
+<a href="whatsapp-premium.html" data-i="c7">Subscription Info</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=900&q=80" alt="Voice Call">
+</div>
+<div class="card-content">
+<h3 data-i="t8">Voice Call</h3>
+<p data-i="d8">Explore voice call booking options.</p>
+<a href="voice-call.html" data-i="c8">Call Information</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=80" alt="Audio Call">
+</div>
+<div class="card-content">
+<h3 data-i="t9">Audio Call</h3>
+<p data-i="d9">Explore audio call booking options.</p>
+<a href="audio-call.html" data-i="c9">Audio Call Info</a>
+</div>
+</article>
+
+<article class="card">
+<div class="visual">
+<img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=900&q=80" alt="Men's Herbal Wellness">
+</div>
+<div class="card-content">
+<h3 data-i="t10">Men's Herbal Wellness</h3>
+<p data-i="d10">Herbal products and information for men's wellness.</p>
+<a href="mens-herbal-wellness.html" data-i="c10">View Products</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<aside class="note" data-i="note">
+Visa and passport decisions are made by relevant government authorities.
+Herbal products are not guaranteed to treat medical conditions.
+</aside>
+
+</main>
+
+<footer>
+<p>© <span id="year"></span> Sofia Jenny Taborda · Official Website</p>
+<p>Global Services · Opportunities · Care</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const english = [
+"Welcome to the Official Website",
+"Discover premium videos, photos, fashion, travel information, gifts and wellness services.",
+"Explore Our Services","Choose a category to explore.",
+["Premium Videos","Photo Gallery","Fashion Store","Visa & Passport","Gifts & Services","Long Package System","Herbal Wellness","WhatsApp Premium Subscription","Voice Call","Audio Call","Men's Herbal Wellness"],
+["Explore our exclusive video collection.","Discover featured photography collections.","Clothing, shoes, bags and accessories.","Visa and passport information for USA, Colombia and Italy.","Explore gifts and personalized services.","Browse available packages and details.","Discover herbal wellness products.","Learn about private subscription-based contact.","Explore voice call booking options.","Explore audio call booking options.","Herbal products and information for men's wellness."],
+["Explore Videos","View Gallery","Shop Fashion","Visa & Passport","Explore Gifts","View Packages","Explore Wellness","Subscription Info","Call Information","Audio Call Info","View Products"],
+"Visa and passport decisions are made by the relevant government authorities. Processing times and eligibility vary. Herbal products are not guaranteed to treat medical conditions."
+];
+
+const languages = {
+en: english,
+
+ur: [
+"آفیشل ویب سائٹ پر خوش آمدید",
+"پریمیم ویڈیوز، تصاویر، فیشن، سفری معلومات، تحائف اور صحت کی مصنوعات ایک ہی جگہ دریافت کریں۔",
+"ہماری خدمات","اپنی پسند کی سروس منتخب کریں۔",
+["پریمیم ویڈیوز","تصویری گیلری","فیشن اسٹور","ویزا اور پاسپورٹ","تحائف اور خدمات","لانگ پیکیج سسٹم","ہربل ویلنیس","واٹس ایپ پریمیم سبسکرپشن","وائس کال","آڈیو کال","مردانہ ہربل ویلنیس"],
+["خصوصی ویڈیوز دیکھیں۔","تصاویر کی گیلری دیکھیں۔","کپڑے، جوتے، بیگ اور لوازمات۔","امریکہ، کولمبیا اور اٹلی کے ویزا اور پاسپورٹ کی معلومات۔","تحائف اور ذاتی خدمات۔","دستیاب پیکیجز دیکھیں۔","ہربل مصنوعات دریافت کریں۔","نجی رابطے کی سبسکرپشن۔","وائس کال بکنگ۔","آڈیو کال بکنگ۔","مردانہ صحت کے لیے ہربل مصنوعات۔"],
+["ویڈیوز دیکھیں","گیلری دیکھیں","فیشن خریدیں","ویزا اور پاسپورٹ","تحائف دیکھیں","پیکیجز دیکھیں","مصنوعات دیکھیں","سبسکرپشن معلومات","کال کی معلومات","آڈیو کال معلومات","مصنوعات دیکھیں"],
+"ویزا اور پاسپورٹ کا فیصلہ متعلقہ سرکاری ادارے کرتے ہیں۔ اہلیت اور وقت مختلف ہو سکتے ہیں۔ ہربل مصنوعات بیماری کے علاج کی ضمانت نہیں دیتیں۔"
+],
+
+es: [
+"Bienvenido al sitio web oficial",
+"Descubre videos, fotos, moda, viajes, regalos y servicios de bienestar en un solo lugar.",
+"Explora nuestros servicios","Elige una categoría.",
+["Videos premium","Galería de fotos","Tienda de moda","Visas y pasaportes","Regalos y servicios","Paquetes largos","Bienestar herbal","Suscripción premium de WhatsApp","Llamada de voz","Llamada de audio","Bienestar herbal masculino"],
+["Explora nuestra colección de videos.","Descubre fotografías seleccionadas.","Ropa, zapatos, bolsos y accesorios.","Información de visas y pasaportes de EE. UU., Colombia e Italia.","Regalos y servicios personalizados.","Consulta los paquetes disponibles.","Productos de bienestar herbal.","Información sobre contacto privado.","Opciones de llamadas de voz.","Opciones de llamadas de audio.","Productos herbales para el bienestar masculino."],
+["Ver videos","Ver galería","Comprar moda","Visas y pasaportes","Ver regalos","Ver paquetes","Ver productos","Información de suscripción","Información de llamadas","Información de audio","Ver productos"],
+"Las decisiones sobre visas y pasaportes corresponden a las autoridades oficiales. Los productos herbales no garantizan tratamientos."
+],
+
+it: [
+"Benvenuti sul sito ufficiale",
+"Scopri video, foto, moda, viaggi, regali e servizi per il benessere.",
+"Scopri i nostri servizi","Scegli una categoria.",
+["Video premium","Galleria fotografica","Negozio di moda","Visti e passaporti","Regali e servizi","Pacchetti a lungo termine","Benessere naturale","Abbonamento WhatsApp Premium","Chiamata vocale","Chiamata audio","Benessere maschile"],
+["Scopri la nostra raccolta di video.","Scopri le fotografie selezionate.","Abbigliamento, scarpe, borse e accessori.","Informazioni su visti e passaporti per USA, Colombia e Italia.","Regali e servizi personalizzati.","Consulta i pacchetti disponibili.","Prodotti per il benessere naturale.","Informazioni sul contatto privato.","Opzioni di chiamata vocale.","Opzioni di chiamata audio.","Prodotti naturali per il benessere maschile."],
+["Guarda i video","Apri galleria","Acquista moda","Visti e passaporti","Scopri regali","Vedi pacchetti","Scopri prodotti","Info abbonamento","Info chiamate","Info audio","Vedi prodotti"],
+"Le decisioni su visti e passaporti spettano alle autorità competenti. I prodotti naturali non garantiscono cure."
+],
+
+fr: [
+"Bienvenue sur le site officiel",
+"Découvrez vidéos, photos, mode, voyages, cadeaux et services de bien-être.",
+"Découvrez nos services","Choisissez une catégorie.",
+["Vidéos premium","Galerie photo","Boutique de mode","Visas et passeports","Cadeaux et services","Forfaits longue durée","Bien-être naturel","Abonnement WhatsApp Premium","Appel vocal","Appel audio","Bien-être masculin"],
+["Découvrez notre collection vidéo.","Découvrez nos photos sélectionnées.","Vêtements, chaussures, sacs et accessoires.","Informations sur les visas et passeports des États-Unis, de Colombie et d'Italie.","Cadeaux et services personnalisés.","Consultez les forfaits disponibles.","Produits de bien-être naturel.","Informations sur le contact privé.","Options d'appel vocal.","Options d'appel audio.","Produits naturels pour le bien-être masculin."],
+["Voir les vidéos","Voir la galerie","Acheter","Visas et passeports","Voir les cadeaux","Voir les forfaits","Voir les produits","Infos abonnement","Infos appels","Infos audio","Voir les produits"],
+"Les décisions concernant les visas et passeports appartiennent aux autorités compétentes. Les produits naturels ne garantissent aucun traitement."
+],
+
+ar: [
+"مرحباً بكم في الموقع الرسمي",
+"اكتشفوا الفيديوهات والصور والأزياء والسفر والهدايا ومنتجات العناية.",
+"اكتشف خدماتنا","اختر الفئة المناسبة.",
+["فيديوهات مميزة","معرض الصور","متجر الأزياء","التأشيرات وجوازات السفر","الهدايا والخدمات","الباقات الطويلة","العناية بالأعشاب","اشتراك واتساب المميز","مكالمة صوتية","مكالمة صوتية","العناية الطبيعية للرجال"],
+["اكتشف مجموعة الفيديوهات.","شاهد الصور المختارة.","ملابس وأحذية وحقائب وإكسسوارات.","معلومات التأشيرات وجوازات السفر للولايات المتحدة وكولومبيا وإيطاليا.","الهدايا والخدمات الشخصية.","تصفح الباقات المتاحة.","منتجات العناية بالأعشاب.","معلومات الاشتراك للتواصل الخاص.","خيارات حجز المكالمات.","خيارات المكالمات الصوتية.","منتجات طبيعية للعناية بصحة الرجال."],
+["عرض الفيديوهات","عرض الصور","تسوق الأزياء","التأشيرات والجوازات","عرض الهدايا","عرض الباقات","عرض المنتجات","معلومات الاشتراك","معلومات المكالمات","معلومات الصوت","عرض المنتجات"],
+"تتخذ الجهات الحكومية المختصة قرارات التأشيرات وجوازات السفر. المنتجات العشبية لا تضمن علاج الأمراض."
+],
+
+pt: [
+"Bem-vindo ao site oficial",
+"Explore vídeos, fotos, moda, viagens, presentes e produtos de bem-estar.",
+"Explore nossos serviços","Escolha uma categoria.",
+["Vídeos premium","Galeria de fotos","Loja de moda","Vistos e passaportes","Presentes e serviços","Pacotes longos","Bem-estar herbal","Assinatura WhatsApp Premium","Chamada de voz","Chamada de áudio","Bem-estar masculino"],
+["Explore nossa coleção de vídeos.","Descubra fotos selecionadas.","Roupas, sapatos, bolsas e acessórios.","Informações sobre vistos e passaportes dos EUA, Colômbia e Itália.","Presentes e serviços personalizados.","Veja os pacotes disponíveis.","Produtos de bem-estar herbal.","Informações sobre contato privado.","Opções de chamada de voz.","Opções de chamada de áudio.","Produtos naturais para o bem-estar masculino."],
+["Ver vídeos","Ver galeria","Comprar moda","Vistos e passaportes","Ver presentes","Ver pacotes","Ver produtos","Informações da assinatura","Informações de chamadas","Informações de áudio","Ver produtos"],
+"As decisões sobre vistos e passaportes cabem às autoridades competentes. Produtos naturais não garantem tratamentos."
+],
+
+de: [
+"Willkommen auf der offiziellen Website",
+"Entdecken Sie Videos, Fotos, Mode, Reisen, Geschenke und Wellnessprodukte.",
+"Unsere Dienstleistungen","Wählen Sie eine Kategorie.",
+["Premium-Videos","Fotogalerie","Modeshop","Visa und Reisepässe","Geschenke und Services","Langzeitpakete","Pflanzliches Wohlbefinden","WhatsApp Premium-Abo","Sprachanruf","Audioanruf","Männer-Wellness"],
+["Entdecken Sie unsere Videos.","Entdecken Sie ausgewählte Fotos.","Kleidung, Schuhe, Taschen und Accessoires.","Informationen zu Visa und Pässen für USA, Kolumbien und Italien.","Geschenke und persönliche Services.","Verfügbare Pakete ansehen.","Pflanzliche Wellnessprodukte.","Informationen zum privaten Kontakt.","Sprachanruf-Optionen.","Audioanruf-Optionen.","Pflanzliche Produkte für Männer."],
+["Videos ansehen","Galerie ansehen","Mode kaufen","Visa und Pässe","Geschenke ansehen","Pakete ansehen","Produkte ansehen","Abo-Informationen","Anrufinformationen","Audioinformationen","Produkte ansehen"],
+"Visa- und Passentscheidungen treffen die zuständigen Behörden. Pflanzliche Produkte garantieren keine Heilung."
+],
+
+hi: [
+"आधिकारिक वेबसाइट पर आपका स्वागत है",
+"वीडियो, फोटो, फैशन, यात्रा, उपहार और वेलनेस सेवाएँ एक ही जगह देखें।",
+"हमारी सेवाएँ","अपनी पसंद की श्रेणी चुनें।",
+["प्रीमियम वीडियो","फोटो गैलरी","फैशन स्टोर","वीज़ा और पासपोर्ट","उपहार और सेवाएँ","लंबे पैकेज","हर्बल वेलनेस","व्हाट्सऐप प्रीमियम सदस्यता","वॉइस कॉल","ऑडियो कॉल","पुरुषों के लिए हर्बल वेलनेस"],
+["विशेष वीडियो देखें।","चुनिंदा फोटो देखें।","कपड़े, जूते, बैग और एक्सेसरीज़।","अमेरिका, कोलंबिया और इटली के वीज़ा और पासपोर्ट की जानकारी।","उपहार और व्यक्तिगत सेवाएँ।","उपलब्ध पैकेज देखें।","हर्बल उत्पाद देखें।","निजी संपर्क सदस्यता की जानकारी।","वॉइस कॉल बुकिंग।","ऑडियो कॉल बुकिंग।","पुरुषों के लिए हर्बल उत्पाद।"],
+["वीडियो देखें","गैलरी देखें","फैशन खरीदें","वीज़ा और पासपोर्ट","उपहार देखें","पैकेज देखें","उत्पाद देखें","सदस्यता जानकारी","कॉल जानकारी","ऑडियो जानकारी","उत्पाद देखें"],
+"वीज़ा और पासपोर्ट का निर्णय सरकारी अधिकारी लेते हैं। हर्बल उत्पाद इलाज की गारंटी नहीं देते।"
+],
+
+zh: [
+"欢迎访问官方网站",
+"探索视频、照片、时尚、旅行、礼品和健康服务。",
+"探索我们的服务","请选择一个类别。",
+["精品视频","照片图库","时尚商店","签证与护照","礼品与服务","长期套餐","草本健康","WhatsApp高级订阅","语音通话","音频通话","男士草本健康"],
+["浏览独家视频。","欣赏精选照片。","服装、鞋子、包袋和配饰。","美国、哥伦比亚和意大利签证与护照信息。","礼品和个性化服务。","查看可用套餐。","探索草本健康产品。","了解私人联系订阅。","语音通话预约选项。","音频通话预约选项。","男士草本健康产品。"],
+["浏览视频","查看图库","购买时尚","签证与护照","查看礼品","查看套餐","查看产品","订阅信息","通话信息","音频信息","查看产品"],
+"签证和护照由相关政府机构决定。草本产品不保证治疗疾病。"
+]
+};
+
+function applyLanguage(code){
+ const d=languages[code]||english;
+ document.documentElement.lang=code;
+ document.documentElement.dir=["ur","ar"].includes(code)?"rtl":"ltr";
+ document.querySelector('[data-i="welcome"]').textContent=d[0];
+ document.querySelector('[data-i="intro"]').textContent=d[1];
+ document.querySelector('[data-i="services"]').textContent=d[2];
+ document.querySelector('[data-i="choose"]').textContent=d[3];
+
+ for(let i=0;i<11;i++){
+  document.querySelector('[data-i="t'+i+'"]').textContent=d[4][i];
+  document.querySelector('[data-i="d'+i+'"]').textContent=d[5][i];
+  document.querySelector('[data-i="c'+i+'"]').textContent=d[6][i];
+ }
+ document.querySelector('[data-i="note"]').textContent=d[7];
+
+ try{localStorage.setItem("sofia-language",code)}catch(e){}
+}
+
+const picker=document.getElementById("language");
+picker.addEventListener("change",()=>applyLanguage(picker.value));
+
+let saved="en";
+try{saved=localStorage.getItem("sofia-language")||"en"}catch(e){}
+picker.value=languages[saved]?saved:"en";
+applyLanguage(picker.value);
+</script>
+
 </body>
 </html>
