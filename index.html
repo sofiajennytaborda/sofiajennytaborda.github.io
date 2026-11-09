@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#082e59">
 <meta name="description" content="Sofia Jenny Taborda Official Website">
+
 <title>Sofia Jenny Taborda | Official Website</title>
 
 <style>
@@ -14,54 +16,71 @@
   --blue:#1769aa;
   --silver:#dce7f2;
   --light:#f4f8fc;
+  --white:#ffffff;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 html{
   scroll-behavior:smooth;
   width:100%;
   overflow-x:hidden;
 }
+
 body{
-  margin:0;
   width:100%;
-  min-width:320px;
+  min-height:100vh;
   overflow-x:hidden;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--navy);
   background:var(--light);
 }
-img{max-width:100%}
+
+/* HEADER */
+
 .banner{
-  display:block;
   width:100%;
   height:auto;
-  object-fit:contain;
+  display:block;
+  object-fit:cover;
 }
 
 /* LANGUAGE BAR */
+
 .langbar{
+  width:100%;
   display:flex;
   justify-content:flex-end;
   align-items:center;
   flex-wrap:wrap;
   gap:10px;
-  width:100%;
-  padding:12px clamp(12px,5vw,64px);
+  padding:12px clamp(12px,4vw,55px);
   background:white;
   border-bottom:1px solid var(--silver);
 }
-.langbar label{font-size:14px}
+
+.langbar label{
+  font-size:14px;
+  font-weight:500;
+}
+
 .langbar select{
   max-width:100%;
-  padding:10px 12px;
+  padding:10px 14px;
   border:1px solid #b7cde2;
   border-radius:9px;
-  color:var(--navy);
   background:white;
-  font:inherit;
+  color:var(--navy);
+  font-size:14px;
+  cursor:pointer;
 }
 
 /* RESPONSIVE NAVIGATION */
+
 .navbar{
   position:sticky;
   top:0;
@@ -70,214 +89,225 @@ img{max-width:100%}
   background:var(--navy);
   box-shadow:0 4px 14px #001c3b35;
 }
+
 .nav-inner{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  gap:4px 6px;
   width:100%;
-  max-width:1600px;
-  margin:0 auto;
-  padding:8px clamp(8px,1.2vw,18px);
+  max-width:1500px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:5px;
+  padding:10px clamp(8px,2vw,25px);
 }
+
 .navbar a{
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
-  flex:0 1 auto;
-  min-height:38px;
-  max-width:100%;
-  padding:9px clamp(7px,0.8vw,12px);
-  border-radius:8px;
+  min-width:0;
+  min-height:43px;
+  padding:9px 5px;
+  border-radius:7px;
   color:white;
   text-decoration:none;
   text-align:center;
-  white-space:normal;
+  font-size:13px;
+  font-weight:bold;
+  line-height:1.3;
   overflow-wrap:anywhere;
-  font-size:clamp(11px,0.82vw,13px);
-  line-height:1.25;
-  font-weight:700;
-  transition:background .2s,color .2s;
+  transition:.2s;
 }
+
 .navbar a:hover,
-.navbar a:focus-visible,
 .navbar a.active{
   background:#ffffff25;
   color:#dcecff;
-  outline-offset:2px;
 }
 
 /* INTRO */
+
 .intro{
-  width:100%;
-  max-width:940px;
-  margin:0 auto;
-  padding:clamp(26px,4vw,42px) 18px 15px;
+  max-width:1000px;
+  margin:auto;
+  padding:55px 20px 15px;
   text-align:center;
-}
-.intro h1{
-  margin:0 0 16px;
-  font:700 clamp(27px,4vw,45px)/1.2 Georgia,serif;
-  overflow-wrap:anywhere;
-}
-.intro p{
-  margin:0;
-  color:#48617d;
-  line-height:1.7;
-  font-size:clamp(15px,1.5vw,17px);
 }
 
-/* LOGO AND IDENTITY */
+.intro h1{
+  font-family:Georgia,serif;
+  font-size:clamp(27px,4vw,46px);
+  line-height:1.2;
+  margin-bottom:22px;
+}
+
+.intro p{
+  color:#48617d;
+  font-size:17px;
+  line-height:1.8;
+}
+
+/* BRAND IDENTITY */
+
 .identity{
-  width:100%;
-  padding:15px 20px 35px;
+  padding:25px 15px 40px;
   text-align:center;
 }
+
 .identity img{
   display:block;
-  width:clamp(145px,23vw,245px);
-  max-width:80%;
+  width:clamp(145px,22vw,245px);
+  max-width:90%;
   height:auto;
   margin:0 auto 15px;
   filter:drop-shadow(0 8px 14px #b7cce0);
 }
+
 .identity h2{
   display:flex;
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
   gap:10px;
-  margin:0;
-  font:700 clamp(25px,4vw,43px)/1.2 Georgia,serif;
-  overflow-wrap:anywhere;
+  font-family:Georgia,serif;
+  font-size:clamp(25px,4vw,43px);
 }
+
 .verify{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  flex:0 0 26px;
-  width:26px;
-  height:26px;
+  width:25px;
+  height:25px;
   border-radius:50%;
   background:#1683df;
   color:white;
-  font:700 17px Arial;
+  font:bold 17px Arial;
 }
+
 .identity small{
   display:block;
   margin-top:10px;
   color:#647f9e;
-  letter-spacing:clamp(1px,0.4vw,3px);
+  letter-spacing:3px;
 }
 
-/* SERVICES */
+/* SERVICE SECTION */
+
 .services{
   width:100%;
-  max-width:1290px;
-  margin:0 auto;
-  padding:15px clamp(12px,2vw,22px) 60px;
+  max-width:1350px;
+  margin:auto;
+  padding:20px clamp(12px,3vw,30px) 60px;
 }
-.services h2{
-  margin:0 0 12px;
+
+.services>h2{
+  margin-bottom:12px;
   text-align:center;
-  font:700 clamp(27px,3vw,34px)/1.2 Georgia,serif;
+  font:700 clamp(27px,3vw,36px) Georgia,serif;
 }
+
 .services>p{
-  margin:0 0 30px;
+  margin-bottom:32px;
   color:#637a91;
   text-align:center;
-  line-height:1.6;
+  line-height:1.7;
 }
+
+/* CARDS GRID */
+
 .cards{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  align-items:stretch;
-  gap:clamp(14px,1.8vw,22px);
+  gap:22px;
+  width:100%;
 }
+
 .card{
-  display:flex;
-  flex-direction:column;
   min-width:0;
   overflow:hidden;
+  background:white;
   border:1px solid var(--silver);
   border-radius:17px;
-  background:white;
   box-shadow:0 8px 22px #0b315a12;
   transition:transform .25s,box-shadow .25s;
 }
+
 .card:hover{
-  transform:translateY(-3px);
+  transform:translateY(-4px);
   box-shadow:0 12px 28px #0b315a25;
 }
+
 .visual{
   width:100%;
-  aspect-ratio:16/9;
-  min-height:150px;
+  height:225px;
   overflow:hidden;
   background:linear-gradient(135deg,#dce7f2,#9bbbd9);
 }
+
 .visual img{
   display:block;
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
 .card-content{
-  display:flex;
-  flex:1 1 auto;
-  flex-direction:column;
-  align-items:center;
-  padding:18px clamp(12px,1.5vw,20px) 20px;
+  padding:20px 16px;
   text-align:center;
 }
+
 .card h3{
-  margin:0 0 10px;
-  font-size:clamp(17px,1.5vw,19px);
-  line-height:1.35;
+  margin-bottom:12px;
+  font-size:19px;
+  line-height:1.4;
   overflow-wrap:anywhere;
 }
+
 .card p{
-  flex:1 1 auto;
-  min-height:42px;
-  margin:0 0 8px;
+  min-height:45px;
+  margin-bottom:12px;
   color:#64778c;
   font-size:14px;
-  line-height:1.6;
+  line-height:1.7;
 }
+
 .card a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  max-width:100%;
   min-height:44px;
-  margin-top:8px;
-  padding:12px 20px;
+  max-width:100%;
+  padding:12px 22px;
   border-radius:10px;
   background:var(--navy);
   color:white;
-  text-align:center;
   text-decoration:none;
+  text-align:center;
+  font-size:14px;
   font-weight:bold;
-  line-height:1.3;
-  overflow-wrap:anywhere;
+  transition:.2s;
 }
-.card a:hover,
-.card a:focus-visible{background:var(--blue)}
 
-/* NOTICE AND FOOTER */
+.card a:hover{
+  background:var(--blue);
+}
+
+/* IMPORTANT NOTICE */
+
 .note{
-  width:calc(100% - 32px);
-  max-width:950px;
+  width:calc(100% - 30px);
+  max-width:1000px;
   margin:0 auto 45px;
-  padding:16px 20px;
+  padding:17px 20px;
   border-left:4px solid var(--blue);
   background:#e9f2fa;
   color:#45617d;
   font-size:14px;
-  line-height:1.7;
-  overflow-wrap:anywhere;
+  line-height:1.8;
 }
+
+/* FOOTER */
+
 footer{
   width:100%;
   padding:30px 15px;
@@ -285,74 +315,144 @@ footer{
   color:white;
   text-align:center;
   font-size:14px;
-  line-height:1.6;
+  line-height:1.8;
 }
-footer p{margin:5px 0}
 
 /* TABLETS */
-@media (max-width:1024px){
-  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nav-inner{gap:4px;padding:8px 10px}
-  .navbar a{font-size:12px;padding:9px 9px}
+
+@media(max-width:1000px){
+
+  .nav-inner{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .cards{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .visual{
+    height:210px;
+  }
+
 }
 
-/* PHONES */
-@media (max-width:600px){
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .nav-inner{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:5px;
+    padding:8px;
+  }
+
+  .navbar a{
+    min-height:40px;
+    padding:9px 4px;
+    font-size:12px;
+  }
+
   .langbar{
     justify-content:center;
-    padding:10px 12px;
   }
+
+  .intro{
+    padding:35px 15px 10px;
+  }
+
+  .intro p{
+    font-size:15px;
+  }
+
+  .identity{
+    padding:20px 10px 30px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .visual{
+    height:230px;
+  }
+
+  .services{
+    padding:15px 13px 40px;
+  }
+
+  .services>h2{
+    font-size:27px;
+  }
+
+  .card-content{
+    padding:18px 13px;
+  }
+
+  .note{
+    width:calc(100% - 26px);
+    padding:14px;
+  }
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:350px){
+
   .nav-inner{
-    justify-content:center;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    padding:5px;
     gap:4px;
-    padding:7px 6px;
   }
+
   .navbar a{
-    flex:0 1 auto;
-    min-height:36px;
-    padding:8px 9px;
     font-size:11px;
+    padding:8px 3px;
   }
-  .intro{padding:26px 15px 12px}
-  .identity{padding:12px 14px 28px}
-  .services{padding:12px 14px 42px}
-  .services>p{margin-bottom:22px}
-  .cards{grid-template-columns:minmax(0,1fr);gap:17px}
-  .visual{aspect-ratio:16/9;min-height:0}
-  .card-content{padding:17px 16px 19px}
-  .card p{min-height:0}
-  .note{width:calc(100% - 28px);margin-bottom:30px;padding:14px 15px}
+
+  .visual{
+    height:195px;
+  }
+
 }
 
-/* VERY SMALL PHONES */
-@media (max-width:360px){
-  .navbar a{font-size:10px;padding:7px 7px}
-  .intro h1{font-size:26px}
-  .identity h2{font-size:24px}
+/* RTL LANGUAGES */
+
+html[dir="rtl"] body{
+  direction:rtl;
 }
 
-/* RIGHT-TO-LEFT LANGUAGES */
-html[dir="rtl"] body{text-align:initial}
 html[dir="rtl"] .note{
   border-left:0;
   border-right:4px solid var(--blue);
 }
-html[dir="rtl"] .langbar{justify-content:flex-start}
+
+html[dir="rtl"] .langbar{
+  direction:rtl;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ORIGINAL HEADER -->
+<!-- HEADER -->
+
 <header id="home">
   <img class="banner"
        src="assets/sofia-header-banner.png"
-       alt="Sofia Jenny Taborda">
+       alt="Sofia Jenny Taborda Official Website">
 </header>
 
 <!-- LANGUAGE SELECTOR -->
+
 <div class="langbar">
-  <label for="language">🌐 <span data-i="language">Language:</span></label>
+
+  <label for="language">
+    🌐 <span data-i="language">Language:</span>
+  </label>
+
   <select id="language">
     <option value="en">🇬🇧 English</option>
     <option value="ur">🇵🇰 اردو</option>
@@ -365,11 +465,15 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
     <option value="hi">🇮🇳 हिन्दी</option>
     <option value="zh">🇨🇳 中文</option>
   </select>
+
 </div>
 
 <!-- MAIN NAVIGATION -->
+
 <nav class="navbar">
+
   <div class="nav-inner" id="navigation">
+
     <a href="index.html" data-n="0">Home</a>
     <a href="premium-videos.html" data-n="1">Premium Videos</a>
     <a href="photo-gallery.html" data-n="2">Photo Gallery</a>
@@ -382,39 +486,63 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
     <a href="work-permit-visa.html" data-n="9">Work Permit Visa</a>
     <a href="garments-store.html" data-n="10">Garments Store</a>
     <a href="lucky-draw.html" data-n="11">Lucky Draw</a>
+
   </div>
+
 </nav>
 
 <main>
 
+<!-- INTRODUCTION -->
+
 <section class="intro">
-  <h1 data-i="welcome">Welcome to the Official Website</h1>
+
+  <h1 data-i="welcome">
+    Welcome to the Official Website
+  </h1>
+
   <p data-i="intro">
     Discover premium media collections, fashion, travel information,
     gifts, wellness products and personalized services — all in one place.
   </p>
+
 </section>
 
-<!-- ORIGINAL LOGO -->
+<!-- LOGO -->
+
 <section class="identity">
-  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
+
+  <img src="assets/sofia-logo.png"
+       alt="Sofia Jenny Taborda Logo">
+
   <h2>
     Sofia Jenny Taborda
-    <span class="verify" title="Decorative design mark">✓</span>
+    <span class="verify">✓</span>
   </h2>
+
   <small>OFFICIAL WEBSITE</small>
+
 </section>
 
+<!-- SERVICES -->
+
 <section class="services" id="services">
+
   <h2 data-i="services">Explore Our Services</h2>
-  <p data-i="choose">Choose a category to explore our offerings.</p>
+
+  <p data-i="choose">
+    Choose a category to explore our offerings.
+  </p>
 
   <div class="cards">
+
+    <!-- 1 PREMIUM VIDEOS -->
 
     <article class="card">
       <div class="visual">
         <img src="assets/premium-videos.jpg" alt="Premium Videos">
       </div>
+
       <div class="card-content">
         <h3 data-t="0">Premium Videos</h3>
         <p data-d="0">Explore our exclusive video collection.</p>
@@ -422,10 +550,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 2 PHOTO GALLERY -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/photo-gallery.jpg" alt="Photo Gallery">
       </div>
+
       <div class="card-content">
         <h3 data-t="1">Photo Gallery</h3>
         <p data-d="1">Discover featured photography collections.</p>
@@ -433,10 +564,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 3 FASHION STORE -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/fashion-store.jpg" alt="Fashion Store">
       </div>
+
       <div class="card-content">
         <h3 data-t="2">Fashion Store</h3>
         <p data-d="2">Clothing, shoes, bags and accessories.</p>
@@ -444,10 +578,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 4 VISA AND PASSPORT -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/visa-passport.jpg" alt="Visa and Passport">
       </div>
+
       <div class="card-content">
         <h3 data-t="3">Visa & Passport</h3>
         <p data-d="3">Visa and passport information and services.</p>
@@ -455,10 +592,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 5 GIFTS AND SERVICES -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/gifts-services.jpg" alt="Gifts and Services">
       </div>
+
       <div class="card-content">
         <h3 data-t="4">Gifts & Services</h3>
         <p data-d="4">Explore gifts and personalized services.</p>
@@ -466,10 +606,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 6 LONG PACKAGE SYSTEM -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/long-packages.jpg" alt="Long Package System">
       </div>
+
       <div class="card-content">
         <h3 data-t="5">Long Package System</h3>
         <p data-d="5">Browse available packages and details.</p>
@@ -477,10 +620,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 7 HERBAL WELLNESS -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/herbal-wellness.jpg" alt="Herbal Wellness">
       </div>
+
       <div class="card-content">
         <h3 data-t="6">Herbal Wellness</h3>
         <p data-d="6">Discover herbal wellness products.</p>
@@ -488,10 +634,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 8 WHATSAPP PREMIUM -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/whatsapp-premium.jpg" alt="WhatsApp Premium">
       </div>
+
       <div class="card-content">
         <h3 data-t="7">WhatsApp Premium Subscription</h3>
         <p data-d="7">Learn about private subscription-based contact.</p>
@@ -499,10 +648,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 9 WORK PERMIT VISA -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/work-permit-visa.jpg" alt="Work Permit Visa">
       </div>
+
       <div class="card-content">
         <h3 data-t="8">Work Permit Visa</h3>
         <p data-d="8">Explore work permit information and services.</p>
@@ -510,10 +662,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 10 GARMENTS STORE -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/garments-store.jpg" alt="Garments Store">
       </div>
+
       <div class="card-content">
         <h3 data-t="9">Garments Store</h3>
         <p data-d="9">Explore garments, clothing and products.</p>
@@ -521,10 +676,13 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
       </div>
     </article>
 
+    <!-- 11 LUCKY DRAW -->
+
     <article class="card">
       <div class="visual">
         <img src="assets/lucky-draw.jpg" alt="Lucky Draw">
       </div>
+
       <div class="card-content">
         <h3 data-t="10">Lucky Draw</h3>
         <p data-d="10">Discover lucky draw information and participation.</p>
@@ -533,25 +691,45 @@ html[dir="rtl"] .langbar{justify-content:flex-start}
     </article>
 
   </div>
+
 </section>
 
+<!-- NOTICE -->
+
 <aside class="note" data-i="note">
+
   Visa and passport decisions are made by relevant government authorities.
   Herbal products are not guaranteed to treat medical conditions.
+
 </aside>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <p>© <span id="year"></span> Sofia Jenny Taborda · Official Website</p>
+
+  <p>
+    © <span id="year"></span>
+    Sofia Jenny Taborda · Official Website
+  </p>
+
   <p>Global Services · Opportunities · Care</p>
+
 </footer>
 
 <script>
+
+/* CURRENT YEAR */
+
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
+
+/* TRANSLATIONS */
+
 const translations = {
+
 en:{
 language:"Language:",
 welcome:"Welcome to the Official Website",
@@ -564,6 +742,7 @@ descriptions:["Explore our exclusive video collection.","Discover featured photo
 buttons:["Explore Videos","View Gallery","Shop Fashion","Visa & Passport","Explore Gifts","View Packages","Explore Wellness","Subscription Info","Work Permit Details","Shop Garments","Explore Lucky Draw"],
 note:"Visa and passport decisions are made by relevant government authorities. Herbal products are not guaranteed to treat medical conditions."
 },
+
 ur:{
 language:"زبان:",
 welcome:"آفیشل ویب سائٹ پر خوش آمدید",
@@ -576,6 +755,7 @@ descriptions:["خصوصی ویڈیوز دیکھیں۔","تصاویر کی گیل
 buttons:["ویڈیوز دیکھیں","گیلری دیکھیں","فیشن خریدیں","ویزا اور پاسپورٹ","تحائف دیکھیں","پیکیجز دیکھیں","مصنوعات دیکھیں","سبسکرپشن معلومات","ورک پرمٹ کی تفصیلات","گارمنٹس دیکھیں","لکی ڈرا دیکھیں"],
 note:"ویزا اور پاسپورٹ کا فیصلہ متعلقہ سرکاری ادارے کرتے ہیں۔ ہربل مصنوعات بیماریوں کے علاج کی ضمانت نہیں دیتیں۔"
 },
+
 es:{
 language:"Idioma:",
 welcome:"Bienvenido al sitio web oficial",
@@ -588,6 +768,7 @@ descriptions:["Explora nuestra colección de videos.","Descubre fotografías sel
 buttons:["Ver videos","Ver galería","Comprar moda","Visas y pasaportes","Ver regalos","Ver paquetes","Ver productos","Información de suscripción","Detalles de visa de trabajo","Comprar ropa","Ver sorteo"],
 note:"Las decisiones sobre visas y pasaportes corresponden a las autoridades oficiales. Los productos herbales no garantizan tratamientos."
 },
+
 it:{
 language:"Lingua:",
 welcome:"Benvenuti sul sito ufficiale",
@@ -600,6 +781,7 @@ descriptions:["Scopri la nostra raccolta di video.","Scopri le fotografie selezi
 buttons:["Guarda i video","Apri galleria","Acquista moda","Visti e passaporti","Scopri regali","Vedi pacchetti","Scopri prodotti","Info abbonamento","Dettagli visto lavoro","Acquista abbigliamento","Scopri estrazione"],
 note:"Le decisioni su visti e passaporti spettano alle autorità competenti. I prodotti naturali non garantiscono cure."
 },
+
 fr:{
 language:"Langue :",
 welcome:"Bienvenue sur le site officiel",
@@ -612,6 +794,7 @@ descriptions:["Découvrez notre collection vidéo.","Découvrez nos photos séle
 buttons:["Voir les vidéos","Voir la galerie","Acheter","Visas et passeports","Voir les cadeaux","Voir les forfaits","Voir les produits","Infos abonnement","Détails visa travail","Voir vêtements","Voir le tirage"],
 note:"Les décisions concernant les visas et passeports appartiennent aux autorités compétentes. Les produits naturels ne garantissent aucun traitement."
 },
+
 ar:{
 language:"اللغة:",
 welcome:"مرحباً بكم في الموقع الرسمي",
@@ -624,6 +807,7 @@ descriptions:["اكتشف مجموعة الفيديوهات.","شاهد الصو
 buttons:["عرض الفيديوهات","عرض الصور","تسوق الأزياء","التأشيرات والجوازات","عرض الهدايا","عرض الباقات","عرض المنتجات","معلومات الاشتراك","تفاصيل تأشيرة العمل","تسوق الملابس","عرض السحب"],
 note:"تتخذ الجهات الحكومية المختصة قرارات التأشيرات وجوازات السفر. المنتجات العشبية لا تضمن علاج الأمراض."
 },
+
 pt:{
 language:"Idioma:",
 welcome:"Bem-vindo ao site oficial",
@@ -636,6 +820,7 @@ descriptions:["Explore nossa coleção de vídeos.","Descubra fotos selecionadas
 buttons:["Ver vídeos","Ver galeria","Comprar moda","Vistos e passaportes","Ver presentes","Ver pacotes","Ver produtos","Informações da assinatura","Detalhes do visto","Comprar roupas","Ver sorteio"],
 note:"As decisões sobre vistos e passaportes cabem às autoridades competentes. Produtos naturais não garantem tratamentos."
 },
+
 de:{
 language:"Sprache:",
 welcome:"Willkommen auf der offiziellen Website",
@@ -648,6 +833,7 @@ descriptions:["Entdecken Sie unsere Videos.","Entdecken Sie ausgewählte Fotos."
 buttons:["Videos ansehen","Galerie ansehen","Mode kaufen","Visa und Pässe","Geschenke ansehen","Pakete ansehen","Produkte ansehen","Abo-Informationen","Arbeitsvisum-Details","Kleidung kaufen","Gewinnspiel ansehen"],
 note:"Visa- und Passentscheidungen treffen die zuständigen Behörden. Pflanzliche Produkte garantieren keine Heilung."
 },
+
 hi:{
 language:"भाषा:",
 welcome:"आधिकारिक वेबसाइट पर आपका स्वागत है",
@@ -660,6 +846,7 @@ descriptions:["विशेष वीडियो देखें।","चुन
 buttons:["वीडियो देखें","गैलरी देखें","फैशन खरीदें","वीज़ा और पासपोर्ट","उपहार देखें","पैकेज देखें","उत्पाद देखें","सदस्यता जानकारी","वर्क परमिट विवरण","कपड़े खरीदें","लकी ड्रॉ देखें"],
 note:"वीज़ा और पासपोर्ट का निर्णय सरकारी अधिकारी लेते हैं। हर्बल उत्पाद इलाज की गारंटी नहीं देते।"
 },
+
 zh:{
 language:"语言：",
 welcome:"欢迎访问官方网站",
@@ -672,12 +859,20 @@ descriptions:["浏览独家视频。","欣赏精选照片。","服装、鞋子�
 buttons:["浏览视频","查看图库","购买时尚","签证与护照","查看礼品","查看套餐","查看产品","订阅信息","工作许可详情","购买服装","查看抽奖"],
 note:"签证和护照由相关政府机构决定。草本产品不保证治疗疾病。"
 }
+
 };
 
+
+/* APPLY LANGUAGE */
+
 function applyLanguage(code){
+
   const d=translations[code]||translations.en;
+
   document.documentElement.lang=code;
-  document.documentElement.dir=["ur","ar"].includes(code)?"rtl":"ltr";
+
+  document.documentElement.dir=
+    ["ur","ar"].includes(code)?"rtl":"ltr";
 
   document.querySelector('[data-i="language"]').textContent=d.language;
   document.querySelector('[data-i="welcome"]').textContent=d.welcome;
@@ -689,27 +884,57 @@ function applyLanguage(code){
   document.querySelectorAll("[data-n]").forEach(el=>{
     el.textContent=d.nav[Number(el.dataset.n)];
   });
+
   document.querySelectorAll("[data-t]").forEach(el=>{
     el.textContent=d.titles[Number(el.dataset.t)];
   });
+
   document.querySelectorAll("[data-d]").forEach(el=>{
     el.textContent=d.descriptions[Number(el.dataset.d)];
   });
+
   document.querySelectorAll("[data-b]").forEach(el=>{
     el.textContent=d.buttons[Number(el.dataset.b)];
   });
 
-  try{localStorage.setItem("sofia-language",code)}catch(e){}
+  try{
+    localStorage.setItem("sofia-language",code);
+  }catch(e){}
+
 }
 
+
+/* LANGUAGE SELECTOR */
+
 const picker=document.getElementById("language");
-picker.addEventListener("change",()=>applyLanguage(picker.value));
+
+picker.addEventListener("change",()=>{
+  applyLanguage(picker.value);
+});
 
 let saved="en";
-try{saved=localStorage.getItem("sofia-language")||"en"}catch(e){}
+
+try{
+  saved=localStorage.getItem("sofia-language")||"en";
+}catch(e){}
+
 picker.value=translations[saved]?saved:"en";
+
 applyLanguage(picker.value);
+
+
+/* ACTIVE NAVIGATION */
+
+document.querySelectorAll(".navbar a").forEach(link=>{
+
+  if(link.getAttribute("href")==="index.html"){
+    link.classList.add("active");
+  }
+
+});
+
 </script>
 
 </body>
 </html>
+
