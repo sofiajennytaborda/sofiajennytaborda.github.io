@@ -628,6 +628,85 @@ html[dir="rtl"] .langbar{
     padding: 9px 5px;
   }
 }
+    /* ===== FINAL RESPONSIVE NAVIGATION DESIGN ===== */
+
+.navbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.navbar .nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    padding: 12px 15px !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+}
+
+.navbar .nav-inner a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    padding: 10px 6px !important;
+    box-sizing: border-box !important;
+    border-radius: 11px !important;
+    border: 1px solid rgba(255,255,255,.25) !important;
+    background: #123e68 !important;
+    color: white !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    transition: .25s ease !important;
+}
+
+.navbar .nav-inner a:hover,
+.navbar .nav-inner a.active {
+    background: #eaf3ff !important;
+    color: #082e59 !important;
+    border-color: #ffffff !important;
+}
+
+/* TABLET */
+@media (min-width: 561px) and (max-width: 900px) {
+    .navbar .nav-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 560px) {
+    .navbar .nav-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        padding: 10px !important;
+        gap: 9px !important;
+    }
+
+    .navbar .nav-inner a {
+        min-height: 48px !important;
+        font-size: 13px !important;
+        padding: 9px 5px !important;
+    }
+}
+
+/* PREVENT HORIZONTAL SCROLL */
+html,
+body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
 </style>
 </head>
 
