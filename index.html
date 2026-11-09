@@ -575,7 +575,7 @@ img {
     <!-- 1 PREMIUM VIDEOS -->
     <article class="card">
       <div class="visual">
-        <img src="assets/premium-videos.jpg" alt="Premium Videos">
+        <img src="assets/Premium%20Pink%20Play%20Preview.png" alt="Premium Videos">
       </div>
       <div class="card-content">
         <h3 data-t="0">Premium Videos</h3>
@@ -587,7 +587,7 @@ img {
     <!-- 2 PHOTO GALLERY -->
     <article class="card">
       <div class="visual">
-        <img src="assets/photo-gallery.jpg" alt="Photo Gallery">
+        <img src="assets/Glamorous%20Purple%20Photo%20Gallery%20Banner.png" alt="Photo Gallery">
       </div>
       <div class="card-content">
         <h3 data-t="1">Photo Gallery</h3>
@@ -599,7 +599,7 @@ img {
     <!-- 3 FASHION STORE -->
     <article class="card">
       <div class="visual">
-        <img src="assets/fashion-store.jpg" alt="Fashion Store">
+        <img src="assets/Trendy%20Fashion%20Store%20Poster.png" alt="Fashion Store">
       </div>
       <div class="card-content">
         <h3 data-t="2">Fashion Store</h3>
@@ -611,7 +611,7 @@ img {
     <!-- 4 VISA AND PASSPORT -->
     <article class="card">
       <div class="visual">
-        <img src="assets/visa-passport.jpg" alt="Visa and Passport">
+        <img src="assets/Passport%20Services%20Travel%20Poster.png" alt="Visa and Passport">
       </div>
       <div class="card-content">
         <h3 data-t="3">Visa & Passport</h3>
@@ -623,7 +623,7 @@ img {
     <!-- 5 GIFTS AND SERVICES -->
     <article class="card">
       <div class="visual">
-        <img src="assets/gifts-services.jpg" alt="Gifts and Services">
+        <img src="assets/Gifts%20%26%20Services%20Promotional%20Poster.png" alt="Gifts and Services">
       </div>
       <div class="card-content">
         <h3 data-t="4">Gifts & Services</h3>
@@ -635,7 +635,7 @@ img {
     <!-- 6 LONG PACKAGE SYSTEM -->
     <article class="card">
       <div class="visual">
-        <img src="assets/long-packages.jpg" alt="Long Package System">
+        <img src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png" alt="Long Package System">
       </div>
       <div class="card-content">
         <h3 data-t="5">Long Package System</h3>
@@ -647,7 +647,7 @@ img {
     <!-- 7 HERBAL WELLNESS -->
     <article class="card">
       <div class="visual">
-        <img src="assets/herbal-wellness.jpg" alt="Herbal Wellness">
+        <img src="assets/Sofia%20Herbal%20Wellness%20Promotional%20Banner.png" alt="Herbal Wellness">
       </div>
       <div class="card-content">
         <h3 data-t="6">Herbal Wellness</h3>
@@ -659,7 +659,7 @@ img {
     <!-- 8 WHATSAPP PREMIUM -->
     <article class="card">
       <div class="visual">
-        <img src="assets/whatsapp-premium.jpg" alt="WhatsApp Premium">
+        <img src="assets/WhatsApp%20Premium%20Subscription%20Banner.png" alt="WhatsApp Premium">
       </div>
       <div class="card-content">
         <h3 data-t="7">WhatsApp Premium Subscription</h3>
@@ -671,7 +671,7 @@ img {
     <!-- 9 WORK PERMIT VISA -->
     <article class="card">
       <div class="visual">
-        <img src="assets/work-permit-visa.jpg" alt="Work Permit Visa">
+        <img src="assets/Work%20Permit%20Visa%20Abroad%20Ad.png" alt="Work Permit Visa">
       </div>
       <div class="card-content">
         <h3 data-t="8">Work Permit Visa</h3>
@@ -683,7 +683,7 @@ img {
     <!-- 10 GARMENTS STORE -->
     <article class="card">
       <div class="visual">
-        <img src="assets/garments-store.jpg" alt="Garments Store">
+        <img src="assets/Sofia%20Jenny%20Under%20Garments%20Advertisement.png" alt="Garments Store">
       </div>
       <div class="card-content">
         <h3 data-t="9">Garments Store</h3>
@@ -695,7 +695,7 @@ img {
     <!-- 11 LUCKY DRAW -->
     <article class="card">
       <div class="visual">
-        <img src="assets/lucky-draw.jpg" alt="Lucky Draw">
+        <img src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png" alt="Lucky Draw">
       </div>
       <div class="card-content">
         <h3 data-t="10">Lucky Draw</h3>
@@ -922,6 +922,24 @@ try {
 picker.value = translations[saved] ? saved : "en";
 
 applyLanguage(picker.value);
+
+
+/* SERVICE IMAGE FALLBACK */
+document.querySelectorAll(".visual img").forEach(img => {
+  img.addEventListener("error", () => {
+    img.style.display = "none";
+    const visual = img.closest(".visual");
+    if (visual) {
+      visual.style.display = "flex";
+      visual.style.alignItems = "center";
+      visual.style.justifyContent = "center";
+      visual.style.padding = "18px";
+      visual.style.color = "#082e59";
+      visual.style.textAlign = "center";
+      visual.textContent = img.alt || "Image coming soon";
+    }
+  }, { once: true });
+});
 
 
 /* ACTIVE NAVIGATION */
