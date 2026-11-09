@@ -9,7 +9,94 @@
 <meta name="description" content="Sofia Jenny Taborda Official Website">
 
 <title>Sofia Jenny Taborda | Official Website</title>
+/* ===== FINAL RESPONSIVE NAVIGATION ===== */
 
+.navbar {
+    width: 100%;
+    overflow: visible !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 14px 18px !important;
+    gap: 12px !important;
+    box-sizing: border-box;
+    justify-content: stretch !important;
+}
+
+.navbar a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px;
+    padding: 11px 8px !important;
+    box-sizing: border-box;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    text-align: center;
+    line-height: 1.35;
+    font-size: 13px;
+    border-radius: 12px;
+}
+
+/* TABLET */
+@media (min-width: 541px) and (max-width: 850px) {
+    .nav-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        padding: 12px !important;
+        gap: 10px !important;
+    }
+
+    .navbar a {
+        min-height: 50px;
+        font-size: 13px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 540px) {
+    .nav-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        padding: 12px !important;
+        gap: 10px !important;
+    }
+
+    .navbar a {
+        min-height: 55px;
+        font-size: 13px;
+        padding: 10px 6px !important;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+    .nav-inner {
+        gap: 7px !important;
+        padding: 8px !important;
+    }
+
+    .navbar a {
+        font-size: 11px;
+        min-height: 49px;
+    }
+}
+
+/* REMOVE HORIZONTAL PAGE SCROLL */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 <style>
 :root{
   --navy:#082e59;
