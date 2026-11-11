@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard | Sofia Jenny Taborda</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f2f5fb;color:#082e59}
+header{background:#082e59;color:white;padding:22px}
+header h1{margin:0;font-size:25px}
+header p{margin:8px 0 0;color:#dce8f8}
+.container{max-width:1150px;margin:25px auto;padding:15px}
+h2{margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:white;padding:18px;border-radius:12px;border:1px solid #dce5f2}
+.card h3{margin-top:0}
+label{display:block;font-weight:bold;margin:13px 0 6px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #cbd6e5;border-radius:7px;font-size:14px}
+textarea{min-height:85px;resize:vertical}
+button{background:#082e59;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer;margin-top:12px}
+button:hover{background:#1769aa}
+.section{background:white;padding:22px;margin:18px 0;border-radius:13px;border:1px solid #dce5f2}
+.section h2{margin-top:0}
+.note{background:#fff4d9;padding:12px;border-radius:8px;color:#805500}
+footer{text-align:center;padding:25px;color:#718096}
+</style>
+</head>
+<body>
+
+<header>
+<h1>SOFIA JENNY TABORDA</h1>
+<p>ADMIN CONTROL DASHBOARD</p>
+</header>
+
+<div class="container">
+
+<div class="note">
+<strong>Welcome, Administrator!</strong><br>
+Manage your services, products, images, prices and payment links.
+</div>
+
+<h2>PAYPAL PAYMENT SERVICES</h2>
+<div class="grid" id="payments"></div>
+
+<h2>PRODUCT MANAGEMENT</h2>
+<div id="products"></div>
+
+</div>
+
+<footer>© 2026 Sofia Jenny Taborda | Admin Panel</footer>
+
+<script>
+const paymentServices = [
+["Premium Videos",40,"https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4"],
+["Photo Gallery",20,"https://www.paypal.com/ncp/payment/GKDEUC2CM9784"],
+["Gifts & Services",10,"https://www.paypal.com/ncp/payment/JT6AJNSQ5R8D2"],
+["Long Package System",80,"https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"],
+["WhatsApp Premium",60,"https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"],
+["Lucky Draw",20,"https://www.paypal.com/ncp/payment/CQT5JFMQFRM9Y"]
+];
+
+const productServices = [
+"Fashion Store",
+"Visa & Passport",
+"Herbal Wellness",
+"Work Permit Visa",
+"Garments Store",
+"SIXY DOLLS"
+];
+
+function paymentCard(item){
+return `
+<div class="card">
+<h3>${item[0]}</h3>
+<label>Price (USD)</label>
+<input type="number" value="${item[1]}" min="0" step="0.01">
+<label>PayPal Payment Link</label>
+<input type="url" value="${item[2]}">
+<label>Description</label>
+<textarea placeholder="Write service details"></textarea>
+<button onclick="alert('Backend connection will be added in the next step.')">Save Service</button>
+</div>`;
+}
+
+document.getElementById("payments").innerHTML =
+paymentServices.map(paymentCard).join("");
+
+function productSection(name,index){
+return `
+<div class="section">
+<h2>${name}</h2>
+<label>Product Name</label>
+<input type="text" placeholder="Enter product name">
+
+<label>Product Description</label>
+<textarea placeholder="Write product details"></textarea>
+
+<label>Upload Product Image</label>
+<input type="file" accept="image/*">
+
+<label>Upload Video (Optional)</label>
+<input type="file" accept="video/*">
+
+<label>Product Price (USD)</label>
+<input type="number" min="0" step="0.01" placeholder="Enter your price">
+
+<label>Individual PayPal Payment Link</label>
+<input type="url" placeholder="Paste this product's PayPal link">
+
+<button onclick="alert('Secure product saving will be connected next.')">
+Save Product
+</button>
+</div>`;
+}
+
+document.getElementById("products").innerHTML =
+productServices.map(productSection).join("");
+</script>
+</body>
+</html>
