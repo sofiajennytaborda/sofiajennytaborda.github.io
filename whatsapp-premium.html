@@ -1,1 +1,159 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sofia Jenny WhatsApp Premium</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f5fb;
+  color: #082e59;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 520px;
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+p {
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.welcome {
+  margin: 25px 0;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 17px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.paypal {
+  background: #0070ba;
+  color: white;
+}
+
+.whatsapp {
+  background: #168b50;
+  color: white;
+}
+
+.whatsapp:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>SOFIA JENNY TABORDA</h1>
+
+<h2>Welcome to Sofia Jenny!</h2>
+
+<div class="welcome">
+<p>
+Thank you so much for your interest in connecting
+with Sofia Jenny.
+</p>
+
+<p>
+Subscribe now and get the opportunity to connect
+and communicate directly through WhatsApp.
+</p>
+
+<p>
+We truly appreciate your support.
+</p>
+</div>
+
+<a
+class="button paypal"
+href="https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"
+target="_blank">
+SUBSCRIBE NOW – PAYPAL
+</a>
+
+<p>
+After completing your payment, return to this page
+to continue to WhatsApp.
+</p>
+
+<button
+class="button whatsapp"
+id="continueBtn"
+disabled>
+CONTINUE TO WHATSAPP
+</button>
+
+<p class="small">
+Please continue only after completing your payment.
+</p>
+
+<footer>
+© 2026 Sofia Jenny Taborda. All Rights Reserved.
+</footer>
+
+</div>
+
+<script>
+const whatsappNumber = "33409907967";
+
+const continueBtn = document.getElementById("continueBtn");
+
+continueBtn.addEventListener("click", function() {
+  window.location.href =
+    "https://wa.me/" + whatsappNumber;
+});
+</script>
+
+</body>
+</html>
+
