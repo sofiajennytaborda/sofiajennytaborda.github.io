@@ -1,248 +1,360 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sofia Jenny WhatsApp Premium</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
- margin:0;font-family:Arial,sans-serif;
- background:#f2f5fb;color:#082e59;
- min-height:100vh;display:flex;
- align-items:center;justify-content:center;padding:20px
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f2f5fb;
+ color:#082e59;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
 }
+
 .container{
- background:white;width:100%;max-width:520px;
- padding:35px 25px;border-radius:16px;
- text-align:center;box-shadow:0 5px 25px rgba(0,0,0,.08)
+ background:white;
+ width:100%;
+ max-width:520px;
+ padding:32px 25px;
+ border-radius:16px;
+ text-align:center;
+ box-shadow:0 5px 25px #00000012;
 }
-h1{font-size:27px;margin-bottom:12px}
-p{color:#64748b;line-height:1.8;font-size:15px}
-.welcome{margin:25px 0}
+
+h1{font-size:25px}
+p{color:#64748b;line-height:1.7}
+
 .button{
- display:block;width:100%;padding:15px;border-radius:8px;
- text-decoration:none;font-weight:bold;margin-top:17px;
- border:none;cursor:pointer;font-size:15px
+ display:block;
+ width:100%;
+ padding:15px;
+ border:0;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:15px;
+ cursor:pointer;
+ font-size:15px;
 }
+
 .paypal{background:#0070ba;color:white}
-.submit{background:#082e59;color:white}
-.whatsapp{background:#168b50;color:white}
-.button:disabled{opacity:.5;cursor:not-allowed}
-.field{text-align:left;margin-top:18px}
-label{display:block;font-weight:bold;margin-bottom:7px}
+.green{background:#168b50;color:white}
+button:disabled{opacity:.5}
+
 input{
- width:100%;padding:13px;border:1px solid #cbd6e5;
- border-radius:7px;font-size:15px
+ width:100%;
+ padding:13px;
+ border:1px solid #ccd6e3;
+ border-radius:7px;
+ margin:7px 0 13px;
+ font-size:14px;
 }
-.hidden{display:none}
+
+label{
+ display:block;
+ text-align:left;
+ font-weight:bold;
+}
+
+.hidden{display:none!important}
+
 .status{
- margin-top:17px;padding:12px;border-radius:8px;
- line-height:1.6;font-size:14px
+ padding:12px;
+ border-radius:8px;
+ background:#eef4fb;
+ margin-top:15px;
+ line-height:1.6;
 }
-.pending{background:#fff4d9;color:#805500}
-.success{background:#dcfce7;color:#166534}
-.error{background:#fee2e2;color:#991b1b}
-.small{font-size:12px;margin-top:20px}
-footer{margin-top:30px;font-size:12px;color:#94a3b8}
+
+.success{background:#e5f6e9;color:#17632b}
+.error{background:#ffe9e9;color:#a52d2d}
+
+footer{
+ margin-top:25px;
+ font-size:12px;
+ color:#94a3b8;
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <h1>SOFIA JENNY TABORDA</h1>
-<h2>Welcome to Sofia Jenny!</h2>
+<h2>WhatsApp Premium</h2>
 
-<div class="welcome">
-<p>Thank you so much for your interest in connecting with Sofia Jenny.</p>
-<p>Subscribe now and get the opportunity to connect and communicate directly through WhatsApp.</p>
-<p>We truly appreciate your support.</p>
-</div>
+<p>
+Subscribe for $60 and get access to direct
+WhatsApp communication after payment approval.
+</p>
 
 <a class="button paypal"
 href="https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"
 target="_blank" rel="noopener">
-SUBSCRIBE NOW – PAYPAL ($60)
+PAY NOW – $60 USD
 </a>
 
-<div class="field">
-<label for="customerName">Your Name</label>
-<input id="customerName" type="text" placeholder="Enter your full name">
-</div>
-
-<div class="field">
-<label for="customerEmail">Your Email Address</label>
-<input id="customerEmail" type="email" placeholder="Enter your email">
-</div>
-
-<div class="field">
-<label for="transactionId">PayPal Transaction ID</label>
-<input id="transactionId" type="text" placeholder="Enter your PayPal transaction ID">
-</div>
-
-<button class="button submit" id="submitBtn">
-SUBMIT PAYMENT FOR VERIFICATION
-</button>
-
-<div id="status" class="status hidden"></div>
-
-<div id="approvalSection" class="hidden">
-<p>Your payment has been approved. Thank you!</p>
-<a id="whatsappBtn" class="button whatsapp"
-target="_blank" rel="noopener">
-CONTINUE TO WHATSAPP
-</a>
-</div>
-
-<p class="small">
-Your WhatsApp contact will remain private until your payment is verified and approved by the administrator.
+<p>
+After payment, return here and submit your
+PayPal Transaction ID.
 </p>
 
-<footer>© 2026 Sofia Jenny Taborda. All Rights Reserved.</footer>
+<form id="requestForm">
+
+<label>Full Name</label>
+<input name="name" required placeholder="Your full name">
+
+<label>Email Address</label>
+<input name="email" type="email" required placeholder="Your email">
+
+<label>WhatsApp Number</label>
+<input name="whatsapp" required placeholder="Country code + number">
+
+<label>PayPal Transaction ID</label>
+<input name="transactionId" required placeholder="Enter transaction ID">
+
+<button class="button green" id="submitBtn" type="submit">
+SUBMIT PAYMENT DETAILS
+</button>
+
+</form>
+
+<iframe name="waSubmitFrame"
+id="waSubmitFrame"
+class="hidden"></iframe>
+
+<div id="message" class="status hidden"></div>
+
+<div id="approvedSection" class="hidden">
+
+<h3>Payment Approved!</h3>
+
+<p>Your WhatsApp Premium access is now available.</p>
+
+<a id="whatsappBtn"
+class="button green"
+target="_blank"
+rel="noopener">
+CONTINUE TO WHATSAPP
+</a>
+
+</div>
+
+<footer>
+© 2026 Sofia Jenny Taborda. All Rights Reserved.
+</footer>
 
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycby9wCy2gp7uSBmCon2uNIbAp21EwwJBe7enFStm6C9Tl65oNeEKuxZSgvuhNRFnOl4N/exec";
 
+const EXEC_URL =
+"https://script.google.com/macros/s/AKfycby9wCy2gp7uSBmCon2uNIbAp21EwwJBe7enFStm6C9Tl65oNeEKuxZSgvuhNRFnOl4N/exec";
+
+let paymentId = "";
+let polling = false;
+let timer = null;
+
+const form = document.getElementById("requestForm");
 const submitBtn = document.getElementById("submitBtn");
-const statusBox = document.getElementById("status");
-const approvalSection = document.getElementById("approvalSection");
+const message = document.getElementById("message");
 
-let requestId = "";
-let customerEmail = "";
-let pollTimer = null;
-
-function showStatus(message,type){
- statusBox.className = "status " + type;
- statusBox.textContent = message;
+function showMessage(text,type=""){
+ message.className="status "+type;
+ message.textContent=text;
+ message.classList.remove("hidden");
 }
 
-function callAPI(params){
- return new Promise((resolve,reject)=>{
-  const callback = "waCallback_" + Date.now() + "_" +
-    Math.floor(Math.random()*100000);
+form.addEventListener("submit",function(e){
 
-  const script = document.createElement("script");
-  const query = new URLSearchParams({
-   ...params,
-   callback:callback
-  });
+ e.preventDefault();
 
-  window[callback] = function(data){
-   resolve(data);
-   cleanup();
-  };
+ if(!form.reportValidity())return;
 
-  function cleanup(){
-   delete window[callback];
-   script.remove();
-  }
+ submitBtn.disabled=true;
+ submitBtn.textContent="SUBMITTING...";
 
-  script.onerror = function(){
-   cleanup();
-   reject(new Error("Connection failed. Please try again."));
-  };
+ showMessage("Submitting your payment details...");
 
-  script.src = API_URL + "?" + query.toString();
-  document.body.appendChild(script);
- });
-}
+ const iframe = document.getElementById("waSubmitFrame");
 
-submitBtn.addEventListener("click",async function(){
+ const oldFormTarget = form.target;
+ form.action=EXEC_URL;
+ form.method="POST";
+ form.target="waSubmitFrame";
 
- const name = document.getElementById("customerName").value.trim();
- customerEmail = document.getElementById("customerEmail").value.trim();
- const transactionId = document.getElementById("transactionId").value.trim();
+ form.submit();
 
- if(!name || !customerEmail || !transactionId){
-  showStatus("Please complete all fields.","error");
+});
+
+window.addEventListener("message",function(event){
+
+ const data=event.data;
+
+ if(!data)return;
+
+ if(data.type==="WA_PREMIUM_ERROR"){
+
+  submitBtn.disabled=false;
+  submitBtn.textContent="SUBMIT PAYMENT DETAILS";
+
+  showMessage(data.message,"error");
   return;
  }
 
- if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)){
-  showStatus("Please enter a valid email address.","error");
-  return;
- }
+ if(data.type==="WA_PREMIUM_REQUEST"){
 
- submitBtn.disabled = true;
- showStatus("Submitting your payment details...","pending");
+  paymentId=data.paymentId;
 
- try{
-  const result = await callAPI({
-   action:"submitWhatsAppRequest",
-   name:name,
-   email:customerEmail,
-   transactionId:transactionId
-  });
+  localStorage.setItem("waPremiumPaymentId",paymentId);
 
-  if(!result.success){
-   throw new Error(result.message || "Request could not be submitted.");
-  }
+  form.classList.add("hidden");
 
-  requestId = result.requestId;
+  submitBtn.disabled=false;
 
-  showStatus(
-   "Your payment details have been submitted. Your request is pending administrator verification. Please wait for approval.",
-   "pending"
+  showMessage(
+   "Your request has been received. Request ID: "+paymentId+
+   ". Waiting for administrator approval."
   );
 
-  submitBtn.textContent = "REQUEST SUBMITTED";
-
   startChecking();
-
- }catch(error){
-  showStatus(error.message,"error");
-  submitBtn.disabled = false;
  }
 
 });
 
-async function checkApproval(){
+function startChecking(){
 
- if(!requestId) return;
+ if(polling)return;
 
- try{
-  const result = await callAPI({
-   action:"checkWhatsAppRequest",
-   requestId:requestId,
-   email:customerEmail
-  });
+ polling=true;
 
-  if(result.status === "approved" && result.whatsappUrl){
+ checkPaymentStatus();
 
-   clearInterval(pollTimer);
+ timer=setInterval(checkPaymentStatus,10000);
 
-   showStatus("Your payment has been approved successfully!","success");
+}
 
-   document.getElementById("whatsappBtn").href = result.whatsappUrl;
+function checkPaymentStatus(){
 
-   approvalSection.classList.remove("hidden");
+ if(!paymentId)return;
 
-  }else if(result.status === "rejected"){
+ const callbackName="receiveWhatsAppStatus";
 
-   clearInterval(pollTimer);
-   showStatus("Your request was not approved. Please contact the website administrator.","error");
+ window[callbackName]=function(result){
 
-  }else{
+  if(!result||!result.found){
 
-   showStatus("Your payment is awaiting verification. Please check again shortly.","pending");
-
+   showMessage("Payment request not found.","error");
+   return;
   }
 
- }catch(error){
-  showStatus("Unable to check approval right now. Please try again.","error");
- }
+  if(result.status==="approved"){
+
+   clearInterval(timer);
+   polling=false;
+
+   document.getElementById("approvedSection")
+    .classList.remove("hidden");
+
+   let link="";
+
+   if(result.number){
+
+    link="https://wa.me/"+
+      result.number.replace(/\D/g,"");
+
+   }else if(result.username){
+
+    link="https://wa.me/"+
+      result.username.replace(/^@/,"");
+
+   }
+
+   if(link){
+
+    document.getElementById("whatsappBtn").href=link;
+
+    showMessage(
+     "Your payment has been approved successfully.",
+     "success"
+    );
+
+   }else{
+
+    showMessage(
+     "Payment approved, but WhatsApp contact is not configured.",
+     "error"
+    );
+
+   }
+
+   return;
+  }
+
+  if(result.status==="failed" ||
+     result.status==="refunded"){
+
+   clearInterval(timer);
+   polling=false;
+
+   showMessage(
+    "Your payment request was not approved. Please contact support.",
+    "error"
+   );
+
+   return;
+  }
+
+  showMessage(
+   "Your payment is pending verification. Please wait."
+  );
+
+ };
+
+ const script=document.createElement("script");
+
+ script.src=EXEC_URL+
+ "?action=whatsappStatus"+
+ "&paymentId="+encodeURIComponent(paymentId)+
+ "&callback="+callbackName+
+ "&_="+Date.now();
+
+ script.onerror=function(){
+  showMessage("Unable to check payment status. Retrying...");
+ };
+
+ document.body.appendChild(script);
+
+ script.onload=function(){
+  script.remove();
+ };
 
 }
 
-function startChecking(){
- checkApproval();
- pollTimer = setInterval(checkApproval,15000);
+const savedId=localStorage.getItem("waPremiumPaymentId");
+
+if(savedId){
+
+ paymentId=savedId;
+ form.classList.add("hidden");
+
+ showMessage("Restoring your previous payment request...");
+
+ startChecking();
+
 }
+
 </script>
+
 </body>
 </html>
