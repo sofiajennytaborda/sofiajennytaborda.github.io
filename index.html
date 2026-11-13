@@ -301,24 +301,67 @@ header#home {
 }
 
 .card a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  max-width: 100%;
-  padding: 12px 22px;
-  border-radius: 10px;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  min-height: 52px;
+  margin: 0 auto;
+  padding: 8px 11px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
   background: var(--navy);
   color: #fff;
   text-decoration: none;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  transition: background .2s ease;
+  transition: background .2s ease, transform .2s ease;
 }
 
 .card a:hover {
   background: var(--blue);
+  transform: translateY(-1px);
+}
+
+.card a .button-logo {
+  display: block;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+}
+
+.card a .button-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.card a .button-click {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 29px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .35px;
+  white-space: nowrap;
+}
+
+.card a:hover .button-click {
+  background: #eaf4ff;
 }
 
 /* IMPORTANT NOTICE */
@@ -581,7 +624,7 @@ img {
       <div class="card-content">
         <h3 data-t="0">Sofia Jenny Taborda Videos</h3>
         <p data-d="0">Explore our exclusive video collection.</p>
-        <a href="premium-videos.html" data-b="0">Sofia Jenny Taborda Videos</a>
+        <a href="premium-videos.html" data-b="0"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Videos</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -593,7 +636,7 @@ img {
       <div class="card-content">
         <h3 data-t="1">Sofia Jenny Taborda Photos</h3>
         <p data-d="1">Discover featured photography collections.</p>
-        <a href="photo-gallery.html" data-b="1">Sofia Jenny Taborda Photos</a>
+        <a href="photo-gallery.html" data-b="1"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Photos</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -605,7 +648,7 @@ img {
       <div class="card-content">
         <h3 data-t="2">Sofia Jenny Taborda Fashion Store</h3>
         <p data-d="2">Clothing, shoes, bags and accessories.</p>
-        <a href="fashion-store.html" data-b="2">Sofia Jenny Taborda Fashion Store</a>
+        <a href="fashion-store.html" data-b="2"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Fashion Store</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -617,7 +660,7 @@ img {
       <div class="card-content">
         <h3 data-t="3">Travel & Visa Information</h3>
         <p data-d="3">Visa and passport information and services.</p>
-        <a href="visa-passport.html" data-b="3">Travel & Visa Information</a>
+        <a href="visa-passport.html" data-b="3"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Travel & Visa Information</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -629,7 +672,7 @@ img {
       <div class="card-content">
         <h3 data-t="4">Send a Gift to Sofia Jenny Taborda 🎁</h3>
         <p data-d="4">Explore gifts and personalized services.</p>
-        <a href="gifts-services.html" data-b="4">Send a Gift to Sofia Jenny Taborda 🎁</a>
+        <a href="gifts-services.html" data-b="4"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Send a Gift to Sofia Jenny Taborda 🎁</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -641,7 +684,7 @@ img {
       <div class="card-content">
         <h3 data-t="5">I Want to Meet Sofia Jenny Taborda</h3>
         <p data-d="5">Browse available packages and details.</p>
-        <a href="long-packages.html" data-b="5">I Want to Meet Sofia Jenny Taborda</a>
+        <a href="long-packages.html" data-b="5"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">I Want to Meet Sofia Jenny Taborda</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -653,7 +696,7 @@ img {
       <div class="card-content">
         <h3 data-t="6">Sofia Jenny Taborda Wellness</h3>
         <p data-d="6">Discover herbal wellness products.</p>
-        <a href="herbal-wellness.html" data-b="6">Sofia Jenny Taborda Wellness</a>
+        <a href="herbal-wellness.html" data-b="6"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Wellness</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -665,7 +708,7 @@ img {
       <div class="card-content">
         <h3 data-t="7">Sofia Jenny Taborda Personal WhatsApp</h3>
         <p data-d="7">Learn about private subscription-based contact.</p>
-        <a href="whatsapp-premium.html" data-b="7">Sofia Jenny Taborda Personal WhatsApp</a>
+        <a href="whatsapp-premium.html" data-b="7"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Personal WhatsApp</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -677,7 +720,7 @@ img {
       <div class="card-content">
         <h3 data-t="8">Work Permit Assistance Visa</h3>
         <p data-d="8">Explore work permit information and services.</p>
-        <a href="work-permit-visa.html" data-b="8">Work Permit Assistance Visa</a>
+        <a href="work-permit-visa.html" data-b="8"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Work Permit Assistance Visa</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -689,7 +732,7 @@ img {
       <div class="card-content">
         <h3 data-t="9">Sofia Jenny Taborda Boutique</h3>
         <p data-d="9">Explore garments, clothing and products.</p>
-        <a href="garments-store.html" data-b="9">Sofia Jenny Taborda Boutique</a>
+        <a href="garments-store.html" data-b="9"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Boutique</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -701,18 +744,20 @@ img {
       <div class="card-content">
         <h3 data-t="10">Sofia Jenny Taborda Lucky Draw</h3>
         <p data-d="10">Discover lucky draw information and participation.</p>
-        <a href="lucky-draw.html" data-b="10">Sofia Jenny Taborda Lucky Draw</a>
+        <a href="lucky-draw.html" data-b="10"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">Sofia Jenny Taborda Lucky Draw</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
 
     <!-- 12 SIXEY DOLLS -->
     <article class="card">
-      <div class="visual" role="img" aria-label="SIXEY DOLLS"></div>
+      <div class="visual">
+        <img src="assets/sixey-dolls.jpg" alt="SIXEY DOLLS">
+      </div>
       <div class="card-content">
         <h3 data-t="11">SIXEY DOLLS</h3>
         <p data-d="11">Explore SIXEY DOLLS.</p>
-        <a href="sixey-dolls.html" data-b="11">SIXEY DOLLS</a>
+        <a href="sixey-dolls.html" data-b="11"><img class="button-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda logo"><span class="button-label">SIXEY DOLLS</span><span class="button-click">CLICK HERE</span></a>
       </div>
     </article>
 
@@ -941,7 +986,10 @@ function applyLanguage(code) {
   });
 
   document.querySelectorAll("[data-b]").forEach(el => {
-    el.textContent = serviceCategoryNames[Number(el.dataset.b)] || d.buttons[Number(el.dataset.b)];
+    const label = el.querySelector(".button-label");
+    if (label) {
+      label.textContent = serviceCategoryNames[Number(el.dataset.b)] || d.buttons[Number(el.dataset.b)];
+    }
   });
 
   try {
