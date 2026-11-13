@@ -4,27 +4,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin Dashboard | Sofia Jenny Taborda</title>
+<title>Sofia Jenny Admin Dashboard</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial;background:#f2f5fb;color:#082e59}
 header{background:#082e59;color:white;padding:22px}
-header h1{margin:0;font-size:25px}
-header p{margin:8px 0 0;color:#dce8f8}
-.container{max-width:1150px;margin:25px auto;padding:15px}
-h2{margin-top:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{background:white;padding:18px;border-radius:12px;border:1px solid #dce5f2}
-.card h3{margin-top:0}
-label{display:block;font-weight:bold;margin:13px 0 6px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #cbd6e5;border-radius:7px;font-size:14px}
-textarea{min-height:85px;resize:vertical}
-button{background:#082e59;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer;margin-top:12px}
+header h1{margin:0}
+.container{max-width:1100px;margin:25px auto;padding:15px}
+.card{background:white;padding:22px;border-radius:12px;border:1px solid #dce5f2;margin:16px 0}
+input{width:100%;padding:13px;border:1px solid #cbd6e5;border-radius:7px;margin:8px 0}
+button{background:#082e59;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer;margin:5px}
 button:hover{background:#1769aa}
-.section{background:white;padding:22px;margin:18px 0;border-radius:13px;border:1px solid #dce5f2}
-.section h2{margin-top:0}
-.note{background:#fff4d9;padding:12px;border-radius:8px;color:#805500}
-footer{text-align:center;padding:25px;color:#718096}
+.approve{background:#16834b}
+.reject{background:#b52d37}
+.hidden{display:none}
+.status{padding:12px;background:#eaf2fc;border-radius:8px;margin:12px 0}
+.payment{border:1px solid #dce5f2;padding:17px;border-radius:10px;margin:12px 0;background:#fff}
+small{color:#667b96}
 </style>
 </head>
 <body>
@@ -36,87 +32,152 @@ footer{text-align:center;padding:25px;color:#718096}
 
 <div class="container">
 
-<div class="note">
-<strong>Welcome, Administrator!</strong><br>
-Manage your services, products, images, prices and payment links.
+<div class="card" id="loginBox">
+<h2>Administrator Login</h2>
+<input type="password" id="password" placeholder="Enter admin password">
+<button onclick="login()">Login</button>
+<div id="loginMessage"></div>
 </div>
 
-<h2>PAYPAL PAYMENT SERVICES</h2>
-<div class="grid" id="payments"></div>
+<div id="dashboard" class="hidden">
 
-<h2>PRODUCT MANAGEMENT</h2>
-<div id="products"></div>
-
+<div class="card">
+<h2>Sofia Jenny Videos</h2>
+<p><b>Monthly price:</b> $40 USD</p>
+<p><b>Membership:</b> 30 days after approval</p>
+<p><b>Payment link:</b>
+<a href="https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4" target="_blank">Open PayPal</a></p>
+<button onclick="loadPayments()">Refresh Payment Requests</button>
+<button onclick="logout()">Logout</button>
+<div id="message" class="status">Loading...</div>
 </div>
 
-<footer>© 2026 Sofia Jenny Taborda | Admin Panel</footer>
+<div class="card">
+<h2>Pending Video Payments</h2>
+<div id="payments">Loading payment requests...</div>
+</div>
+
+</div>
+</div>
 
 <script>
-const paymentServices = [
-["Premium Videos",40,"https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4"],
-["Photo Gallery",20,"https://www.paypal.com/ncp/payment/GKDEUC2CM9784"],
-["Gifts & Services",10,"https://www.paypal.com/ncp/payment/JT6AJNSQ5R8D2"],
-["Long Package System",80,"https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"],
-["WhatsApp Premium",60,"https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"],
-["Lucky Draw",20,"https://www.paypal.com/ncp/payment/CQT5JFMQFRM9Y"]
-];
+let adminToken = "";
 
-const productServices = [
-"Fashion Store",
-"Visa & Passport",
-"Herbal Wellness",
-"Work Permit Visa",
-"Garments Store",
-"SIXY DOLLS"
-];
-
-function paymentCard(item){
-return `
-<div class="card">
-<h3>${item[0]}</h3>
-<label>Price (USD)</label>
-<input type="number" value="${item[1]}" min="0" step="0.01">
-<label>PayPal Payment Link</label>
-<input type="url" value="${item[2]}">
-<label>Description</label>
-<textarea placeholder="Write service details"></textarea>
-<button onclick="alert('Backend connection will be added in the next step.')">Save Service</button>
-</div>`;
+function showMessage(id,message){
+ document.getElementById(id).textContent=message;
 }
 
-document.getElementById("payments").innerHTML =
-paymentServices.map(paymentCard).join("");
+function login(){
+ const password=document.getElementById("password").value;
+ showMessage("loginMessage","Checking login...");
 
-function productSection(name,index){
-return `
-<div class="section">
-<h2>${name}</h2>
-<label>Product Name</label>
-<input type="text" placeholder="Enter product name">
-
-<label>Product Description</label>
-<textarea placeholder="Write product details"></textarea>
-
-<label>Upload Product Image</label>
-<input type="file" accept="image/*">
-
-<label>Upload Video (Optional)</label>
-<input type="file" accept="video/*">
-
-<label>Product Price (USD)</label>
-<input type="number" min="0" step="0.01" placeholder="Enter your price">
-
-<label>Individual PayPal Payment Link</label>
-<input type="url" placeholder="Paste this product's PayPal link">
-
-<button onclick="alert('Secure product saving will be connected next.')">
-Save Product
-</button>
-</div>`;
+ google.script.run
+ .withSuccessHandler(result=>{
+   if(!result || !result.success){
+     showMessage("loginMessage",result?.message || "Login failed.");
+     return;
+   }
+   adminToken=result.token;
+   document.getElementById("loginBox").classList.add("hidden");
+   document.getElementById("dashboard").classList.remove("hidden");
+   loadPayments();
+ })
+ .withFailureHandler(error=>{
+   showMessage("loginMessage",error.message || "Login error");
+ })
+ .loginAdmin(password);
 }
 
-document.getElementById("products").innerHTML =
-productServices.map(productSection).join("");
+function loadPayments(){
+ const area=document.getElementById("payments");
+ area.textContent="Loading...";
+
+ google.script.run
+ .withSuccessHandler(items=>{
+   area.innerHTML="";
+
+   if(!items || items.length===0){
+     area.textContent="No pending Sofia Jenny Videos payments.";
+     showMessage("message","Payment list updated.");
+     return;
+   }
+
+   items.forEach(item=>{
+     const card=document.createElement("div");
+     card.className="payment";
+
+     const title=document.createElement("h3");
+     title.textContent=item.customerName || "Customer";
+
+     const details=document.createElement("p");
+     details.textContent=
+       "Email: "+item.email+
+       " | Amount: $"+item.amount+
+       " | Transaction ID: "+item.transactionId;
+
+     const id=document.createElement("small");
+     id.textContent="Request ID: "+item.paymentId;
+
+     const verify=document.createElement("label");
+     const checkbox=document.createElement("input");
+     checkbox.type="checkbox";
+     checkbox.style.width="auto";
+     verify.appendChild(checkbox);
+     verify.appendChild(document.createTextNode(
+       " I have independently verified this payment in PayPal."
+     ));
+
+     const approve=document.createElement("button");
+     approve.className="approve";
+     approve.textContent="Approve 30-Day Access";
+     approve.onclick=()=>{
+       if(!checkbox.checked){
+         alert("Verify the payment in PayPal first.");
+         return;
+       }
+       approvePayment(item.paymentId,approve);
+     };
+
+     card.append(title,details,id,verify,approve);
+     area.appendChild(card);
+   });
+
+   showMessage("message",items.length+" pending payment(s) found.");
+ })
+ .withFailureHandler(error=>{
+   area.textContent=error.message || "Could not load payments.";
+ })
+ .getPendingVideosPayments(adminToken);
+}
+
+function approvePayment(paymentId,button){
+ if(!confirm("Have you verified this transaction in PayPal? Approve 30-day access?")) return;
+
+ button.disabled=true;
+ button.textContent="Approving...";
+
+ google.script.run
+ .withSuccessHandler(result=>{
+   alert(result.message || "Membership approved.");
+   loadPayments();
+ })
+ .withFailureHandler(error=>{
+   alert(error.message || "Approval failed.");
+   button.disabled=false;
+   button.textContent="Approve 30-Day Access";
+ })
+ .approveVideosPayment(adminToken,paymentId,true);
+}
+
+function logout(){
+ if(adminToken){
+   google.script.run.logoutAdmin(adminToken);
+ }
+ adminToken="";
+ document.getElementById("dashboard").classList.add("hidden");
+ document.getElementById("loginBox").classList.remove("hidden");
+ document.getElementById("password").value="";
+}
 </script>
 </body>
 </html>
