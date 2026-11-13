@@ -546,7 +546,7 @@ img {
     🌐 <span data-i="language">Language:</span>
   </label>
 
-  <select id="language">
+  <select id="language" aria-label="Choose website language">
     <option value="en">🇬🇧 English</option>
     <option value="ur">🇵🇰 اردو</option>
     <option value="es">🇪🇸 Español</option>
@@ -974,11 +974,13 @@ function applyLanguage(code) {
   document.querySelector('[data-i="note"]').textContent = d.note;
 
   document.querySelectorAll("[data-n]").forEach(el => {
-    el.textContent = navigationCategoryNames[Number(el.dataset.n)] || d.nav[Number(el.dataset.n)];
+    const index = Number(el.dataset.n);
+    el.textContent = d.nav[index] || navigationCategoryNames[index] || "";
   });
 
   document.querySelectorAll("[data-t]").forEach(el => {
-    el.textContent = serviceCategoryNames[Number(el.dataset.t)] || d.titles[Number(el.dataset.t)];
+    const index = Number(el.dataset.t);
+    el.textContent = d.titles[index] || serviceCategoryNames[index] || "";
   });
 
   document.querySelectorAll("[data-d]").forEach(el => {
@@ -986,9 +988,11 @@ function applyLanguage(code) {
   });
 
   document.querySelectorAll("[data-b]").forEach(el => {
+    const index = Number(el.dataset.b);
     const label = el.querySelector(".button-label");
     if (label) {
-      label.textContent = serviceCategoryNames[Number(el.dataset.b)] || d.buttons[Number(el.dataset.b)];
+      label.textContent = d.buttons[index] || d.titles[index] ||
+        serviceCategoryNames[index] || "";
     }
   });
 
