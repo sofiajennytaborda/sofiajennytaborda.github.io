@@ -1,38 +1,227 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#082e59">
 <title>Premium Videos | Sofia Jenny Taborda</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f3f7fc;color:#082e59}
-header{background:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0000000c}header strong{font-size:21px}header a{color:#082e59;text-decoration:none;font-weight:bold}
-.hero{background:linear-gradient(115deg,#06264b,#173b70,#581653);color:#fff;padding:55px 6%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}.hero h1{font-size:clamp(38px,5vw,64px);margin:15px 0}.hero p{line-height:1.8;color:#e0eafa}.hero img{width:100%;max-height:380px;object-fit:cover;border-radius:20px;border:3px solid #ed72bd;box-shadow:0 12px 35px #0005}.tag{color:#ffd078;letter-spacing:3px;font-weight:bold;font-size:12px}
-section{padding:48px 6%}.heading{text-align:center;margin-bottom:28px}.heading h2{font-size:32px;margin:0 0 12px}.heading p{color:#647b98;line-height:1.7}.membership{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fff;border:1px solid #dce7f3;border-radius:18px;padding:28px;box-shadow:0 8px 25px #163b6510}.panel h3{font-size:22px;margin-top:8px}.panel p,.panel li{color:#607995;line-height:1.9}.price{font-size:32px;font-weight:bold;margin:15px 0}.btn{display:inline-block;padding:14px 24px;border:0;border-radius:10px;background:#082e59;color:#fff;text-decoration:none;font-weight:bold;cursor:pointer}.btn:hover{background:#174d83}.btn:disabled{opacity:.55;cursor:wait}.pending{display:inline-block;background:#fff3d8;color:#96600a;padding:9px 14px;border-radius:30px;font-size:13px;margin-top:10px}.lock-icon{font-size:35px}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.video-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #dce7f3;box-shadow:0 7px 22px #173b6510}.thumbnail{aspect-ratio:16/9;background:linear-gradient(135deg,#102e56,#54205b);display:flex;align-items:center;justify-content:center;color:white;font-size:42px;position:relative}.thumbnail img{width:100%;height:100%;object-fit:cover}.thumbnail .lock{position:absolute;right:12px;top:12px;background:#082e59dd;padding:8px 11px;border-radius:30px;font-size:13px}.video-info{padding:18px}.video-info h3{margin:0 0 10px}.video-info p{color:#71839a;font-size:14px;line-height:1.6}.locked{color:#a66b12;font-weight:bold;font-size:13px}.empty{text-align:center;background:#fff;border:1px dashed #a8bfd9;border-radius:18px;padding:55px 20px;color:#647b98}.empty .icon{font-size:45px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left;margin-top:20px}.form-grid label{display:block;font-weight:bold;margin-bottom:7px}.form-grid input{width:100%;padding:13px;border:1px solid #cbd9e8;border-radius:9px;font-size:16px}.form-grid .full{grid-column:1/-1}.note{font-size:13px;color:#647b98}.message{display:none;margin-top:16px;padding:14px;border-radius:10px;line-height:1.7}.message.ok{display:block;background:#e8f7ed;color:#176534}.message.err{display:block;background:#fff0ef;color:#a12a22}.access-area{display:none;margin-top:20px}.access-area iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#071d35}footer{background:#082e59;color:#fff;text-align:center;padding:27px;line-height:1.8}
-@media(max-width:750px){.hero,.membership{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:35px 5%}}@media(max-width:480px){.gallery{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}header{padding:15px 4%}header strong{font-size:17px}}
-</style></head><body>
-<header><strong>Sofia Jenny Taborda</strong><a href="index.html">← Back to Home</a></header>
-<div class="hero"><div><div class="tag">MEMBERS ONLY COLLECTION</div><h1>Premium Videos</h1><p>Explore our exclusive premium video collection. Become a member to unlock access to our special video library and premium content.</p></div><img src="assets/Premium Pink Play Preview.png" alt="Premium Videos Preview"></div>
-<section><div class="heading"><h2>Premium Membership</h2><p>ایک مرتبہ ادائیگی کریں اور تمام Premium Videos تک 30 دن رسائی حاصل کریں۔</p></div>
-<div class="membership"><div class="panel"><div class="lock-icon">🔒</div><h3>Members Only Access</h3><p>ادائیگی کی تصدیق اور Admin کی منظوری کے بعد تمام ویڈیوز دستیاب ہوں گی۔</p><ul><li>تمام Premium Videos ایک ہی کلیکشن میں</li><li>ایک ماہ یعنی 30 دن کی رسائی</li><li>ہر نئی اپ لوڈ ہونے والی ویڈیو اسی کلیکشن میں</li><li>مدت ختم ہونے پر خودکار رسائی بند</li></ul><span class="pending">Admin Approval Required</span></div>
-<div class="panel"><h3>30-Day Membership</h3><div class="price">$40 USD</div><p>ادائیگی کے لیے PayPal استعمال کریں۔ ادائیگی مکمل ہونے کے بعد PayPal Transaction ID درج کرکے درخواست بھیجیں۔</p><a class="btn" href="https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4" target="_blank" rel="noopener">Pay $40 with PayPal</a><p class="note">یہ PayPal لنک صرف Premium Videos کے $40 پیکج کے لیے ہے۔</p></div></div></section>
-<section id="payment"><div class="heading"><h2>ادائیگی کی تصدیق کی درخواست</h2><p>PayPal پر ادائیگی مکمل کرنے کے بعد نیچے اپنی تفصیلات درج کریں۔</p></div>
-<div class="panel"><form id="paymentForm" target="paymentFrame" method="post" action="https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec">
-<input type="hidden" name="action" value="videosPayment"><div class="form-grid"><div><label for="customerName">آپ کا نام</label><input id="customerName" name="name" required maxlength="100" placeholder="اپنا نام لکھیں"></div><div><label for="customerEmail">Gmail / Email</label><input id="customerEmail" name="email" type="email" required placeholder="آپ کا Google account والا Gmail"></div><div class="full"><label for="transactionId">PayPal Transaction ID</label><input id="transactionId" name="transactionId" required maxlength="120" placeholder="PayPal رسید سے Transaction ID درج کریں"></div><div class="full"><button class="btn" id="submitBtn" type="submit">ادائیگی کی تصدیق کے لیے درخواست بھیجیں</button><p class="note">صرف درخواست بھیجنے سے رسائی نہیں کھلے گی۔ Admin آپ کی ادائیگی PayPal میں چیک کرکے منظوری دے گا۔</p></div></div></form><iframe name="paymentFrame" id="paymentFrame" title="Payment request response" style="display:none"></iframe><div id="formMessage" class="message" aria-live="polite"></div></div></section>
-<section id="collection"><div class="heading"><h2>Exclusive Video Collection</h2><p>تمام دستیاب ویڈیوز کے نمونے یہاں نظر آئیں گے۔ مکمل ویڈیو صرف منظور شدہ ممبرز دیکھ سکیں گے۔</p></div><div id="videoGallery" class="empty"><div class="icon">🎬</div><h3>ویڈیوز لوڈ ہو رہی ہیں</h3><p>براہ کرم انتظار کریں۔</p></div>
-<div class="panel" style="margin-top:22px"><h3>اپنی ممبرشپ چیک کریں</h3><p>اسی Gmail کو درج کریں جس پر آپ نے ممبرشپ کی درخواست دی تھی۔</p><div class="form-grid"><div class="full"><label for="accessEmail">Gmail / Email</label><input id="accessEmail" type="email" placeholder="اپنا Gmail درج کریں"></div><div class="full"><button class="btn" id="checkAccess" type="button">رسائی چیک کریں</button></div></div><div id="accessMessage" class="message" aria-live="polite"></div><div id="memberVideos" class="access-area"></div></div></section>
-<footer>© 2026 Sofia Jenny Taborda<br>Official Website · Premium Collection</footer>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7fc;color:#082e59}
+header{background:#fff;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;box-shadow:0 2px 12px #0000000c;flex-wrap:wrap}
+header strong{font-size:21px}
+.header-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header a{color:#082e59;text-decoration:none;font-weight:bold}
+select{padding:10px 12px;border:1px solid #cbd9e8;border-radius:9px;background:#fff;color:#082e59;font-size:14px}
+.hero{background:linear-gradient(115deg,#06264b,#173b70,#581653);color:#fff;padding:55px 6%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
+.hero h1{font-size:clamp(38px,5vw,64px);margin:15px 0}
+.hero p{line-height:1.8;color:#e0eafa}
+.hero img{width:100%;max-height:380px;object-fit:cover;border-radius:20px;border:3px solid #ed72bd;box-shadow:0 12px 35px #0005}
+.tag{color:#ffd078;letter-spacing:3px;font-weight:bold;font-size:12px}
+section{padding:48px 6%}
+.heading{text-align:center;margin-bottom:28px}
+.heading h2{font-size:32px;margin:0 0 12px}
+.heading p{color:#647b98;line-height:1.7}
+.membership{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:#fff;border:1px solid #dce7f3;border-radius:18px;padding:28px;box-shadow:0 8px 25px #163b6510}
+.panel h3{font-size:22px;margin-top:8px}
+.panel p,.panel li{color:#607995;line-height:1.9}
+.price{font-size:32px;font-weight:bold;margin:15px 0}
+.btn{display:inline-block;padding:14px 24px;border:0;border-radius:10px;background:#082e59;color:#fff;text-decoration:none;font-weight:bold;cursor:pointer}
+.btn:hover{background:#174d83}
+.btn:disabled{opacity:.55;cursor:wait}
+.pending{display:inline-block;background:#fff3d8;color:#96600a;padding:9px 14px;border-radius:30px;font-size:13px;margin-top:10px}
+.lock-icon{font-size:35px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.video-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #dce7f3;box-shadow:0 7px 22px #173b6510}
+.thumbnail{aspect-ratio:16/9;background:linear-gradient(135deg,#102e56,#54205b);display:flex;align-items:center;justify-content:center;color:white;font-size:42px;position:relative}
+.thumbnail img{width:100%;height:100%;object-fit:cover}
+.thumbnail .lock{position:absolute;right:12px;top:12px;background:#082e59dd;padding:8px 11px;border-radius:30px;font-size:13px}
+.video-info{padding:18px}
+.video-info h3{margin:0 0 10px}
+.video-info p{color:#71839a;font-size:14px;line-height:1.6}
+.locked{color:#a66b12;font-weight:bold;font-size:13px}
+.empty{text-align:center;background:#fff;border:1px dashed #a8bfd9;border-radius:18px;padding:55px 20px;color:#647b98}
+.empty .icon{font-size:45px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left;margin-top:20px}
+.form-grid label{display:block;font-weight:bold;margin-bottom:7px}
+.form-grid input{width:100%;padding:13px;border:1px solid #cbd9e8;border-radius:9px;font-size:16px}
+.form-grid .full{grid-column:1/-1}
+.note{font-size:13px;color:#647b98}
+.message{display:none;margin-top:16px;padding:14px;border-radius:10px;line-height:1.7}
+.message.ok{display:block;background:#e8f7ed;color:#176534}
+.message.err{display:block;background:#fff0ef;color:#a12a22}
+.access-area{display:none;margin-top:20px}
+.access-area iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#071d35}
+footer{background:#082e59;color:#fff;text-align:center;padding:27px;line-height:1.8}
+[dir="rtl"] body{text-align:right}
+[dir="rtl"] .form-grid{text-align:right}
+[dir="rtl"] .thumbnail .lock{right:auto;left:12px}
+@media(max-width:750px){.hero,.membership{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:35px 5%}}
+@media(max-width:480px){.gallery,.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}header{padding:15px 4%}header strong{font-size:17px}.header-actions{width:100%;justify-content:space-between}}
+</style>
+</head>
+<body>
+<header>
+  <strong>Sofia Jenny Taborda</strong>
+  <div class="header-actions">
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="ur">اردو</option><option value="ar">العربية</option>
+      <option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option>
+      <option value="hi">हिन्दी</option><option value="zh">中文</option>
+    </select>
+    <a href="index.html" data-i18n="backHome">← Back to Home</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div><div class="tag" data-i18n="tag">MEMBERS ONLY COLLECTION</div>
+    <h1 data-i18n="heroTitle">Premium Videos</h1>
+    <p data-i18n="heroText">Explore our exclusive premium video collection. Become a member to unlock access to our special video library and premium content.</p>
+  </div>
+  <img src="assets/Premium Pink Play Preview.png" alt="Premium Videos Preview">
+</div>
+
+<section>
+  <div class="heading"><h2 data-i18n="membershipTitle">Premium Membership</h2>
+    <p data-i18n="membershipIntro">Pay once and enjoy 30 days of access to all Premium Videos.</p>
+  </div>
+  <div class="membership">
+    <div class="panel">
+      <div class="lock-icon">🔒</div><h3 data-i18n="membersOnly">Members Only Access</h3>
+      <p data-i18n="approvalText">All videos become available after payment verification and administrator approval.</p>
+      <ul>
+        <li data-i18n="benefit1">All Premium Videos in one collection</li>
+        <li data-i18n="benefit2">30 days of access</li>
+        <li data-i18n="benefit3">Newly uploaded videos added to the same collection</li>
+        <li data-i18n="benefit4">Access automatically ends after 30 days</li>
+      </ul>
+      <span class="pending" data-i18n="approvalRequired">Administrator approval required</span>
+    </div>
+    <div class="panel">
+      <h3 data-i18n="thirtyDay">30-Day Membership</h3><div class="price">$40 USD</div>
+      <p data-i18n="paymentInstructions">Pay securely using PayPal. After payment, enter your PayPal Transaction ID and submit your request.</p>
+      <a class="btn" href="https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4" target="_blank" rel="noopener" data-i18n="payPaypal">Pay $40 with PayPal</a>
+      <p class="note" data-i18n="paypalNote">This PayPal link is only for the $40 Premium Videos package.</p>
+    </div>
+  </div>
+</section>
+
+<section id="payment">
+  <div class="heading"><h2 data-i18n="paymentTitle">Payment Confirmation Request</h2>
+    <p data-i18n="paymentIntro">After completing your PayPal payment, enter your details below.</p>
+  </div>
+  <div class="panel">
+    <form id="paymentForm" target="paymentFrame" method="post" action="https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec">
+      <input type="hidden" name="action" value="videosPayment">
+      <div class="form-grid">
+        <div><label for="customerName" data-i18n="yourName">Your Name</label><input id="customerName" name="name" required maxlength="100" placeholder="Enter your name" data-i18n-placeholder="namePlaceholder"></div>
+        <div><label for="customerEmail" data-i18n="emailLabel">Gmail / Email</label><input id="customerEmail" name="email" type="email" required placeholder="Your Google account email" data-i18n-placeholder="emailPlaceholder"></div>
+        <div class="full"><label for="transactionId" data-i18n="transactionLabel">PayPal Transaction ID</label><input id="transactionId" name="transactionId" required maxlength="120" placeholder="Enter the Transaction ID from your PayPal receipt" data-i18n-placeholder="transactionPlaceholder"></div>
+        <div class="full"><button class="btn" id="submitBtn" type="submit" data-i18n="submitRequest">Submit Payment Confirmation Request</button>
+          <p class="note" data-i18n="submitNote">Submitting a request does not unlock access. The administrator will verify your payment in PayPal before approving it.</p>
+        </div>
+      </div>
+    </form>
+    <iframe name="paymentFrame" id="paymentFrame" title="Payment request response" style="display:none"></iframe>
+    <div id="formMessage" class="message" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="heading"><h2 data-i18n="collectionTitle">Exclusive Video Collection</h2>
+    <p data-i18n="collectionIntro">Previews of all available videos appear here. Full videos are available only to approved members.</p>
+  </div>
+  <div id="videoGallery" class="empty"><div class="icon">🎬</div><h3 data-i18n="loadingVideos">Loading videos</h3><p data-i18n="pleaseWait">Please wait.</p></div>
+  <div class="panel" style="margin-top:22px">
+    <h3 data-i18n="checkMembership">Check Your Membership</h3>
+    <p data-i18n="checkIntro">Enter the same email address you used when submitting your membership request.</p>
+    <div class="form-grid">
+      <div class="full"><label for="accessEmail" data-i18n="emailLabel">Gmail / Email</label><input id="accessEmail" type="email" placeholder="Enter your email" data-i18n-placeholder="emailPlaceholder"></div>
+      <div class="full"><button class="btn" id="checkAccess" type="button" data-i18n="checkAccessBtn">Check Access</button></div>
+    </div>
+    <div id="accessMessage" class="message" aria-live="polite"></div><div id="memberVideos" class="access-area"></div>
+  </div>
+</section>
+<footer>© 2026 Sofia Jenny Taborda<br><span data-i18n="footerText">Official Website · Premium Collection</span></footer>
+
 <script>
 const API_URL='https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec';
-function jsonp(params){return new Promise((resolve,reject)=>{const cb='sjcb_'+Date.now()+'_'+Math.floor(Math.random()*100000);const s=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('سرور سے جواب نہیں ملا۔ دوبارہ کوشش کریں۔'));},15000);function cleanup(){clearTimeout(timer);delete window[cb];s.remove();}window[cb]=data=>{cleanup();resolve(data)};s.onerror=()=>{cleanup();reject(new Error('سرور سے رابطہ نہیں ہوسکا۔'))};s.src=API_URL+'?'+new URLSearchParams({...params,callback:cb}).toString();document.body.appendChild(s);});}
+
+const translations = {
+en:{backHome:'← Back to Home',tag:'MEMBERS ONLY COLLECTION',heroTitle:'Premium Videos',heroText:'Explore our exclusive premium video collection. Become a member to unlock access to our special video library and premium content.',membershipTitle:'Premium Membership',membershipIntro:'Pay once and enjoy 30 days of access to all Premium Videos.',membersOnly:'Members Only Access',approvalText:'All videos become available after payment verification and administrator approval.',benefit1:'All Premium Videos in one collection',benefit2:'30 days of access',benefit3:'Newly uploaded videos added to the same collection',benefit4:'Access automatically ends after 30 days',approvalRequired:'Administrator approval required',thirtyDay:'30-Day Membership',paymentInstructions:'Pay securely using PayPal. After payment, enter your PayPal Transaction ID and submit your request.',payPaypal:'Pay $40 with PayPal',paypalNote:'This PayPal link is only for the $40 Premium Videos package.',paymentTitle:'Payment Confirmation Request',paymentIntro:'After completing your PayPal payment, enter your details below.',yourName:'Your Name',emailLabel:'Gmail / Email',transactionLabel:'PayPal Transaction ID',namePlaceholder:'Enter your name',emailPlaceholder:'Your Google account email',transactionPlaceholder:'Enter the Transaction ID from your PayPal receipt',submitRequest:'Submit Payment Confirmation Request',submitNote:'Submitting a request does not unlock access. The administrator will verify your payment in PayPal before approving it.',collectionTitle:'Exclusive Video Collection',collectionIntro:'Previews of all available videos appear here. Full videos are available only to approved members.',loadingVideos:'Loading videos',pleaseWait:'Please wait.',checkMembership:'Check Your Membership',checkIntro:'Enter the same email address you used when submitting your membership request.',checkAccessBtn:'Check Access',footerText:'Official Website · Premium Collection',locked:'🔒 Locked',membersOnlyStatus:'🔒 Membership required',emptyVideos:'No videos have been uploaded yet',emptyVideosText:'New videos uploaded through the Admin Dashboard will appear here.',requiredEmail:'Please enter your email address.',requestSending:'Submitting your request...',requestButton:'Submit Payment Confirmation Request',requestSuccess:'Your request has been received. Please wait while the administrator verifies your PayPal payment. Access details will be sent to your email after approval. Thank you. Request ID: ',requestError:'Your request could not be submitted.',activeMembership:'Your membership is active. Expiry date: ',noMembership:'Your membership is not active yet.',noMemberVideos:'No videos are available yet.',serverError:'The server did not respond. Please try again.',videoDescription:'This video is for approved members only.',premiumVideo:'Premium Video'},
+ur:{backHome:'← ہوم پیج پر واپس جائیں',tag:'صرف ممبرز کے لیے',heroTitle:'پریمیم ویڈیوز',heroText:'ہماری خصوصی ویڈیوز دیکھیں۔ ممبرشپ حاصل کرکے ہماری ویڈیو لائبریری تک رسائی حاصل کریں۔',membershipTitle:'پریمیم ممبرشپ',membershipIntro:'ایک بار ادائیگی کریں اور تمام پریمیم ویڈیوز تک 30 دن رسائی حاصل کریں۔',membersOnly:'صرف ممبرز کے لیے رسائی',approvalText:'ادائیگی کی تصدیق اور ایڈمن کی منظوری کے بعد تمام ویڈیوز دستیاب ہوں گی۔',benefit1:'تمام پریمیم ویڈیوز ایک کلیکشن میں',benefit2:'30 دن کی رسائی',benefit3:'نئی اپ لوڈ ہونے والی ویڈیوز بھی اسی کلیکشن میں',benefit4:'30 دن بعد رسائی خودکار طور پر ختم',approvalRequired:'ایڈمن کی منظوری ضروری ہے',thirtyDay:'30 دن کی ممبرشپ',paymentInstructions:'PayPal سے ادائیگی کریں۔ ادائیگی کے بعد Transaction ID درج کرکے درخواست بھیجیں۔',payPaypal:'PayPal سے 40 ڈالر ادا کریں',paypalNote:'یہ لنک صرف 40 ڈالر کے پریمیم ویڈیوز پیکج کے لیے ہے۔',paymentTitle:'ادائیگی کی تصدیق کی درخواست',paymentIntro:'PayPal پر ادائیگی کے بعد اپنی تفصیلات درج کریں۔',yourName:'آپ کا نام',emailLabel:'Gmail / ای میل',transactionLabel:'PayPal Transaction ID',namePlaceholder:'اپنا نام لکھیں',emailPlaceholder:'اپنا Gmail درج کریں',transactionPlaceholder:'PayPal رسید سے Transaction ID درج کریں',submitRequest:'ادائیگی کی تصدیق کی درخواست بھیجیں',submitNote:'صرف درخواست بھیجنے سے رسائی نہیں کھلے گی۔ ایڈمن PayPal میں ادائیگی چیک کرکے منظوری دے گا۔',collectionTitle:'خصوصی ویڈیو کلیکشن',collectionIntro:'تمام ویڈیوز کے نمونے یہاں نظر آئیں گے۔ مکمل ویڈیوز صرف منظور شدہ ممبرز دیکھ سکیں گے۔',loadingVideos:'ویڈیوز لوڈ ہو رہی ہیں',pleaseWait:'براہ کرم انتظار کریں۔',checkMembership:'اپنی ممبرشپ چیک کریں',checkIntro:'وہی ای میل درج کریں جس سے ممبرشپ کی درخواست دی تھی۔',checkAccessBtn:'رسائی چیک کریں',footerText:'آفیشل ویب سائٹ · پریمیم کلیکشن',locked:'🔒 لاک ہے',membersOnlyStatus:'🔒 ممبرشپ ضروری ہے',emptyVideos:'ابھی کوئی ویڈیو اپ لوڈ نہیں ہوئی',emptyVideosText:'ایڈمن ڈیش بورڈ سے اپ لوڈ ہونے والی نئی ویڈیوز یہاں نظر آئیں گی۔',requiredEmail:'براہ کرم اپنا ای میل درج کریں۔',requestSending:'درخواست بھیجی جا رہی ہے...',requestButton:'ادائیگی کی تصدیق کی درخواست بھیجیں',requestSuccess:'آپ کی درخواست موصول ہوگئی ہے۔ ایڈمن PayPal ادائیگی کی تصدیق کرے گا۔ منظوری کے بعد رسائی کی تفصیل ای میل کی جائے گی۔ شکریہ۔ درخواست نمبر: ',requestError:'درخواست جمع نہیں ہوسکی۔',activeMembership:'آپ کی ممبرشپ فعال ہے۔ آخری تاریخ: ',noMembership:'آپ کی ممبرشپ ابھی فعال نہیں ہے۔',noMemberVideos:'ابھی کوئی ویڈیو دستیاب نہیں۔',serverError:'سرور سے جواب نہیں ملا۔ دوبارہ کوشش کریں۔',videoDescription:'یہ ویڈیو صرف منظور شدہ ممبرز کے لیے ہے۔',premiumVideo:'پریمیم ویڈیو'},
+ar:{backHome:'العودة إلى الصفحة الرئيسية ←',tag:'مجموعة للأعضاء فقط',heroTitle:'الفيديوهات المميزة',heroText:'استكشف مجموعتنا الحصرية من الفيديوهات المميزة واشترك للوصول إلى مكتبتنا الخاصة.',membershipTitle:'العضوية المميزة',membershipIntro:'ادفع مرة واحدة واحصل على إمكانية الوصول إلى جميع الفيديوهات لمدة 30 يومًا.',membersOnly:'الوصول للأعضاء فقط',approvalText:'تتوفر جميع الفيديوهات بعد التحقق من الدفع وموافقة المسؤول.',benefit1:'جميع الفيديوهات في مجموعة واحدة',benefit2:'إمكانية الوصول لمدة 30 يومًا',benefit3:'إضافة الفيديوهات الجديدة إلى المجموعة نفسها',benefit4:'ينتهي الوصول تلقائيًا بعد 30 يومًا',approvalRequired:'موافقة المسؤول مطلوبة',thirtyDay:'عضوية لمدة 30 يومًا',paymentInstructions:'ادفع بأمان عبر PayPal، ثم أدخل رقم المعاملة وأرسل طلبك.',payPaypal:'ادفع 40 دولارًا عبر PayPal',paypalNote:'هذا الرابط مخصص لباقـة الفيديوهات بسعر 40 دولارًا.',paymentTitle:'طلب تأكيد الدفع',paymentIntro:'بعد إتمام الدفع عبر PayPal، أدخل بياناتك أدناه.',yourName:'اسمك',emailLabel:'البريد الإلكتروني',transactionLabel:'رقم معاملة PayPal',namePlaceholder:'أدخل اسمك',emailPlaceholder:'بريد حساب Google',transactionPlaceholder:'أدخل رقم المعاملة من إيصال PayPal',submitRequest:'إرسال طلب تأكيد الدفع',submitNote:'إرسال الطلب لا يفتح الوصول. سيتحقق المسؤول من الدفع قبل الموافقة.',collectionTitle:'مجموعة الفيديوهات الحصرية',collectionIntro:'تظهر معاينات الفيديوهات هنا. الفيديوهات الكاملة متاحة للأعضاء الموافق عليهم فقط.',loadingVideos:'جارٍ تحميل الفيديوهات',pleaseWait:'يرجى الانتظار.',checkMembership:'تحقق من عضويتك',checkIntro:'أدخل البريد الإلكتروني نفسه المستخدم في طلب العضوية.',checkAccessBtn:'تحقق من الوصول',footerText:'الموقع الرسمي · المجموعة المميزة',locked:'🔒 مقفل',membersOnlyStatus:'🔒 العضوية مطلوبة',emptyVideos:'لم يتم تحميل أي فيديو بعد',emptyVideosText:'ستظهر هنا الفيديوهات الجديدة التي يرفعها المسؤول.',requiredEmail:'يرجى إدخال بريدك الإلكتروني.',requestSending:'جارٍ إرسال الطلب...',requestButton:'إرسال طلب تأكيد الدفع',requestSuccess:'تم استلام طلبك. سيتحقق المسؤول من الدفع عبر PayPal. ستصلك تفاصيل الوصول بعد الموافقة. رقم الطلب: ',requestError:'تعذر إرسال الطلب.',activeMembership:'عضويتك نشطة. تاريخ الانتهاء: ',noMembership:'عضويتك غير نشطة حاليًا.',noMemberVideos:'لا توجد فيديوهات متاحة بعد.',serverError:'لم يستجب الخادم. حاول مرة أخرى.',videoDescription:'هذا الفيديو للأعضاء الموافق عليهم فقط.',premiumVideo:'فيديو مميز'},
+es:{backHome:'← Volver al inicio',tag:'COLECCIÓN SOLO PARA MIEMBROS',heroTitle:'Vídeos Premium',heroText:'Explora nuestra colección exclusiva de vídeos premium. Hazte miembro para acceder a nuestra biblioteca especial.',membershipTitle:'Membresía Premium',membershipIntro:'Paga una vez y disfruta de 30 días de acceso a todos los vídeos premium.',membersOnly:'Acceso solo para miembros',approvalText:'Todos los vídeos estarán disponibles después de verificar el pago y recibir la aprobación del administrador.',benefit1:'Todos los vídeos premium en una colección',benefit2:'30 días de acceso',benefit3:'Los nuevos vídeos se añaden a la misma colección',benefit4:'El acceso finaliza automáticamente después de 30 días',approvalRequired:'Se requiere aprobación del administrador',thirtyDay:'Membresía de 30 días',paymentInstructions:'Paga de forma segura con PayPal. Después, introduce el ID de transacción y envía tu solicitud.',payPaypal:'Pagar 40 USD con PayPal',paypalNote:'Este enlace es solo para el paquete de vídeos premium de 40 USD.',paymentTitle:'Solicitud de confirmación de pago',paymentIntro:'Después de completar el pago con PayPal, introduce tus datos.',yourName:'Tu nombre',emailLabel:'Correo electrónico',transactionLabel:'ID de transacción de PayPal',namePlaceholder:'Escribe tu nombre',emailPlaceholder:'Correo de tu cuenta de Google',transactionPlaceholder:'Introduce el ID de tu recibo de PayPal',submitRequest:'Enviar solicitud de confirmación',submitNote:'Enviar la solicitud no desbloquea el acceso. El administrador verificará el pago antes de aprobarlo.',collectionTitle:'Colección exclusiva de vídeos',collectionIntro:'Aquí aparecen las vistas previas. Los vídeos completos son solo para miembros aprobados.',loadingVideos:'Cargando vídeos',pleaseWait:'Espera, por favor.',checkMembership:'Consultar tu membresía',checkIntro:'Introduce el mismo correo que usaste para solicitar la membresía.',checkAccessBtn:'Comprobar acceso',footerText:'Sitio oficial · Colección Premium',locked:'🔒 Bloqueado',membersOnlyStatus:'🔒 Se requiere membresía',emptyVideos:'Todavía no se han subido vídeos',emptyVideosText:'Los vídeos nuevos aparecerán aquí.',requiredEmail:'Introduce tu correo electrónico.',requestSending:'Enviando solicitud...',requestButton:'Enviar solicitud de confirmación',requestSuccess:'Hemos recibido tu solicitud. El administrador verificará el pago. Los datos de acceso se enviarán tras la aprobación. Número de solicitud: ',requestError:'No se pudo enviar la solicitud.',activeMembership:'Tu membresía está activa. Fecha de vencimiento: ',noMembership:'Tu membresía aún no está activa.',noMemberVideos:'Todavía no hay vídeos disponibles.',serverError:'El servidor no respondió. Inténtalo de nuevo.',videoDescription:'Este vídeo es solo para miembros aprobados.',premiumVideo:'Vídeo Premium'},
+fr:{backHome:'← Retour à l’accueil',tag:'COLLECTION RÉSERVÉE AUX MEMBRES',heroTitle:'Vidéos Premium',heroText:'Découvrez notre collection exclusive de vidéos premium et devenez membre pour accéder à notre bibliothèque.',membershipTitle:'Abonnement Premium',membershipIntro:'Payez une fois et profitez de 30 jours d’accès à toutes les vidéos Premium.',membersOnly:'Accès réservé aux membres',approvalText:'Toutes les vidéos seront disponibles après vérification du paiement et approbation de l’administrateur.',benefit1:'Toutes les vidéos Premium dans une collection',benefit2:'30 jours d’accès',benefit3:'Les nouvelles vidéos rejoignent la même collection',benefit4:'L’accès prend fin automatiquement après 30 jours',approvalRequired:'Approbation de l’administrateur requise',thirtyDay:'Abonnement de 30 jours',paymentInstructions:'Payez en toute sécurité avec PayPal. Saisissez ensuite votre identifiant de transaction et envoyez votre demande.',payPaypal:'Payer 40 USD avec PayPal',paypalNote:'Ce lien PayPal concerne uniquement le forfait Vidéos Premium à 40 USD.',paymentTitle:'Demande de confirmation du paiement',paymentIntro:'Après votre paiement PayPal, saisissez vos informations ci-dessous.',yourName:'Votre nom',emailLabel:'E-mail',transactionLabel:'Identifiant de transaction PayPal',namePlaceholder:'Saisissez votre nom',emailPlaceholder:'Adresse e-mail de votre compte Google',transactionPlaceholder:'Saisissez l’identifiant figurant sur votre reçu PayPal',submitRequest:'Envoyer la demande de confirmation',submitNote:'L’envoi de la demande ne débloque pas l’accès. L’administrateur vérifiera le paiement avant de l’approuver.',collectionTitle:'Collection vidéo exclusive',collectionIntro:'Les aperçus sont affichés ici. Les vidéos complètes sont réservées aux membres approuvés.',loadingVideos:'Chargement des vidéos',pleaseWait:'Veuillez patienter.',checkMembership:'Vérifier votre abonnement',checkIntro:'Saisissez la même adresse e-mail que celle utilisée pour votre demande.',checkAccessBtn:'Vérifier l’accès',footerText:'Site officiel · Collection Premium',locked:'🔒 Verrouillé',membersOnlyStatus:'🔒 Abonnement requis',emptyVideos:'Aucune vidéo n’a encore été publiée',emptyVideosText:'Les nouvelles vidéos apparaîtront ici.',requiredEmail:'Veuillez saisir votre adresse e-mail.',requestSending:'Envoi de la demande...',requestButton:'Envoyer la demande de confirmation',requestSuccess:'Votre demande a été reçue. L’administrateur vérifiera le paiement PayPal. Les informations d’accès seront envoyées après approbation. Numéro de demande : ',requestError:'Impossible d’envoyer la demande.',activeMembership:'Votre abonnement est actif. Date d’expiration : ',noMembership:'Votre abonnement n’est pas encore actif.',noMemberVideos:'Aucune vidéo disponible pour le moment.',serverError:'Le serveur ne répond pas. Veuillez réessayer.',videoDescription:'Cette vidéo est réservée aux membres approuvés.',premiumVideo:'Vidéo Premium'},
+de:{backHome:'← Zur Startseite',tag:'SAMMLUNG NUR FÜR MITGLIEDER',heroTitle:'Premium-Videos',heroText:'Entdecken Sie unsere exklusive Premium-Videosammlung und erhalten Sie als Mitglied Zugriff auf unsere Videobibliothek.',membershipTitle:'Premium-Mitgliedschaft',membershipIntro:'Einmal zahlen und 30 Tage Zugriff auf alle Premium-Videos erhalten.',membersOnly:'Zugriff nur für Mitglieder',approvalText:'Alle Videos werden nach Zahlungsprüfung und Freigabe durch den Administrator verfügbar.',benefit1:'Alle Premium-Videos in einer Sammlung',benefit2:'30 Tage Zugriff',benefit3:'Neue Videos werden derselben Sammlung hinzugefügt',benefit4:'Der Zugriff endet nach 30 Tagen automatisch',approvalRequired:'Freigabe durch Administrator erforderlich',thirtyDay:'30-Tage-Mitgliedschaft',paymentInstructions:'Bezahlen Sie sicher mit PayPal. Geben Sie danach Ihre PayPal-Transaktions-ID ein und senden Sie Ihre Anfrage.',payPaypal:'40 USD mit PayPal bezahlen',paypalNote:'Dieser PayPal-Link gilt nur für das Premium-Videos-Paket für 40 USD.',paymentTitle:'Anfrage zur Zahlungsbestätigung',paymentIntro:'Geben Sie nach der PayPal-Zahlung Ihre Daten ein.',yourName:'Ihr Name',emailLabel:'E-Mail-Adresse',transactionLabel:'PayPal-Transaktions-ID',namePlaceholder:'Namen eingeben',emailPlaceholder:'E-Mail Ihres Google-Kontos',transactionPlaceholder:'Transaktions-ID aus dem PayPal-Beleg eingeben',submitRequest:'Bestätigungsanfrage senden',submitNote:'Die Anfrage allein schaltet den Zugriff nicht frei. Der Administrator prüft die Zahlung vor der Freigabe.',collectionTitle:'Exklusive Videosammlung',collectionIntro:'Hier werden Vorschauen angezeigt. Vollständige Videos sind nur für freigegebene Mitglieder verfügbar.',loadingVideos:'Videos werden geladen',pleaseWait:'Bitte warten.',checkMembership:'Mitgliedschaft prüfen',checkIntro:'Geben Sie dieselbe E-Mail-Adresse ein, die Sie für Ihre Anfrage verwendet haben.',checkAccessBtn:'Zugriff prüfen',footerText:'Offizielle Website · Premium-Sammlung',locked:'🔒 Gesperrt',membersOnlyStatus:'🔒 Mitgliedschaft erforderlich',emptyVideos:'Noch keine Videos hochgeladen',emptyVideosText:'Neue Videos erscheinen hier.',requiredEmail:'Bitte geben Sie Ihre E-Mail-Adresse ein.',requestSending:'Anfrage wird gesendet...',requestButton:'Bestätigungsanfrage senden',requestSuccess:'Ihre Anfrage ist eingegangen. Der Administrator prüft Ihre PayPal-Zahlung. Nach der Freigabe erhalten Sie die Zugangsdaten per E-Mail. Anfragenummer: ',requestError:'Die Anfrage konnte nicht gesendet werden.',activeMembership:'Ihre Mitgliedschaft ist aktiv. Ablaufdatum: ',noMembership:'Ihre Mitgliedschaft ist noch nicht aktiv.',noMemberVideos:'Derzeit sind keine Videos verfügbar.',serverError:'Der Server antwortet nicht. Bitte versuchen Sie es erneut.',videoDescription:'Dieses Video ist nur für freigegebene Mitglieder.',premiumVideo:'Premium-Video'},
+hi:{backHome:'← होम पेज पर वापस जाएँ',tag:'केवल सदस्यों के लिए',heroTitle:'प्रीमियम वीडियो',heroText:'हमारे विशेष प्रीमियम वीडियो संग्रह को देखें। हमारी वीडियो लाइब्रेरी तक पहुँचने के लिए सदस्य बनें।',membershipTitle:'प्रीमियम सदस्यता',membershipIntro:'एक बार भुगतान करें और सभी प्रीमियम वीडियो का 30 दिनों तक आनंद लें।',membersOnly:'केवल सदस्यों के लिए पहुँच',approvalText:'भुगतान सत्यापन और व्यवस्थापक की मंज़ूरी के बाद सभी वीडियो उपलब्ध होंगे।',benefit1:'सभी प्रीमियम वीडियो एक संग्रह में',benefit2:'30 दिनों की पहुँच',benefit3:'नए वीडियो उसी संग्रह में जोड़े जाएँगे',benefit4:'30 दिनों बाद पहुँच अपने आप समाप्त होगी',approvalRequired:'व्यवस्थापक की मंज़ूरी आवश्यक है',thirtyDay:'30-दिन की सदस्यता',paymentInstructions:'PayPal से सुरक्षित भुगतान करें। फिर PayPal Transaction ID दर्ज करके अनुरोध भेजें।',payPaypal:'PayPal से $40 भुगतान करें',paypalNote:'यह PayPal लिंक केवल $40 प्रीमियम वीडियो पैकेज के लिए है।',paymentTitle:'भुगतान पुष्टि अनुरोध',paymentIntro:'PayPal भुगतान पूरा करने के बाद नीचे अपना विवरण भरें।',yourName:'आपका नाम',emailLabel:'Gmail / ईमेल',transactionLabel:'PayPal Transaction ID',namePlaceholder:'अपना नाम लिखें',emailPlaceholder:'अपने Google खाते का ईमेल',transactionPlaceholder:'PayPal रसीद से Transaction ID दर्ज करें',submitRequest:'भुगतान पुष्टि अनुरोध भेजें',submitNote:'अनुरोध भेजने से पहुँच नहीं खुलेगी। व्यवस्थापक PayPal में भुगतान जाँचकर मंज़ूरी देगा।',collectionTitle:'विशेष वीडियो संग्रह',collectionIntro:'सभी उपलब्ध वीडियो के प्रीव्यू यहाँ दिखेंगे। पूरी वीडियो केवल स्वीकृत सदस्य देख सकेंगे।',loadingVideos:'वीडियो लोड हो रहे हैं',pleaseWait:'कृपया प्रतीक्षा करें।',checkMembership:'अपनी सदस्यता जाँचें',checkIntro:'वही ईमेल दर्ज करें जिसका उपयोग आपने सदस्यता अनुरोध में किया था।',checkAccessBtn:'पहुँच जाँचें',footerText:'आधिकारिक वेबसाइट · प्रीमियम संग्रह',locked:'🔒 लॉक',membersOnlyStatus:'🔒 सदस्यता आवश्यक',emptyVideos:'अभी कोई वीडियो अपलोड नहीं हुआ',emptyVideosText:'एडमिन डैशबोर्ड से अपलोड किए गए नए वीडियो यहाँ दिखेंगे।',requiredEmail:'कृपया अपना ईमेल दर्ज करें।',requestSending:'अनुरोध भेजा जा रहा है...',requestButton:'भुगतान पुष्टि अनुरोध भेजें',requestSuccess:'आपका अनुरोध मिल गया है। व्यवस्थापक PayPal भुगतान की पुष्टि करेगा। मंज़ूरी के बाद पहुँच की जानकारी ईमेल की जाएगी। अनुरोध संख्या: ',requestError:'अनुरोध भेजा नहीं जा सका।',activeMembership:'आपकी सदस्यता सक्रिय है। समाप्ति तिथि: ',noMembership:'आपकी सदस्यता अभी सक्रिय नहीं है।',noMemberVideos:'अभी कोई वीडियो उपलब्ध नहीं है।',serverError:'सर्वर से जवाब नहीं मिला। फिर से कोशिश करें।',videoDescription:'यह वीडियो केवल स्वीकृत सदस्यों के लिए है।',premiumVideo:'प्रीमियम वीडियो'},
+zh:{backHome:'← 返回首页',tag:'仅限会员收藏',heroTitle:'高级视频',heroText:'探索我们的独家高级视频合集。成为会员即可访问专属视频库。',membershipTitle:'高级会员',membershipIntro:'一次付款，即可访问所有高级视频 30 天。',membersOnly:'仅会员可访问',approvalText:'付款经过核实并由管理员批准后，即可观看所有视频。',benefit1:'所有高级视频集中在一个合集',benefit2:'30 天访问权限',benefit3:'新上传的视频会加入同一合集',benefit4:'30 天后访问权限自动结束',approvalRequired:'需要管理员批准',thirtyDay:'30 天会员资格',paymentInstructions:'使用 PayPal 安全付款。付款后输入 PayPal 交易编号并提交申请。',payPaypal:'使用 PayPal 支付 40 美元',paypalNote:'此 PayPal 链接仅用于 40 美元高级视频套餐。',paymentTitle:'付款确认申请',paymentIntro:'完成 PayPal 付款后，请填写以下信息。',yourName:'姓名',emailLabel:'电子邮箱',transactionLabel:'PayPal 交易编号',namePlaceholder:'输入姓名',emailPlaceholder:'Google 账户邮箱',transactionPlaceholder:'输入 PayPal 收据上的交易编号',submitRequest:'提交付款确认申请',submitNote:'提交申请不会立即解锁访问权限。管理员将在批准前核实 PayPal 付款。',collectionTitle:'独家视频合集',collectionIntro:'这里显示所有视频预览。完整视频仅对已批准的会员开放。',loadingVideos:'正在加载视频',pleaseWait:'请稍候。',checkMembership:'检查会员资格',checkIntro:'请输入提交会员申请时使用的相同邮箱。',checkAccessBtn:'检查访问权限',footerText:'官方网站 · 高级视频合集',locked:'🔒 已锁定',membersOnlyStatus:'🔒 需要会员资格',emptyVideos:'尚未上传视频',emptyVideosText:'管理员上传的新视频将在此显示。',requiredEmail:'请输入电子邮箱。',requestSending:'正在提交申请...',requestButton:'提交付款确认申请',requestSuccess:'已收到您的申请。管理员将核实 PayPal 付款。批准后，访问详情将发送到您的邮箱。申请编号：',requestError:'无法提交申请。',activeMembership:'您的会员资格已生效。到期日期：',noMembership:'您的会员资格尚未生效。',noMemberVideos:'目前没有可用视频。',serverError:'服务器未响应，请重试。',videoDescription:'此视频仅供已批准的会员观看。',premiumVideo:'高级视频'}
+};
+
+let currentLang='en';
+function tr(key){return (translations[currentLang]&&translations[currentLang][key])||translations.en[key]||key;}
+function applyLanguage(lang){
+ currentLang=translations[lang]?lang:'en';
+ const rtl=['ur','ar'].includes(currentLang);
+ document.documentElement.lang=currentLang;
+ document.documentElement.dir=rtl?'rtl':'ltr';
+ document.getElementById('languageSelect').value=currentLang;
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(tr(key))el.textContent=tr(key);});
+ document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{el.placeholder=tr(el.dataset.i18nPlaceholder);});
+ try{localStorage.setItem('sj_premium_language',currentLang);}catch(e){}
+}
+document.getElementById('languageSelect').addEventListener('change',e=>applyLanguage(e.target.value));
+let savedLang='en';try{savedLang=localStorage.getItem('sj_premium_language')||'en';}catch(e){}
+applyLanguage(savedLang);
+
+function jsonp(params){return new Promise((resolve,reject)=>{const cb='sjcb_'+Date.now()+'_'+Math.floor(Math.random()*100000);const s=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error(tr('serverError')));},15000);function cleanup(){clearTimeout(timer);delete window[cb];s.remove();}window[cb]=data=>{cleanup();resolve(data)};s.onerror=()=>{cleanup();reject(new Error(tr('serverError')))};s.src=API_URL+'?'+new URLSearchParams({...params,callback:cb}).toString();document.body.appendChild(s);});}
 function showMessage(el,text,ok){el.className='message '+(ok?'ok':'err');el.textContent=text;}
-function renderCards(videos){const g=document.getElementById('videoGallery');if(!videos||!videos.length){g.className='empty';g.innerHTML='<div class="icon">🎬</div><h3>ابھی کوئی ویڈیو اپ لوڈ نہیں ہوئی</h3><p>نئی ویڈیوز Admin Dashboard سے اپ لوڈ ہونے پر یہاں نظر آئیں گی۔</p>';return;}g.className='gallery';g.innerHTML='';videos.forEach(v=>{const card=document.createElement('article');card.className='video-card';const thumb=document.createElement('div');thumb.className='thumbnail';if(v.thumbnailUrl){const img=document.createElement('img');img.src=v.thumbnailUrl;img.alt=v.title;thumb.appendChild(img);}else{thumb.textContent='▶';}const lock=document.createElement('span');lock.className='lock';lock.textContent='🔒 Locked';thumb.appendChild(lock);const info=document.createElement('div');info.className='video-info';const h=document.createElement('h3');h.textContent=v.title||'Premium Video';const p=document.createElement('p');p.textContent=v.description||'یہ ویڈیو صرف منظور شدہ ممبرز کے لیے ہے۔';const status=document.createElement('div');status.className='locked';status.textContent='🔒 ممبرشپ درکار ہے';info.append(h,p,status);card.append(thumb,info);g.appendChild(card);});}
-async function loadCatalogue(){try{const r=await jsonp({action:'videosList'});if(!r.success)throw new Error(r.message||'ویڈیوز لوڈ نہیں ہوئیں');renderCards(r.videos||[]);}catch(e){const g=document.getElementById('videoGallery');g.className='empty';g.textContent=e.message;}}
+function renderCards(videos){
+ const g=document.getElementById('videoGallery');
+ if(!videos||!videos.length){g.className='empty';g.innerHTML='<div class="icon">🎬</div><h3>'+tr('emptyVideos')+'</h3><p>'+tr('emptyVideosText')+'</p>';return;}
+ g.className='gallery';g.innerHTML='';
+ videos.forEach(v=>{
+  const card=document.createElement('article');card.className='video-card';
+  const thumb=document.createElement('div');thumb.className='thumbnail';
+  if(v.thumbnailUrl){const img=document.createElement('img');img.src=v.thumbnailUrl;img.alt=v.title||tr('premiumVideo');thumb.appendChild(img);}else{thumb.textContent='▶';}
+  const lock=document.createElement('span');lock.className='lock';lock.textContent=tr('locked');thumb.appendChild(lock);
+  const info=document.createElement('div');info.className='video-info';
+  const h=document.createElement('h3');h.textContent=v.title||tr('premiumVideo');
+  const p=document.createElement('p');p.textContent=v.description||tr('videoDescription');
+  const status=document.createElement('div');status.className='locked';status.textContent=tr('membersOnlyStatus');
+  info.append(h,p,status);card.append(thumb,info);g.appendChild(card);
+ });
+}
+async function loadCatalogue(){try{const r=await jsonp({action:'videosList'});if(!r.success)throw new Error(r.message||tr('serverError'));renderCards(r.videos||[]);}catch(e){const g=document.getElementById('videoGallery');g.className='empty';g.textContent=e.message;}}
 const form=document.getElementById('paymentForm'),submitBtn=document.getElementById('submitBtn'),formMessage=document.getElementById('formMessage');
-form.addEventListener('submit',()=>{submitBtn.disabled=true;submitBtn.textContent='درخواست بھیجی جا رہی ہے...';formMessage.className='message';formMessage.textContent='';});
-window.addEventListener('message',e=>{if(!e.data||!['VIDEOS_PAYMENT_SUCCESS','VIDEOS_PAYMENT_ERROR'].includes(e.data.type))return;submitBtn.disabled=false;submitBtn.textContent='ادائیگی کی تصدیق کے لیے درخواست بھیجیں';if(e.data.type==='VIDEOS_PAYMENT_SUCCESS'){showMessage(formMessage,'آپ کی درخواست موصول ہوگئی ہے۔ براہِ کرم تھوڑا انتظار کریں۔ Admin آپ کی PayPal ادائیگی کی تصدیق کرکے منظوری دے گا۔ منظوری کے بعد آپ کو اسی Gmail پر ویڈیوز تک رسائی کی تفصیل بھیج دی جائے گی۔ شکریہ۔ درخواست نمبر: '+e.data.paymentId,true);form.reset();}else{showMessage(formMessage,e.data.message||'درخواست جمع نہیں ہوسکی۔',false);}});
-document.getElementById('checkAccess').addEventListener('click',async()=>{const email=document.getElementById('accessEmail').value.trim();const msg=document.getElementById('accessMessage');const area=document.getElementById('memberVideos');area.style.display='none';if(!email){showMessage(msg,'براہِ کرم اپنا Gmail درج کریں۔',false);return;}const btn=document.getElementById('checkAccess');btn.disabled=true;try{const r=await jsonp({action:'videosAccess',email});if(!r.access){showMessage(msg,r.message||'آپ کی ممبرشپ ابھی فعال نہیں۔',false);return;}showMessage(msg,'آپ کی ممبرشپ فعال ہے۔ آخری تاریخ: '+new Date(r.expiresAt).toLocaleString(),true);area.style.display='block';area.innerHTML='';(r.videos||[]).forEach(v=>{const box=document.createElement('div');box.style.marginTop='18px';const h=document.createElement('h3');h.textContent=v.title;const frame=document.createElement('iframe');frame.src=v.previewUrl;frame.allow='autoplay; encrypted-media';frame.allowFullscreen=true;box.append(h,frame);area.appendChild(box);});if(!r.videos||!r.videos.length)area.textContent='ابھی کوئی ویڈیو دستیاب نہیں۔';}catch(e){showMessage(msg,e.message,false);}finally{btn.disabled=false;}});
+form.addEventListener('submit',()=>{submitBtn.disabled=true;submitBtn.textContent=tr('requestSending');formMessage.className='message';formMessage.textContent='';});
+window.addEventListener('message',e=>{
+ if(!e.data||!['VIDEOS_PAYMENT_SUCCESS','VIDEOS_PAYMENT_ERROR'].includes(e.data.type))return;
+ submitBtn.disabled=false;submitBtn.textContent=tr('submitRequest');
+ if(e.data.type==='VIDEOS_PAYMENT_SUCCESS'){showMessage(formMessage,tr('requestSuccess')+e.data.paymentId,true);form.reset();}
+ else{showMessage(formMessage,e.data.message||tr('requestError'),false);}
+});
+document.getElementById('checkAccess').addEventListener('click',async()=>{
+ const email=document.getElementById('accessEmail').value.trim(),msg=document.getElementById('accessMessage'),area=document.getElementById('memberVideos');
+ area.style.display='none';
+ if(!email){showMessage(msg,tr('requiredEmail'),false);return;}
+ const btn=document.getElementById('checkAccess');btn.disabled=true;
+ try{
+  const r=await jsonp({action:'videosAccess',email});
+  if(!r.access){showMessage(msg,r.message||tr('noMembership'),false);return;}
+  showMessage(msg,tr('activeMembership')+new Date(r.expiresAt).toLocaleString(),true);
+  area.style.display='block';area.innerHTML='';
+  (r.videos||[]).forEach(v=>{
+   const box=document.createElement('div');box.style.marginTop='18px';
+   const h=document.createElement('h3');h.textContent=v.title||tr('premiumVideo');
+   const frame=document.createElement('iframe');frame.src=v.previewUrl;frame.allow='autoplay; encrypted-media';frame.allowFullscreen=true;
+   box.append(h,frame);area.appendChild(box);
+  });
+  if(!r.videos||!r.videos.length)area.textContent=tr('noMemberVideos');
+ }catch(e){showMessage(msg,e.message,false);}finally{btn.disabled=false;}
+});
 loadCatalogue();
-</script></body></html>
+</script>
+</body>
+</html>
