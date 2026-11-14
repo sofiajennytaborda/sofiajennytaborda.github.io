@@ -88,74 +88,6 @@ header#home {
   cursor: pointer;
 }
 
-/* ===== FINAL RESPONSIVE NAVIGATION ===== */
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  background: var(--navy);
-  box-shadow: 0 5px 18px rgba(0,25,55,.20);
-}
-
-.nav-inner {
-  display: grid;
-  grid-template-columns: repeat(6,minmax(0,1fr));
-  grid-auto-rows: minmax(52px,auto);
-  align-items: stretch;
-  gap: 10px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 13px clamp(12px,2vw,24px);
-}
-
-.navbar .nav-inner a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-width: 0;
-  min-height: 52px;
-  padding: 10px 8px;
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 12px;
-  background: linear-gradient(145deg,#164879,#0b315c);
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.35;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: normal;
-  box-shadow: 0 3px 8px rgba(0,0,0,.15);
-  transition: background .2s ease,color .2s ease,
-    transform .2s ease,box-shadow .2s ease;
-}
-
-.navbar .nav-inner a:hover,
-.navbar .nav-inner a:focus-visible,
-.navbar .nav-inner a.active {
-  background: linear-gradient(135deg,#fff,#dcecff);
-  color: var(--navy);
-  border-color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 13px rgba(0,0,0,.20);
-  outline: none;
-}
-
-/* SMALL LAPTOP */
-@media (min-width:1001px) and (max-width:1200px) {
-  .nav-inner {
-    grid-template-columns: repeat(4,minmax(0,1fr));
-  }
-}
-
 /* INTRODUCTION */
 .intro {
   width: 100%;
@@ -388,110 +320,6 @@ footer {
   line-height: 1.8;
 }
 
-/* TABLET */
-@media (min-width:561px) and (max-width:1000px) {
-  .nav-inner {
-    grid-template-columns: repeat(3,minmax(0,1fr));
-    grid-auto-rows: minmax(52px,auto);
-    gap: 10px;
-    padding: 12px;
-  }
-
-  .navbar .nav-inner a {
-    min-height: 52px;
-    padding: 10px 7px;
-    font-size: 13px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-
-  .visual {
-    height: 210px;
-  }
-}
-
-/* MOBILE */
-@media (max-width:560px) {
-  .nav-inner {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    grid-auto-rows: minmax(54px,auto);
-    gap: 9px;
-    padding: 11px;
-  }
-
-  .navbar .nav-inner a {
-    min-height: 52px;
-    padding: 10px 7px;
-    font-size: 12px;
-    line-height: 1.35;
-    border-radius: 10px;
-  }
-
-  .langbar {
-    justify-content: center;
-    min-height: 60px;
-    padding: 10px 12px;
-  }
-
-  .intro {
-    padding: 36px 15px 10px;
-  }
-
-  .intro p {
-    font-size: 15px;
-  }
-
-  .identity {
-    padding: 20px 10px 30px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .visual {
-    height: 230px;
-  }
-
-  .services {
-    padding: 15px 13px 40px;
-  }
-
-  .services > h2 {
-    font-size: 27px;
-  }
-
-  .card-content {
-    padding: 18px 13px;
-  }
-
-  .note {
-    width: calc(100% - 26px);
-    padding: 14px;
-  }
-}
-
-/* VERY SMALL MOBILE */
-@media (max-width:350px) {
-  .nav-inner {
-    gap: 7px;
-    padding: 8px;
-  }
-
-  .navbar .nav-inner a {
-    min-height: 49px;
-    padding: 8px 5px;
-    font-size: 11px;
-  }
-
-  .visual {
-    height: 195px;
-  }
-}
-
 /* RIGHT-TO-LEFT LANGUAGES */
 html[dir="rtl"] body {
   direction: rtl;
@@ -528,6 +356,250 @@ body {
 img {
   max-width: 100%;
 }
+
+/* THIN GREEN HEADER ACCENT */
+.header-green-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #16d879, #eafff4, #16d879, transparent);
+  background-size: 220% 100%;
+  animation: greenLineMove 4s linear infinite;
+  box-shadow: 0 0 9px rgba(22,216,121,.65);
+}
+@keyframes greenLineMove {
+  from { background-position: 220% 0; }
+  to { background-position: -220% 0; }
+}
+
+/* IMAGE LINKS */
+.visual-image-link {
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.visual-image-link img {
+  transition: transform .35s ease, filter .35s ease;
+}
+.card:hover .visual-image-link img {
+  transform: scale(1.045);
+  filter: saturate(1.08);
+}
+
+/* FLOATING FOLDER BUTTON */
+.folder-menu-toggle {
+  position: fixed;
+  top: 42%;
+  right: 0;
+  z-index: 2100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  width: 52px;
+  min-height: 190px;
+  padding: 13px 8px;
+  border: 1px solid #27df8b;
+  border-right: 0;
+  border-radius: 13px 0 0 13px;
+  background: linear-gradient(160deg, #073c35, #071f32 75%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 13px rgba(28,224,137,.28), -4px 5px 18px rgba(0,0,0,.2);
+}
+.folder-menu-toggle:hover,
+.folder-menu-toggle:focus-visible {
+  box-shadow: 0 0 19px rgba(28,224,137,.55), -4px 5px 18px rgba(0,0,0,.2);
+  outline: 2px solid #a7ffd0;
+  outline-offset: 2px;
+}
+.folder-menu-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+}
+.folder-menu-icon {
+  font-size: 20px;
+  color: #45f0a1;
+  line-height: 1;
+}
+
+/* DRAWER AND OVERLAY */
+.folder-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2190;
+  background: rgba(2,12,23,.58);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.folder-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2200;
+  display: flex;
+  flex-direction: column;
+  width: min(410px, 91vw);
+  height: 100vh;
+  height: 100dvh;
+  padding: 22px 19px 16px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #082e35, #071b2e 70%);
+  color: #fff;
+  border-left: 1px solid rgba(48,239,151,.55);
+  box-shadow: -12px 0 35px rgba(0,0,0,.28);
+  transform: translateX(105%);
+  transition: transform .3s ease;
+}
+body.folder-menu-open .folder-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+body.folder-menu-open .folder-drawer {
+  transform: translateX(0);
+}
+body.folder-menu-open {
+  overflow: hidden;
+}
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.drawer-header h2 {
+  margin: 0 0 6px;
+  color: #fff;
+  font: 700 25px Georgia, "Times New Roman", serif;
+}
+.drawer-header p {
+  color: #b9d7ce;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.drawer-close {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 10px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+.drawer-close:hover {
+  background: #1c9b68;
+}
+.drawer-neon-line {
+  flex: 0 0 2px;
+  width: 100%;
+  margin: 18px 0 14px;
+  background: linear-gradient(90deg, transparent, #29e994, #e8fff4, #29e994, transparent);
+  box-shadow: 0 0 10px rgba(41,233,148,.7);
+}
+.folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  padding: 2px 3px 12px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.folder-list a {
+  display: grid;
+  grid-template-columns: 27px minmax(0,1fr) 14px;
+  align-items: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 9px 11px;
+  border: 1px solid rgba(164,231,202,.17);
+  border-radius: 10px;
+  background: rgba(255,255,255,.055);
+  color: #f4fff9;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.folder-list a:hover,
+.folder-list a:focus-visible {
+  background: rgba(29,194,119,.18);
+  border-color: #39e99a;
+  transform: translateX(-2px);
+  outline: none;
+}
+.folder-emoji {
+  font-size: 19px;
+  text-align: center;
+}
+.folder-arrow {
+  color: #5af0a9;
+  font-size: 23px;
+  line-height: 1;
+}
+.drawer-footer {
+  flex: 0 0 auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.13);
+  color: #a8c9bd;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .4px;
+}
+
+@media (max-width:560px) {
+  .folder-menu-toggle {
+    top: auto;
+    bottom: 24%;
+    width: 44px;
+    min-height: 164px;
+    padding: 10px 6px;
+  }
+  .folder-menu-label {
+    font-size: 9px;
+    letter-spacing: .8px;
+  }
+  .folder-drawer {
+    width: min(390px, 92vw);
+    padding: 18px 14px 13px;
+  }
+  .drawer-header h2 {
+    font-size: 22px;
+  }
+  .folder-list {
+    gap: 7px;
+  }
+  .folder-list a {
+    min-height: 46px;
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-green-line { animation: none; }
+  .folder-overlay, .folder-drawer, .folder-list a, .visual-image-link img {
+    transition: none !important;
+  }
+}
+
 </style>
 </head>
 
@@ -539,6 +611,8 @@ img {
        src="assets/sofia-header-banner.png"
        alt="Sofia Jenny Taborda Official Website">
 </header>
+
+<div class="header-green-line" aria-hidden="true"></div>
 
 <!-- LANGUAGE SELECTOR -->
 <div class="langbar">
@@ -560,24 +634,45 @@ img {
   </select>
 </div>
 
-<!-- MAIN NAVIGATION -->
-<nav class="navbar">
-  <div class="nav-inner" id="navigation">
-    <a href="index.html" data-n="0">Home</a>
-    <a href="premium-videos.html" data-n="1">Sofia Jenny Taborda Videos</a>
-    <a href="photo-gallery.html" data-n="2">Sofia Jenny Taborda Photos</a>
-    <a href="fashion-store.html" data-n="3">Sofia Jenny Taborda Fashion Store</a>
-    <a href="visa-passport.html" data-n="4">Travel & Visa Information</a>
-    <a href="gifts-services.html" data-n="5">Send a Gift to Sofia Jenny Taborda 🎁</a>
-    <a href="long-packages.html" data-n="6">I Want to Meet Sofia Jenny Taborda</a>
-    <a href="herbal-wellness.html" data-n="7">Sofia Jenny Taborda Wellness</a>
-    <a href="whatsapp-premium.html" data-n="8">Sofia Jenny Taborda Personal WhatsApp</a>
-    <a href="work-permit-visa.html" data-n="9">Work Permit Assistance Visa</a>
-    <a href="garments-store.html" data-n="10">Sofia Jenny Taborda Boutique</a>
-    <a href="lucky-draw.html" data-n="11">Sofia Jenny Taborda Lucky Draw</a>
-    <a href="sixey-dolls.html" data-n="12">SIXEY DOLLS</a>
+
+<!-- ALL FOLDERS MENU -->
+<button class="folder-menu-toggle" id="folderMenuToggle"
+        type="button" aria-controls="folderDrawer" aria-expanded="false">
+  <span class="folder-menu-label">VISIT ALL MY FOLDERS</span>
+  <span class="folder-menu-icon" aria-hidden="true">☰</span>
+</button>
+
+<div class="folder-overlay" id="folderOverlay"></div>
+
+<aside class="folder-drawer" id="folderDrawer"
+       aria-hidden="true" aria-label="Website folders">
+  <div class="drawer-header">
+    <div>
+      <h2>Explore All Folders</h2>
+      <p>Choose a section to continue</p>
+    </div>
+    <button class="drawer-close" id="folderClose" type="button"
+            aria-label="Close folders menu">×</button>
   </div>
-</nav>
+  <div class="drawer-neon-line" aria-hidden="true"></div>
+
+  <nav class="folder-list">
+    <a href="premium-videos.html"><span class="folder-emoji">🎬</span><span>Sofia Jenny Taborda Videos</span><span class="folder-arrow">›</span></a>
+    <a href="photo-gallery.html"><span class="folder-emoji">📸</span><span>Sofia Jenny Taborda Photos</span><span class="folder-arrow">›</span></a>
+    <a href="fashion-store.html"><span class="folder-emoji">👗</span><span>Sofia Jenny Taborda Fashion Store</span><span class="folder-arrow">›</span></a>
+    <a href="visa-passport.html"><span class="folder-emoji">✈️</span><span>Travel &amp; Visa Information</span><span class="folder-arrow">›</span></a>
+    <a href="gifts-services.html"><span class="folder-emoji">🎁</span><span>Send a Gift to Sofia Jenny Taborda</span><span class="folder-arrow">›</span></a>
+    <a href="long-packages.html"><span class="folder-emoji">💎</span><span>I Want to Meet Sofia Jenny Taborda</span><span class="folder-arrow">›</span></a>
+    <a href="herbal-wellness.html"><span class="folder-emoji">🌿</span><span>Sofia Jenny Taborda Wellness</span><span class="folder-arrow">›</span></a>
+    <a href="whatsapp-premium.html"><span class="folder-emoji">💬</span><span>Sofia Jenny Taborda Personal WhatsApp</span><span class="folder-arrow">›</span></a>
+    <a href="work-permit-visa.html"><span class="folder-emoji">📋</span><span>Work Permit Assistance Visa</span><span class="folder-arrow">›</span></a>
+    <a href="garments-store.html"><span class="folder-emoji">🛍️</span><span>Sofia Jenny Taborda Boutique</span><span class="folder-arrow">›</span></a>
+    <a href="lucky-draw.html"><span class="folder-emoji">🎉</span><span>Sofia Jenny Taborda Lucky Draw</span><span class="folder-arrow">›</span></a>
+    <a href="sixey-dolls.html"><span class="folder-emoji">🧸</span><span>SIXEY DOLLS</span><span class="folder-arrow">›</span></a>
+  </nav>
+
+  <div class="drawer-footer">Sofia Jenny Taborda · Official Website</div>
+</aside>
 
 <main>
 
@@ -619,7 +714,7 @@ img {
     <!-- 1 PREMIUM VIDEOS -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Premium%20Pink%20Play%20Preview.png" alt="Premium Videos">
+        <a class="visual-image-link" href="premium-videos.html" aria-label="Premium Videos"><img src="assets/Premium%20Pink%20Play%20Preview.png" alt="Premium Videos"></a>
       </div>
       <div class="card-content">
         <h3 data-t="0">Sofia Jenny Taborda Videos</h3>
@@ -631,7 +726,7 @@ img {
     <!-- 2 PHOTO GALLERY -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Glamorous%20Purple%20Photo%20Gallery%20Banner.png" alt="Photo Gallery">
+        <a class="visual-image-link" href="photo-gallery.html" aria-label="Photo Gallery"><img src="assets/Glamorous%20Purple%20Photo%20Gallery%20Banner.png" alt="Photo Gallery"></a>
       </div>
       <div class="card-content">
         <h3 data-t="1">Sofia Jenny Taborda Photos</h3>
@@ -643,7 +738,7 @@ img {
     <!-- 3 FASHION STORE -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Trendy%20Fashion%20Store%20Poster.png" alt="Fashion Store">
+        <a class="visual-image-link" href="fashion-store.html" aria-label="Fashion Store"><img src="assets/Trendy%20Fashion%20Store%20Poster.png" alt="Fashion Store"></a>
       </div>
       <div class="card-content">
         <h3 data-t="2">Sofia Jenny Taborda Fashion Store</h3>
@@ -655,7 +750,7 @@ img {
     <!-- 4 VISA AND PASSPORT -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Passport%20Services%20Travel%20Poster.png" alt="Visa and Passport">
+        <a class="visual-image-link" href="visa-passport.html" aria-label="Visa and Passport"><img src="assets/Passport%20Services%20Travel%20Poster.png" alt="Visa and Passport"></a>
       </div>
       <div class="card-content">
         <h3 data-t="3">Travel & Visa Information</h3>
@@ -667,7 +762,7 @@ img {
     <!-- 5 GIFTS AND SERVICES -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Gifts%20%26%20Services%20Promotional%20Poster.png" alt="Gifts and Services">
+        <a class="visual-image-link" href="gifts-services.html" aria-label="Gifts and Services"><img src="assets/Gifts%20%26%20Services%20Promotional%20Poster.png" alt="Gifts and Services"></a>
       </div>
       <div class="card-content">
         <h3 data-t="4">Send a Gift to Sofia Jenny Taborda 🎁</h3>
@@ -679,7 +774,7 @@ img {
     <!-- 6 LONG PACKAGE SYSTEM -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png" alt="Long Package System">
+        <a class="visual-image-link" href="long-packages.html" aria-label="Long Package System"><img src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png" alt="Long Package System"></a>
       </div>
       <div class="card-content">
         <h3 data-t="5">I Want to Meet Sofia Jenny Taborda</h3>
@@ -691,7 +786,7 @@ img {
     <!-- 7 HERBAL WELLNESS -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Sofia%20Herbal%20Wellness%20Promotional%20Banner.png" alt="Herbal Wellness">
+        <a class="visual-image-link" href="herbal-wellness.html" aria-label="Herbal Wellness"><img src="assets/Sofia%20Herbal%20Wellness%20Promotional%20Banner.png" alt="Herbal Wellness"></a>
       </div>
       <div class="card-content">
         <h3 data-t="6">Sofia Jenny Taborda Wellness</h3>
@@ -703,7 +798,7 @@ img {
     <!-- 8 WHATSAPP PREMIUM -->
     <article class="card">
       <div class="visual">
-        <img src="assets/WhatsApp%20Premium%20Subscription%20Banner.png" alt="WhatsApp Premium">
+        <a class="visual-image-link" href="whatsapp-premium.html" aria-label="WhatsApp Premium"><img src="assets/WhatsApp%20Premium%20Subscription%20Banner.png" alt="WhatsApp Premium"></a>
       </div>
       <div class="card-content">
         <h3 data-t="7">Sofia Jenny Taborda Personal WhatsApp</h3>
@@ -715,7 +810,7 @@ img {
     <!-- 9 WORK PERMIT VISA -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Work%20Permit%20Visa%20Abroad%20Ad.png" alt="Work Permit Visa">
+        <a class="visual-image-link" href="work-permit-visa.html" aria-label="Work Permit Visa"><img src="assets/Work%20Permit%20Visa%20Abroad%20Ad.png" alt="Work Permit Visa"></a>
       </div>
       <div class="card-content">
         <h3 data-t="8">Work Permit Assistance Visa</h3>
@@ -727,7 +822,7 @@ img {
     <!-- 10 GARMENTS STORE -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Sofia%20Jenny%20Under%20Garments%20Advertisement.png" alt="Garments Store">
+        <a class="visual-image-link" href="garments-store.html" aria-label="Garments Store"><img src="assets/Sofia%20Jenny%20Under%20Garments%20Advertisement.png" alt="Garments Store"></a>
       </div>
       <div class="card-content">
         <h3 data-t="9">Sofia Jenny Taborda Boutique</h3>
@@ -739,7 +834,7 @@ img {
     <!-- 11 LUCKY DRAW -->
     <article class="card">
       <div class="visual">
-        <img src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png" alt="Lucky Draw">
+        <a class="visual-image-link" href="lucky-draw.html" aria-label="Lucky Draw"><img src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png" alt="Lucky Draw"></a>
       </div>
       <div class="card-content">
         <h3 data-t="10">Sofia Jenny Taborda Lucky Draw</h3>
@@ -752,7 +847,7 @@ img {
     <!-- 12 SIXEY DOLLS -->
     <article class="card">
       <div class="visual">
-        <img src="assets/sixey-dolls.jpg" alt="SIXEY DOLLS">
+        <a class="visual-image-link" href="sixey-dolls.html" aria-label="SIXEY DOLLS"><img src="assets/sixey-dolls.jpg" alt="SIXEY DOLLS"></a>
       </div>
       <div class="card-content">
         <h3 data-t="11">SIXEY DOLLS</h3>
@@ -1039,14 +1134,49 @@ document.querySelectorAll(".visual img").forEach(img => {
 });
 
 
-/* ACTIVE NAVIGATION */
-document.querySelectorAll(".navbar a").forEach(link => {
 
-  if (link.getAttribute("href") === "index.html") {
-    link.classList.add("active");
+
+/* ALL-FOLDERS DRAWER */
+(() => {
+  const openButton = document.getElementById("folderMenuToggle");
+  const closeButton = document.getElementById("folderClose");
+  const overlay = document.getElementById("folderOverlay");
+  const drawer = document.getElementById("folderDrawer");
+
+  if (!openButton || !closeButton || !overlay || !drawer) return;
+
+  function openDrawer() {
+    document.body.classList.add("folder-menu-open");
+    openButton.setAttribute("aria-expanded", "true");
+    drawer.setAttribute("aria-hidden", "false");
+    closeButton.focus();
   }
 
-});
+  function closeDrawer() {
+    document.body.classList.remove("folder-menu-open");
+    openButton.setAttribute("aria-expanded", "false");
+    drawer.setAttribute("aria-hidden", "true");
+    openButton.focus();
+  }
+
+  openButton.addEventListener("click", openDrawer);
+  closeButton.addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && document.body.classList.contains("folder-menu-open")) {
+      closeDrawer();
+    }
+  });
+
+  drawer.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("folder-menu-open");
+      openButton.setAttribute("aria-expanded", "false");
+      drawer.setAttribute("aria-hidden", "true");
+    });
+  });
+})();
 
 </script>
 
