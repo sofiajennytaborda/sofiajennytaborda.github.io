@@ -658,19 +658,19 @@ body.folder-menu-open {
   font-size: 16px;
 }
 .intro h1 {
-  animation: welcomeLight 3s ease-in-out infinite alternate;
-  text-shadow: 0 0 4px rgba(31,119,190,.16),
-               0 0 12px rgba(31,119,190,.12);
+  animation: welcomeLight 2.8s ease-in-out infinite alternate;
+  text-shadow: 0 0 5px rgba(31,119,190,.25),
+               0 0 14px rgba(31,119,190,.20);
 }
 @keyframes welcomeLight {
   from {
-    text-shadow: 0 0 3px rgba(31,119,190,.12),
-                 0 0 9px rgba(31,119,190,.12);
+    text-shadow: 0 0 4px rgba(31,119,190,.20),
+                 0 0 10px rgba(31,119,190,.18);
   }
   to {
-    text-shadow: 0 0 5px rgba(31,119,190,.28),
-                 0 0 18px rgba(31,119,190,.22),
-                 0 0 28px rgba(32,216,121,.12);
+    text-shadow: 0 0 7px rgba(31,119,190,.42),
+                 0 0 20px rgba(31,119,190,.34),
+                 0 0 32px rgba(32,216,121,.22);
   }
 }
 @media (max-width: 700px) {
@@ -1339,8 +1339,10 @@ function applyLanguage(code) {
     const index = Number(el.dataset.b);
     const label = el.querySelector(".button-label");
     if (label) {
-      label.textContent = d.buttons[index] || d.titles[index] ||
-        serviceCategoryNames[index] || "";
+      label.textContent = index === 1
+        ? "Sofia Jenny Taborda Photos"
+        : (d.buttons[index] || d.titles[index] ||
+           serviceCategoryNames[index] || "");
     }
   });
 
