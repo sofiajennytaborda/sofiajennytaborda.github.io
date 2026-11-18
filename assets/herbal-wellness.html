@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Discover herbal wellness products. View available items and place an order using the product-specific PayPal payment link.">
+<title>Sofia Jenny Taborda Wellness | Sofia Jenny Taborda</title>
+<link rel="stylesheet" href="paid-folder.css">
+<link rel="stylesheet" href="service-pages.css">
+<script src="service-pages.js" defer></script>
+</head>
+<body data-page-type="store" data-category="Herbal Wellness">
+<header>
+  <a class="brand" href="index.html"><span class="brand-mark">🌿</span><span>Sofia Jenny Taborda</span></a>
+  <div class="header-actions"><a class="back-home" href="index.html">← Back to Home</a></div>
+</header>
+<div class="green-line"></div>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">SOFIA JENNY TABORDA COLLECTION</span>
+      <h1>Sofia Jenny Taborda Wellness</h1>
+      <p>Discover herbal wellness products. View available items and place an order using the product-specific PayPal payment link.</p>
+      <p class="note">Browse the items uploaded by Sofia. Select a product, pay through its PayPal button, then submit your order details and payment screenshot.</p>
+      <div id="setupStatus" class="status" aria-live="polite"></div>
+    </div>
+    <div class="hero-image"><img src="assets/Sofia%20Herbal%20Wellness%20Promotional%20Banner.png" alt="Sofia Jenny Taborda Wellness" onerror="this.style.display='none'"></div>
+  </section>
+
+  <section class="section">
+    <h2>Available Collection</h2>
+    <p class="section-intro">Only active products with a price and PayPal link configured in the Admin Panel appear here.</p>
+    <div id="catalogueGrid" class="catalogue-grid"></div>
+    <div id="emptyState" class="empty">Loading products…</div>
+  </section>
+
+  <section class="section hidden" id="orderSection">
+    <h2>Place Your Order</h2>
+    <p class="section-intro">First complete the PayPal payment for the selected item. Then submit the same transaction ID and your contact and delivery details.</p>
+    <div class="selected-service">
+      <strong id="selectedProductName">Selected product</strong>
+      <span id="selectedProductPrice"></span>
+    </div>
+    <div class="button-row"><a id="orderPayPal" class="pay-button" href="#" target="_blank" rel="noopener noreferrer">Pay with PayPal</a></div>
+    <form id="orderForm" target="responseFrame" method="post">
+      <input type="hidden" name="action" value="productOrder">
+      <input type="hidden" id="productId" name="productId" value="">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" id="orderScreenshotData" name="screenshotData" value="">
+      <div class="form-grid">
+        <div class="field"><label for="orderName">Your Name</label><input id="orderName" name="name" required maxlength="100" autocomplete="name"></div>
+        <div class="field"><label for="orderEmail">Gmail / Email</label><input id="orderEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="orderPhone">WhatsApp / Mobile Number</label><input id="orderPhone" name="phone" type="tel" required maxlength="35" autocomplete="tel"></div>
+        <div class="field"><label for="orderAddress">Full Delivery Address</label><input id="orderAddress" name="address" required maxlength="500" autocomplete="street-address"></div>
+        <div class="field full"><label for="orderTxn">PayPal Transaction ID</label><input id="orderTxn" name="transactionId" required maxlength="120" autocomplete="off"></div>
+        <div class="field full"><label for="orderScreenshot">Payment Screenshot</label><input id="orderScreenshot" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small">JPG, PNG or WEBP · Maximum 6 MB</span></div>
+      </div>
+      <div class="button-row"><button id="orderSubmit" class="request-submit" type="submit">Submit Order Request</button><span class="small">Sofia will verify your PayPal transaction before approving the order.</span></div>
+      <div id="orderStatus" class="status" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<iframe id="responseFrame" name="responseFrame" class="response-frame" title="Order request response"></iframe>
+<footer>© 2026 Sofia Jenny Taborda · Official Website</footer>
+</body>
+</html>

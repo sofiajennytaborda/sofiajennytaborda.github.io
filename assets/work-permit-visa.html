@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore available work permit assistance listings. Select a service, complete PayPal payment and submit your applicant details and documents for review.">
+<title>Work Permit Assistance Visa | Sofia Jenny Taborda</title>
+<link rel="stylesheet" href="paid-folder.css">
+<link rel="stylesheet" href="service-pages.css">
+<script src="service-pages.js" defer></script>
+</head>
+<body data-page-type="service" data-category="Work Permit Visa">
+<header>
+  <a class="brand" href="index.html"><span class="brand-mark">📋</span><span>Sofia Jenny Taborda</span></a>
+  <div class="header-actions"><a class="back-home" href="index.html">← Back to Home</a></div>
+</header>
+<div class="green-line"></div>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">TRAVEL & APPLICATION SERVICES</span>
+      <h1>Work Permit Assistance Visa</h1>
+      <p>Explore available work permit assistance listings. Select a service, complete PayPal payment and submit your applicant details and documents for review.</p>
+      <p class="note">Choose an active service listing uploaded by Sofia. Each listing has its own price and PayPal payment link.</p>
+      <div id="setupStatus" class="status" aria-live="polite"></div>
+    </div>
+    <div class="hero-image"><img src="assets/Work%20Permit%20Visa%20Abroad%20Ad.png" alt="Work Permit Assistance Visa" onerror="this.style.display='none'"></div>
+  </section>
+
+  <section class="section">
+    <h2>Available Services</h2>
+    <p class="section-intro">The services below are managed through the Admin Panel. Select a listing to see its payment and application form.</p>
+    <div id="catalogueGrid" class="catalogue-grid"></div>
+    <div id="emptyState" class="empty">Loading services…</div>
+  </section>
+
+  <section class="section hidden" id="applicationSection">
+    <h2>Service Application</h2>
+    <p class="section-intro">Complete the PayPal payment for the selected listing, then submit the transaction ID and required applicant documents.</p>
+    <div class="selected-service">
+      <strong id="selectedServiceName">Selected service</strong>
+      <span id="selectedServicePrice"></span>
+    </div>
+    <div class="button-row"><a id="applicationPayPal" class="pay-button" href="#" target="_blank" rel="noopener noreferrer">Pay with PayPal</a></div>
+
+    <form id="applicationForm" target="responseFrame" method="post">
+      <input type="hidden" name="action" value="serviceApplication">
+      <input type="hidden" id="listingId" name="listingId" value="">
+      <input type="hidden" id="serviceTypeValue" name="serviceType" value="">
+      <input type="hidden" id="applicationScreenshotData" name="screenshotData" value="">
+      <input type="hidden" id="idFrontData" name="idFrontData" value="">
+      <input type="hidden" id="idBackData" name="idBackData" value="">
+      <input type="hidden" id="passportData" name="passportData" value="">
+      <input type="hidden" id="applicantPhotoData" name="applicantPhotoData" value="">
+
+      <div class="form-grid">
+        <div class="field"><label for="appCountry">Destination Country</label><input id="appCountry" name="country" required maxlength="100"></div>
+        <div class="field"><label for="appName">Applicant Full Name</label><input id="appName" name="name" required maxlength="120" autocomplete="name"></div>
+        <div class="field"><label for="appFather">Father / Husband Name</label><input id="appFather" name="fatherHusbandName" required maxlength="120"></div>
+        <div class="field"><label for="appGender">Gender</label><select id="appGender" name="gender" required><option value="">Select gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select></div>
+        <div class="field"><label for="appEmail">Gmail / Email</label><input id="appEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="appPhone">Mobile / WhatsApp Number</label><input id="appPhone" name="phone" type="tel" required maxlength="35" autocomplete="tel"></div>
+        <div class="field full"><label for="appTxn">PayPal Transaction ID</label><input id="appTxn" name="transactionId" required maxlength="120" autocomplete="off"></div>
+      </div>
+
+      <h3 style="margin:22px 0 10px;color:var(--navy)">Required Documents</h3>
+      <p class="form-help">Upload clear JPG, PNG or WEBP images. Images are compressed in your browser before secure submission. Do not upload original documents unless you intend to submit this application.</p>
+      <div class="document-grid" style="margin-top:12px">
+        <div class="document-field"><label for="applicationScreenshot">PayPal Payment Screenshot</label><input id="applicationScreenshot" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+        <div class="document-field"><label for="idFrontFile">ID Card – Front</label><input id="idFrontFile" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+        <div class="document-field"><label for="idBackFile">ID Card – Back</label><input id="idBackFile" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+        <div class="document-field"><label for="passportFile">Passport – Bio Page</label><input id="passportFile" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+        <div class="document-field full"><label for="applicantPhotoFile">Applicant Recent Photo</label><input id="applicantPhotoFile" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+      </div>
+
+      <label class="consent-row"><input type="checkbox" name="documentConsent" value="yes" required><span>I consent to the secure processing and storage of the documents I submit for this application.</span></label>
+      <div class="service-disclaimer">Important: payment verification and acceptance of an application for processing do not guarantee a visa, passport, work permit or government approval. Final decisions are made by the relevant government authorities.</div>
+      <div class="button-row"><button id="applicationSubmit" class="request-submit" type="submit">Submit Application</button><span class="small">Sofia will verify the payment and review the submitted documents.</span></div>
+      <div id="applicationStatus" class="status" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<iframe id="responseFrame" name="responseFrame" class="response-frame" title="Application request response"></iframe>
+<footer>© 2026 Sofia Jenny Taborda · Official Website</footer>
+</body>
+</html>

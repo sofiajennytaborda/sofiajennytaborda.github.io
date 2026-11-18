@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore active Sofia Jenny Taborda Lucky Draws, view prizes and submit an entry after PayPal payment.">
+<title>Sofia Jenny Taborda Lucky Draw | Sofia Jenny Taborda</title>
+<link rel="stylesheet" href="paid-folder.css">
+<link rel="stylesheet" href="service-pages.css">
+<script src="service-pages.js" defer></script>
+</head>
+<body data-page-type="lucky" data-category="Lucky Draw">
+<header>
+  <a class="brand" href="index.html"><span class="brand-mark">🎉</span><span>Sofia Jenny Taborda</span></a>
+  <div class="header-actions"><a class="back-home" href="index.html">← Back to Home</a></div>
+</header>
+<div class="green-line"></div>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">SPECIAL PRIZES & GIVEAWAYS</span>
+      <h1>Sofia Jenny Taborda Lucky Draw</h1>
+      <p>Explore the active draws, check each prize and entry price, and submit your entry after completing the PayPal payment.</p>
+      <p class="note">Each active draw and its entry price are managed by Sofia through the Admin Panel.</p>
+      <div id="setupStatus" class="status" aria-live="polite"></div>
+    </div>
+    <div class="hero-image"><img src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png" alt="Sofia Jenny Taborda Lucky Draw" onerror="this.style.display='none'"></div>
+  </section>
+
+  <section class="section">
+    <h2>Active Lucky Draws</h2>
+    <p class="section-intro">Choose a draw to see its PayPal link and submit your entry details.</p>
+    <div id="drawGrid" class="draw-grid"></div>
+    <div id="emptyState" class="empty">Loading active draws…</div>
+  </section>
+
+  <section class="section hidden" id="entrySection">
+    <h2>Submit Your Lucky Draw Entry</h2>
+    <div class="selected-service">
+      <strong id="selectedDrawName">Selected draw</strong>
+      <span id="selectedDrawPrize"></span><br>
+      <span id="selectedDrawPrice"></span>
+    </div>
+    <div class="button-row"><a id="entryPayPal" class="pay-button" href="#" target="_blank" rel="noopener noreferrer">Pay Entry Fee with PayPal</a></div>
+    <p class="form-help">The page accepts one entry per payment request. If you want another entry, submit a separate payment request.</p>
+    <form id="entryForm" target="responseFrame" method="post">
+      <input type="hidden" name="action" value="luckyEntry">
+      <input type="hidden" id="drawId" name="drawId" value="">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" id="entryScreenshotData" name="screenshotData" value="">
+      <div class="form-grid">
+        <div class="field"><label for="entryName">Your Name</label><input id="entryName" name="name" required maxlength="100" autocomplete="name"></div>
+        <div class="field"><label for="entryEmail">Gmail / Email</label><input id="entryEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="entryPhone">Mobile / WhatsApp Number</label><input id="entryPhone" name="phone" type="tel" required maxlength="35" autocomplete="tel"></div>
+        <div class="field"><label for="entryTxn">PayPal Transaction ID</label><input id="entryTxn" name="transactionId" required maxlength="120" autocomplete="off"></div>
+        <div class="field full"><label for="entryScreenshot">Payment Screenshot</label><input id="entryScreenshot" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small">JPG, PNG or WEBP · Maximum 6 MB</span></div>
+      </div>
+      <div class="button-row"><button id="entrySubmit" class="request-submit" type="submit">Submit Entry</button><span class="small">Your entry remains pending until Sofia verifies your PayPal payment.</span></div>
+      <div id="entryStatus" class="status" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<iframe id="responseFrame" name="responseFrame" class="response-frame" title="Lucky Draw entry response"></iframe>
+<footer>© 2026 Sofia Jenny Taborda · Official Website</footer>
+</body>
+</html>
