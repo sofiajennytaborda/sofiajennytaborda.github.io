@@ -2,7 +2,9 @@
 (() => {
   "use strict";
 
-  const API_URL = "https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec";
+
+const API_URL = "https://script.google.com/macros/s/AKfycbxas1YC9rxUuaMgd4opSGhSdCzoxILjEdbbjM_fHTQ0RNNkkcMTjEhSJgf2O1u8PammFw/exec";
+
 
   const category = document.body.dataset.category || "";
   const isWhatsApp = category === "WhatsApp Premium";
