@@ -1,268 +1,432 @@
-
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<meta name="description" content="Explore the SIXEY DOLLS collection. Browse products, individual prices and PayPal payment options.">
-
+<meta name="description" content="Explore the SIXEY DOLLS collection. Available products, prices and PayPal payment links are managed by the administrator.">
 <title>SIXEY DOLLS | Sofia Jenny Taborda</title>
 
 <link rel="stylesheet" href="paid-folder.css">
 <link rel="stylesheet" href="service-pages.css">
-
 <script src="service-pages.js" defer></script>
+
+<style>
+.brand-logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  border-radius:10px;
+  display:block;
+  flex-shrink:0;
+  background:#fff;
+}
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.lang-select{
+  padding:9px 11px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+  color:var(--ink);
+}
+html[dir="rtl"] body{
+  text-align:right;
+}
+html[dir="rtl"] .header-actions{
+  flex-direction:row-reverse;
+}
+</style>
 </head>
 
-<body data-page-type="store" data-category="SIXEY DOLLS">
-
+<body data-page-type="store" data-category="SIXY DOLLS">
 <header>
   <a class="brand" href="index.html">
-    <span class="brand-mark">🧸</span>
+    <img class="brand-logo" src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
     <span>Sofia Jenny Taborda</span>
   </a>
 
   <div class="header-actions">
-    <a class="back-home" href="index.html">← Back to Home</a>
+    <select id="languageSelect" class="lang-select" aria-label="Choose language">
+      <option value="en">English</option>
+      <option value="ur">اردو</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="hi">हिन्दी</option>
+      <option value="zh">中文</option>
+    </select>
+
+    <a class="back-home" href="index.html" id="backHomeText">← Back to Home</a>
   </div>
 </header>
 
 <div class="green-line"></div>
 
 <main>
-
   <section class="hero">
-
     <div class="hero-copy">
-
-      <span class="eyebrow">
-        SOFIA JENNY TABORDA COLLECTION
-      </span>
-
-      <h1>SIXEY DOLLS</h1>
-
-      <p>
-        Welcome to the exclusive SIXEY DOLLS collection.
-        Explore our available dolls and products, view
-        individual prices and place your order securely.
+      <span class="eyebrow" id="eyebrowText">SOFIA JENNY TABORDA COLLECTION</span>
+      <h1 id="pageTitle">SIXEY DOLLS</h1>
+      <p id="heroDesc">
+        Explore the SIXEY DOLLS collection. Available products, prices and PayPal payment links are managed by the administrator.
       </p>
-
-      <p class="note">
-        Each product has its own price and PayPal payment link.
-        Select your favourite product, complete payment and
-        submit your order details.
+      <p class="note" id="heroNote">
+        Browse the items uploaded by Sofia. Select a product, pay through its PayPal button, then submit your order details and payment screenshot.
       </p>
-
       <div id="setupStatus" class="status" aria-live="polite"></div>
-
     </div>
 
     <div class="hero-image">
-      <img
-        src="assets/sixey-dolls.jpg"
-        alt="SIXEY DOLLS Collection"
-        onerror="this.style.display='none'"
-      >
+      <img src="assets/sixey-dolls.jpg" alt="SIXEY DOLLS" onerror="this.style.display='none'">
     </div>
-
   </section>
 
   <section class="section">
-
-    <h2>SIXEY DOLLS Collection</h2>
-
-    <p class="section-intro">
-      Explore all available SIXEY DOLLS products.
-      Each product has its own price, description and
-      PayPal payment option managed through the Admin Panel.
+    <h2 id="collectionTitle">Available Collection</h2>
+    <p class="section-intro" id="collectionIntro">
+      Only active products with a price and PayPal link configured in the Admin Panel appear here.
     </p>
-
     <div id="catalogueGrid" class="catalogue-grid"></div>
-
-    <div id="emptyState" class="empty">
-      Loading SIXEY DOLLS products...
-    </div>
-
+    <div id="emptyState" class="empty">Loading products…</div>
   </section>
 
   <section class="section hidden" id="orderSection">
-
-    <h2>Place Your Order</h2>
-
-    <p class="section-intro">
-      Complete the PayPal payment for your selected product.
-      Then submit your transaction ID and contact details.
+    <h2 id="orderTitle">Place Your Order</h2>
+    <p class="section-intro" id="orderIntro">
+      First complete the PayPal payment for the selected item. Then submit the same transaction ID and your contact and delivery details.
     </p>
 
     <div class="selected-service">
-
-      <strong id="selectedProductName">
-        Selected product
-      </strong>
-
+      <strong id="selectedProductName">Selected product</strong>
       <span id="selectedProductPrice"></span>
-
     </div>
 
     <div class="button-row">
-
-      <a
-        id="orderPayPal"
-        class="pay-button"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pay with PayPal
-      </a>
-
+      <a id="orderPayPal" class="pay-button" href="#" target="_blank" rel="noopener noreferrer">Pay with PayPal</a>
     </div>
 
     <form id="orderForm" target="responseFrame" method="post">
-
       <input type="hidden" name="action" value="productOrder">
-
-      <input
-        type="hidden"
-        id="productId"
-        name="productId"
-        value=""
-      >
-
+      <input type="hidden" id="productId" name="productId" value="">
       <input type="hidden" name="quantity" value="1">
-
-      <input
-        type="hidden"
-        id="orderScreenshotData"
-        name="screenshotData"
-        value=""
-      >
+      <input type="hidden" id="orderScreenshotData" name="screenshotData" value="">
 
       <div class="form-grid">
-
         <div class="field">
-          <label for="orderName">Your Name</label>
-          <input
-            id="orderName"
-            name="name"
-            required
-            maxlength="100"
-            autocomplete="name"
-          >
+          <label for="orderName" id="labelName">Your Name</label>
+          <input id="orderName" name="name" required maxlength="100" autocomplete="name">
         </div>
 
         <div class="field">
-          <label for="orderEmail">Gmail / Email</label>
-          <input
-            id="orderEmail"
-            name="email"
-            type="email"
-            required
-            maxlength="160"
-            autocomplete="email"
-          >
+          <label for="orderEmail" id="labelEmail">Gmail / Email</label>
+          <input id="orderEmail" name="email" type="email" required maxlength="160" autocomplete="email">
         </div>
 
         <div class="field">
-          <label for="orderPhone">WhatsApp / Mobile Number</label>
-          <input
-            id="orderPhone"
-            name="phone"
-            type="tel"
-            required
-            maxlength="35"
-            autocomplete="tel"
-          >
+          <label for="orderPhone" id="labelPhone">WhatsApp / Mobile Number</label>
+          <input id="orderPhone" name="phone" type="tel" required maxlength="35" autocomplete="tel">
         </div>
 
         <div class="field">
-          <label for="orderAddress">Full Delivery Address</label>
-          <input
-            id="orderAddress"
-            name="address"
-            required
-            maxlength="500"
-            autocomplete="street-address"
-          >
+          <label for="orderAddress" id="labelAddress">Full Delivery Address</label>
+          <input id="orderAddress" name="address" required maxlength="500" autocomplete="street-address">
         </div>
 
         <div class="field full">
-
-          <label for="orderTxn">
-            PayPal Transaction ID
-          </label>
-
-          <input
-            id="orderTxn"
-            name="transactionId"
-            required
-            maxlength="120"
-            autocomplete="off"
-          >
-
+          <label for="orderTxn" id="labelTxn">PayPal Transaction ID</label>
+          <input id="orderTxn" name="transactionId" required maxlength="120" autocomplete="off">
         </div>
 
         <div class="field full">
-
-          <label for="orderScreenshot">
-            Payment Screenshot
-          </label>
-
-          <input
-            id="orderScreenshot"
-            type="file"
-            accept="image/jpeg,image/png,image/webp"
-            required
-          >
-
-          <span class="small">
-            JPG, PNG or WEBP · Maximum 6 MB
-          </span>
-
+          <label for="orderScreenshot" id="labelScreenshot">Payment Screenshot</label>
+          <input id="orderScreenshot" type="file" accept="image/jpeg,image/png,image/webp" required>
+          <span class="small" id="shotNote">JPG, PNG or WEBP · Maximum 6 MB</span>
         </div>
-
       </div>
 
       <div class="button-row">
-
-        <button
-          id="orderSubmit"
-          class="request-submit"
-          type="submit"
-        >
-          Submit Order Request
-        </button>
-
-        <span class="small">
-          Your order will remain pending until Sofia
-          verifies your PayPal payment.
-        </span>
-
+        <button id="orderSubmit" class="request-submit" type="submit">Submit Order Request</button>
+        <span class="small" id="submitNote">Sofia will verify your PayPal transaction before approving the order.</span>
       </div>
 
-      <div
-        id="orderStatus"
-        class="status"
-        aria-live="polite"
-      ></div>
-
+      <div id="orderStatus" class="status" aria-live="polite"></div>
     </form>
-
   </section>
-
 </main>
 
-<iframe
-  id="responseFrame"
-  name="responseFrame"
-  class="response-frame"
-  title="SIXEY DOLLS Order Response"
-></iframe>
+<iframe id="responseFrame" name="responseFrame" class="response-frame" title="Order request response"></iframe>
 
-<footer>
-  © 2026 Sofia Jenny Taborda · Official Website
-</footer>
+<footer>© 2026 Sofia Jenny Taborda · Official Website</footer>
 
+<script>
+const translations = {
+  en: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Back to Home",
+    eyebrow: "SOFIA JENNY TABORDA COLLECTION",
+    heroDesc: "Explore the SIXEY DOLLS collection. Available products, prices and PayPal payment links are managed by the administrator.",
+    heroNote: "Browse the items uploaded by Sofia. Select a product, pay through its PayPal button, then submit your order details and payment screenshot.",
+    collectionTitle: "Available Collection",
+    collectionIntro: "Only active products with a price and PayPal link configured in the Admin Panel appear here.",
+    emptyState: "Loading products…",
+    orderTitle: "Place Your Order",
+    orderIntro: "First complete the PayPal payment for the selected item. Then submit the same transaction ID and your contact and delivery details.",
+    labelName: "Your Name",
+    labelEmail: "Gmail / Email",
+    labelPhone: "WhatsApp / Mobile Number",
+    labelAddress: "Full Delivery Address",
+    labelTxn: "PayPal Transaction ID",
+    labelScreenshot: "Payment Screenshot",
+    shotNote: "JPG, PNG or WEBP · Maximum 6 MB",
+    orderPayPal: "Pay with PayPal",
+    orderSubmit: "Submit Order Request",
+    submitNote: "Sofia will verify your PayPal transaction before approving the order."
+  },
+  ur: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← ہوم پر واپس جائیں",
+    eyebrow: "صوفیہ جینی ٹبورڈا کلیکشن",
+    heroDesc: "SIXEY DOLLS کلیکشن دیکھیں۔ دستیاب پروڈکٹس، قیمتیں اور PayPal ادائیگی لنکس ایڈمنسٹریٹر کے ذریعے مینیج ہوتے ہیں۔",
+    heroNote: "صوفیہ کی اپلوڈ کی گئی آئٹمز دیکھیں۔ پسندیدہ پروڈکٹ منتخب کریں، اس کے PayPal بٹن سے ادائیگی کریں، پھر اپنا آرڈر اور اسکرین شاٹ جمع کریں۔",
+    collectionTitle: "دستیاب کلیکشن",
+    collectionIntro: "صرف وہی ایکٹیو پروڈکٹس یہاں نظر آئیں گی جن کی قیمت اور PayPal لنک ایڈمن پینل میں موجود ہوگا۔",
+    emptyState: "پروڈکٹس لوڈ ہو رہی ہیں…",
+    orderTitle: "اپنا آرڈر دیں",
+    orderIntro: "پہلے منتخب آئٹم کی PayPal ادائیگی مکمل کریں۔ پھر وہی ٹرانزیکشن آئی ڈی اور اپنی رابطہ و ڈیلیوری معلومات جمع کریں۔",
+    labelName: "آپ کا نام",
+    labelEmail: "جی میل / ای میل",
+    labelPhone: "واٹس ایپ / موبائل نمبر",
+    labelAddress: "مکمل ڈیلیوری پتہ",
+    labelTxn: "PayPal ٹرانزیکشن آئی ڈی",
+    labelScreenshot: "ادائیگی کا اسکرین شاٹ",
+    shotNote: "JPG, PNG یا WEBP · زیادہ سے زیادہ 6 MB",
+    orderPayPal: "PayPal سے ادائیگی کریں",
+    orderSubmit: "آرڈر ریکویسٹ جمع کریں",
+    submitNote: "آرڈر منظور ہونے سے پہلے صوفیہ آپ کی PayPal ادائیگی ویریفائی کرے گی۔"
+  },
+  es: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Volver al inicio",
+    eyebrow: "COLECCIÓN DE SOFIA JENNY TABORDA",
+    heroDesc: "Explora la colección SIXEY DOLLS. Los productos disponibles, precios y enlaces de pago PayPal son gestionados por la administradora.",
+    heroNote: "Explora los artículos subidos por Sofia. Selecciona un producto, paga con su botón de PayPal y luego envía los detalles de tu pedido y la captura de pago.",
+    collectionTitle: "Colección disponible",
+    collectionIntro: "Aquí aparecen solo los productos activos con precio y enlace de PayPal configurados en el panel de administración.",
+    emptyState: "Cargando productos…",
+    orderTitle: "Haz tu pedido",
+    orderIntro: "Primero completa el pago de PayPal para el artículo seleccionado. Luego envía el mismo ID de transacción y tus datos de contacto y entrega.",
+    labelName: "Tu nombre",
+    labelEmail: "Gmail / Correo electrónico",
+    labelPhone: "WhatsApp / Número móvil",
+    labelAddress: "Dirección completa de entrega",
+    labelTxn: "ID de transacción de PayPal",
+    labelScreenshot: "Captura de pago",
+    shotNote: "JPG, PNG o WEBP · Máximo 6 MB",
+    orderPayPal: "Pagar con PayPal",
+    orderSubmit: "Enviar pedido",
+    submitNote: "Sofia verificará tu transacción de PayPal antes de aprobar el pedido."
+  },
+  it: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Torna alla Home",
+    eyebrow: "COLLEZIONE DI SOFIA JENNY TABORDA",
+    heroDesc: "Esplora la collezione SIXEY DOLLS. Prodotti disponibili, prezzi e link di pagamento PayPal sono gestiti dall’amministratore.",
+    heroNote: "Sfoglia gli articoli caricati da Sofia. Seleziona un prodotto, paga tramite il pulsante PayPal e poi invia i dettagli dell’ordine e lo screenshot del pagamento.",
+    collectionTitle: "Collezione disponibile",
+    collectionIntro: "Qui compaiono solo i prodotti attivi con prezzo e link PayPal configurati nel pannello admin.",
+    emptyState: "Caricamento prodotti…",
+    orderTitle: "Effettua il tuo ordine",
+    orderIntro: "Completa prima il pagamento PayPal per l’articolo selezionato. Poi invia lo stesso ID transazione insieme ai tuoi dati di contatto e consegna.",
+    labelName: "Il tuo nome",
+    labelEmail: "Gmail / Email",
+    labelPhone: "WhatsApp / Numero di cellulare",
+    labelAddress: "Indirizzo completo di consegna",
+    labelTxn: "ID transazione PayPal",
+    labelScreenshot: "Screenshot del pagamento",
+    shotNote: "JPG, PNG o WEBP · Massimo 6 MB",
+    orderPayPal: "Paga con PayPal",
+    orderSubmit: "Invia richiesta ordine",
+    submitNote: "Sofia verificherà la tua transazione PayPal prima di approvare l’ordine."
+  },
+  fr: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Retour à l’accueil",
+    eyebrow: "COLLECTION SOFIA JENNY TABORDA",
+    heroDesc: "Découvrez la collection SIXEY DOLLS. Les produits, prix et liens de paiement PayPal sont gérés par l’administratrice.",
+    heroNote: "Parcourez les articles ajoutés par Sofia. Sélectionnez un produit, payez via son bouton PayPal, puis envoyez les détails de votre commande et la capture du paiement.",
+    collectionTitle: "Collection disponible",
+    collectionIntro: "Seuls les produits actifs avec un prix et un lien PayPal configurés dans le panneau admin apparaissent ici.",
+    emptyState: "Chargement des produits…",
+    orderTitle: "Passez votre commande",
+    orderIntro: "Effectuez d’abord le paiement PayPal pour l’article sélectionné. Ensuite, envoyez le même identifiant de transaction ainsi que vos coordonnées et votre adresse de livraison.",
+    labelName: "Votre nom",
+    labelEmail: "Gmail / Email",
+    labelPhone: "WhatsApp / Numéro mobile",
+    labelAddress: "Adresse complète de livraison",
+    labelTxn: "ID de transaction PayPal",
+    labelScreenshot: "Capture du paiement",
+    shotNote: "JPG, PNG ou WEBP · Maximum 6 Mo",
+    orderPayPal: "Payer avec PayPal",
+    orderSubmit: "Envoyer la commande",
+    submitNote: "Sofia vérifiera votre transaction PayPal avant d’approuver la commande."
+  },
+  ar: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← العودة إلى الرئيسية",
+    eyebrow: "مجموعة صوفيا جيني تابوردا",
+    heroDesc: "استكشف مجموعة SIXEY DOLLS. يتم إدارة المنتجات والأسعار وروابط الدفع عبر PayPal بواسطة المسؤول.",
+    heroNote: "تصفح العناصر التي رفعتها صوفيا. اختر المنتج، وادفع عبر زر PayPal، ثم أرسل تفاصيل الطلب ولقطة شاشة الدفع.",
+    collectionTitle: "المجموعة المتاحة",
+    collectionIntro: "تظهر هنا فقط المنتجات النشطة التي تحتوي على سعر ورابط PayPal تم ضبطهما في لوحة الإدارة.",
+    emptyState: "جارٍ تحميل المنتجات…",
+    orderTitle: "قدّم طلبك",
+    orderIntro: "أكمل أولاً الدفع عبر PayPal للمنتج المحدد، ثم أرسل نفس رقم المعاملة مع بيانات الاتصال والتوصيل.",
+    labelName: "اسمك",
+    labelEmail: "جيميل / البريد الإلكتروني",
+    labelPhone: "واتساب / رقم الجوال",
+    labelAddress: "عنوان التوصيل الكامل",
+    labelTxn: "رقم معاملة PayPal",
+    labelScreenshot: "لقطة شاشة الدفع",
+    shotNote: "JPG أو PNG أو WEBP · الحد الأقصى 6 MB",
+    orderPayPal: "ادفع عبر PayPal",
+    orderSubmit: "إرسال طلب الشراء",
+    submitNote: "ستقوم صوفيا بالتحقق من دفعة PayPal قبل الموافقة على الطلب."
+  },
+  pt: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Voltar para a página inicial",
+    eyebrow: "COLEÇÃO SOFIA JENNY TABORDA",
+    heroDesc: "Explore a coleção SIXEY DOLLS. Produtos disponíveis, preços e links de pagamento PayPal são gerenciados pela administradora.",
+    heroNote: "Veja os itens enviados por Sofia. Selecione um produto, pague pelo botão PayPal e depois envie os detalhes do pedido e a captura de pagamento.",
+    collectionTitle: "Coleção disponível",
+    collectionIntro: "Somente produtos ativos com preço e link PayPal configurados no painel administrativo aparecem aqui.",
+    emptyState: "Carregando produtos…",
+    orderTitle: "Faça seu pedido",
+    orderIntro: "Primeiro conclua o pagamento PayPal do item selecionado. Depois envie o mesmo ID da transação junto com seus dados de contato e entrega.",
+    labelName: "Seu nome",
+    labelEmail: "Gmail / E-mail",
+    labelPhone: "WhatsApp / Número de celular",
+    labelAddress: "Endereço completo de entrega",
+    labelTxn: "ID da transação PayPal",
+    labelScreenshot: "Captura de pagamento",
+    shotNote: "JPG, PNG ou WEBP · Máximo 6 MB",
+    orderPayPal: "Pagar com PayPal",
+    orderSubmit: "Enviar pedido",
+    submitNote: "Sofia verificará sua transação PayPal antes de aprovar o pedido."
+  },
+  de: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← Zur Startseite",
+    eyebrow: "SOFIA JENNY TABORDA KOLLEKTION",
+    heroDesc: "Entdecke die SIXEY DOLLS Kollektion. Verfügbare Produkte, Preise und PayPal-Zahlungslinks werden von der Administratorin verwaltet.",
+    heroNote: "Sieh dir die von Sofia hochgeladenen Artikel an. Wähle ein Produkt aus, zahle per PayPal und sende anschließend deine Bestelldaten und den Zahlungsnachweis.",
+    collectionTitle: "Verfügbare Kollektion",
+    collectionIntro: "Hier erscheinen nur aktive Produkte mit Preis und PayPal-Link, die im Admin-Panel eingerichtet wurden.",
+    emptyState: "Produkte werden geladen…",
+    orderTitle: "Bestellung aufgeben",
+    orderIntro: "Schließe zuerst die PayPal-Zahlung für den ausgewählten Artikel ab. Sende danach dieselbe Transaktions-ID sowie deine Kontakt- und Lieferdaten.",
+    labelName: "Ihr Name",
+    labelEmail: "Gmail / E-Mail",
+    labelPhone: "WhatsApp / Mobilnummer",
+    labelAddress: "Vollständige Lieferadresse",
+    labelTxn: "PayPal-Transaktions-ID",
+    labelScreenshot: "Zahlungs-Screenshot",
+    shotNote: "JPG, PNG oder WEBP · Maximal 6 MB",
+    orderPayPal: "Mit PayPal bezahlen",
+    orderSubmit: "Bestellanfrage senden",
+    submitNote: "Sofia wird Ihre PayPal-Zahlung prüfen, bevor die Bestellung genehmigt wird."
+  },
+  hi: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← होम पर वापस जाएँ",
+    eyebrow: "सोफिया जेनी टबोर्डा कलेक्शन",
+    heroDesc: "SIXEY DOLLS कलेक्शन देखें। उपलब्ध प्रोडक्ट, कीमतें और PayPal पेमेंट लिंक एडमिन द्वारा मैनेज किए जाते हैं।",
+    heroNote: "सोफिया द्वारा अपलोड किए गए आइटम देखें। कोई प्रोडक्ट चुनें, उसके PayPal बटन से भुगतान करें और फिर अपना ऑर्डर विवरण और पेमेंट स्क्रीनशॉट भेजें।",
+    collectionTitle: "उपलब्ध कलेक्शन",
+    collectionIntro: "यहाँ केवल वही एक्टिव प्रोडक्ट दिखाई देंगे जिनके लिए एडमिन पैनल में कीमत और PayPal लिंक सेट किया गया है।",
+    emptyState: "प्रोडक्ट लोड हो रहे हैं…",
+    orderTitle: "अपना ऑर्डर दें",
+    orderIntro: "पहले चुने गए आइटम का PayPal भुगतान पूरा करें। फिर वही ट्रांजैक्शन ID और अपनी संपर्क व डिलीवरी जानकारी जमा करें।",
+    labelName: "आपका नाम",
+    labelEmail: "Gmail / ईमेल",
+    labelPhone: "WhatsApp / मोबाइल नंबर",
+    labelAddress: "पूरा डिलीवरी पता",
+    labelTxn: "PayPal ट्रांजैक्शन ID",
+    labelScreenshot: "पेमेंट स्क्रीनशॉट",
+    shotNote: "JPG, PNG या WEBP · अधिकतम 6 MB",
+    orderPayPal: "PayPal से भुगतान करें",
+    orderSubmit: "ऑर्डर रिक्वेस्ट भेजें",
+    submitNote: "ऑर्डर मंजूर करने से पहले सोफिया आपकी PayPal पेमेंट वेरिफाई करेगी।"
+  },
+  zh: {
+    pageTitle: "SIXEY DOLLS",
+    backHome: "← 返回首页",
+    eyebrow: "SOFIA JENNY TABORDA 系列",
+    heroDesc: "浏览 SIXEY DOLLS 系列。可用商品、价格和 PayPal 付款链接由管理员管理。",
+    heroNote: "浏览 Sofia 上传的商品。选择商品后，通过其 PayPal 按钮付款，然后提交订单详情和付款截图。",
+    collectionTitle: "可用系列",
+    collectionIntro: "这里只会显示在管理面板中已设置价格和 PayPal 链接的有效商品。",
+    emptyState: "正在加载商品…",
+    orderTitle: "提交您的订单",
+    orderIntro: "请先完成所选商品的 PayPal 付款，然后提交相同的交易编号以及您的联系和配送信息。",
+    labelName: "您的姓名",
+    labelEmail: "Gmail / 电子邮箱",
+    labelPhone: "WhatsApp / 手机号码",
+    labelAddress: "完整收货地址",
+    labelTxn: "PayPal 交易编号",
+    labelScreenshot: "付款截图",
+    shotNote: "JPG、PNG 或 WEBP · 最大 6 MB",
+    orderPayPal: "使用 PayPal 付款",
+    orderSubmit: "提交订单请求",
+    submitNote: "在批准订单之前，Sofia 会先核实您的 PayPal 付款。"
+  }
+};
+
+function applyLanguage(lang){
+  const t = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ur" || lang === "ar") ? "rtl" : "ltr";
+
+  document.getElementById("pageTitle").textContent = t.pageTitle;
+  document.getElementById("backHomeText").textContent = t.backHome;
+  document.getElementById("eyebrowText").textContent = t.eyebrow;
+  document.getElementById("heroDesc").textContent = t.heroDesc;
+  document.getElementById("heroNote").textContent = t.heroNote;
+  document.getElementById("collectionTitle").textContent = t.collectionTitle;
+  document.getElementById("collectionIntro").textContent = t.collectionIntro;
+  document.getElementById("emptyState").textContent = t.emptyState;
+  document.getElementById("orderTitle").textContent = t.orderTitle;
+  document.getElementById("orderIntro").textContent = t.orderIntro;
+  document.getElementById("labelName").textContent = t.labelName;
+  document.getElementById("labelEmail").textContent = t.labelEmail;
+  document.getElementById("labelPhone").textContent = t.labelPhone;
+  document.getElementById("labelAddress").textContent = t.labelAddress;
+  document.getElementById("labelTxn").textContent = t.labelTxn;
+  document.getElementById("labelScreenshot").textContent = t.labelScreenshot;
+  document.getElementById("shotNote").textContent = t.shotNote;
+  document.getElementById("orderPayPal").textContent = t.orderPayPal;
+  document.getElementById("orderSubmit").textContent = t.orderSubmit;
+  document.getElementById("submitNote").textContent = t.submitNote;
+
+  localStorage.setItem("sjt_lang", lang);
+}
+
+const languageSelect = document.getElementById("languageSelect");
+const savedLang = localStorage.getItem("sjt_lang") || "en";
+languageSelect.value = savedLang;
+applyLanguage(savedLang);
+
+languageSelect.addEventListener("change", function(){
+  applyLanguage(this.value);
+});
+</script>
 </body>
 </html>
