@@ -3,573 +3,437 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#082e59">
-
-<meta name="description" content="I Want to Meet Sofia Jenny Taborda. Explore exclusive long packages and request private access after payment verification.">
-
-<title>I Want to Meet Sofia Jenny Taborda | Official Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="I Want to Meet Sofia Jenny Taborda - Exclusive Long Package">
+<title>I Want to Meet Sofia Jenny Taborda | Sofia Jenny Taborda</title>
 
 <link rel="stylesheet" href="paid-folder.css">
 <script src="paid-folder.js" defer></script>
 
 <style>
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  min-width:320px;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f3f7fc;
-  color:#082e59;
+:root {
+  --navy:#082d52;
+  --blue:#125b92;
+  --gold:#ffc439;
+  --green:#12a36a;
+  --ink:#18324b;
+  --muted:#6d7f91;
+  --line:#dfe8f0;
 }
 
-header{
+* {box-sizing:border-box}
+
+body {
+  margin:0;
+  background:#f3f6fa;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+header {
+  background:#fff;
+  padding:13px max(18px,calc((100% - 1160px)/2));
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  padding:13px clamp(15px,4vw,55px);
-  background:#fff;
-  box-shadow:0 3px 15px rgba(8,46,89,.09);
   flex-wrap:wrap;
 }
 
-.brand{
+.brand {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:11px;
   text-decoration:none;
-  color:#082e59;
-  font-weight:800;
-  font-size:19px;
+  color:var(--navy);
+  font-weight:900;
 }
 
-.brand img{
-  width:49px;
-  height:49px;
+.brand-logo {
+  width:43px;
+  height:43px;
   object-fit:contain;
-  border-radius:50%;
 }
 
-.header-actions{
+.header-actions {
   display:flex;
   align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
+  gap:14px;
 }
 
-.header-actions select{
-  padding:10px 13px;
-  border:1px solid #cbd9e8;
-  border-radius:9px;
+.header-actions select {
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:8px;
   background:#fff;
-  color:#082e59;
-  font-size:14px;
 }
 
-.back-home{
-  color:#082e59;
+.back-home {
+  color:var(--blue);
   text-decoration:none;
-  font-weight:700;
-  font-size:14px;
+  font-size:13px;
+  font-weight:800;
 }
 
-.back-home:hover{text-decoration:underline}
-
-.green-line{
-  height:4px;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    #19c979,
-    #ffffff,
-    #19c979,
-    transparent
-  );
+.green-line {
+  height:5px;
+  background:linear-gradient(90deg,#10a66b,#91d6b4,#10a66b);
 }
 
-/* HERO */
+main {
+  max-width:1160px;
+  margin:30px auto;
+  padding:0 18px;
+}
 
-.hero{
+/* PREMIUM HERO */
+
+.hero {
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  grid-template-columns:1fr 1fr;
+  gap:35px;
   align-items:center;
-  gap:40px;
-  padding:55px clamp(18px,6vw,85px);
-  background:linear-gradient(
-    120deg,
-    #071d38,
-    #123e68,
-    #633016
-  );
+  padding:45px;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(115deg,#082440,#164c78 58%,#4c302c);
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.hero-copy {
   color:#fff;
 }
 
-.hero-copy{min-width:0}
-
-.eyebrow{
-  display:inline-block;
-  color:#ffd58a;
+.eyebrow {
+  color:#ffd16a;
   font-size:12px;
   font-weight:900;
   letter-spacing:2px;
-  margin-bottom:12px;
 }
 
-.hero h1{
+.hero h1 {
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
   font-family:Georgia,serif;
-  font-size:clamp(32px,4.5vw,55px);
-  line-height:1.13;
-  margin:8px 0 17px;
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.15;
+  margin:17px 0;
+  text-shadow:0 2px 9px #0005;
 }
 
-.hero-copy>p{
-  color:#e1eaf5;
+.hero-copy p {
+  color:#e5edf6;
   font-size:16px;
   line-height:1.8;
-  max-width:580px;
 }
 
-.price-row{
+.price-row {
   display:flex;
   align-items:center;
-  gap:13px;
+  gap:15px;
   flex-wrap:wrap;
-  margin:23px 0;
+  margin:28px 0 20px;
 }
 
-.price{
-  font-size:clamp(27px,3vw,37px);
+.price {
+  color:#ffd36d;
+  font-size:36px;
   font-weight:900;
-  color:#ffd477;
 }
 
-.pill{
-  display:inline-block;
-  padding:9px 13px;
-  border:1px solid rgba(255,255,255,.4);
+.pill {
+  background:#e7f7ef;
+  color:#137447;
+  padding:10px 15px;
   border-radius:30px;
   font-size:11px;
-  font-weight:800;
-  letter-spacing:.7px;
+  font-weight:900;
 }
 
-.pay-button{
+/* PAYPAL BUTTON */
+
+.pay-button {
   display:flex;
   align-items:center;
   justify-content:center;
   gap:12px;
   width:100%;
   max-width:430px;
-  min-height:59px;
-  padding:15px 20px;
-  border-radius:12px;
-  background:linear-gradient(110deg,#ffc439,#ffe5a4);
-  color:#082e59;
+  min-height:64px;
+  background:linear-gradient(100deg,#ffc439,#ffe6a2);
+  color:#082d52;
   text-decoration:none;
+  border-radius:12px;
   font-size:16px;
   font-weight:900;
-  box-shadow:0 8px 23px rgba(0,0,0,.23);
-  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 5px 0 #d49c27;
+  transition:.2s;
 }
 
-.pay-button:hover{
+.pay-button:hover {
   transform:translateY(-3px);
-  box-shadow:0 12px 27px rgba(0,0,0,.3);
+  box-shadow:0 8px 15px #0003;
 }
 
-.pay-button.disabled{
-  opacity:.6;
-  pointer-events:none;
+.paypal-mark {
+  background:#fff;
+  color:#064b88;
+  border-radius:6px;
+  padding:7px 12px;
+  font-size:16px;
 }
 
-.paypal-mark{
-  font-weight:900;
-  color:#123b77;
-}
-
-.note{
-  max-width:440px;
-  margin-top:14px;
-  color:#dce8f7;
-  font-size:13px;
+.note {
+  color:#e1eaf4;
+  font-size:12px;
+  margin-top:17px;
   line-height:1.7;
 }
 
-/* PACKAGE PHOTO */
+/* CLICKABLE HERO PHOTO */
 
-.hero-image{
-  display:block;
-  position:relative;
+.hero-image {
   width:100%;
-  min-width:0;
+  min-height:0;
+  padding:0;
+  border:2px solid #d6a849;
+  border-radius:20px;
   overflow:hidden;
-  border:3px solid #d9ad5c;
-  border-radius:19px;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
-  text-decoration:none;
-  background:#25120d;
+  background:#10263c;
+  display:block;
 }
 
-.hero-image img{
+.hero-image-link {
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:16/10;
-  object-fit:cover;
-  transition:transform .35s;
+  text-decoration:none;
+  cursor:pointer;
 }
 
-.hero-image:hover img{
+.hero-image-link img {
+  display:block;
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  transition:transform .3s;
+}
+
+.hero-image-link:hover img {
   transform:scale(1.035);
 }
 
-.image-overlay{
-  position:absolute;
-  left:12px;
-  right:12px;
-  bottom:12px;
-  padding:13px;
-  border-radius:9px;
-  background:rgba(8,30,52,.9);
+.hero-image-cta {
+  display:block;
+  background:#071d32;
   color:#fff;
+  padding:15px 10px;
   text-align:center;
-  font-size:12px;
   font-weight:900;
+  font-size:13px;
   letter-spacing:1px;
 }
 
-/* GENERAL SECTIONS */
+/* COLLECTION AND FORMS */
 
-.section{
-  width:100%;
-  max-width:1150px;
-  margin:0 auto;
-  padding:42px clamp(15px,4vw,35px);
+.section {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:25px;
+  margin-top:24px;
 }
 
-.section h2{
-  color:#082e59;
-  font-family:Georgia,serif;
-  font-size:clamp(24px,3vw,32px);
-  margin:0 0 12px;
+.section h2 {
+  color:var(--navy);
+  margin:0 0 8px;
+  font-size:23px;
 }
 
-.section-intro{
-  color:#63768c;
-  font-size:15px;
-  line-height:1.7;
-  margin:0 0 24px;
+.section-intro {
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
 }
 
-.preview-grid{
+.preview-grid {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;
+  gap:15px;
 }
 
-.preview-card{
-  overflow:hidden;
-  background:#fff;
-  border:1px solid #dce6f1;
-  border-radius:14px;
-  box-shadow:0 5px 18px rgba(8,46,89,.07);
+.empty {
+  padding:24px;
+  text-align:center;
+  background:#f7fafc;
+  border:1px dashed #cbd8e4;
+  border-radius:12px;
+  color:var(--muted);
 }
 
-.preview-card h3,
-.preview-card p{
-  padding:0 14px;
-}
-
-/* PAYMENT AND ACCESS CARDS */
-
-#paymentRequest,
-#accessSection{
-  background:#fff;
-  border:1px solid #e0e8f1;
-  border-radius:18px;
-  box-shadow:0 7px 24px rgba(8,46,89,.06);
-  margin-top:15px;
-  margin-bottom:25px;
-}
-
-.form-grid{
+.form-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
+  gap:15px;
 }
 
-.field{
+.field {
   display:flex;
   flex-direction:column;
-  gap:9px;
-  min-width:0;
+  gap:7px;
 }
 
-.field.full{grid-column:1/-1}
+.field.full {
+  grid-column:1/-1;
+}
 
-.field label{
-  color:#082e59;
-  font-size:14px;
+.field label {
+  font-size:13px;
   font-weight:800;
+  color:#29445e;
 }
 
-.field input{
+.field input {
   width:100%;
-  min-width:0;
-  min-height:49px;
-  padding:12px 14px;
-  border:1px solid #ccd9e8;
+  padding:13px;
+  border:1px solid #cbd8e4;
   border-radius:9px;
-  background:#f9fbfe;
-  color:#082e59;
-  font-size:15px;
-  outline:none;
-}
-
-.field input:focus{
-  border-color:#1769aa;
-  box-shadow:0 0 0 3px rgba(23,105,170,.1);
-}
-
-.field input[type=file]{
-  padding:10px;
   background:#fff;
+  font-size:14px;
 }
 
-.small{
-  color:#71839a;
-  font-size:12px;
-  line-height:1.6;
+.field input:focus {
+  outline:2px solid #a9d7c2;
+  border-color:#46a77b;
 }
 
-.button-row{
+.button-row {
   display:flex;
   align-items:center;
+  gap:12px;
   flex-wrap:wrap;
-  gap:15px;
-  margin-top:23px;
+  margin-top:18px;
 }
 
-.button-row button{
-  min-height:50px;
-  padding:13px 23px;
+.button-row button {
+  padding:14px 20px;
+  background:var(--navy);
+  color:#fff;
   border:0;
   border-radius:9px;
-  background:#082e59;
-  color:#fff;
-  font-size:14px;
   font-weight:900;
   cursor:pointer;
-  transition:background .2s,transform .2s;
 }
 
-.button-row button:hover{
-  background:#1769aa;
-  transform:translateY(-2px);
-}
-
-.button-row button:disabled{
-  opacity:.6;
+.button-row button:disabled {
+  opacity:.55;
   cursor:wait;
-  transform:none;
 }
 
-.status{
+.small {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.status {
   display:none;
-  margin-top:18px;
-  padding:14px;
+  margin-top:14px;
+  padding:13px;
   border-radius:9px;
   font-size:14px;
-  line-height:1.6;
-  overflow-wrap:anywhere;
 }
 
-.status.show{display:block}
+.status.show {display:block}
+.status.success {background:#e8f7ee;color:#145f39}
+.status.error {background:#fff0f0;color:#9d2c2c}
+.status.info {background:#edf5fc;color:#24557d}
 
-.status.success{
-  background:#e8f8ef;
-  color:#176b3b;
-}
-
-.status.error{
-  background:#fff0ef;
-  color:#a52b25;
-}
-
-.status.info{
-  background:#edf5ff;
-  color:#164b80;
-}
-
-.empty{
-  padding:30px 15px;
-  border:1px dashed #b9cadd;
-  border-radius:13px;
-  text-align:center;
-  color:#71839a;
-  background:#fff;
-}
-
-.hidden{display:none!important}
-
-.access-link{
+.access-link {
   display:inline-block;
-  margin-top:14px;
-  padding:13px 19px;
-  border-radius:9px;
-  background:#0a7545;
+  margin-top:12px;
+  padding:12px 18px;
+  background:#087a4b;
   color:#fff;
-  font-weight:800;
+  border-radius:8px;
   text-decoration:none;
+  font-weight:900;
 }
 
-#paymentFrame{
-  position:absolute;
-  width:1px;
-  height:1px;
-  border:0;
-  opacity:0;
-  pointer-events:none;
-}
-
-footer{
-  padding:24px 15px;
-  background:#082e59;
-  color:#fff;
+footer {
   text-align:center;
-  font-size:13px;
-  line-height:1.7;
+  padding:28px 15px;
+  color:#8090a0;
+  font-size:12px;
 }
+
+#paymentFrame {display:none}
 
 /* MOBILE */
 
-@media(max-width:760px){
-
-  header{
-    padding:12px 15px;
+@media(max-width:760px) {
+  main {
+    margin:18px auto;
+    padding:0 11px;
   }
 
-  .hero{
+  .hero {
     grid-template-columns:1fr;
-    gap:25px;
-    padding:30px 17px;
+    padding:22px;
+    gap:22px;
   }
 
-  .hero-image{grid-row:1}
-
-  .hero h1{
-    font-size:clamp(30px,8vw,42px);
+  .hero-image {
+    order:-1;
   }
 
-  .hero-copy>p{
-    font-size:15px;
+  .hero-image-link img {
+    height:240px;
   }
 
-  .pay-button{
+  .hero h1 {
+    font-size:34px;
+  }
+
+  .price {
+    font-size:30px;
+  }
+
+  .pay-button {
     max-width:100%;
+    min-height:60px;
+    font-size:14px;
   }
 
-  .preview-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-  }
-
-  .section{
-    padding:30px 15px;
-  }
-}
-
-@media(max-width:480px){
-
-  header{
-    align-items:flex-start;
-  }
-
-  .brand{
-    font-size:16px;
-  }
-
-  .brand img{
-    width:42px;
-    height:42px;
-  }
-
-  .header-actions{
-    width:100%;
-    justify-content:space-between;
-  }
-
-  .header-actions select{
-    max-width:48%;
-  }
-
-  .back-home{font-size:12px}
-
-  .hero{
-    padding:23px 14px 30px;
-  }
-
-  .hero-image img{
-    aspect-ratio:4/3;
-  }
-
-  .preview-grid{
+  .preview-grid,
+  .form-grid {
     grid-template-columns:1fr;
   }
 
-  .form-grid{
-    grid-template-columns:1fr;
-    gap:15px;
+  .section {
+    padding:18px;
   }
 
-  .field.full{
+  .field.full {
     grid-column:auto;
   }
 
-  #paymentRequest,
-  #accessSection{
-    border-radius:13px;
-  }
-
-  .button-row{
-    align-items:stretch;
-    flex-direction:column;
-  }
-
-  .button-row button{
+  .header-actions {
     width:100%;
+    justify-content:space-between;
   }
 }
 
-html[dir="rtl"] .section,
-html[dir="rtl"] .hero-copy{
+html[dir="rtl"] body {
   text-align:right;
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    scroll-behavior:auto!important;
-    animation:none!important;
-    transition:none!important;
-  }
-}
-  .hero h1 {
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 </style>
 </head>
 
 <body data-category="Long Package System">
 
-<!-- HEADER -->
 <header>
   <a class="brand" href="index.html">
-    <img src="assets/sofia-logo.png"
+    <img class="brand-logo"
+         src="assets/sofia-logo.png"
          alt="Sofia Jenny Taborda Logo">
     <span>Sofia Jenny Taborda</span>
   </a>
@@ -590,284 +454,315 @@ html[dir="rtl"] .hero-copy{
 
 <main>
 
-<!-- HERO SECTION -->
-<section class="hero">
+  <!-- LONG PACKAGE HERO -->
 
-  <div class="hero-copy">
+  <section class="hero">
 
-    <span class="eyebrow">
-      EXCLUSIVE LONG PACKAGE
-    </span>
+    <div class="hero-copy">
 
-    <h1 style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;">I Want to Meet Sofia Jenny Taborda</h1>
+      <span class="eyebrow">
+        EXCLUSIVE LONG PACKAGE
+      </span>
 
-    <p>
-      Discover the exclusive Long Package collection.
-      Explore available package details and submit your
-      payment request for private access.
-    </p>
+      <h1>I Want to Meet Sofia Jenny Taborda</h1>
 
-    <div class="price-row">
+      <p>
+        Discover the exclusive Long Package collection.
+        Explore available package details and submit your
+        payment request for private access.
+      </p>
 
-      <div class="price" id="priceValue">
-        Loading price…
+      <div class="price-row">
+        <div class="price" id="priceValue">$80.00 USD</div>
+
+        <span class="pill" data-i18n="oneTime">
+          ONE-TIME PAYMENT
+        </span>
       </div>
 
-      <span class="pill" data-i18n="oneTime">
-        ONE-TIME PAYMENT
-      </span>
+      <!-- PAYPAL BUTTON -->
+
+      <a id="payButton"
+         class="pay-button"
+         href="https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-disabled="false">
+
+        <span class="paypal-mark">PayPal</span>
+
+        <span data-i18n="pay">
+          PAY WITH PAYPAL
+        </span>
+
+      </a>
+
+      <p class="note" data-i18n="payNote">
+        Pay through PayPal. Then submit your transaction ID
+        and payment screenshot. Access is granted only after
+        Sofia verifies the payment.
+      </p>
+
+      <div id="setupStatus" class="status"></div>
 
     </div>
 
-    <a id="payButton"
-       class="pay-button disabled"
-       href="#"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-disabled="true">
+    <!-- PHOTO ALSO OPENS PAYPAL -->
 
-      <span class="paypal-mark">PayPal</span>
+    <div class="hero-image">
 
-      <span data-i18n="pay">
-        PAY WITH PAYPAL
-      </span>
+      <a id="heroPayLink"
+         class="hero-image-link"
+         href="https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Pay for Long Package through PayPal">
 
-    </a>
+        <img
+          src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png"
+          alt="Sofia Jenny Taborda Long Package"
+          onerror="this.style.display='none'">
 
-    <p class="note" data-i18n="payNote">
-      Pay through PayPal. Then submit your transaction ID
-      and payment screenshot. Access is granted only after
-      Sofia verifies the payment.
+        <span class="hero-image-cta">
+          VIEW LONG PACKAGE DETAILS
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- COLLECTION -->
+
+  <section class="section">
+
+    <h2 data-i18n="items">
+      Collection
+    </h2>
+
+    <p class="section-intro" data-i18n="itemsIntro">
+      Previews uploaded through the Admin Panel appear here.
+      Full content remains private until approval.
     </p>
 
-    <div id="setupStatus" class="status"></div>
+    <div id="previewGrid" class="preview-grid"></div>
 
-  </div>
+    <div id="previewEmpty" class="empty">
+      Loading collection...
+    </div>
 
-  <!-- PACKAGE IMAGE -->
-  <a class="hero-image" href="#paymentRequest"
-     aria-label="View Long Package payment details">
+  </section>
 
-    <img
-      src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png"
-      alt="Sofia Jenny Taborda Exclusive Long Package"
-      fetchpriority="high"
-      decoding="async">
+  <!-- PAYMENT CONFIRMATION -->
 
-    <span class="image-overlay">
-      VIEW LONG PACKAGE DETAILS
-    </span>
+  <section class="section" id="paymentRequest">
 
-  </a>
+    <h2 data-i18n="payment">
+      Payment Confirmation Request
+    </h2>
 
-</section>
+    <p class="section-intro" data-i18n="paymentIntro">
+      After completing PayPal payment, enter your details below
+      and submit your request.
+    </p>
 
+    <form id="paymentForm"
+          target="paymentFrame"
+          method="post">
 
-<!-- COLLECTION -->
-<section class="section" id="collection">
+      <input type="hidden" name="action" value="folderPayment">
 
-  <h2 data-i18n="items">
-    I Want to Meet Sofia Jenny Taborda Collection
-  </h2>
+      <input type="hidden"
+             name="category"
+             value="Long Package System">
 
-  <p class="section-intro" data-i18n="itemsIntro">
-    Previews uploaded through the Admin Panel appear here.
-    Full content remains private until approval.
-  </p>
+      <input type="hidden"
+             id="screenshotData"
+             name="screenshotData"
+             value="">
 
-  <div id="previewGrid" class="preview-grid"></div>
+      <div class="form-grid">
 
-  <div id="previewEmpty" class="empty">
-    Loading collection…
-  </div>
+        <div class="field">
 
-</section>
+          <label for="customerName" data-i18n="name">
+            Your Name
+          </label>
 
+          <input id="customerName"
+                 name="name"
+                 required
+                 maxlength="100"
+                 autocomplete="name">
 
-<!-- PAYMENT FORM -->
-<section class="section" id="paymentRequest">
+        </div>
 
-  <h2 data-i18n="payment">
-    Payment Confirmation Request
-  </h2>
+        <div class="field">
 
-  <p class="section-intro" data-i18n="paymentIntro">
-    After completing PayPal payment, enter your details
-    below and submit your request.
-  </p>
+          <label for="customerEmail" data-i18n="email">
+            Gmail / Email
+          </label>
 
-  <form id="paymentForm"
-        target="paymentFrame"
-        method="post">
+          <input id="customerEmail"
+                 name="email"
+                 type="email"
+                 required
+                 maxlength="160"
+                 autocomplete="email">
 
-    <input type="hidden"
-           name="action"
-           value="folderPayment">
+        </div>
 
-    <input type="hidden"
-           name="category"
-           value="Long Package System">
+        <div class="field full">
 
-    <input type="hidden"
-           id="screenshotData"
-           name="screenshotData"
-           value="">
+          <label for="transactionId" data-i18n="txn">
+            PayPal Transaction ID
+          </label>
 
-    <div class="form-grid">
+          <input id="transactionId"
+                 name="transactionId"
+                 required
+                 maxlength="120"
+                 autocomplete="off">
 
-      <div class="field">
+        </div>
 
-        <label for="customerName" data-i18n="name">
-          Your Name
-        </label>
+        <div class="field full">
 
-        <input
-          id="customerName"
-          name="name"
-          required
-          maxlength="100"
-          autocomplete="name">
+          <label for="screenshotFile" data-i18n="shot">
+            Payment Screenshot
+          </label>
 
-      </div>
+          <input id="screenshotFile"
+                 type="file"
+                 accept="image/jpeg,image/png,image/webp"
+                 required>
 
-      <div class="field">
+          <span class="small">
+            JPG, PNG or WEBP · Maximum 6 MB
+          </span>
 
-        <label for="customerEmail" data-i18n="email">
-          Gmail / Email
-        </label>
-
-        <input
-          id="customerEmail"
-          name="email"
-          type="email"
-          required
-          maxlength="160"
-          autocomplete="email">
+        </div>
 
       </div>
 
-      <div class="field full">
+      <div class="button-row">
 
-        <label for="transactionId" data-i18n="txn">
-          PayPal Transaction ID
-        </label>
+        <button id="submitPayment"
+                type="submit"
+                data-i18n="submit">
+          Submit Payment Details
+        </button>
 
-        <input
-          id="transactionId"
-          name="transactionId"
-          required
-          maxlength="120"
-          autocomplete="off">
-
-      </div>
-
-      <div class="field full">
-
-        <label for="screenshotFile" data-i18n="shot">
-          Payment Screenshot
-        </label>
-
-        <input
-          id="screenshotFile"
-          type="file"
-          accept="image/jpeg,image/png,image/webp"
-          required>
-
-        <span class="small">
-          JPG, PNG or WEBP · Maximum 6 MB
+        <span class="small" data-i18n="submitNote">
+          Sofia will verify the transaction in PayPal before approval.
         </span>
 
       </div>
 
-    </div>
+      <div id="paymentStatus"
+           class="status"
+           aria-live="polite">
+      </div>
 
-    <div class="button-row">
+    </form>
 
-      <button id="submitPayment"
-              type="submit"
-              data-i18n="submit">
+    <iframe id="paymentFrame"
+            name="paymentFrame"
+            title="Payment request response">
+    </iframe>
 
-        Submit Payment Details
+  </section>
 
-      </button>
+  <!-- CUSTOMER ACCESS CHECK -->
 
-      <span class="small" data-i18n="submitNote">
-        Sofia will verify the transaction in PayPal before approval.
-      </span>
+  <section class="section">
 
-    </div>
+    <h2 data-i18n="check">
+      Check My Access
+    </h2>
 
-    <div id="paymentStatus"
+    <p class="section-intro" data-i18n="checkIntro">
+      Use the same Gmail address entered in your payment request.
+    </p>
+
+    <form id="accessForm">
+
+      <div class="form-grid">
+
+        <div class="field full">
+
+          <label for="accessEmail" data-i18n="checkEmail">
+            Enter your Gmail / Email
+          </label>
+
+          <input id="accessEmail"
+                 type="email"
+                 placeholder="Same Gmail used for payment"
+                 autocomplete="email"
+                 required>
+
+        </div>
+
+      </div>
+
+      <div class="button-row">
+
+        <button type="submit" data-i18n="checkBtn">
+          Check Status
+        </button>
+
+      </div>
+
+    </form>
+
+    <div id="accessStatus"
          class="status"
          aria-live="polite">
     </div>
 
-  </form>
+    <div id="accessResult"></div>
 
-  <iframe id="paymentFrame"
-          name="paymentFrame"
-          title="Payment request response">
-  </iframe>
-
-</section>
-
-
-<!-- CHECK ACCESS -->
-<section class="section" id="accessSection">
-
-  <h2 data-i18n="check">
-    Check My Access
-  </h2>
-
-  <p class="section-intro" data-i18n="checkIntro">
-    Use the same Gmail address entered in your payment request.
-  </p>
-
-  <form id="accessForm">
-
-    <div class="form-grid">
-
-      <div class="field full">
-
-        <label for="accessEmail" data-i18n="checkEmail">
-          Enter your Gmail / Email
-        </label>
-
-        <input
-          id="accessEmail"
-          type="email"
-          placeholder="Same Gmail used for payment"
-          autocomplete="email"
-          required>
-
-      </div>
-
-    </div>
-
-    <div class="button-row">
-
-      <button type="submit" data-i18n="checkBtn">
-        Check Status
-      </button>
-
-    </div>
-
-  </form>
-
-  <div id="accessStatus"
-       class="status"
-       aria-live="polite">
-  </div>
-
-  <div id="accessResult"></div>
-
-</section>
+  </section>
 
 </main>
 
 <footer>
   © 2026 Sofia Jenny Taborda · Official Website
 </footer>
+
+<!-- Keep the hero photo synced with the PayPal link
+     returned by the existing Admin/Backend settings. -->
+
+<script>
+(function() {
+  const button = document.getElementById("payButton");
+  const photoLink = document.getElementById("heroPayLink");
+
+  if (!button || !photoLink) return;
+
+  function syncPayPalLink() {
+    const currentLink = button.getAttribute("href");
+
+    if (
+      currentLink &&
+      currentLink !== "#" &&
+      currentLink.startsWith("https://www.paypal.com/")
+    ) {
+      photoLink.href = currentLink;
+    }
+  }
+
+  const observer = new MutationObserver(syncPayPalLink);
+
+  observer.observe(button, {
+    attributes:true,
+    attributeFilter:["href"]
+  });
+
+  syncPayPalLink();
+})();
+</script>
 
 </body>
 </html>
