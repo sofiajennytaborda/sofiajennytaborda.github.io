@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API_URL = "https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec";
+  const API_URL = "https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
   const $ = id => document.getElementById(id);
   const category = document.body.dataset.category || "";
   const pageType = document.body.dataset.pageType || "store";
