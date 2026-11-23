@@ -1,10 +1,1794 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore the private photo gallery. Make a one-time payment and receive private folder access after payment verification and administrator approval."><title>Sofia Jenny Taborda Photos | Sofia Jenny Taborda</title><link rel="stylesheet" href="paid-folder.css"><script src="paid-folder.js" defer></script></head>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123c2c">
+
+<title>Sofia Jenny Taborda Photos | Exclusive Photo Gallery</title>
+
+<meta name="description" content="Explore the exclusive Sofia Jenny Taborda photo gallery. Preview collections, pay securely with PayPal and request private access.">
+
+<style>
+:root {
+  --green:#176b45;
+  --dark:#102d23;
+  --gold:#d9b76c;
+  --bg:#f5f7f5;
+  --white:#fff;
+  --muted:#68756d;
+  --border:#e3e9e4;
+  --shadow:0 12px 35px rgba(15,45,32,.09);
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:#17251d;
+  line-height:1.6;
+}
+
+button,input,a {
+  font:inherit;
+}
+
+.container {
+  width:min(1160px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header {
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.header-inner {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--dark);
+  font-size:17px;
+  font-weight:800;
+}
+
+.brand img {
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+.header-right {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+select {
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:white;
+  color:#222;
+  max-width:145px;
+}
+
+.back-home {
+  color:var(--green);
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* GREEN LINE */
+
+.green-line {
+  height:4px;
+  background:linear-gradient(
+    90deg,#123c2c,#2b9864,#d9b76c,#176b45
+  );
+}
+
+/* HERO */
+
+.hero {
+  margin:30px auto;
+  padding:36px;
+  background:linear-gradient(135deg,#102d23,#20583e);
+  border-radius:20px;
+  color:white;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:35px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero-tag {
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.hero h1 {
+  font-size:clamp(29px,4vw,46px);
+  line-height:1.15;
+  margin:0 0 15px;
+}
+
+.hero-copy {
+  color:#e1eae3;
+  font-size:15px;
+  max-width:520px;
+}
+
+.price-box {
+  margin:22px 0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.price-label {
+  font-size:12px;
+  color:#d7e4db;
+  font-weight:700;
+}
+
+.price {
+  color:var(--gold);
+  font-size:30px;
+  font-weight:900;
+}
+
+.duration {
+  font-size:10px;
+  color:#e4e9e5;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.pay-button {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  max-width:390px;
+  padding:16px 20px;
+  background:#ffc439;
+  color:#173b2b;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:900;
+  text-decoration:none;
+  transition:.2s;
+  box-shadow:0 7px 20px rgba(0,0,0,.15);
+}
+
+.pay-button:hover {
+  background:#ffda79;
+  transform:translateY(-2px);
+}
+
+.pay-button.disabled {
+  opacity:.55;
+  pointer-events:none;
+}
+
+.paypal-mark {
+  background:white;
+  border-radius:5px;
+  padding:3px 7px;
+  font-weight:900;
+  color:#003087;
+}
+
+.payment-note {
+  color:#d4e3d9;
+  font-size:12px;
+  max-width:430px;
+  margin-top:13px;
+}
+
+.hero-image {
+  min-height:310px;
+  border:5px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  overflow:hidden;
+  background:#293e34;
+}
+
+.hero-image img {
+  width:100%;
+  height:100%;
+  min-height:310px;
+  display:block;
+  object-fit:cover;
+}
+
+/* STATUS */
+
+.status {
+  display:none;
+  margin:15px 0;
+  padding:12px 15px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:700;
+  overflow-wrap:anywhere;
+}
+
+.status.show {
+  display:block;
+}
+
+.status.error {
+  color:#9b2626;
+  background:#fff0f0;
+  border:1px solid #ffd4d4;
+}
+
+.status.success {
+  color:#176b45;
+  background:#e8f8ee;
+  border:1px solid #bce6c9;
+}
+
+.status.info {
+  color:#805c12;
+  background:#fff8e7;
+  border:1px solid #f1dfaa;
+}
+
+/* COLLECTION */
+
+.section {
+  margin:45px auto;
+}
+
+.section-heading {
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-heading h2 {
+  font-size:27px;
+  color:var(--dark);
+  margin:0 0 8px;
+}
+
+.section-heading p {
+  font-size:14px;
+  color:var(--muted);
+  max-width:650px;
+  margin:auto;
+}
+
+.preview-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.preview-card {
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.preview-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.preview-media {
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:#203a2e;
+}
+
+.preview-media img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.preview-placeholder {
+  height:100%;
+  display:grid;
+  place-items:center;
+  font-size:55px;
+  color:white;
+}
+
+.preview-lock {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  background:rgba(5,23,16,.63);
+  color:white;
+  text-align:center;
+  padding:12px;
+}
+
+.lock-icon {
+  font-size:34px;
+}
+
+.lock-text {
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.lock-action {
+  display:inline-block;
+  padding:7px 13px;
+  border-radius:6px;
+  background:#ffc439;
+  color:#183b2b;
+  font-size:11px;
+  font-weight:900;
+}
+
+.preview-card h3 {
+  font-size:16px;
+  margin:14px 15px 5px;
+  color:var(--dark);
+}
+
+.preview-card p {
+  font-size:12px;
+  color:var(--muted);
+  margin:0 15px 17px;
+}
+
+.empty-state {
+  background:#fff;
+  border:1px dashed #cbd8ce;
+  padding:35px 15px;
+  text-align:center;
+  border-radius:12px;
+  color:var(--muted);
+}
+
+.hidden {
+  display:none!important;
+}
+
+/* PAYMENT AND ACCESS */
+
+.panels {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  align-items:start;
+}
+
+.panel {
+  padding:25px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:15px;
+  box-shadow:var(--shadow);
+}
+
+.panel h2 {
+  font-size:21px;
+  color:var(--dark);
+  margin:0 0 8px;
+}
+
+.panel-intro {
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 22px;
+}
+
+.field {
+  margin-bottom:16px;
+}
+
+.field label {
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+  font-weight:800;
+  color:#283c30;
+}
+
+.field input {
+  width:100%;
+  min-width:0;
+  padding:13px 14px;
+  border:1px solid #d8e1da;
+  border-radius:8px;
+  background:#fff;
+  color:#17251d;
+  outline:none;
+  font-size:14px;
+}
+
+.field input:focus {
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(23,107,69,.10);
+}
+
+.field input[type=file] {
+  background:#f8faf8;
+  font-size:12px;
+}
+
+.form-button {
+  display:block;
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:9px;
+  background:var(--green);
+  color:white;
+  font-size:14px;
+  font-weight:900;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.form-button:hover {
+  background:#104d31;
+}
+
+.form-button:disabled {
+  opacity:.6;
+  cursor:wait;
+}
+
+.form-note {
+  margin:13px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  text-align:center;
+}
+
+.access-link {
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 17px;
+  border-radius:8px;
+  background:var(--green);
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top:55px;
+  padding:25px 15px;
+  background:#102d23;
+  color:#dce8df;
+  text-align:center;
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+  .hero {
+    grid-template-columns:1fr;
+    padding:25px;
+    gap:22px;
+  }
+
+  .hero-image {
+    min-height:220px;
+  }
+
+  .hero-image img {
+    min-height:220px;
+    max-height:300px;
+  }
+
+  .preview-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+  }
+
+  .panels {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px) {
+
+  .container {
+    width:calc(100% - 22px);
+  }
+
+  .header-inner {
+    min-height:65px;
+    gap:7px;
+  }
+
+  .brand {
+    font-size:12px;
+    gap:7px;
+  }
+
+  .brand img {
+    width:37px;
+    height:37px;
+  }
+
+  .header-right {
+    gap:6px;
+  }
+
+  select {
+    max-width:95px;
+    padding:8px 5px;
+    font-size:11px;
+  }
+
+  .back-home {
+    font-size:10px;
+  }
+
+  .hero {
+    margin:17px auto;
+    padding:20px 17px;
+    border-radius:13px;
+  }
+
+  .hero h1 {
+    font-size:30px;
+  }
+
+  .hero-copy {
+    font-size:13px;
+  }
+
+  .price {
+    font-size:27px;
+  }
+
+  .pay-button {
+    font-size:12px;
+    padding:14px 10px;
+  }
+
+  .section {
+    margin:32px auto;
+  }
+
+  .section-heading h2 {
+    font-size:22px;
+  }
+
+  .section-heading p {
+    font-size:12px;
+  }
+
+  .preview-grid {
+    gap:10px;
+  }
+
+  .preview-card {
+    border-radius:9px;
+  }
+
+  .preview-card h3 {
+    font-size:12px;
+    margin:10px 9px 4px;
+    line-height:1.4;
+  }
+
+  .preview-card p {
+    font-size:10px;
+    margin:0 9px 12px;
+  }
+
+  .lock-icon {
+    font-size:26px;
+  }
+
+  .lock-text {
+    font-size:9px;
+    letter-spacing:.5px;
+  }
+
+  .lock-action {
+    font-size:9px;
+    padding:6px 8px;
+  }
+
+  .panel {
+    padding:18px 14px;
+  }
+
+  .panel h2 {
+    font-size:19px;
+  }
+
+  .field input {
+    font-size:16px;
+  }
+
+  footer {
+    margin-top:35px;
+  }
+}
+
+[dir="rtl"] body {
+  font-family:Arial,Tahoma,sans-serif;
+}
+
+[dir="rtl"] .header-inner {
+  direction:rtl;
+}
+
+[dir="rtl"] .hero {
+  direction:rtl;
+}
+
+[dir="rtl"] .panel {
+  text-align:right;
+}
+
+[dir="rtl"] .field input {
+  text-align:right;
+}
+</style>
+</head>
+
 <body data-category="Photo Gallery">
-<header><a class="brand" href="index.html"><span class="brand-mark">📸</span><span>Sofia Jenny Taborda</span></a><div class="header-actions"><select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="ur">اردو</option></select><a class="back-home" href="index.html" data-i18n="back">← Back to Home</a></div></header>
-<div class="green-line"></div><main>
-<section class="hero"><div class="hero-copy"><span class="eyebrow">EXCLUSIVE PHOTOGRAPHY COLLECTION</span><h1>Sofia Jenny Taborda Photos</h1><p>Explore the private photo gallery. Make a one-time payment and receive private folder access after payment verification and administrator approval.</p><div class="price-row"><div class="price" id="priceValue">Loading price…</div><span class="pill" data-i18n="oneTime">ONE-TIME PAYMENT</span></div><a id="payButton" class="pay-button disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span class="paypal-mark">PayPal</span><span data-i18n="pay">PAY WITH PAYPAL</span></a><p class="note" data-i18n="payNote">Pay through PayPal. Then submit your transaction ID and payment screenshot. Access is granted only after Sofia verifies the payment.</p><div id="setupStatus" class="status"></div></div><div class="hero-image"><img src="assets/Glamorous%20Purple%20Photo%20Gallery%20Banner.png" alt="Sofia Jenny Taborda Photos" onerror="this.style.display='none'"></div></section>
-<section class="section"><h2 data-i18n="items">Sofia Jenny Taborda Photos Collection</h2><p class="section-intro" data-i18n="itemsIntro">Previews uploaded through the Admin Panel appear here. Full content remains private until approval.</p><div id="previewGrid" class="preview-grid"></div><div id="previewEmpty" class="empty">Loading collection…</div></section>
-<section class="section"><h2 data-i18n="payment">Payment Confirmation Request</h2><p class="section-intro" data-i18n="paymentIntro">After completing PayPal payment, enter your details below and submit your request.</p><form id="paymentForm" target="paymentFrame" method="post"><input type="hidden" name="action" value="folderPayment"><input type="hidden" name="category" value="Photo Gallery"><input type="hidden" id="screenshotData" name="screenshotData" value=""><div class="form-grid"><div class="field"><label for="customerName" data-i18n="name">Your Name</label><input id="customerName" name="name" required maxlength="100" autocomplete="name"></div><div class="field"><label for="customerEmail" data-i18n="email">Gmail / Email</label><input id="customerEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div><div class="field full"><label for="transactionId" data-i18n="txn">PayPal Transaction ID</label><input id="transactionId" name="transactionId" required maxlength="120" autocomplete="off"></div><div class="field full"><label for="screenshotFile" data-i18n="shot">Payment Screenshot</label><input id="screenshotFile" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small">JPG, PNG or WEBP · Maximum 6 MB</span></div></div><div class="button-row"><button id="submitPayment" type="submit" data-i18n="submit">Submit Payment Details</button><span class="small" data-i18n="submitNote">Sofia will verify the transaction in PayPal before approval.</span></div><div id="paymentStatus" class="status" aria-live="polite"></div></form><iframe id="paymentFrame" name="paymentFrame" title="Payment request response"></iframe></section>
-<section class="section"><h2 data-i18n="check">Check My Access</h2><p class="section-intro" data-i18n="checkIntro">Use the same Gmail address entered in your payment request.</p><form id="accessForm"><div class="form-grid"><div class="field full"><label for="accessEmail" data-i18n="checkEmail">Enter your Gmail / Email</label><input id="accessEmail" type="email" placeholder="same Gmail used for payment" autocomplete="email"></div></div><div class="button-row"><button type="submit" data-i18n="checkBtn">Check Status</button></div></form><div id="accessStatus" class="status" aria-live="polite"></div><div id="accessResult"></div></section>
-</main><footer>© 2026 Sofia Jenny Taborda · Official Website</footer></body></html>
+
+<!-- HEADER -->
+
+<header>
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <img src="assets/sofia-logo.png"
+           alt="Sofia Jenny Taborda Logo">
+      <span>Sofia Jenny Taborda</span>
+    </a>
+
+    <div class="header-right">
+
+      <select id="languageSelect" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="ur">اردو</option>
+      </select>
+
+      <a href="index.html" class="back-home"
+         data-i18n="backHome">
+        ← Back to Home
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<div class="green-line"></div>
+
+<main class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div>
+
+      <div class="hero-tag" data-i18n="tag">
+        SOFIA JENNY TABORDA · EXCLUSIVE COLLECTION
+      </div>
+
+      <h1 data-i18n="heroTitle">
+        Sofia Jenny Taborda Photos
+      </h1>
+
+      <p class="hero-copy" data-i18n="heroText">
+        Explore the exclusive photo collection. Pay once and request private folder access after payment verification.
+      </p>
+
+      <div class="price-box">
+
+        <div>
+          <div class="price-label" data-i18n="priceLabel">
+            COLLECTION PRICE
+          </div>
+
+          <div class="price" id="priceValue">
+            Loading...
+          </div>
+        </div>
+
+        <div class="duration" data-i18n="duration">
+          ONE-TIME PAYMENT
+        </div>
+
+      </div>
+
+      <a href="#"
+         id="payButton"
+         class="pay-button disabled"
+         target="_blank"
+         rel="noopener"
+         aria-disabled="true">
+
+        <span class="paypal-mark">PayPal</span>
+
+        <span data-i18n="payButton">
+          PAY WITH PAYPAL
+        </span>
+
+      </a>
+
+      <p class="payment-note" data-i18n="paymentNote">
+        Complete your PayPal payment, then submit your transaction ID and screenshot. Private access is granted after administrator verification.
+      </p>
+
+      <div id="setupStatus" class="status"
+           role="status" aria-live="polite"></div>
+
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="assets/Glamorous%20Purple%20Photo%20Gallery%20Banner.png"
+        alt="Sofia Jenny Taborda Exclusive Photo Gallery"
+      >
+    </div>
+
+  </section>
+
+
+  <!-- PHOTO COLLECTION -->
+
+  <section class="section" id="collection">
+
+    <div class="section-heading">
+
+      <h2 data-i18n="collectionTitle">
+        Exclusive Photo Collection
+      </h2>
+
+      <p data-i18n="collectionIntro">
+        Explore photo previews. Complete private content remains locked until your payment is verified and approved.
+      </p>
+
+    </div>
+
+    <div id="previewGrid" class="preview-grid"></div>
+
+    <div id="previewEmpty" class="empty-state"
+         aria-live="polite" data-i18n="loading">
+      Loading photo collection...
+    </div>
+
+  </section>
+
+
+  <!-- PAYMENT AND ACCESS -->
+
+  <section class="section">
+
+    <div class="panels">
+
+      <!-- PAYMENT FORM -->
+
+      <div class="panel">
+
+        <h2 data-i18n="paymentTitle">
+          Payment Confirmation Request
+        </h2>
+
+        <p class="panel-intro" data-i18n="paymentIntro">
+          After completing PayPal payment, enter your details and submit your payment screenshot.
+        </p>
+
+        <form id="paymentForm"
+              method="POST"
+              action=""
+              target="paymentFrame">
+
+          <input type="hidden"
+                 name="action"
+                 value="folderPayment">
+
+          <input type="hidden"
+                 name="category"
+                 value="Photo Gallery">
+
+          <input type="hidden"
+                 name="screenshotData"
+                 id="screenshotData">
+
+          <div class="field">
+
+            <label for="customerName" data-i18n="name">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="customerName"
+              name="name"
+              autocomplete="name"
+              required
+              placeholder="Enter your full name"
+              data-i18n-placeholder="namePlaceholder"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="customerEmail" data-i18n="email">
+              Gmail / Email
+            </label>
+
+            <input
+              type="email"
+              id="customerEmail"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="Enter your email"
+              data-i18n-placeholder="emailPlaceholder"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="transactionId" data-i18n="transaction">
+              PayPal Transaction ID
+            </label>
+
+            <input
+              type="text"
+              id="transactionId"
+              name="transactionId"
+              required
+              placeholder="Enter transaction ID"
+              data-i18n-placeholder="transactionPlaceholder"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="screenshotFile" data-i18n="screenshot">
+              Payment Screenshot
+            </label>
+
+            <input
+              type="file"
+              id="screenshotFile"
+              accept="image/jpeg,image/png,image/webp"
+              required
+            >
+
+          </div>
+
+          <button type="submit"
+                  id="submitPayment"
+                  class="form-button"
+                  data-i18n="submit">
+            SUBMIT PAYMENT DETAILS
+          </button>
+
+          <p class="form-note" data-i18n="submitNote">
+            Maximum screenshot size: 6 MB. Sofia will verify the payment before approving access.
+          </p>
+
+        </form>
+
+        <div id="paymentStatus"
+             class="status"
+             role="status"
+             aria-live="polite"></div>
+
+      </div>
+
+
+      <!-- ACCESS CHECK -->
+
+      <div class="panel">
+
+        <h2 data-i18n="checkTitle">
+          Check My Photo Gallery Access
+        </h2>
+
+        <p class="panel-intro" data-i18n="checkIntro">
+          Enter the same email address you used when submitting your payment request.
+        </p>
+
+        <form id="accessForm">
+
+          <div class="field">
+
+            <label for="accessEmail" data-i18n="accessEmailLabel">
+              Gmail / Email
+            </label>
+
+            <input
+              type="email"
+              id="accessEmail"
+              required
+              placeholder="Enter your payment email"
+              data-i18n-placeholder="accessPlaceholder"
+            >
+
+          </div>
+
+          <button type="submit"
+                  id="checkAccessButton"
+                  class="form-button"
+                  data-i18n="checkButton">
+            CHECK ACCESS STATUS
+          </button>
+
+        </form>
+
+        <div id="accessStatus"
+             class="status"
+             role="status"
+             aria-live="polite"></div>
+
+        <div id="accessResult"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © 2026 Sofia Jenny Taborda ·
+  <span data-i18n="footer">
+    Exclusive Photo Gallery
+  </span>
+</footer>
+
+
+<!-- HIDDEN PAYMENT RESPONSE FRAME -->
+
+<iframe
+  id="paymentFrame"
+  name="paymentFrame"
+  title="Secure payment response"
+  style="display:none">
+</iframe>
+
+
+<script>
+(() => {
+
+  "use strict";
+
+  /* EXISTING GOOGLE APPS SCRIPT API */
+
+  const API_URL =
+    "https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+
+  const CATEGORY = "Photo Gallery";
+
+  const $ = id => document.getElementById(id);
+
+  let paypalUrl = "";
+
+  const previewLinks = new Set();
+
+
+  /* LANGUAGE */
+
+  const words = {
+
+    en: {
+
+      backHome:"← Back to Home",
+      tag:"SOFIA JENNY TABORDA · EXCLUSIVE COLLECTION",
+      heroTitle:"Sofia Jenny Taborda Photos",
+      heroText:"Explore the exclusive photo collection. Pay once and request private folder access after payment verification.",
+      priceLabel:"COLLECTION PRICE",
+      duration:"ONE-TIME PAYMENT",
+      payButton:"PAY WITH PAYPAL",
+      paymentNote:"Complete your PayPal payment, then submit your transaction ID and screenshot. Private access is granted after administrator verification.",
+      collectionTitle:"Exclusive Photo Collection",
+      collectionIntro:"Explore photo previews. Complete private content remains locked until your payment is verified and approved.",
+      loading:"Loading photo collection...",
+      empty:"No photos have been uploaded yet.",
+      locked:"LOCKED PHOTO",
+      clickPay:"CLICK TO PAY WITH PAYPAL",
+      paymentTitle:"Payment Confirmation Request",
+      paymentIntro:"After completing PayPal payment, enter your details and submit your payment screenshot.",
+      name:"Your Name",
+      email:"Gmail / Email",
+      transaction:"PayPal Transaction ID",
+      screenshot:"Payment Screenshot",
+      submit:"SUBMIT PAYMENT DETAILS",
+      submitNote:"Maximum screenshot size: 6 MB. Sofia will verify the payment before approving access.",
+      checkTitle:"Check My Photo Gallery Access",
+      checkIntro:"Enter the same email address you used when submitting your payment request.",
+      accessEmailLabel:"Gmail / Email",
+      checkButton:"CHECK ACCESS STATUS",
+      waiting:"Your payment request has been received. Please wait while Sofia verifies your payment and approves access.",
+      pending:"Your payment is still waiting for administrator approval.",
+      approved:"Your Photo Gallery access has been approved.",
+      open:"OPEN MY PRIVATE PHOTO FOLDER",
+      accessHint:"Open the folder while signed in with the same Google email used for payment.",
+      notFound:"No approved access was found for this email.",
+      invalid:"Please select a JPG, PNG or WEBP screenshot up to 6 MB.",
+      sending:"SUBMITTING YOUR REQUEST...",
+      requestId:"Request ID",
+      setup:"Payment setup is not complete. Please try again later.",
+      loadError:"Could not load photos. Please refresh the page.",
+      namePlaceholder:"Enter your full name",
+      emailPlaceholder:"Enter your email",
+      transactionPlaceholder:"Enter transaction ID",
+      accessPlaceholder:"Enter your payment email",
+      footer:"Exclusive Photo Gallery"
+
+    },
+
+    ur: {
+
+      backHome:"← ہوم پیج پر واپس",
+      tag:"صوفیہ جینی تبورڈا · خصوصی کلیکشن",
+      heroTitle:"صوفیہ جینی تبورڈا فوٹوز",
+      heroText:"خصوصی فوٹو کلیکشن دیکھیں۔ ایک مرتبہ ادائیگی کے بعد تصدیق کی بنیاد پر نجی فولڈر تک رسائی کی درخواست دیں۔",
+      priceLabel:"کلیکشن کی قیمت",
+      duration:"ایک مرتبہ ادائیگی",
+      payButton:"پے پال سے ادائیگی کریں",
+      paymentNote:"پے پال ادائیگی مکمل کرنے کے بعد ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔ تصدیق کے بعد نجی رسائی دی جائے گی۔",
+      collectionTitle:"خصوصی فوٹو کلیکشن",
+      collectionIntro:"تصاویر کے نمونے دیکھیں۔ مکمل نجی مواد ادائیگی کی تصدیق اور منظوری تک بند رہے گا۔",
+      loading:"فوٹو کلیکشن لوڈ ہو رہا ہے...",
+      empty:"ابھی کوئی تصویر اپ لوڈ نہیں کی گئی۔",
+      locked:"مقفل تصویر",
+      clickPay:"پے پال ادائیگی کے لیے کلک کریں",
+      paymentTitle:"ادائیگی کی تصدیق کی درخواست",
+      paymentIntro:"پے پال ادائیگی کے بعد اپنی تفصیلات اور اسکرین شاٹ جمع کروائیں۔",
+      name:"آپ کا نام",
+      email:"جی میل / ای میل",
+      transaction:"پے پال ٹرانزیکشن آئی ڈی",
+      screenshot:"ادائیگی کا اسکرین شاٹ",
+      submit:"ادائیگی کی تفصیلات جمع کروائیں",
+      submitNote:"اسکرین شاٹ زیادہ سے زیادہ 6 MB ہو۔ صوفیہ ادائیگی کی تصدیق کے بعد منظوری دیں گی۔",
+      checkTitle:"اپنی فوٹو گیلری کی رسائی چیک کریں",
+      checkIntro:"وہی ای میل درج کریں جو ادائیگی کی درخواست میں استعمال کی تھی۔",
+      accessEmailLabel:"جی میل / ای میل",
+      checkButton:"رسائی کی حالت چیک کریں",
+      waiting:"آپ کی ادائیگی کی درخواست موصول ہوگئی ہے۔ صوفیہ تصدیق کرکے رسائی منظور کریں گی۔",
+      pending:"آپ کی درخواست ابھی ایڈمن کی منظوری کے انتظار میں ہے۔",
+      approved:"آپ کی فوٹو گیلری کی رسائی منظور ہوگئی ہے۔",
+      open:"میرا نجی فوٹو فولڈر کھولیں",
+      accessHint:"اسی گوگل ای میل سے فولڈر کھولیں جو ادائیگی کے وقت استعمال کی تھی۔",
+      notFound:"اس ای میل کے لیے منظور شدہ رسائی نہیں ملی۔",
+      invalid:"6 MB تک JPG، PNG یا WEBP اسکرین شاٹ منتخب کریں۔",
+      sending:"درخواست جمع ہو رہی ہے...",
+      requestId:"درخواست کا آئی ڈی",
+      setup:"ادائیگی کا نظام ابھی مکمل نہیں۔ براہ کرم بعد میں کوشش کریں۔",
+      loadError:"تصاویر لوڈ نہیں ہو سکیں۔ صفحہ دوبارہ کھولیں۔",
+      namePlaceholder:"اپنا پورا نام درج کریں",
+      emailPlaceholder:"اپنا ای میل درج کریں",
+      transactionPlaceholder:"ٹرانزیکشن آئی ڈی درج کریں",
+      accessPlaceholder:"ادائیگی والا ای میل درج کریں",
+      footer:"خصوصی فوٹو گیلری"
+
+    }
+
+  };
+
+
+  function tr(key) {
+
+    const lang = $("languageSelect").value;
+
+    return (words[lang] || words.en)[key] ||
+           words.en[key] ||
+           key;
+  }
+
+
+  function applyLanguage() {
+
+    const lang = $("languageSelect").value;
+
+    document.documentElement.lang = lang;
+
+    document.documentElement.dir =
+      lang === "ur" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      el.textContent = tr(el.dataset.i18n);
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+      el.placeholder = tr(el.dataset.i18nPlaceholder);
+    });
+
+  }
+
+
+  /* STATUS */
+
+  function setStatus(element, message, kind = "info") {
+
+    element.textContent = message;
+
+    element.className = "status show " + kind;
+
+  }
+
+
+  /* JSONP CONNECTION */
+
+  function jsonp(action, params = {}) {
+
+    return new Promise((resolve, reject) => {
+
+      const callback =
+        "sjPhoto_" +
+        Date.now() +
+        "_" +
+        Math.floor(Math.random() * 999999);
+
+      const query = new URLSearchParams({
+        ...params,
+        action,
+        callback
+      }).toString();
+
+      const script = document.createElement("script");
+
+      const timer = setTimeout(() => {
+
+        cleanup();
+
+        reject(new Error(
+          "The website service took too long to respond."
+        ));
+
+      },20000);
+
+
+      function cleanup() {
+
+        clearTimeout(timer);
+
+        try {
+          delete window[callback];
+        } catch(e) {
+          window[callback] = undefined;
+        }
+
+        script.remove();
+
+      }
+
+
+      window[callback] = data => {
+
+        cleanup();
+
+        resolve(data);
+
+      };
+
+
+      script.onerror = () => {
+
+        cleanup();
+
+        reject(new Error(
+          "Could not connect to the website service."
+        ));
+
+      };
+
+
+      script.src = API_URL + "?" + query;
+
+      document.head.appendChild(script);
+
+    });
+
+  }
+
+
+  /* PAYPAL PRICE AND LINK */
+
+  async function loadInfo() {
+
+    try {
+
+      const data = await jsonp("folderInfo", {
+        category:CATEGORY
+      });
+
+      if (!data || !data.success) {
+        throw new Error(
+          data?.message || "Folder information unavailable."
+        );
+      }
+
+      const price = Number(data.price || 0);
+
+      $("priceValue").textContent =
+        "$" + price.toFixed(2) + " USD";
+
+      if (
+        !data.paypalLink ||
+        !data.paypalLink.startsWith(
+          "https://www.paypal.com/"
+        ) ||
+        price <= 0
+      ) {
+
+        throw new Error(tr("setup"));
+
+      }
+
+      paypalUrl = data.paypalLink;
+
+      $("payButton").href = paypalUrl;
+
+      $("payButton").classList.remove("disabled");
+
+      $("payButton").setAttribute(
+        "aria-disabled",
+        "false"
+      );
+
+      previewLinks.forEach(link => {
+
+        link.href = paypalUrl;
+
+        link.setAttribute(
+          "aria-disabled",
+          "false"
+        );
+
+      });
+
+      $("setupStatus").className = "status";
+
+    } catch(error) {
+
+      $("priceValue").textContent = "—";
+
+      setStatus(
+        $("setupStatus"),
+        error.message || tr("setup"),
+        "error"
+      );
+
+    }
+
+  }
+
+
+  $("payButton").addEventListener("click",e => {
+
+    if (!paypalUrl) {
+
+      e.preventDefault();
+
+      setStatus(
+        $("setupStatus"),
+        tr("setup"),
+        "error"
+      );
+
+    }
+
+  });
+
+
+  /* LOCKED PHOTO CARD */
+
+  function createLockedCard(item) {
+
+    const card = document.createElement("a");
+
+    card.className = "preview-card";
+
+    card.href = paypalUrl || "#";
+
+    card.target = "_blank";
+
+    card.rel = "noopener noreferrer";
+
+
+    card.addEventListener("click",e => {
+
+      if (!paypalUrl) {
+
+        e.preventDefault();
+
+        setStatus(
+          $("setupStatus"),
+          tr("setup"),
+          "error"
+        );
+
+      }
+
+    });
+
+
+    previewLinks.add(card);
+
+
+    const media = document.createElement("div");
+
+    media.className = "preview-media";
+
+
+    if (
+      item.thumbnailUrl &&
+      /^https?:\/\//i.test(item.thumbnailUrl)
+    ) {
+
+      const img = document.createElement("img");
+
+      img.src = item.thumbnailUrl;
+
+      img.alt = "Locked photo preview";
+
+      img.loading = "lazy";
+
+      media.appendChild(img);
+
+    } else {
+
+      const placeholder = document.createElement("div");
+
+      placeholder.className = "preview-placeholder";
+
+      placeholder.textContent = "📸";
+
+      media.appendChild(placeholder);
+
+    }
+
+
+    const overlay = document.createElement("div");
+
+    overlay.className = "preview-lock";
+
+
+    const icon = document.createElement("span");
+
+    icon.className = "lock-icon";
+
+    icon.textContent = "🔒";
+
+
+    const lockText = document.createElement("span");
+
+    lockText.className = "lock-text";
+
+    lockText.textContent = tr("locked");
+
+
+    const action = document.createElement("span");
+
+    action.className = "lock-action";
+
+    action.textContent = tr("clickPay");
+
+
+    overlay.append(icon,lockText,action);
+
+    media.appendChild(overlay);
+
+    card.appendChild(media);
+
+
+    const title = document.createElement("h3");
+
+    title.textContent =
+      item.title || "Photo Collection";
+
+    card.appendChild(title);
+
+
+    if (item.description) {
+
+      const description = document.createElement("p");
+
+      description.textContent = item.description;
+
+      card.appendChild(description);
+
+    }
+
+    return card;
+
+  }
+
+
+  /* LOAD PHOTOS FROM ADMIN PANEL */
+
+  async function loadItems() {
+
+    try {
+
+      const data = await jsonp("folderContents", {
+        category:CATEGORY
+      });
+
+      if (!data || data.success === false) {
+
+        throw new Error(tr("loadError"));
+
+      }
+
+      const items = Array.isArray(data.items)
+        ? data.items
+        : [];
+
+      const grid = $("previewGrid");
+
+      grid.innerHTML = "";
+
+      previewLinks.clear();
+
+
+      if (!items.length) {
+
+        $("previewEmpty").textContent = tr("empty");
+
+        $("previewEmpty").classList.remove("hidden");
+
+        return;
+
+      }
+
+
+      $("previewEmpty").classList.add("hidden");
+
+
+      items.forEach(item => {
+
+        grid.appendChild(
+          createLockedCard(item)
+        );
+
+      });
+
+    } catch(error) {
+
+      $("previewEmpty").textContent =
+        error.message || tr("loadError");
+
+      $("previewEmpty").classList.remove("hidden");
+
+    }
+
+  }
+
+
+  /* READ PAYMENT SCREENSHOT */
+
+  function readFile(file) {
+
+    return new Promise((resolve,reject) => {
+
+      const reader = new FileReader();
+
+      reader.onload = () => {
+
+        resolve(String(reader.result || ""));
+
+      };
+
+      reader.onerror = () => {
+
+        reject(new Error(
+          "Could not read payment screenshot."
+        ));
+
+      };
+
+      reader.readAsDataURL(file);
+
+    });
+
+  }
+
+
+  /* PAYMENT REQUEST */
+
+  function setupPayment() {
+
+    const form = $("paymentForm");
+
+    const frame = $("paymentFrame");
+
+    const button = $("submitPayment");
+
+    form.action = API_URL;
+
+    form.method = "POST";
+
+    form.target = "paymentFrame";
+
+
+    form.addEventListener("submit",async e => {
+
+      e.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const file = $("screenshotFile").files[0];
+
+      if (
+        !file ||
+        file.size > 6 * 1024 * 1024 ||
+        !/^image\/(jpeg|png|webp)$/i.test(file.type)
+      ) {
+
+        setStatus(
+          $("paymentStatus"),
+          tr("invalid"),
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      button.disabled = true;
+
+      button.textContent = tr("sending");
+
+
+      try {
+
+        $("screenshotData").value =
+          await readFile(file);
+
+        form.submit();
+
+      } catch(error) {
+
+        button.disabled = false;
+
+        button.textContent = tr("submit");
+
+        setStatus(
+          $("paymentStatus"),
+          error.message,
+          "error"
+        );
+
+      }
+
+    });
+
+
+    window.addEventListener("message",event => {
+
+      if (event.source !== frame.contentWindow) return;
+
+      const data = event.data || {};
+
+      if (
+        data.type !== "FOLDER_PAYMENT_SUCCESS" &&
+        data.type !== "FORM_SUBMISSION_ERROR"
+      ) return;
+
+
+      button.disabled = false;
+
+      button.textContent = tr("submit");
+
+
+      if (data.success) {
+
+        setStatus(
+          $("paymentStatus"),
+          tr("waiting") +
+          " " +
+          tr("requestId") +
+          ": " +
+          (data.paymentId || ""),
+          "success"
+        );
+
+        form.reset();
+
+      } else {
+
+        setStatus(
+          $("paymentStatus"),
+          data.message || "Payment request failed.",
+          "error"
+        );
+
+      }
+
+    });
+
+  }
+
+
+  /* CHECK APPROVED FOLDER ACCESS */
+
+  async function checkAccess(event) {
+
+    event.preventDefault();
+
+    const button = $("checkAccessButton");
+
+    const result = $("accessResult");
+
+    result.replaceChildren();
+
+    button.disabled = true;
+
+    try {
+
+      const email = $("accessEmail").value.trim();
+
+      if (!email) {
+
+        throw new Error(tr("notFound"));
+
+      }
+
+
+      const data = await jsonp("folderAccess", {
+        category:CATEGORY,
+        email
+      });
+
+
+      if (!data || !data.success) {
+
+        throw new Error(
+          data?.message || tr("notFound")
+        );
+
+      }
+
+
+      if (!data.access) {
+
+        setStatus(
+          $("accessStatus"),
+          tr("pending"),
+          "info"
+        );
+
+        return;
+
+      }
+
+
+      if (
+        !data.folderUrl ||
+        !data.folderUrl.startsWith(
+          "https://drive.google.com/"
+        )
+      ) {
+
+        throw new Error(tr("notFound"));
+
+      }
+
+
+      setStatus(
+        $("accessStatus"),
+        tr("approved") + " " + tr("accessHint"),
+        "success"
+      );
+
+
+      const link = document.createElement("a");
+
+      link.className = "access-link";
+
+      link.href = data.folderUrl;
+
+      link.target = "_blank";
+
+      link.rel = "noopener noreferrer";
+
+      link.textContent = tr("open");
+
+      result.appendChild(link);
+
+
+    } catch(error) {
+
+      setStatus(
+        $("accessStatus"),
+        error.message || tr("notFound"),
+        "error"
+      );
+
+    } finally {
+
+      button.disabled = false;
+
+    }
+
+  }
+
+
+  /* INITIALIZE */
+
+  $("languageSelect").addEventListener(
+    "change",
+    applyLanguage
+  );
+
+  $("accessForm").addEventListener(
+    "submit",
+    checkAccess
+  );
+
+  applyLanguage();
+
+  setupPayment();
+
+  loadInfo();
+
+  loadItems();
+
+})();
+</script>
+
+</body>
+</html>
