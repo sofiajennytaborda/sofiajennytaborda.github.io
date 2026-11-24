@@ -1,0 +1,1702 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#174b38">
+<title>Sofia Jenny Taborda Wellness</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/css/intlTelInput.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#f5f8f4;color:#244735;
+ font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+header{
+ background:#fff;padding:12px clamp(14px,4vw,50px);
+ display:flex;align-items:center;justify-content:space-between;
+ gap:14px;flex-wrap:wrap;box-shadow:0 3px 15px #174b3810
+}
+.brand{
+ display:flex;align-items:center;gap:10px;
+ text-decoration:none;color:#174b38
+}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand strong{font-size:19px;font-weight:900}
+.header-actions{display:flex;align-items:center;gap:13px}
+#languageSelect{
+ max-width:175px;padding:10px;
+ border:1px solid #d7e6da;border-radius:9px;
+ color:#174b38;background:white
+}
+.back-home{
+ color:#24734b;text-decoration:none;
+ font-size:13px;font-weight:900
+}
+.green-line{
+ height:5px;
+ background:linear-gradient(90deg,#174b38,#75ad79,#e5c879,#174b38)
+}
+
+main{max-width:1240px;margin:26px auto;padding:0 16px}
+
+.hero{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:27px;align-items:center;
+ padding:clamp(22px,4vw,42px);
+ background:linear-gradient(120deg,#123c2c,#246345,#50865d);
+ color:white;border-radius:18px;
+ box-shadow:0 12px 30px #174b3820
+}
+.eyebrow{
+ color:#f5d99b;font-weight:900;
+ letter-spacing:2px;font-size:11px
+}
+.hero h1{
+ color:#fff;font-size:clamp(30px,4vw,49px);
+ font-weight:900;line-height:1.17;margin:15px 0;
+ text-shadow:0 2px 12px #0003
+}
+.hero h1 span{color:#f3d68f;display:block}
+.hero p{
+ color:#edf5ec;font-size:15px;
+ line-height:1.8;max-width:550px
+}
+.hero-note{
+ color:#f5d99b;font-size:12px;
+ font-weight:900;margin-top:17px
+}
+
+/* ADMIN CONTROLLED HEADER IMAGE - NO CROP */
+
+.hero-photo{
+ width:100%;height:auto;min-height:0;
+ overflow:visible;border:3px solid #e9d39b;
+ border-radius:14px;background:#ffffff14;
+ box-shadow:0 12px 28px #0003
+}
+.hero-photo img{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ max-height:none!important;
+ aspect-ratio:auto!important;
+ object-fit:contain!important;
+ object-position:center!important;
+}
+.hero-fallback{
+ padding:35px 15px;text-align:center;
+ font-size:23px;font-weight:900;color:#f5d99b
+}
+.hidden{display:none!important}
+
+.toolbar{
+ margin-top:25px;padding:21px;
+ background:white;border:1px solid #dfeae0;
+ border-radius:14px;display:flex;
+ align-items:center;justify-content:space-between;
+ gap:17px;flex-wrap:wrap
+}
+.toolbar h2{
+ margin:0;color:#174b38;
+ font-size:clamp(22px,3vw,30px);
+ font-weight:900
+}
+.toolbar p{margin:4px 0 0;color:#788a7c;font-size:13px}
+
+.search-box{position:relative;width:min(100%,360px)}
+.search-box input{
+ width:100%;padding:14px 15px 14px 42px;
+ border:1px solid #d8e6da;border-radius:10px;
+ outline:none;background:#fbfdfb;color:#174b38
+}
+.search-box input:focus{
+ border-color:#398258;box-shadow:0 0 0 3px #39825818
+}
+.search-icon{position:absolute;left:14px;top:12px;font-size:19px}
+
+.product-count{
+ margin:17px 3px 12px;
+ color:#718574;font-size:13px;font-weight:800
+}
+.product-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:19px
+}
+.product-card{
+ min-width:0;background:white;
+ border:1px solid #dfe9df;border-radius:14px;
+ overflow:hidden;box-shadow:0 5px 17px #174b380d;
+ transition:box-shadow .2s,transform .2s
+}
+.product-card:hover{
+ transform:translateY(-4px);
+ box-shadow:0 12px 25px #174b3819
+}
+
+/* PRODUCT IMAGES - NEVER CROP */
+
+.product-media{
+ width:100%;min-height:190px;
+ padding:12px;border:0;
+ background:#f0f5ef;
+ display:flex;align-items:center;
+ justify-content:center;overflow:visible
+}
+.product-media img{
+ display:block;
+ max-width:100%;
+ width:auto;
+ height:auto;
+ max-height:370px;
+ object-fit:contain;
+ object-position:center
+}
+.product-placeholder{
+ padding:35px 10px;text-align:center;
+ font-size:42px;color:#52775d
+}
+.product-info{padding:16px}
+.product-info h3{
+ margin:0 0 7px;color:#174b38;
+ font-size:18px;font-weight:900;line-height:1.4
+}
+.product-info p{
+ color:#77867a;font-size:13px;
+ line-height:1.65;margin:0 0 12px;
+ min-height:42px;overflow-wrap:anywhere
+}
+.price{
+ color:#24734b;font-size:24px;
+ font-weight:900;margin:10px 0 14px
+}
+.price small{font-size:11px;color:#829084}
+.buy-button{
+ width:100%;padding:13px;
+ border:0;border-radius:9px;
+ background:linear-gradient(100deg,#174b38,#398258);
+ color:white;font-size:14px;font-weight:900;
+ box-shadow:0 4px 12px #174b3820
+}
+.buy-button:hover{filter:brightness(1.12)}
+
+.empty{
+ grid-column:1/-1;text-align:center;
+ padding:42px 15px;background:#fff;
+ border:1px dashed #cbdccc;border-radius:13px;
+ color:#788a7c
+}
+.empty h3{color:#174b38}
+
+.notice{
+ margin-top:23px;padding:17px;
+ border-radius:11px;background:#edf5ed;
+ border:1px solid #d7e7d7;
+ color:#536c58;font-size:12px;line-height:1.8
+}
+
+footer{
+ margin-top:40px;background:#174b38;
+ color:white;text-align:center;padding:24px 15px;
+ font-size:12px
+}
+
+/* PRODUCT ORDER MODAL */
+
+.modal{
+ display:none;position:fixed;inset:0;z-index:9999;
+ align-items:center;justify-content:center;padding:12px
+}
+.modal.open{display:flex}
+.modal-backdrop{
+ position:absolute;inset:0;background:#071b10d9;
+ backdrop-filter:blur(4px)
+}
+.modal-panel{
+ position:relative;z-index:2;width:100%;
+ max-width:750px;max-height:94vh;overflow-y:auto;
+ padding:24px;background:white;border-radius:15px;
+ box-shadow:0 20px 60px #0005
+}
+.modal-top{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:12px;margin-bottom:18px
+}
+.modal-top h2{
+ color:#174b38;margin:0;font-size:22px;font-weight:900
+}
+.close-button{
+ width:37px;height:37px;border:0;border-radius:50%;
+ background:#edf5ed;color:#174b38;
+ font-size:22px;font-weight:900
+}
+.modal-product{
+ padding:13px;background:#f4f8f3;
+ border:1px solid #dfebdf;border-radius:11px;
+ display:grid;grid-template-columns:145px 1fr;
+ align-items:center;gap:16px;margin-bottom:20px
+}
+.modal-media{
+ display:flex;justify-content:center;align-items:center;
+ background:#eaf1e9;border-radius:9px;
+ min-height:100px;padding:8px
+}
+.modal-media img{
+ max-width:100%;width:auto;height:auto;
+ max-height:240px;object-fit:contain
+}
+.modal-product h3{
+ color:#174b38;margin:0 0 7px;
+ font-size:18px;font-weight:900
+}
+.modal-product p{font-size:13px;color:#788a7c;margin:0}
+.modal-product .price{font-size:23px;margin-top:8px}
+
+.form-title{
+ color:#174b38;font-size:17px;
+ font-weight:900;margin:19px 0 13px
+}
+.form-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:14px
+}
+.field{min-width:0}
+.field.full{grid-column:1/-1}
+.field label{
+ display:block;margin-bottom:6px;
+ color:#315d40;font-size:13px;font-weight:900
+}
+.field input,.field textarea{
+ width:100%;min-width:0;padding:12px;
+ border:1px solid #d8e5d9;border-radius:8px;
+ color:#174b38;outline:none;background:white
+}
+.field textarea{min-height:85px;resize:vertical}
+.field input:focus,.field textarea:focus{
+ border-color:#398258;box-shadow:0 0 0 3px #39825818
+}
+.iti{width:100%}
+.iti__country-list{z-index:10005;max-width:300px}
+.country-info{
+ color:#277047;font-size:11px;
+ font-weight:800;margin-top:7px
+}
+.small-note{
+ display:block;color:#819082;
+ font-size:11px;margin-top:6px;line-height:1.6
+}
+.modal-action{
+ width:100%;padding:15px;margin-top:19px;
+ border:0;border-radius:9px;
+ background:linear-gradient(100deg,#174b38,#398258);
+ color:white;font-weight:900;font-size:14px
+}
+.modal-action:disabled{opacity:.55;cursor:wait}
+
+.payment-step{
+ margin-top:18px;padding:17px;
+ background:#f1f7ef;border:1px solid #dceadc;
+ border-radius:11px
+}
+.payment-step h3{margin:0;color:#174b38}
+.payment-step p{font-size:13px;color:#617666;line-height:1.7}
+.pay-fallback{
+ display:none;padding:11px;margin:10px 0;
+ border-radius:8px;background:#fff2d7;color:#664a19;
+ font-size:13px;font-weight:800
+}
+.pay-fallback a{color:#174b38}
+.status{
+ display:none;margin-top:13px;padding:13px;
+ border-radius:8px;font-size:13px;line-height:1.7;
+ overflow-wrap:anywhere
+}
+.status.show{display:block}
+.status.success{background:#e8f6e9;color:#176334;border:1px solid #c8e5cb}
+.status.error{background:#fff0ef;color:#a12d2d;border:1px solid #efcdca}
+.status.info{background:#edf4fa;color:#315b7c;border:1px solid #d1e1ef}
+.response-frame{display:none;width:0;height:0;border:0}
+
+html[dir=rtl] body{text-align:right}
+html[dir=rtl] .hero{direction:rtl}
+html[dir=rtl] .brand{flex-direction:row-reverse}
+html[dir=rtl] .search-icon{left:auto;right:14px}
+html[dir=rtl] .search-box input{padding:14px 42px 14px 15px}
+html[dir=rtl] .modal-top{flex-direction:row-reverse}
+html[dir=rtl] .field{text-align:right}
+
+@media(max-width:850px){
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ header{padding:11px 13px}
+ .header-actions{width:100%;justify-content:space-between}
+ #languageSelect{max-width:57%;font-size:12px}
+ .brand strong{font-size:16px}
+ main{margin:16px auto;padding:0 12px}
+ .hero{grid-template-columns:1fr;padding:21px 16px}
+ .hero h1{font-size:34px}
+ .hero p{font-size:14px}
+ .toolbar{padding:16px}
+ .search-box{width:100%}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .product-media{min-height:150px;padding:8px}
+ .product-media img{max-height:280px}
+ .product-info{padding:11px}
+ .product-info h3{font-size:14px}
+ .product-info p{font-size:11px;min-height:38px}
+ .price{font-size:19px}
+ .buy-button{font-size:11px;padding:11px 6px}
+ .modal-panel{padding:16px 13px}
+ .modal-product{grid-template-columns:105px 1fr;gap:11px}
+ .modal-product h3{font-size:15px}
+ .modal-product p{font-size:11px}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+}
+@media(max-width:380px){
+ .product-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <a class="brand" href="index.html">
+  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda">
+  <strong>Sofia Jenny Taborda</strong>
+ </a>
+
+ <div class="header-actions">
+  <select id="languageSelect" aria-label="Select language">
+   <option value="en">🇬🇧 English</option>
+   <option value="ur">🇵🇰 اردو</option>
+   <option value="es">🇪🇸 Español</option>
+   <option value="it">🇮🇹 Italiano</option>
+   <option value="fr">🇫🇷 Français</option>
+   <option value="ar">🇸🇦 العربية</option>
+   <option value="pt">🇧🇷 Português</option>
+   <option value="de">🇩🇪 Deutsch</option>
+   <option value="hi">🇮🇳 हिन्दी</option>
+   <option value="zh">🇨🇳 中文</option>
+  </select>
+
+  <a href="index.html" class="back-home" data-i18n="home">
+   ← Back to Home
+  </a>
+ </div>
+</header>
+
+<div class="green-line"></div>
+
+<main>
+
+<section class="hero">
+
+ <div>
+  <div class="eyebrow" data-i18n="tag">
+   HERBAL WELLNESS COLLECTION
+  </div>
+
+  <h1>
+   <span>Sofia Jenny Taborda</span>
+   <span data-i18n="heroTitle">Wellness</span>
+  </h1>
+
+  <p data-i18n="heroText">
+   Explore our herbal wellness products and discover
+   carefully presented product details, prices and ordering options.
+  </p>
+
+  <div class="hero-note" data-i18n="heroNote">
+   🌿 HERBAL PRODUCTS · INDIVIDUAL PRICES · SECURE PAYPAL CHECKOUT
+  </div>
+ </div>
+
+ <div class="hero-photo">
+  <img id="headerPhoto"
+   src=""
+   alt="Sofia Jenny Taborda Wellness Header"
+   style="display:none">
+
+  <div class="hero-fallback" id="headerFallback">
+   🌿 SOFIA JENNY TABORDA WELLNESS
+  </div>
+ </div>
+
+</section>
+
+<section class="toolbar">
+
+ <div>
+  <h2 data-i18n="collection">Herbal Wellness Products</h2>
+  <p data-i18n="collectionIntro">
+   Explore products uploaded through the Admin Dashboard.
+  </p>
+ </div>
+
+ <div class="search-box">
+  <span class="search-icon">⌕</span>
+  <input id="productSearch" type="search"
+   data-i18n-placeholder="search"
+   placeholder="Search herbal products...">
+ </div>
+
+</section>
+
+<div id="productCount" class="product-count"></div>
+
+<section class="product-grid" id="productGrid" aria-live="polite">
+ <div class="empty">
+  <h3 data-i18n="loading">Loading products...</h3>
+ </div>
+</section>
+
+<div class="notice" data-i18n="notice">
+ Product information is provided by the seller. Please read the
+ product label, ingredients and directions before purchasing.
+ Herbal wellness products are not a substitute for professional
+ medical advice or prescribed treatment.
+</div>
+
+</main>
+
+<footer>
+ © 2026 Sofia Jenny Taborda ·
+ <span data-i18n="footer">Official Wellness Store</span>
+</footer>
+
+<!-- PRODUCT ORDER MODAL -->
+
+<div class="modal" id="productModal" aria-hidden="true">
+
+ <div class="modal-backdrop" id="modalBackdrop"></div>
+
+ <div class="modal-panel" role="dialog" aria-modal="true">
+
+  <div class="modal-top">
+   <h2 data-i18n="details">Product Details</h2>
+   <button type="button" class="close-button"
+    id="closeModal" aria-label="Close">×</button>
+  </div>
+
+  <div class="modal-product">
+
+   <div class="modal-media" id="modalMedia">
+    <img id="modalImage" src="" alt="Product">
+   </div>
+
+   <div>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+    <div class="price" id="modalPrice"></div>
+   </div>
+
+  </div>
+
+  <form id="buyerForm">
+
+   <h3 class="form-title" data-i18n="customer">
+    Customer & Delivery Information
+   </h3>
+
+   <div class="form-grid">
+
+    <div class="field">
+     <label for="customerName" data-i18n="name">
+      Full Name *
+     </label>
+     <input id="customerName" required maxlength="100"
+      autocomplete="name">
+    </div>
+
+    <div class="field">
+     <label for="customerEmail" data-i18n="email">
+      Gmail / Email *
+     </label>
+     <input id="customerEmail" type="email" required
+      maxlength="160" autocomplete="email">
+    </div>
+
+    <div class="field full">
+     <label for="customerPhone" data-i18n="phone">
+      Mobile / WhatsApp Number *
+     </label>
+
+     <input id="customerPhone" type="tel" required
+      autocomplete="tel" placeholder="Select country and enter number">
+
+     <div id="countryInfo" class="country-info"></div>
+
+     <span class="small-note" data-i18n="phoneHint">
+      Search your country name and select its international code.
+     </span>
+    </div>
+
+    <div class="field full">
+     <label for="customerAddress" data-i18n="address">
+      Complete Delivery Address *
+     </label>
+     <textarea id="customerAddress" required
+      maxlength="700" autocomplete="street-address"></textarea>
+    </div>
+
+    <div class="field">
+     <label for="quantity" data-i18n="quantity">
+      Quantity *
+     </label>
+     <input id="quantity" type="number" min="1"
+      max="20" value="1" required>
+    </div>
+
+    <div class="field">
+     <label for="productNotes" data-i18n="notes">
+      Product Notes (Optional)
+     </label>
+     <input id="productNotes" maxlength="200">
+    </div>
+
+   </div>
+
+   <button type="submit" class="modal-action"
+    id="buyNowButton" data-i18n="buy">
+    BUY NOW · CONTINUE TO PAYPAL
+   </button>
+
+  </form>
+
+  <!-- PAYMENT CONFIRMATION -->
+
+  <section class="payment-step hidden" id="paymentStep">
+
+   <h3 data-i18n="paymentTitle">
+    Payment Confirmation
+   </h3>
+
+   <p data-i18n="paymentText">
+    Complete payment in PayPal. Return here and submit your
+    transaction ID and payment screenshot.
+   </p>
+
+   <div class="pay-fallback" id="payFallback">
+    <a id="payFallbackLink" href="#"
+     target="_blank" rel="noopener noreferrer"
+     data-i18n="openPaypal">
+     Open PayPal Payment Page
+    </a>
+   </div>
+
+   <form id="paymentProofForm">
+
+    <div class="form-grid">
+
+     <div class="field full">
+      <label for="transactionId" data-i18n="transaction">
+       PayPal Transaction ID *
+      </label>
+      <input id="transactionId" required maxlength="120">
+     </div>
+
+     <div class="field full">
+      <label for="paymentScreenshot" data-i18n="screenshot">
+       Payment Screenshot *
+      </label>
+      <input id="paymentScreenshot" type="file"
+       accept="image/jpeg,image/png,image/webp" required>
+
+      <span class="small-note" data-i18n="screenshotHint">
+       JPG, PNG or WEBP · Maximum 6 MB
+      </span>
+     </div>
+
+    </div>
+
+    <button type="submit" class="modal-action"
+     id="submitOrderButton" data-i18n="submit">
+     SUBMIT ORDER FOR VERIFICATION
+    </button>
+
+   </form>
+
+  </section>
+
+  <div class="status" id="orderStatus" aria-live="polite"></div>
+
+ </div>
+</div>
+
+<!-- EXISTING BACKEND ORDER SUBMISSION -->
+
+<form id="backendOrderForm" method="POST"
+ target="orderFrame" style="display:none">
+
+ <input type="hidden" name="action" value="productOrder">
+ <input type="hidden" name="productId" id="backendProductId">
+ <input type="hidden" name="name" id="backendName">
+ <input type="hidden" name="email" id="backendEmail">
+ <input type="hidden" name="phone" id="backendPhone">
+ <input type="hidden" name="address" id="backendAddress">
+ <input type="hidden" name="quantity" id="backendQuantity">
+ <input type="hidden" name="transactionId" id="backendTransactionId">
+ <input type="hidden" name="screenshotData" id="backendScreenshot">
+
+</form>
+
+<iframe id="orderFrame" name="orderFrame"
+ class="response-frame" title="Order response"></iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/intlTelInput.min.js"></script>
+
+<script>
+"use strict";
+
+/* EXISTING WEBSITE BACKEND */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+
+/* IMPORTANT: KEEP THIS CATEGORY EXACTLY */
+
+const CATEGORY = "Herbal Wellness";
+
+const $ = id => document.getElementById(id);
+
+let products = [];
+let selectedProduct = null;
+let pendingOrder = null;
+let phoneIti = null;
+let currentLanguage = "en";
+
+/* TEN LANGUAGES */
+
+const translations = {
+
+en:{
+ home:"← Back to Home",
+ tag:"HERBAL WELLNESS COLLECTION",
+ heroTitle:"Wellness",
+ heroText:"Explore our herbal wellness products and discover carefully presented product details, prices and ordering options.",
+ heroNote:"🌿 HERBAL PRODUCTS · INDIVIDUAL PRICES · SECURE PAYPAL CHECKOUT",
+ collection:"Herbal Wellness Products",
+ collectionIntro:"Explore products uploaded through the Admin Dashboard.",
+ search:"Search herbal products...",
+ loading:"Loading products...",
+ empty:"No herbal wellness products have been uploaded yet.",
+ noResults:"No matching products found.",
+ details:"Product Details",
+ customer:"Customer & Delivery Information",
+ name:"Full Name *",
+ email:"Gmail / Email *",
+ phone:"Mobile / WhatsApp Number *",
+ phoneHint:"Search your country name and select its international code.",
+ address:"Complete Delivery Address *",
+ quantity:"Quantity *",
+ notes:"Product Notes (Optional)",
+ buy:"BUY NOW · CONTINUE TO PAYPAL",
+ paymentTitle:"Payment Confirmation",
+ paymentText:"Complete payment in PayPal. Return here and submit your transaction ID and payment screenshot.",
+ openPaypal:"Open PayPal Payment Page",
+ transaction:"PayPal Transaction ID *",
+ screenshot:"Payment Screenshot *",
+ screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",
+ submit:"SUBMIT ORDER FOR VERIFICATION",
+ sending:"Submitting your order...",
+ success:"Your order has been submitted. Order ID: ",
+ error:"Your order could not be submitted. Please try again.",
+ phoneError:"Enter a valid international mobile number.",
+ screenshotError:"Select a JPG, PNG or WEBP screenshot up to 6 MB.",
+ popupError:"Your browser blocked the PayPal tab. Use the PayPal link below.",
+ notice:"Product information is provided by the seller. Please read the product label, ingredients and directions before purchasing. Herbal wellness products are not a substitute for professional medical advice or prescribed treatment.",
+ footer:"Official Wellness Store"
+},
+
+ur:{
+ home:"← ہوم پیج پر واپس جائیں",
+ tag:"ہربل ویلنس کلیکشن",
+ heroTitle:"ویلنس اسٹور",
+ heroText:"ہربل مصنوعات، ان کی مکمل تفصیلات، قیمتیں اور خریداری کے طریقے دیکھیں۔",
+ heroNote:"🌿 ہربل مصنوعات · الگ الگ قیمتیں · پے پال ادائیگی",
+ collection:"ہربل ویلنس مصنوعات",
+ collectionIntro:"ایڈمن ڈیش بورڈ سے اپ لوڈ کی گئی مصنوعات دیکھیں۔",
+ search:"ہربل مصنوعات تلاش کریں...",
+ loading:"مصنوعات لوڈ ہو رہی ہیں...",
+ empty:"ابھی کوئی ہربل پروڈکٹ اپ لوڈ نہیں کی گئی۔",
+ noResults:"آپ کی تلاش سے کوئی پروڈکٹ نہیں ملی۔",
+ details:"پروڈکٹ کی تفصیلات",
+ customer:"کسٹمر اور ڈیلیوری کی معلومات",
+ name:"پورا نام *",
+ email:"جی میل / ای میل *",
+ phone:"موبائل / واٹس ایپ نمبر *",
+ phoneHint:"ملک کا نام تلاش کریں اور اس کا بین الاقوامی کوڈ منتخب کریں۔",
+ address:"مکمل ڈیلیوری پتہ *",
+ quantity:"تعداد *",
+ notes:"پروڈکٹ کے متعلق نوٹس (اختیاری)",
+ buy:"ابھی خریدیں · پے پال پر جائیں",
+ paymentTitle:"ادائیگی کی تصدیق",
+ paymentText:"پے پال پر ادائیگی مکمل کریں، واپس آ کر ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔",
+ openPaypal:"پے پال ادائیگی کا صفحہ کھولیں",
+ transaction:"پے پال ٹرانزیکشن آئی ڈی *",
+ screenshot:"ادائیگی کا اسکرین شاٹ *",
+ screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",
+ submit:"آرڈر تصدیق کے لیے جمع کروائیں",
+ sending:"آرڈر جمع ہو رہا ہے...",
+ success:"آپ کا آرڈر جمع ہوگیا۔ آرڈر نمبر: ",
+ error:"آرڈر جمع نہیں ہوسکا۔ دوبارہ کوشش کریں۔",
+ phoneError:"درست بین الاقوامی موبائل نمبر درج کریں۔",
+ screenshotError:"6 MB تک کا درست JPG، PNG یا WEBP اسکرین شاٹ منتخب کریں۔",
+ popupError:"براؤزر نے پے پال ٹیب روک دیا ہے۔ نیچے دیا گیا لنک کھولیں۔",
+ notice:"پروڈکٹ کی معلومات فروخت کنندہ فراہم کرتا ہے۔ خریدنے سے پہلے اجزاء اور استعمال کی ہدایات پڑھیں۔ ہربل مصنوعات طبی مشورے یا تجویز کردہ علاج کا متبادل نہیں ہیں۔",
+ footer:"آفیشل ویلنس اسٹور"
+},
+
+es:{
+ home:"← Volver al inicio",
+ tag:"COLECCIÓN HERBAL WELLNESS",
+ heroTitle:"Bienestar",
+ heroText:"Descubre productos herbales, sus detalles, precios y opciones de compra.",
+ heroNote:"🌿 PRODUCTOS HERBALES · PRECIOS INDIVIDUALES · PAYPAL",
+ collection:"Productos Herbal Wellness",
+ collectionIntro:"Explora los productos publicados desde el panel de administración.",
+ search:"Buscar productos herbales...",
+ loading:"Cargando productos...",
+ empty:"Todavía no se han publicado productos.",
+ noResults:"No se encontraron productos.",
+ details:"Detalles del producto",
+ customer:"Datos del cliente y entrega",
+ name:"Nombre completo *",
+ email:"Gmail / Correo electrónico *",
+ phone:"Móvil / WhatsApp *",
+ phoneHint:"Busca tu país y selecciona su código internacional.",
+ address:"Dirección completa de entrega *",
+ quantity:"Cantidad *",
+ notes:"Notas del producto (opcional)",
+ buy:"COMPRAR · CONTINUAR A PAYPAL",
+ paymentTitle:"Confirmación del pago",
+ paymentText:"Completa el pago en PayPal y vuelve para enviar el ID de transacción y la captura.",
+ openPaypal:"Abrir página de PayPal",
+ transaction:"ID de transacción PayPal *",
+ screenshot:"Captura del pago *",
+ screenshotHint:"JPG, PNG o WEBP · Máximo 6 MB",
+ submit:"ENVIAR PEDIDO PARA VERIFICACIÓN",
+ sending:"Enviando pedido...",
+ success:"Pedido enviado. ID: ",
+ error:"No se pudo enviar el pedido. Inténtalo de nuevo.",
+ phoneError:"Introduce un número internacional válido.",
+ screenshotError:"Selecciona una imagen JPG, PNG o WEBP de hasta 6 MB.",
+ popupError:"El navegador bloqueó PayPal. Usa el enlace de abajo.",
+ notice:"La información del producto la proporciona el vendedor. Lee los ingredientes e instrucciones antes de comprar. Estos productos no sustituyen el consejo médico.",
+ footer:"Tienda oficial de bienestar"
+},
+
+it:{
+ home:"← Torna alla Home",
+ tag:"COLLEZIONE HERBAL WELLNESS",
+ heroTitle:"Benessere",
+ heroText:"Scopri prodotti a base di erbe, dettagli, prezzi e modalità di acquisto.",
+ heroNote:"🌿 PRODOTTI ERBORISTICI · PREZZI INDIVIDUALI · PAYPAL",
+ collection:"Prodotti Herbal Wellness",
+ collectionIntro:"Esplora i prodotti caricati dal pannello amministrativo.",
+ search:"Cerca prodotti...",
+ loading:"Caricamento prodotti...",
+ empty:"Nessun prodotto è stato ancora caricato.",
+ noResults:"Nessun prodotto trovato.",
+ details:"Dettagli prodotto",
+ customer:"Informazioni cliente e consegna",
+ name:"Nome completo *",
+ email:"Gmail / Email *",
+ phone:"Cellulare / WhatsApp *",
+ phoneHint:"Cerca il tuo paese e seleziona il prefisso internazionale.",
+ address:"Indirizzo completo di consegna *",
+ quantity:"Quantità *",
+ notes:"Note sul prodotto (facoltativo)",
+ buy:"ACQUISTA · CONTINUA CON PAYPAL",
+ paymentTitle:"Conferma del pagamento",
+ paymentText:"Completa il pagamento su PayPal e torna per inviare l'ID transazione e lo screenshot.",
+ openPaypal:"Apri la pagina PayPal",
+ transaction:"ID transazione PayPal *",
+ screenshot:"Screenshot del pagamento *",
+ screenshotHint:"JPG, PNG o WEBP · Massimo 6 MB",
+ submit:"INVIA ORDINE PER VERIFICA",
+ sending:"Invio ordine...",
+ success:"Ordine inviato. ID: ",
+ error:"Impossibile inviare l'ordine. Riprova.",
+ phoneError:"Inserisci un numero internazionale valido.",
+ screenshotError:"Scegli un'immagine JPG, PNG o WEBP fino a 6 MB.",
+ popupError:"Il browser ha bloccato PayPal. Usa il link qui sotto.",
+ notice:"Le informazioni sono fornite dal venditore. Leggi ingredienti e istruzioni prima dell'acquisto. Questi prodotti non sostituiscono il parere medico.",
+ footer:"Negozio ufficiale benessere"
+},
+
+fr:{
+ home:"← Retour à l'accueil",
+ tag:"COLLECTION HERBAL WELLNESS",
+ heroTitle:"Bien-être",
+ heroText:"Découvrez nos produits à base de plantes, leurs détails, leurs prix et les options d'achat.",
+ heroNote:"🌿 PRODUITS À BASE DE PLANTES · PRIX INDIVIDUELS · PAYPAL",
+ collection:"Produits Herbal Wellness",
+ collectionIntro:"Découvrez les produits ajoutés depuis le panneau d'administration.",
+ search:"Rechercher des produits...",
+ loading:"Chargement des produits...",
+ empty:"Aucun produit n'a encore été ajouté.",
+ noResults:"Aucun produit trouvé.",
+ details:"Détails du produit",
+ customer:"Informations client et livraison",
+ name:"Nom complet *",
+ email:"Gmail / E-mail *",
+ phone:"Mobile / WhatsApp *",
+ phoneHint:"Recherchez votre pays et sélectionnez son indicatif international.",
+ address:"Adresse complète de livraison *",
+ quantity:"Quantité *",
+ notes:"Notes sur le produit (facultatif)",
+ buy:"ACHETER · CONTINUER AVEC PAYPAL",
+ paymentTitle:"Confirmation du paiement",
+ paymentText:"Effectuez le paiement sur PayPal puis revenez pour envoyer l'identifiant et la capture.",
+ openPaypal:"Ouvrir PayPal",
+ transaction:"Identifiant de transaction PayPal *",
+ screenshot:"Capture du paiement *",
+ screenshotHint:"JPG, PNG ou WEBP · Maximum 6 MB",
+ submit:"ENVOYER LA COMMANDE POUR VÉRIFICATION",
+ sending:"Envoi de la commande...",
+ success:"Commande envoyée. ID : ",
+ error:"Impossible d'envoyer la commande. Réessayez.",
+ phoneError:"Saisissez un numéro international valide.",
+ screenshotError:"Choisissez une image JPG, PNG ou WEBP jusqu'à 6 MB.",
+ popupError:"Le navigateur a bloqué PayPal. Utilisez le lien ci-dessous.",
+ notice:"Les informations du produit sont fournies par le vendeur. Lisez les ingrédients et les instructions avant l'achat. Ces produits ne remplacent pas un avis médical.",
+ footer:"Boutique officielle bien-être"
+},
+
+ar:{
+ home:"العودة إلى الصفحة الرئيسية ←",
+ tag:"مجموعة المنتجات العشبية",
+ heroTitle:"العافية",
+ heroText:"اكتشف المنتجات العشبية وتفاصيلها وأسعارها وخيارات الشراء.",
+ heroNote:"🌿 منتجات عشبية · أسعار منفصلة · باي بال",
+ collection:"منتجات العافية العشبية",
+ collectionIntro:"تصفح المنتجات المضافة من لوحة الإدارة.",
+ search:"ابحث عن المنتجات...",
+ loading:"جارٍ تحميل المنتجات...",
+ empty:"لم يتم رفع أي منتجات بعد.",
+ noResults:"لم يتم العثور على منتجات.",
+ details:"تفاصيل المنتج",
+ customer:"معلومات العميل والتوصيل",
+ name:"الاسم الكامل *",
+ email:"البريد الإلكتروني *",
+ phone:"رقم الهاتف / واتساب *",
+ phoneHint:"ابحث عن اسم بلدك واختر رمز الاتصال الدولي.",
+ address:"عنوان التوصيل الكامل *",
+ quantity:"الكمية *",
+ notes:"ملاحظات المنتج (اختياري)",
+ buy:"اشترِ الآن · تابع إلى باي بال",
+ paymentTitle:"تأكيد الدفع",
+ paymentText:"أكمل الدفع عبر باي بال ثم عد لإرسال رقم المعاملة وصورة الدفع.",
+ openPaypal:"افتح صفحة باي بال",
+ transaction:"رقم معاملة باي بال *",
+ screenshot:"صورة إثبات الدفع *",
+ screenshotHint:"JPG أو PNG أو WEBP · بحد أقصى 6 MB",
+ submit:"إرسال الطلب للتحقق",
+ sending:"جارٍ إرسال الطلب...",
+ success:"تم إرسال طلبك. رقم الطلب: ",
+ error:"تعذر إرسال الطلب. حاول مرة أخرى.",
+ phoneError:"أدخل رقم هاتف دولي صحيح.",
+ screenshotError:"اختر صورة JPG أو PNG أو WEBP بحجم لا يتجاوز 6 MB.",
+ popupError:"المتصفح منع فتح باي بال. استخدم الرابط أدناه.",
+ notice:"معلومات المنتج مقدمة من البائع. اقرأ المكونات والتعليمات قبل الشراء. هذه المنتجات لا تحل محل الاستشارة الطبية.",
+ footer:"متجر العافية الرسمي"
+},
+
+pt:{
+ home:"← Voltar ao início",
+ tag:"COLEÇÃO HERBAL WELLNESS",
+ heroTitle:"Bem-estar",
+ heroText:"Descubra produtos herbais, detalhes, preços e opções de compra.",
+ heroNote:"🌿 PRODUTOS HERBAIS · PREÇOS INDIVIDUAIS · PAYPAL",
+ collection:"Produtos Herbal Wellness",
+ collectionIntro:"Explore os produtos enviados pelo painel administrativo.",
+ search:"Pesquisar produtos...",
+ loading:"Carregando produtos...",
+ empty:"Nenhum produto foi enviado ainda.",
+ noResults:"Nenhum produto encontrado.",
+ details:"Detalhes do produto",
+ customer:"Informações do cliente e entrega",
+ name:"Nome completo *",
+ email:"Gmail / E-mail *",
+ phone:"Celular / WhatsApp *",
+ phoneHint:"Pesquise seu país e selecione o código internacional.",
+ address:"Endereço completo de entrega *",
+ quantity:"Quantidade *",
+ notes:"Observações do produto (opcional)",
+ buy:"COMPRAR · CONTINUAR PARA PAYPAL",
+ paymentTitle:"Confirmação do pagamento",
+ paymentText:"Conclua o pagamento no PayPal e volte para enviar o ID da transação e a captura.",
+ openPaypal:"Abrir página PayPal",
+ transaction:"ID da transação PayPal *",
+ screenshot:"Captura do pagamento *",
+ screenshotHint:"JPG, PNG ou WEBP · Máximo 6 MB",
+ submit:"ENVIAR PEDIDO PARA VERIFICAÇÃO",
+ sending:"Enviando pedido...",
+ success:"Pedido enviado. ID: ",
+ error:"Não foi possível enviar o pedido. Tente novamente.",
+ phoneError:"Digite um número internacional válido.",
+ screenshotError:"Escolha uma imagem JPG, PNG ou WEBP de até 6 MB.",
+ popupError:"O navegador bloqueou o PayPal. Use o link abaixo.",
+ notice:"As informações são fornecidas pelo vendedor. Leia os ingredientes e instruções antes de comprar. Estes produtos não substituem orientação médica.",
+ footer:"Loja oficial de bem-estar"
+},
+
+de:{
+ home:"← Zurück zur Startseite",
+ tag:"HERBAL WELLNESS KOLLEKTION",
+ heroTitle:"Wohlbefinden",
+ heroText:"Entdecken Sie pflanzliche Produkte, Details, Preise und Bestellmöglichkeiten.",
+ heroNote:"🌿 PFLANZLICHE PRODUKTE · EINZELPREISE · PAYPAL",
+ collection:"Herbal Wellness Produkte",
+ collectionIntro:"Alle Produkte aus dem Admin-Dashboard ansehen.",
+ search:"Produkte suchen...",
+ loading:"Produkte werden geladen...",
+ empty:"Es wurden noch keine Produkte hochgeladen.",
+ noResults:"Keine Produkte gefunden.",
+ details:"Produktdetails",
+ customer:"Kunden- und Lieferinformationen",
+ name:"Vollständiger Name *",
+ email:"Gmail / E-Mail *",
+ phone:"Mobil / WhatsApp *",
+ phoneHint:"Suchen Sie Ihr Land und wählen Sie die internationale Vorwahl.",
+ address:"Vollständige Lieferadresse *",
+ quantity:"Menge *",
+ notes:"Produktnotizen (optional)",
+ buy:"JETZT KAUFEN · WEITER ZU PAYPAL",
+ paymentTitle:"Zahlungsbestätigung",
+ paymentText:"Schließen Sie die PayPal-Zahlung ab und kehren Sie zurück, um Transaktions-ID und Screenshot einzureichen.",
+ openPaypal:"PayPal-Seite öffnen",
+ transaction:"PayPal-Transaktions-ID *",
+ screenshot:"Zahlungs-Screenshot *",
+ screenshotHint:"JPG, PNG oder WEBP · Maximal 6 MB",
+ submit:"BESTELLUNG ZUR PRÜFUNG SENDEN",
+ sending:"Bestellung wird gesendet...",
+ success:"Bestellung gesendet. ID: ",
+ error:"Bestellung konnte nicht gesendet werden. Bitte erneut versuchen.",
+ phoneError:"Geben Sie eine gültige internationale Telefonnummer ein.",
+ screenshotError:"Wählen Sie ein JPG-, PNG- oder WEBP-Bild bis 6 MB.",
+ popupError:"Der Browser hat PayPal blockiert. Verwenden Sie den Link unten.",
+ notice:"Produktinformationen stammen vom Verkäufer. Lesen Sie Zutaten und Hinweise vor dem Kauf. Diese Produkte ersetzen keine medizinische Beratung.",
+ footer:"Offizieller Wellness-Shop"
+},
+
+hi:{
+ home:"← होम पेज पर वापस जाएँ",
+ tag:"हर्बल वेलनेस कलेक्शन",
+ heroTitle:"वेलनेस",
+ heroText:"हर्बल उत्पादों, उनकी जानकारी, कीमतों और खरीदारी के विकल्पों को देखें।",
+ heroNote:"🌿 हर्बल उत्पाद · अलग कीमतें · पेपाल",
+ collection:"हर्बल वेलनेस उत्पाद",
+ collectionIntro:"एडमिन डैशबोर्ड से अपलोड किए गए उत्पाद देखें।",
+ search:"हर्बल उत्पाद खोजें...",
+ loading:"उत्पाद लोड हो रहे हैं...",
+ empty:"अभी कोई उत्पाद अपलोड नहीं किया गया है।",
+ noResults:"कोई उत्पाद नहीं मिला।",
+ details:"उत्पाद विवरण",
+ customer:"ग्राहक और डिलीवरी जानकारी",
+ name:"पूरा नाम *",
+ email:"Gmail / ईमेल *",
+ phone:"मोबाइल / WhatsApp नंबर *",
+ phoneHint:"अपने देश का नाम खोजें और अंतरराष्ट्रीय कोड चुनें।",
+ address:"पूरा डिलीवरी पता *",
+ quantity:"मात्रा *",
+ notes:"उत्पाद नोट्स (वैकल्पिक)",
+ buy:"अभी खरीदें · PayPal पर जाएँ",
+ paymentTitle:"भुगतान की पुष्टि",
+ paymentText:"PayPal पर भुगतान पूरा करें और ट्रांज़ैक्शन ID तथा स्क्रीनशॉट जमा करने के लिए वापस आएँ।",
+ openPaypal:"PayPal भुगतान पेज खोलें",
+ transaction:"PayPal ट्रांज़ैक्शन ID *",
+ screenshot:"भुगतान स्क्रीनशॉट *",
+ screenshotHint:"JPG, PNG या WEBP · अधिकतम 6 MB",
+ submit:"सत्यापन के लिए ऑर्डर भेजें",
+ sending:"ऑर्डर भेजा जा रहा है...",
+ success:"ऑर्डर भेज दिया गया। ID: ",
+ error:"ऑर्डर नहीं भेजा जा सका। दोबारा कोशिश करें।",
+ phoneError:"सही अंतरराष्ट्रीय फोन नंबर दर्ज करें।",
+ screenshotError:"6 MB तक की JPG, PNG या WEBP तस्वीर चुनें।",
+ popupError:"ब्राउज़र ने PayPal को रोका है। नीचे दिया गया लिंक खोलें।",
+ notice:"उत्पाद की जानकारी विक्रेता द्वारा दी जाती है। खरीदने से पहले सामग्री और निर्देश पढ़ें। ये उत्पाद चिकित्सा सलाह का विकल्प नहीं हैं।",
+ footer:"आधिकारिक वेलनेस स्टोर"
+},
+
+zh:{
+ home:"← 返回首页",
+ tag:"草本健康系列",
+ heroTitle:"健康产品",
+ heroText:"探索草本健康产品、详细信息、价格和购买方式。",
+ heroNote:"🌿 草本产品 · 独立定价 · PAYPAL",
+ collection:"草本健康产品",
+ collectionIntro:"浏览管理员上传的所有产品。",
+ search:"搜索草本产品...",
+ loading:"正在加载产品...",
+ empty:"尚未上传任何产品。",
+ noResults:"没有找到产品。",
+ details:"商品详情",
+ customer:"客户及配送信息",
+ name:"姓名 *",
+ email:"Gmail / 电子邮箱 *",
+ phone:"手机 / WhatsApp 号码 *",
+ phoneHint:"搜索您的国家名称并选择国际区号。",
+ address:"完整配送地址 *",
+ quantity:"数量 *",
+ notes:"商品备注（可选）",
+ buy:"立即购买 · 前往 PayPal",
+ paymentTitle:"付款确认",
+ paymentText:"在 PayPal 完成付款后返回此页面，提交交易编号和付款截图。",
+ openPaypal:"打开 PayPal 付款页面",
+ transaction:"PayPal 交易编号 *",
+ screenshot:"付款截图 *",
+ screenshotHint:"JPG、PNG 或 WEBP · 最大 6 MB",
+ submit:"提交订单以供核实",
+ sending:"正在提交订单...",
+ success:"订单已提交。订单编号：",
+ error:"无法提交订单，请重试。",
+ phoneError:"请输入有效的国际电话号码。",
+ screenshotError:"请选择不超过 6 MB 的 JPG、PNG 或 WEBP 图片。",
+ popupError:"浏览器阻止了 PayPal，请使用下方链接。",
+ notice:"产品信息由卖家提供。购买前请阅读成分和使用说明。这些产品不能替代专业医疗建议。",
+ footer:"官方健康商店"
+}
+
+};
+
+/* LANGUAGE CONTROL */
+
+function tr(key){
+ return (translations[currentLanguage]||translations.en)[key]
+ || translations.en[key] || key;
+}
+
+function applyLanguage(lang){
+
+ currentLanguage=translations[lang]?lang:"en";
+
+ document.documentElement.lang=currentLanguage;
+ document.documentElement.dir=
+  ["ur","ar"].includes(currentLanguage)?"rtl":"ltr";
+
+ $("languageSelect").value=currentLanguage;
+
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+  el.textContent=tr(el.dataset.i18n);
+ });
+
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+  el.placeholder=tr(el.dataset.i18nPlaceholder);
+ });
+
+ try{
+  localStorage.setItem("sofia-language",currentLanguage);
+ }catch(e){}
+}
+
+$("languageSelect").addEventListener("change",e=>{
+ applyLanguage(e.target.value);
+});
+
+/* JSONP BACKEND CONNECTION */
+
+function jsonp(params){
+
+ return new Promise((resolve,reject)=>{
+
+  const callback="sjtWellness_"+Date.now()+"_"+
+   Math.floor(Math.random()*999999);
+
+  const script=document.createElement("script");
+
+  const timer=setTimeout(()=>{
+   cleanup();
+   reject(new Error("Website service timed out."));
+  },18000);
+
+  function cleanup(){
+   clearTimeout(timer);
+   try{delete window[callback]}
+   catch(e){window[callback]=undefined}
+   script.remove();
+  }
+
+  window[callback]=data=>{
+   cleanup();
+   resolve(data);
+  };
+
+  script.onerror=()=>{
+   cleanup();
+   reject(new Error("Could not connect to the website."));
+  };
+
+  script.src=API_URL+"?"+
+   new URLSearchParams({...params,callback}).toString();
+
+  document.body.appendChild(script);
+
+ });
+}
+
+/* LOAD HEADER PHOTO FROM ADMIN DASHBOARD */
+
+async function loadHeader(){
+
+ try{
+
+  const result=await jsonp({
+   action:"pageHeader",
+   pageKey:CATEGORY
+  });
+
+  if(result&&result.success&&result.imageUrl){
+
+   const img=$("headerPhoto");
+
+   img.onload=()=>{
+    img.style.display="block";
+    $("headerFallback").classList.add("hidden");
+   };
+
+   img.onerror=()=>{
+    img.style.display="none";
+    $("headerFallback").classList.remove("hidden");
+   };
+
+   img.src=result.imageUrl;
+
+  }
+
+ }catch(error){
+  console.warn("Header image unavailable:",error);
+ }
+
+}
+
+/* LOAD HERBAL PRODUCTS FROM ADMIN */
+
+async function loadProducts(){
+
+ try{
+
+  const result=await jsonp({
+   action:"publicContent",
+   category:CATEGORY
+  });
+
+  if(!result||result.success===false){
+   throw new Error("Could not load Herbal Wellness products.");
+  }
+
+  products=Array.isArray(result.content)?result.content:[];
+
+  renderProducts();
+
+ }catch(error){
+
+  $("productGrid").innerHTML="";
+
+  const box=document.createElement("div");
+  box.className="empty";
+
+  const h=document.createElement("h3");
+  h.textContent="Could not load products. Please refresh the page.";
+
+  box.appendChild(h);
+  $("productGrid").appendChild(box);
+
+ }
+
+}
+
+/* DISPLAY PRODUCT PRICE */
+
+function money(value){
+ return "$"+Number(value||0).toFixed(2)+" USD";
+}
+
+/* DISPLAY PRODUCTS - NO CROP */
+
+function renderProducts(){
+
+ const grid=$("productGrid");
+ const term=$("productSearch").value.trim().toLowerCase();
+
+ grid.innerHTML="";
+
+ const filtered=products.filter(p=>
+  String(p.title||"").toLowerCase().includes(term)||
+  String(p.description||"").toLowerCase().includes(term)
+ );
+
+ $("productCount").textContent=filtered.length+" products";
+
+ if(!filtered.length){
+
+  const box=document.createElement("div");
+  box.className="empty";
+
+  const h=document.createElement("h3");
+  h.textContent=products.length?tr("noResults"):tr("empty");
+
+  box.appendChild(h);
+  grid.appendChild(box);
+  return;
+
+ }
+
+ filtered.forEach(product=>{
+
+  const card=document.createElement("article");
+  card.className="product-card";
+
+  const media=document.createElement("button");
+  media.type="button";
+  media.className="product-media";
+  media.setAttribute("aria-label",product.title||"Product details");
+
+  const imageUrl=product.thumbnailUrl||product.mediaUrl||"";
+
+  if(imageUrl&&product.mediaType!=="video"){
+
+   const img=document.createElement("img");
+   img.src=imageUrl;
+   img.alt=product.title||"Herbal Wellness Product";
+   img.loading="lazy";
+
+   img.onerror=()=>{
+    img.remove();
+    media.textContent="🌿";
+   };
+
+   media.appendChild(img);
+
+  }else{
+
+   const placeholder=document.createElement("span");
+   placeholder.className="product-placeholder";
+   placeholder.textContent="🌿";
+   media.appendChild(placeholder);
+
+  }
+
+  media.addEventListener("click",()=>openProduct(product));
+
+  const info=document.createElement("div");
+  info.className="product-info";
+
+  const title=document.createElement("h3");
+  title.textContent=product.title||"Herbal Wellness Product";
+
+  const description=document.createElement("p");
+  description.textContent=product.description||"";
+
+  const price=document.createElement("div");
+  price.className="price";
+  price.textContent=money(product.price);
+
+  const buy=document.createElement("button");
+  buy.type="button";
+  buy.className="buy-button";
+  buy.textContent=tr("buy");
+  buy.addEventListener("click",()=>openProduct(product));
+
+  info.append(title,description,price,buy);
+  card.append(media,info);
+  grid.appendChild(card);
+
+ });
+
+}
+
+$("productSearch").addEventListener("input",renderProducts);
+
+/* COUNTRY SEARCH AND PHONE CODE */
+
+function initPhone(){
+
+ const input=$("customerPhone");
+
+ if(!window.intlTelInput){
+  input.placeholder="+Country Code Number";
+  return;
+ }
+
+ phoneIti=window.intlTelInput(input,{
+
+  initialCountry:"pk",
+  separateDialCode:true,
+  countrySearch:true,
+  preferredCountries:["pk","us","gb","ca","au","ae","sa","in"],
+
+  utilsScript:
+   "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.5/build/js/utils.js"
+
+ });
+
+ input.addEventListener("countrychange",updateCountryInfo);
+
+ updateCountryInfo();
+
+}
+
+function updateCountryInfo(){
+
+ if(!phoneIti)return;
+
+ const country=phoneIti.getSelectedCountryData();
+
+ $("countryInfo").textContent=
+  (country.name||"")+" (+"+(country.dialCode||"")+")";
+
+}
+
+function getFullPhone(){
+
+ const raw=$("customerPhone").value.trim();
+
+ if(!raw)return "";
+
+ if(raw.startsWith("+")){
+  return "+"+raw.replace(/\D/g,"");
+ }
+
+ if(phoneIti){
+
+  const number=phoneIti.getNumber();
+
+  if(number)return number;
+
+  const country=phoneIti.getSelectedCountryData();
+
+  const digits=raw.replace(/\D/g,"").replace(/^0+/,"");
+
+  return country.dialCode?
+   "+"+country.dialCode+digits:"";
+
+ }
+
+ return raw;
+
+}
+
+/* OPEN PRODUCT DETAILS */
+
+function openProduct(product){
+
+ selectedProduct=product;
+ pendingOrder=null;
+
+ $("modalTitle").textContent=product.title||"Herbal Product";
+ $("modalDescription").textContent=product.description||"";
+ $("modalPrice").textContent=money(product.price);
+
+ const media=$("modalMedia");
+ media.innerHTML="";
+
+ const url=product.thumbnailUrl||product.mediaUrl||"";
+
+ if(url&&product.mediaType!=="video"){
+
+  const img=document.createElement("img");
+  img.src=url;
+  img.alt=product.title||"Herbal Product";
+  media.appendChild(img);
+
+ }else{
+
+  media.textContent="🌿";
+
+ }
+
+ $("buyerForm").reset();
+ $("paymentProofForm").reset();
+
+ $("buyerForm").classList.remove("hidden");
+ $("paymentStep").classList.add("hidden");
+
+ $("orderStatus").className="status";
+ $("orderStatus").textContent="";
+
+ $("payFallback").style.display="none";
+ $("buyNowButton").disabled=false;
+ $("buyNowButton").textContent=tr("buy");
+
+ if(phoneIti){
+  phoneIti.setCountry("pk");
+  updateCountryInfo();
+ }
+
+ $("productModal").classList.add("open");
+ $("productModal").setAttribute("aria-hidden","false");
+ document.body.style.overflow="hidden";
+
+}
+
+/* CLOSE PRODUCT WINDOW */
+
+function closeModal(){
+
+ $("productModal").classList.remove("open");
+ $("productModal").setAttribute("aria-hidden","true");
+ document.body.style.overflow="";
+
+ selectedProduct=null;
+ pendingOrder=null;
+
+}
+
+$("closeModal").addEventListener("click",closeModal);
+$("modalBackdrop").addEventListener("click",closeModal);
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"&&$("productModal").classList.contains("open")){
+  closeModal();
+ }
+});
+
+/* BUY NOW - OPEN INDIVIDUAL PRODUCT PAYPAL */
+
+$("buyerForm").addEventListener("submit",event=>{
+
+ event.preventDefault();
+
+ if(!selectedProduct){
+  showStatus("orderStatus","Please select a product.","error");
+  return;
+ }
+
+ if(!selectedProduct.paypalLink){
+  showStatus("orderStatus","PayPal link is not configured for this product.","error");
+  return;
+ }
+
+ const phone=getFullPhone();
+
+ if(!phone||phone.replace(/\D/g,"").length<7){
+  showStatus("orderStatus",tr("phoneError"),"error");
+  return;
+ }
+
+ const country=phoneIti?
+  phoneIti.getSelectedCountryData().name:"International";
+
+ const quantity=Number($("quantity").value);
+
+ if(!Number.isInteger(quantity)||quantity<1||quantity>20){
+  showStatus("orderStatus","Quantity must be between 1 and 20.","error");
+  return;
+ }
+
+ let address=
+  "Country: "+country+
+  "\nDelivery Address: "+$("customerAddress").value.trim();
+
+ const notes=$("productNotes").value.trim();
+
+ if(notes){
+  address+="\nProduct Notes: "+notes;
+ }
+
+ pendingOrder={
+
+  productId:selectedProduct.id,
+  name:$("customerName").value.trim(),
+  email:$("customerEmail").value.trim(),
+  phone:phone,
+  address:address,
+  quantity:quantity,
+  paypalLink:selectedProduct.paypalLink
+
+ };
+
+ /* OPEN THIS EXACT PRODUCT'S PAYPAL LINK */
+
+ const payWindow=window.open(
+  selectedProduct.paypalLink,
+  "_blank"
+ );
+
+ $("payFallbackLink").href=selectedProduct.paypalLink;
+ $("payFallback").style.display="block";
+
+ if(!payWindow){
+  showStatus("orderStatus",tr("popupError"),"info");
+ }else{
+  try{payWindow.opener=null}catch(e){}
+  showStatus("orderStatus",tr("paymentText"),"success");
+ }
+
+ $("buyerForm").classList.add("hidden");
+ $("paymentStep").classList.remove("hidden");
+
+});
+
+/* READ PAYMENT SCREENSHOT */
+
+function readFile(file){
+
+ return new Promise((resolve,reject)=>{
+
+  const reader=new FileReader();
+
+  reader.onload=()=>resolve(String(reader.result||""));
+
+  reader.onerror=()=>reject(new Error("Could not read screenshot."));
+
+  reader.readAsDataURL(file);
+
+ });
+
+}
+
+/* SUBMIT ORDER TO EXISTING ADMIN BACKEND */
+
+$("paymentProofForm").addEventListener("submit",async event=>{
+
+ event.preventDefault();
+
+ if(!pendingOrder||!selectedProduct){
+  showStatus("orderStatus","Please select a product first.","error");
+  return;
+ }
+
+ const file=$("paymentScreenshot").files[0];
+
+ if(
+  !file||
+  file.size>6*1024*1024||
+  !/^image\/(jpeg|png|webp)$/i.test(file.type)
+ ){
+
+  showStatus("orderStatus",tr("screenshotError"),"error");
+  return;
+
+ }
+
+ const button=$("submitOrderButton");
+
+ button.disabled=true;
+ button.textContent=tr("sending");
+
+ try{
+
+  const screenshotData=await readFile(file);
+
+  $("backendProductId").value=pendingOrder.productId;
+  $("backendName").value=pendingOrder.name;
+  $("backendEmail").value=pendingOrder.email;
+  $("backendPhone").value=pendingOrder.phone;
+  $("backendAddress").value=pendingOrder.address;
+  $("backendQuantity").value=pendingOrder.quantity;
+
+  $("backendTransactionId").value=
+   $("transactionId").value.trim();
+
+  $("backendScreenshot").value=screenshotData;
+
+  const form=$("backendOrderForm");
+
+  form.action=API_URL;
+  form.submit();
+
+ }catch(error){
+
+  button.disabled=false;
+  button.textContent=tr("submit");
+
+  showStatus(
+   "orderStatus",
+   error.message||tr("error"),
+   "error"
+  );
+
+ }
+
+});
+
+/* ADMIN BACKEND RESPONSE */
+
+window.addEventListener("message",event=>{
+
+ if(event.source!==$("orderFrame").contentWindow)return;
+
+ const data=event.data||{};
+
+ if(data.type==="PRODUCT_ORDER_SUCCESS"&&data.success){
+
+  showStatus(
+   "orderStatus",
+   tr("success")+(data.orderId||""),
+   "success"
+  );
+
+  $("paymentProofForm").classList.add("hidden");
+  $("submitOrderButton").disabled=true;
+
+  pendingOrder=null;
+
+ }else if(
+  data.type==="FORM_SUBMISSION_ERROR"||
+  data.type==="PRODUCT_ORDER_ERROR"
+ ){
+
+  $("submitOrderButton").disabled=false;
+  $("submitOrderButton").textContent=tr("submit");
+
+  showStatus(
+   "orderStatus",
+   data.message||tr("error"),
+   "error"
+  );
+
+ }
+
+});
+
+/* STATUS MESSAGE */
+
+function showStatus(id,message,type){
+
+ const el=$(id);
+
+ el.textContent=message;
+ el.className="status show "+type;
+
+}
+
+/* START PAGE */
+
+async function startPage(){
+
+ let saved="en";
+
+ try{
+  saved=localStorage.getItem("sofia-language")||"en";
+ }catch(e){}
+
+ applyLanguage(saved);
+
+ initPhone();
+
+ await Promise.all([
+  loadHeader(),
+  loadProducts()
+ ]);
+
+}
+
+startPage();
+
+</script>
+
+</body>
+</html>
