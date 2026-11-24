@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10264a">
+<meta name="description" content="Sofia Jenny Taborda Lucky Draw — explore prizes and enter securely through PayPal.">
+<title>Sofia Jenny Taborda | Lucky Draw</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<style>
+:root{--navy:#10264a;--navy2:#1d3761;--gold:#e9b94e;--gold2:#ffdf91;--purple:#68438d;--ink:#26364d;--muted:#718096;--bg:#f5f7fb;--line:#e4e9f1;--white:#fff;--green:#168653;--red:#b83b43}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px clamp(14px,4vw,55px);background:#fff;box-shadow:0 3px 17px #10264a10}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy);min-width:0}
+.brand img{width:49px;height:49px;object-fit:contain;border-radius:50%}
+.brand strong{font-size:clamp(15px,2vw,21px);font-weight:900}
+.header-actions{display:flex;align-items:center;gap:15px}
+#languageSelect{max-width:175px;padding:10px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--navy)}
+.back-home{color:var(--navy);font-size:13px;font-weight:900;text-decoration:none}
+.back-home:hover{color:var(--purple)}
+.accent-line{height:5px;background:linear-gradient(90deg,#10264a,#d59a32,#ffe4a4,#68438d,#10264a)}
+main{max-width:1320px;margin:25px auto;padding:0 18px}
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px;padding:clamp(22px,4vw,42px);border:1px solid #ead8ad;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#0d2143,#1d3761 57%,#604184);box-shadow:0 14px 35px #10264a20;color:#fff}
+.hero-tag{color:#ffdf91;font-size:11px;letter-spacing:2px;font-weight:900}
+.hero h1{margin:13px 0 14px;color:#fff;font-size:clamp(32px,4.4vw,54px);font-weight:900;line-height:1.12}
+.hero h1 span{display:block;color:#ffdf91}
+.hero p{max-width:560px;color:#edf1f8;font-size:15px;line-height:1.8}
+.hero-note{margin-top:18px;color:#ffe4a4;font-size:12px;font-weight:900;letter-spacing:.5px}
+.hero-image{display:block;width:100%;max-height:390px;overflow:hidden;border:3px solid #f1d18a;border-radius:15px;background:#0a1d38;box-shadow:0 12px 30px #0005}
+.hero-image img{display:block;width:100%;height:100%;max-height:390px;object-fit:contain}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:17px;flex-wrap:wrap;margin-top:24px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:15px}
+.shop-heading h2{margin:0;color:var(--navy);font-size:clamp(22px,3vw,30px);font-weight:900}
+.shop-heading p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.search-box{position:relative;width:min(100%,370px)}
+.search-box input{width:100%;padding:14px 16px 14px 43px;border:1px solid #d9e0eb;border-radius:10px;background:#fbfcfe;color:var(--ink);outline:none}
+.search-box input:focus{border-color:#9b7cbd;box-shadow:0 0 0 3px #68438d18}
+.search-icon{position:absolute;left:14px;top:12px;font-size:18px}
+.draw-count{margin:18px 3px 12px;color:var(--muted);font-size:13px;font-weight:700}
+.draw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.draw-card{min-width:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 20px #10264a0c;transition:transform .22s,box-shadow .22s}
+.draw-card:hover{transform:translateY(-4px);box-shadow:0 13px 28px #10264a18}
+.draw-media{position:relative;display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,#e8edf5,#d7dceb)}
+.draw-media img{display:block;width:100%;height:100%;object-fit:cover}
+.draw-media iframe{width:100%;height:100%;border:0}
+.media-fallback{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;width:100%;height:100%;color:#6b7890;font-size:42px}
+.media-fallback small{font-size:12px;font-weight:800;letter-spacing:1px}
+.draw-info{padding:18px}
+.draw-info h3{margin:0 0 6px;color:var(--navy);font-size:19px;font-weight:900;line-height:1.35;overflow-wrap:anywhere}
+.prize-line{margin:0 0 9px;color:#956b19;font-size:13px;font-weight:900}
+.draw-description{min-height:44px;margin:0 0 13px;color:var(--muted);font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+.draw-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 15px}
+.meta-box{padding:9px 10px;border:1px solid #edf0f5;border-radius:9px;background:#fafbfd}
+.meta-box small{display:block;color:#8994a5;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.meta-box strong{display:block;margin-top:2px;color:var(--navy);font-size:13px;overflow-wrap:anywhere}
+.entry-price{margin:9px 0 13px;color:#a77719;font-size:25px;font-weight:900}
+.entry-price small{color:var(--muted);font-size:11px;font-weight:700}
+.join-button{width:100%;padding:13px 15px;border:0;border-radius:10px;background:linear-gradient(100deg,#e8b84e,#ffe2a0);color:#35280d;font-size:14px;font-weight:900;box-shadow:0 4px 12px #9a682522;transition:.2s}
+.join-button:hover{filter:brightness(1.04);transform:translateY(-2px)}
+.empty{grid-column:1/-1;padding:42px 16px;text-align:center;background:#fff;border:1px dashed #ccd5e2;border-radius:14px;color:var(--muted)}
+.empty .emoji{font-size:40px}
+.empty h3{margin:8px 0;color:var(--navy)}
+.empty p{margin:0;font-size:13px}
+footer{margin-top:42px;padding:27px 15px;background:#0c2345;color:#fff;text-align:center;font-size:12px;line-height:1.8}
+.modal{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:14px}
+.modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:#071329df;backdrop-filter:blur(4px)}
+.modal-panel{position:relative;z-index:2;width:100%;max-width:760px;max-height:93vh;overflow-y:auto;padding:24px;background:#fff;border:1px solid #e9d8ad;border-radius:17px;box-shadow:0 20px 60px #0005}
+.modal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.modal-top h2{margin:0;color:var(--navy);font-size:22px;font-weight:900}
+.close-button{width:38px;height:38px;border:0;border-radius:50%;background:#f0f2f7;color:var(--navy);font-size:23px;font-weight:900}
+.selected-draw{display:grid;grid-template-columns:135px 1fr;gap:16px;align-items:center;margin-bottom:18px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fafbfd}
+.selected-media{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:9px;background:#e8edf5}
+.selected-media img{display:block;width:100%;height:100%;object-fit:cover}
+.selected-media iframe{width:100%;height:100%;border:0}
+.selected-draw h3{margin:0 0 5px;color:var(--navy);font-size:18px}
+.selected-draw p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.selected-draw .selected-price{margin-top:6px;color:#a77719;font-size:20px;font-weight:900}
+.form-title{margin:18px 0 12px;color:var(--navy);font-size:16px;font-weight:900}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{min-width:0}
+.field.full{grid-column:1/-1}
+.field label{display:block;margin-bottom:6px;color:#394a63;font-size:13px;font-weight:900}
+.field input,.field textarea{width:100%;min-width:0;padding:12px;border:1px solid #dce2ec;border-radius:9px;background:#fff;color:var(--ink);outline:none}
+.field input:focus,.field textarea:focus{border-color:#9b7cbd;box-shadow:0 0 0 3px #68438d18}
+.field input[type=file]{padding:9px}
+.field textarea{min-height:78px;resize:vertical}
+.iti{width:100%}
+.iti__country-list{z-index:10005;max-width:300px;color:#333}
+.country-display,.small-note{display:block;margin-top:6px;color:#7c8797;font-size:11px;line-height:1.5}
+.total-box{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding:13px 15px;border:1px solid #efdfb8;border-radius:10px;background:#fffaf0;color:#58431b;font-weight:900}
+.total-box strong{font-size:18px}
+.modal-action{width:100%;margin-top:17px;padding:14px;border:0;border-radius:10px;background:linear-gradient(100deg,#10264a,#68438d);color:#fff;font-size:14px;font-weight:900;box-shadow:0 5px 15px #10264a25}
+.modal-action:hover{filter:brightness(1.1)}
+.modal-action:disabled{opacity:.55;cursor:wait}
+.payment-step{margin-top:18px;padding:18px;border:1px solid #e9dfc7;border-radius:12px;background:#fffaf0}
+.payment-step h3{margin:0 0 7px;color:var(--navy);font-size:17px}
+.payment-step p{margin:0;color:#6f6a5d;font-size:13px;line-height:1.7}
+.pay-fallback{display:inline-block;margin:12px 0;padding:10px 13px;border-radius:8px;background:#f4e7c7;color:#614711;font-size:13px;font-weight:900;text-decoration:none}
+.status{display:none;margin-top:14px;padding:13px;border-radius:9px;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.status.show{display:block}
+.status.success{background:#eaf7ef;color:#145f39;border:1px solid #c4e6d0}
+.status.error{background:#fff0f0;color:#9d2c2c;border:1px solid #f0caca}
+.status.info{background:#f1f4fa;color:#324a6c;border:1px solid #d8e0ec}
+.hidden{display:none!important}
+.response-frame{display:none;width:0;height:0;border:0}
+.pending-note{margin-top:12px;padding:12px;border-left:4px solid #d5a43e;background:#fff7e5;color:#5c481c;font-size:13px;line-height:1.7}
+html[dir=rtl] body{text-align:right}
+html[dir=rtl] .hero{direction:rtl}
+html[dir=rtl] .brand{flex-direction:row-reverse}
+html[dir=rtl] .search-icon{left:auto;right:14px}
+html[dir=rtl] .search-box input{padding:14px 43px 14px 16px}
+html[dir=rtl] .modal-top{flex-direction:row-reverse}
+html[dir=rtl] .field{text-align:right}
+html[dir=rtl] .total-box{flex-direction:row-reverse}
+@media(max-width:900px){.draw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:20px}}
+@media(max-width:650px){
+ header{padding:11px 13px}
+ .header-actions{width:100%;justify-content:space-between}
+ #languageSelect{max-width:58%;font-size:12px}
+ .back-home{font-size:12px}
+ main{margin:16px auto;padding:0 12px}
+ .hero{grid-template-columns:1fr;padding:20px 15px}
+ .hero-image{grid-row:1;max-height:none}
+ .hero-image img{height:auto;max-height:none;object-fit:contain}
+ .hero h1{font-size:35px}
+ .hero p{font-size:14px}
+ .toolbar{padding:16px}
+ .search-box{width:100%}
+ .draw-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .draw-info{padding:11px}
+ .draw-info h3{font-size:14px}
+ .draw-description{font-size:11px;min-height:35px}
+ .draw-meta{grid-template-columns:1fr;gap:6px}
+ .meta-box{padding:7px 8px}
+ .entry-price{font-size:19px}
+ .join-button{padding:11px 7px;font-size:11px}
+ .modal-panel{padding:17px 13px}
+ .selected-draw{grid-template-columns:95px 1fr;gap:11px}
+ .selected-draw h3{font-size:15px}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+}
+@media(max-width:390px){.draw-grid{grid-template-columns:1fr}.draw-card{max-width:440px;width:100%;margin:auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+ <a class="brand" href="index.html">
+  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
+  <strong>Sofia Jenny Taborda</strong>
+ </a>
+ <div class="header-actions">
+  <select id="languageSelect" aria-label="Choose language">
+   <option value="en">🇬🇧 English</option><option value="ur">🇵🇰 اردو</option>
+   <option value="es">🇪🇸 Español</option><option value="it">🇮🇹 Italiano</option>
+   <option value="fr">🇫🇷 Français</option><option value="ar">🇸🇦 العربية</option>
+   <option value="pt">🇧🇷 Português</option><option value="de">🇩🇪 Deutsch</option>
+   <option value="hi">🇮🇳 हिन्दी</option><option value="zh">🇨🇳 中文</option>
+  </select>
+  <a href="index.html" class="back-home" data-i18n="home">← Back to Home</a>
+ </div>
+</header>
+<div class="accent-line"></div>
+
+<main>
+ <section class="hero">
+  <div>
+   <div class="hero-tag" data-i18n="eyebrow">SOFIA JENNY TABORDA · LUCKY DRAW</div>
+   <h1><span data-i18n="title">Win Something Special</span><span data-i18n="title2">Lucky Draw</span></h1>
+   <p data-i18n="subtitle">Choose the prize you want, complete its entry payment through PayPal, and submit your payment proof for verification.</p>
+   <div class="hero-note" data-i18n="heroNote">✦ DIFFERENT PRIZES · INDIVIDUAL ENTRY PRICES · VERIFIED ENTRIES</div>
+  </div>
+  <div class="hero-image">
+   <img id="luckyBanner" src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png" alt="Sofia Jenny Taborda Lucky Draw">
+  </div>
+ </section>
+
+ <section class="toolbar">
+  <div class="shop-heading">
+   <h2 data-i18n="collection">Explore Lucky Draws</h2>
+   <p data-i18n="collectionIntro">Choose the prize you would like to enter.</p>
+  </div>
+  <div class="search-box">
+   <span class="search-icon" aria-hidden="true">⌕</span>
+   <input id="drawSearch" type="search" data-i18n-placeholder="search" placeholder="Search prizes or draws...">
+  </div>
+ </section>
+ <div class="draw-count" id="drawCount" aria-live="polite"></div>
+ <section class="draw-grid" id="drawGrid" aria-live="polite">
+  <div class="empty"><div class="emoji">🎁</div><h3 data-i18n="loading">Loading Lucky Draws...</h3></div>
+ </section>
+</main>
+
+<footer><div>© <span id="year"></span> Sofia Jenny Taborda · <span data-i18n="footer">Official Lucky Draw</span></div><div data-i18n="footerNote">All entries remain pending until payment verification and approval.</div></footer>
+
+<!-- ENTRY MODAL -->
+<div class="modal" id="entryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-backdrop" id="modalBackdrop"></div>
+ <div class="modal-panel">
+  <div class="modal-top">
+   <h2 id="modalTitle" data-i18n="joinTitle">Join This Lucky Draw</h2>
+   <button class="close-button" id="closeModal" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="selected-draw">
+   <div class="selected-media" id="selectedMedia"></div>
+   <div>
+    <h3 id="selectedTitle"></h3>
+    <p id="selectedPrize"></p>
+    <p id="selectedDate"></p>
+    <div class="selected-price" id="selectedPrice"></div>
+   </div>
+  </div>
+
+  <form id="buyerForm">
+   <div class="form-title" data-i18n="customerDetails">Your Details</div>
+   <div class="form-grid">
+    <div class="field">
+     <label for="customerName" data-i18n="name">Full Name *</label>
+     <input id="customerName" required maxlength="120" autocomplete="name">
+    </div>
+    <div class="field">
+     <label for="customerEmail" data-i18n="email">Gmail / Email *</label>
+     <input id="customerEmail" type="email" required maxlength="160" autocomplete="email">
+    </div>
+    <div class="field full">
+     <label for="customerPhone" data-i18n="phone">Mobile / WhatsApp Number *</label>
+     <input id="customerPhone" type="tel" required autocomplete="tel">
+     <span class="country-display" id="countryDisplay" data-i18n="phoneHint">Select your country code and enter your mobile number.</span>
+    </div>
+    <div class="field">
+     <label for="entryQuantity" data-i18n="quantity">Number of Entries *</label>
+     <input id="entryQuantity" type="number" min="1" max="50" value="1" required>
+    </div>
+   </div>
+   <div class="total-box"><span data-i18n="total">Total Entry Payment</span><strong id="entryTotal">$0.00 USD</strong></div>
+   <button class="modal-action" type="submit" id="continuePayButton" data-i18n="continuePay">CONTINUE TO PAYPAL</button>
+  </form>
+
+  <section class="payment-step hidden" id="paymentProofSection">
+   <h3 data-i18n="paymentStep">Complete Payment Confirmation</h3>
+   <p data-i18n="paymentStepText">PayPal has opened in a new tab. Complete the payment, return here, and submit your transaction ID and screenshot. Your entry will remain pending until Sofia verifies it.</p>
+   <a class="pay-fallback" id="payFallback" href="#" target="_blank" rel="noopener noreferrer" data-i18n="payFallback">Open this draw's PayPal payment page</a>
+   <form id="paymentProofForm">
+    <div class="form-grid">
+     <div class="field full">
+      <label for="transactionId" data-i18n="transaction">PayPal Transaction ID *</label>
+      <input id="transactionId" required maxlength="120">
+     </div>
+     <div class="field full">
+      <label for="paymentScreenshot" data-i18n="screenshot">Payment Screenshot *</label>
+      <input id="paymentScreenshot" type="file" accept="image/jpeg,image/png,image/webp" required>
+      <span class="small-note" data-i18n="screenshotHint">JPG, PNG or WEBP · Maximum 6 MB</span>
+     </div>
+    </div>
+    <button class="modal-action" type="submit" id="submitEntryButton" data-i18n="submitEntry">SUBMIT ENTRY FOR VERIFICATION</button>
+   </form>
+  </section>
+  <div class="status" id="entryStatus" aria-live="polite"></div>
+ </div>
+</div>
+
+<!-- Existing Google Apps Script customer-entry endpoint -->
+<form id="backendEntryForm" method="POST" target="luckyEntryFrame" style="display:none">
+ <input type="hidden" name="action" value="luckyEntry">
+ <input type="hidden" name="drawId" id="backendDrawId">
+ <input type="hidden" name="name" id="backendName">
+ <input type="hidden" name="email" id="backendEmail">
+ <input type="hidden" name="phone" id="backendPhone">
+ <input type="hidden" name="quantity" id="backendQuantity">
+ <input type="hidden" name="transactionId" id="backendTransactionId">
+ <input type="hidden" name="screenshotData" id="backendScreenshot">
+</form>
+<iframe class="response-frame" id="luckyEntryFrame" name="luckyEntryFrame" title="Lucky Draw entry response"></iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script>
+"use strict";
+
+const API_URL="https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+const CATEGORY="Lucky Draw";
+const $=id=>document.getElementById(id);
+let draws=[];
+let selectedDraw=null;
+let pendingEntry=null;
+let phoneIti=null;
+let currentLanguage="en";
+
+const T={
+en:{home:"← Back to Home",eyebrow:"SOFIA JENNY TABORDA · LUCKY DRAW",title:"Win Something Special",title2:"Lucky Draw",subtitle:"Choose the prize you want, complete its entry payment through PayPal, and submit your payment proof for verification.",heroNote:"✦ DIFFERENT PRIZES · INDIVIDUAL ENTRY PRICES · VERIFIED ENTRIES",collection:"Explore Lucky Draws",collectionIntro:"Choose the prize you would like to enter.",search:"Search prizes or draws...",loading:"Loading Lucky Draws...",empty:"No active Lucky Draws are available right now.",noResults:"No draws match your search.",loadError:"Could not load Lucky Draws. Please refresh and try again.",join:"JOIN THIS DRAW",drawDate:"Draw date",entryPrice:"Entry price",maxEntries:"Entry limit",unlimited:"No entry limit",joinTitle:"Join This Lucky Draw",customerDetails:"Your Details",name:"Full Name *",email:"Gmail / Email *",phone:"Mobile / WhatsApp Number *",phoneHint:"Select your country code and enter your mobile number.",quantity:"Number of Entries *",total:"Total Entry Payment",continuePay:"CONTINUE TO PAYPAL",paymentStep:"Complete Payment Confirmation",paymentStepText:"PayPal has opened in a new tab. Complete the payment, return here, and submit your transaction ID and screenshot. Your entry will remain pending until Sofia verifies it.",payFallback:"Open this draw's PayPal payment page",transaction:"PayPal Transaction ID *",screenshot:"Payment Screenshot *",screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",submitEntry:"SUBMIT ENTRY FOR VERIFICATION",sending:"Submitting your entry...",invalidPhone:"Enter a valid international mobile number.",invalidScreenshot:"Choose a JPG, PNG or WEBP screenshot up to 6 MB.",selectDraw:"Please select a Lucky Draw first.",popupError:"Your browser blocked the PayPal tab. Use the PayPal link shown below.",entrySuccess:"Thank you for participating! Your entry has been submitted and is now pending. Sofia Jenny Taborda will verify your payment and approve your entry. Please wait for confirmation.",entryError:"Your entry could not be submitted. Please check your details and try again.",footer:"Official Lucky Draw",footerNote:"All entries remain pending until payment verification and approval.",dateTBA:"Draw date to be announced",prize:"Prize",searchCount:"draws found"},
+ur:{home:"← ہوم پیج پر واپس جائیں",eyebrow:"صوفیہ جینی تبورڈا · لکی ڈرا",title:"خاص انعام جیتیں",title2:"لکی ڈرا",subtitle:"اپنی پسند کا انعام منتخب کریں، پے پال کے ذریعے انٹری فیس ادا کریں اور تصدیق کے لیے ادائیگی کا ثبوت جمع کروائیں۔",heroNote:"✦ مختلف انعامات · الگ انٹری فیس · تصدیق شدہ انٹریز",collection:"لکی ڈراز دیکھیں",collectionIntro:"جس انعام میں شامل ہونا چاہتے ہیں اسے منتخب کریں۔",search:"انعام یا لکی ڈرا تلاش کریں...",loading:"لکی ڈراز لوڈ ہو رہے ہیں...",empty:"اس وقت کوئی فعال لکی ڈرا موجود نہیں۔",noResults:"آپ کی تلاش سے کوئی لکی ڈرا نہیں ملا۔",loadError:"لکی ڈرا لوڈ نہیں ہو سکے۔ دوبارہ کوشش کریں۔",join:"اس لکی ڈرا میں شامل ہوں",drawDate:"قرعہ اندازی کی تاریخ",entryPrice:"انٹری فیس",maxEntries:"انٹری کی حد",unlimited:"کوئی حد نہیں",joinTitle:"لکی ڈرا میں شامل ہوں",customerDetails:"اپنی معلومات درج کریں",name:"پورا نام *",email:"جی میل / ای میل *",phone:"موبائل / واٹس ایپ نمبر *",phoneHint:"اپنے ملک کا کوڈ منتخب کرکے موبائل نمبر درج کریں۔",quantity:"انٹریز کی تعداد *",total:"کل انٹری فیس",continuePay:"پے پال پر جائیں",paymentStep:"ادائیگی کی تصدیق مکمل کریں",paymentStepText:"پے پال نئے ٹیب میں کھل گیا ہے۔ ادائیگی مکمل کریں، واپس آکر ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔ صوفیہ کی تصدیق تک آپ کی انٹری زیرِ التوا رہے گی۔",payFallback:"اس لکی ڈرا کا پے پال لنک کھولیں",transaction:"پے پال ٹرانزیکشن آئی ڈی *",screenshot:"ادائیگی کا اسکرین شاٹ *",screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",submitEntry:"انٹری تصدیق کے لیے جمع کروائیں",sending:"آپ کی انٹری جمع ہو رہی ہے...",invalidPhone:"درست بین الاقوامی موبائل نمبر درج کریں۔",invalidScreenshot:"6 MB تک کا درست JPG، PNG یا WEBP اسکرین شاٹ منتخب کریں۔",selectDraw:"پہلے لکی ڈرا منتخب کریں۔",popupError:"براؤزر نے پے پال ٹیب روک دیا ہے۔ نیچے دیا گیا لنک کھولیں۔",entrySuccess:"شرکت کرنے کا شکریہ! آپ کی انٹری جمع ہو گئی ہے اور فی الحال زیرِ التوا ہے۔ صوفیہ جینی تبورڈا آپ کی ادائیگی چیک کرکے انٹری منظور کریں گی۔ براہِ کرم انتظار کریں۔",entryError:"آپ کی انٹری جمع نہیں ہو سکی۔ معلومات چیک کرکے دوبارہ کوشش کریں۔",footer:"آفیشل لکی ڈرا",footerNote:"تمام انٹریز ادائیگی کی تصدیق اور منظوری تک زیرِ التوا رہیں گی۔",dateTBA:"قرعہ اندازی کی تاریخ جلد بتائی جائے گی",prize:"انعام",searchCount:"لکی ڈراز ملے"},
+es:{home:"← Volver al inicio",eyebrow:"SOFIA JENNY TABORDA · SORTEO",title:"Gana algo especial",title2:"Sorteo",subtitle:"Elige el premio, paga la participación con PayPal y envía el comprobante para su verificación.",heroNote:"✦ PREMIOS DIFERENTES · PRECIOS INDIVIDUALES · PARTICIPACIONES VERIFICADAS",collection:"Explorar sorteos",collectionIntro:"Elige el premio en el que deseas participar.",search:"Buscar premios o sorteos...",loading:"Cargando sorteos...",empty:"No hay sorteos activos ahora.",noResults:"No hay sorteos que coincidan.",loadError:"No se pudieron cargar los sorteos.",join:"PARTICIPAR",drawDate:"Fecha del sorteo",entryPrice:"Precio de entrada",maxEntries:"Límite de entradas",unlimited:"Sin límite",joinTitle:"Participar en este sorteo",customerDetails:"Tus datos",name:"Nombre completo *",email:"Correo electrónico *",phone:"Móvil / WhatsApp *",phoneHint:"Selecciona el código de tu país.",quantity:"Número de participaciones *",total:"Pago total",continuePay:"CONTINUAR A PAYPAL",paymentStep:"Confirmar pago",paymentStepText:"PayPal se abrió en otra pestaña. Completa el pago y vuelve para enviar el ID de transacción y la captura. Tu participación quedará pendiente hasta la verificación.",payFallback:"Abrir enlace PayPal",transaction:"ID de transacción PayPal *",screenshot:"Captura del pago *",screenshotHint:"JPG, PNG o WEBP · Máximo 6 MB",submitEntry:"ENVIAR PARA VERIFICACIÓN",sending:"Enviando...",invalidPhone:"Introduce un número internacional válido.",invalidScreenshot:"Selecciona una captura JPG, PNG o WEBP de hasta 6 MB.",selectDraw:"Selecciona primero un sorteo.",popupError:"El navegador bloqueó PayPal. Usa el enlace de abajo.",entrySuccess:"¡Gracias por participar! Tu entrada está pendiente. Sofia Jenny Taborda verificará el pago y aprobará tu participación. Espera la confirmación.",entryError:"No se pudo enviar la entrada.",footer:"Sorteo oficial",footerNote:"Las participaciones quedan pendientes hasta verificar el pago.",dateTBA:"Fecha por anunciar",prize:"Premio",searchCount:"sorteos encontrados"},
+it:{home:"← Torna alla home",eyebrow:"SOFIA JENNY TABORDA · ESTRAZIONE",title:"Vinci qualcosa di speciale",title2:"Estrazione",subtitle:"Scegli il premio, paga la quota tramite PayPal e invia la prova di pagamento per la verifica.",heroNote:"✦ PREMI DIVERSI · QUOTE INDIVIDUALI · PARTECIPAZIONI VERIFICATE",collection:"Esplora le estrazioni",collectionIntro:"Scegli il premio a cui vuoi partecipare.",search:"Cerca premi o estrazioni...",loading:"Caricamento...",empty:"Nessuna estrazione attiva al momento.",noResults:"Nessun risultato.",loadError:"Impossibile caricare le estrazioni.",join:"PARTECIPA",drawDate:"Data estrazione",entryPrice:"Quota di partecipazione",maxEntries:"Limite partecipazioni",unlimited:"Nessun limite",joinTitle:"Partecipa a questa estrazione",customerDetails:"I tuoi dati",name:"Nome completo *",email:"Email *",phone:"Cellulare / WhatsApp *",phoneHint:"Seleziona il prefisso del tuo paese.",quantity:"Numero di partecipazioni *",total:"Pagamento totale",continuePay:"CONTINUA SU PAYPAL",paymentStep:"Conferma pagamento",paymentStepText:"PayPal si è aperto in una nuova scheda. Completa il pagamento e torna per inviare ID transazione e screenshot. La partecipazione resta in attesa di verifica.",payFallback:"Apri il link PayPal",transaction:"ID transazione PayPal *",screenshot:"Screenshot pagamento *",screenshotHint:"JPG, PNG o WEBP · Max 6 MB",submitEntry:"INVIA PER LA VERIFICA",sending:"Invio in corso...",invalidPhone:"Inserisci un numero internazionale valido.",invalidScreenshot:"Scegli uno screenshot JPG, PNG o WEBP fino a 6 MB.",selectDraw:"Seleziona prima un'estrazione.",popupError:"Il browser ha bloccato PayPal. Usa il link qui sotto.",entrySuccess:"Grazie per la partecipazione! La tua richiesta è in attesa. Sofia Jenny Taborda verificherà il pagamento e approverà la partecipazione.",entryError:"Invio non riuscito.",footer:"Estrazione ufficiale",footerNote:"Le partecipazioni restano in attesa fino alla verifica del pagamento.",dateTBA:"Data da annunciare",prize:"Premio",searchCount:"estrazioni trovate"},
+fr:{home:"← Retour à l'accueil",eyebrow:"SOFIA JENNY TABORDA · TIRAGE AU SORT",title:"Gagnez un prix spécial",title2:"Tirage au sort",subtitle:"Choisissez un prix, payez via PayPal et envoyez votre preuve de paiement pour vérification.",heroNote:"✦ PLUSIEURS PRIX · TARIFS INDIVIDUELS · PARTICIPATIONS VÉRIFIÉES",collection:"Découvrir les tirages",collectionIntro:"Choisissez le prix auquel vous souhaitez participer.",search:"Rechercher un prix...",loading:"Chargement...",empty:"Aucun tirage actif pour le moment.",noResults:"Aucun résultat.",loadError:"Impossible de charger les tirages.",join:"PARTICIPER",drawDate:"Date du tirage",entryPrice:"Frais de participation",maxEntries:"Limite",unlimited:"Sans limite",joinTitle:"Participer à ce tirage",customerDetails:"Vos informations",name:"Nom complet *",email:"E-mail *",phone:"Mobile / WhatsApp *",phoneHint:"Choisissez l'indicatif de votre pays.",quantity:"Nombre de participations *",total:"Paiement total",continuePay:"CONTINUER VERS PAYPAL",paymentStep:"Confirmer le paiement",paymentStepText:"PayPal s'est ouvert dans un nouvel onglet. Terminez le paiement puis revenez envoyer l'identifiant de transaction et la capture. Votre participation restera en attente de vérification.",payFallback:"Ouvrir le lien PayPal",transaction:"ID de transaction PayPal *",screenshot:"Capture du paiement *",screenshotHint:"JPG, PNG ou WEBP · Max 6 MB",submitEntry:"ENVOYER POUR VÉRIFICATION",sending:"Envoi...",invalidPhone:"Saisissez un numéro international valide.",invalidScreenshot:"Choisissez une capture JPG, PNG ou WEBP de 6 MB maximum.",selectDraw:"Sélectionnez d'abord un tirage.",popupError:"PayPal a été bloqué. Utilisez le lien ci-dessous.",entrySuccess:"Merci de votre participation ! Votre entrée est en attente. Sofia Jenny Taborda vérifiera le paiement et approuvera votre participation.",entryError:"Échec de l'envoi.",footer:"Tirage officiel",footerNote:"Les participations restent en attente jusqu'à la vérification du paiement.",dateTBA:"Date à annoncer",prize:"Prix",searchCount:"tirages trouvés"},
+ar:{home:"العودة إلى الصفحة الرئيسية ←",eyebrow:"صوفيا جيني تابوردا · السحب",title:"اربح جائزة مميزة",title2:"السحب",subtitle:"اختر الجائزة وادفع رسوم المشاركة عبر PayPal ثم أرسل إثبات الدفع للتحقق.",heroNote:"✦ جوائز متنوعة · رسوم منفصلة · مشاركات موثقة",collection:"استكشف السحوبات",collectionIntro:"اختر الجائزة التي ترغب بالمشاركة فيها.",search:"ابحث عن الجوائز...",loading:"جارٍ تحميل السحوبات...",empty:"لا توجد سحوبات نشطة الآن.",noResults:"لا توجد نتائج.",loadError:"تعذر تحميل السحوبات.",join:"شارك الآن",drawDate:"تاريخ السحب",entryPrice:"رسوم المشاركة",maxEntries:"حد المشاركات",unlimited:"بلا حد",joinTitle:"المشاركة في السحب",customerDetails:"بياناتك",name:"الاسم الكامل *",email:"البريد الإلكتروني *",phone:"الهاتف / واتساب *",phoneHint:"اختر رمز بلدك.",quantity:"عدد المشاركات *",total:"إجمالي الدفع",continuePay:"المتابعة إلى PayPal",paymentStep:"تأكيد الدفع",paymentStepText:"تم فتح PayPal في تبويب جديد. أكمل الدفع ثم أرسل رقم المعاملة وصورة الإيصال. ستظل مشاركتك معلقة حتى التحقق.",payFallback:"افتح رابط PayPal",transaction:"رقم معاملة PayPal *",screenshot:"صورة إثبات الدفع *",screenshotHint:"JPG أو PNG أو WEBP · الحد الأقصى 6 MB",submitEntry:"إرسال للتحقق",sending:"جارٍ الإرسال...",invalidPhone:"أدخل رقم هاتف دولي صحيح.",invalidScreenshot:"اختر صورة JPG أو PNG أو WEBP حتى 6 MB.",selectDraw:"اختر سحباً أولاً.",popupError:"تم حظر PayPal. استخدم الرابط أدناه.",entrySuccess:"شكراً لمشاركتك! مشاركتك قيد الانتظار. ستتحقق صوفيا جيني تابوردا من الدفع وتعتمد مشاركتك.",entryError:"تعذر إرسال المشاركة.",footer:"السحب الرسمي",footerNote:"تبقى المشاركات معلقة حتى التحقق من الدفع.",dateTBA:"سيتم الإعلان عن التاريخ",prize:"الجائزة",searchCount:"سحوبات"},
+pt:{home:"← Voltar ao início",eyebrow:"SOFIA JENNY TABORDA · SORTEIO",title:"Ganhe algo especial",title2:"Sorteio",subtitle:"Escolha o prêmio, pague a participação pelo PayPal e envie o comprovante para verificação.",heroNote:"✦ PRÊMIOS DIFERENTES · PREÇOS INDIVIDUAIS · PARTICIPAÇÕES VERIFICADAS",collection:"Explorar sorteios",collectionIntro:"Escolha o prêmio em que deseja participar.",search:"Pesquisar prêmios...",loading:"Carregando sorteios...",empty:"Não há sorteios ativos no momento.",noResults:"Nenhum resultado.",loadError:"Não foi possível carregar os sorteios.",join:"PARTICIPAR",drawDate:"Data do sorteio",entryPrice:"Preço de entrada",maxEntries:"Limite de entradas",unlimited:"Sem limite",joinTitle:"Participar deste sorteio",customerDetails:"Seus dados",name:"Nome completo *",email:"E-mail *",phone:"Celular / WhatsApp *",phoneHint:"Selecione o código do seu país.",quantity:"Número de entradas *",total:"Pagamento total",continuePay:"CONTINUAR PARA PAYPAL",paymentStep:"Confirmar pagamento",paymentStepText:"O PayPal abriu em outra aba. Conclua o pagamento e envie o ID da transação e a captura. Sua entrada ficará pendente até a verificação.",payFallback:"Abrir link PayPal",transaction:"ID da transação PayPal *",screenshot:"Captura do pagamento *",screenshotHint:"JPG, PNG ou WEBP · Máximo 6 MB",submitEntry:"ENVIAR PARA VERIFICAÇÃO",sending:"Enviando...",invalidPhone:"Insira um número internacional válido.",invalidScreenshot:"Escolha uma captura JPG, PNG ou WEBP de até 6 MB.",selectDraw:"Selecione um sorteio primeiro.",popupError:"O navegador bloqueou o PayPal. Use o link abaixo.",entrySuccess:"Obrigado por participar! Sua entrada está pendente. Sofia Jenny Taborda verificará o pagamento e aprovará sua participação.",entryError:"Não foi possível enviar a entrada.",footer:"Sorteio oficial",footerNote:"Todas as entradas ficam pendentes até a verificação do pagamento.",dateTBA:"Data a anunciar",prize:"Prêmio",searchCount:"sorteios encontrados"},
+de:{home:"← Zur Startseite",eyebrow:"SOFIA JENNY TABORDA · GEWINNSPIEL",title:"Gewinnen Sie etwas Besonderes",title2:"Gewinnspiel",subtitle:"Wählen Sie einen Preis, bezahlen Sie die Teilnahme über PayPal und senden Sie den Zahlungsnachweis zur Prüfung.",heroNote:"✦ VERSCHIEDENE PREISE · EINZELNE TEILNAHMEGEBÜHREN · GEPRÜFTE TEILNAHMEN",collection:"Gewinnspiele entdecken",collectionIntro:"Wählen Sie den Preis, an dem Sie teilnehmen möchten.",search:"Preise suchen...",loading:"Gewinnspiele werden geladen...",empty:"Derzeit sind keine Gewinnspiele aktiv.",noResults:"Keine passenden Gewinnspiele.",loadError:"Gewinnspiele konnten nicht geladen werden.",join:"JETZT TEILNEHMEN",drawDate:"Ziehungsdatum",entryPrice:"Teilnahmegebühr",maxEntries:"Teilnahmelimit",unlimited:"Kein Limit",joinTitle:"An diesem Gewinnspiel teilnehmen",customerDetails:"Ihre Angaben",name:"Vollständiger Name *",email:"E-Mail *",phone:"Mobil / WhatsApp *",phoneHint:"Wählen Sie Ihre Landesvorwahl.",quantity:"Anzahl der Teilnahmen *",total:"Gesamtzahlung",continuePay:"WEITER ZU PAYPAL",paymentStep:"Zahlung bestätigen",paymentStepText:"PayPal wurde in einem neuen Tab geöffnet. Schließen Sie die Zahlung ab und senden Sie Transaktions-ID und Screenshot. Ihre Teilnahme bleibt bis zur Prüfung ausstehend.",payFallback:"PayPal-Link öffnen",transaction:"PayPal-Transaktions-ID *",screenshot:"Zahlungs-Screenshot *",screenshotHint:"JPG, PNG oder WEBP · Max. 6 MB",submitEntry:"ZUR PRÜFUNG SENDEN",sending:"Wird gesendet...",invalidPhone:"Geben Sie eine gültige internationale Nummer ein.",invalidScreenshot:"Wählen Sie einen JPG-, PNG- oder WEBP-Screenshot bis 6 MB.",selectDraw:"Wählen Sie zuerst ein Gewinnspiel.",popupError:"PayPal wurde blockiert. Nutzen Sie den Link unten.",entrySuccess:"Vielen Dank für Ihre Teilnahme! Ihre Teilnahme ist ausstehend. Sofia Jenny Taborda prüft die Zahlung und bestätigt Ihre Teilnahme.",entryError:"Die Teilnahme konnte nicht gesendet werden.",footer:"Offizielles Gewinnspiel",footerNote:"Alle Teilnahmen bleiben bis zur Zahlungsprüfung ausstehend.",dateTBA:"Datum wird bekannt gegeben",prize:"Preis",searchCount:"Gewinnspiele gefunden"},
+hi:{home:"← होम पर वापस जाएँ",eyebrow:"सोफिया जेनी ताबोर्डा · लकी ड्रॉ",title:"खास इनाम जीतें",title2:"लकी ड्रॉ",subtitle:"अपना पसंदीदा इनाम चुनें, PayPal से एंट्री फीस दें और भुगतान का प्रमाण जाँच के लिए भेजें।",heroNote:"✦ अलग-अलग इनाम · अलग एंट्री फीस · सत्यापित एंट्री",collection:"लकी ड्रॉ देखें",collectionIntro:"जिस इनाम में शामिल होना चाहते हैं उसे चुनें।",search:"इनाम या ड्रॉ खोजें...",loading:"लकी ड्रॉ लोड हो रहे हैं...",empty:"अभी कोई सक्रिय लकी ड्रॉ उपलब्ध नहीं है।",noResults:"कोई ड्रॉ नहीं मिला।",loadError:"लकी ड्रॉ लोड नहीं हो सके।",join:"इस ड्रॉ में शामिल हों",drawDate:"ड्रॉ की तारीख",entryPrice:"एंट्री फीस",maxEntries:"एंट्री सीमा",unlimited:"कोई सीमा नहीं",joinTitle:"इस लकी ड्रॉ में शामिल हों",customerDetails:"अपनी जानकारी",name:"पूरा नाम *",email:"ईमेल *",phone:"मोबाइल / WhatsApp *",phoneHint:"अपने देश का कोड चुनें।",quantity:"एंट्री की संख्या *",total:"कुल भुगतान",continuePay:"PAYPAL पर जाएँ",paymentStep:"भुगतान की पुष्टि",paymentStepText:"PayPal नए टैब में खुल गया है। भुगतान पूरा करें और ट्रांजैक्शन आईडी व स्क्रीनशॉट भेजें। सत्यापन तक आपकी एंट्री लंबित रहेगी।",payFallback:"PayPal लिंक खोलें",transaction:"PayPal ट्रांजैक्शन आईडी *",screenshot:"भुगतान स्क्रीनशॉट *",screenshotHint:"JPG, PNG या WEBP · अधिकतम 6 MB",submitEntry:"सत्यापन के लिए भेजें",sending:"भेजा जा रहा है...",invalidPhone:"सही अंतरराष्ट्रीय मोबाइल नंबर दर्ज करें।",invalidScreenshot:"6 MB तक का JPG, PNG या WEBP स्क्रीनशॉट चुनें।",selectDraw:"पहले लकी ड्रॉ चुनें।",popupError:"ब्राउज़र ने PayPal को रोक दिया। नीचे दिए लिंक का उपयोग करें।",entrySuccess:"भाग लेने के लिए धन्यवाद! आपकी एंट्री लंबित है। सोफिया जेनी ताबोर्डा भुगतान जाँचकर आपकी एंट्री मंजूर करेंगी। कृपया प्रतीक्षा करें।",entryError:"एंट्री भेजी नहीं जा सकी।",footer:"आधिकारिक लकी ड्रॉ",footerNote:"भुगतान सत्यापन तक सभी एंट्री लंबित रहेंगी।",dateTBA:"तारीख घोषित की जाएगी",prize:"इनाम",searchCount:"ड्रॉ मिले"},
+zh:{home:"← 返回首页",eyebrow:"SOFIA JENNY TABORDA · 幸运抽奖",title:"赢取特别奖品",title2:"幸运抽奖",subtitle:"选择您喜欢的奖品，通过 PayPal 支付参与费用，并提交付款凭证以供核实。",heroNote:"✦ 多种奖品 · 独立参与价格 · 付款核实",collection:"浏览抽奖活动",collectionIntro:"选择您想参与的奖品。",search:"搜索奖品或抽奖...",loading:"正在加载抽奖...",empty:"目前没有进行中的抽奖。",noResults:"没有找到匹配的抽奖。",loadError:"无法加载抽奖，请刷新重试。",join:"参加抽奖",drawDate:"抽奖日期",entryPrice:"参与费用",maxEntries:"参与上限",unlimited:"不限数量",joinTitle:"参加此抽奖",customerDetails:"您的信息",name:"姓名 *",email:"电子邮箱 *",phone:"手机 / WhatsApp *",phoneHint:"请选择国家区号。",quantity:"参与次数 *",total:"总付款金额",continuePay:"继续使用 PAYPAL",paymentStep:"完成付款确认",paymentStepText:"PayPal 已在新标签页打开。完成付款后返回此页，提交交易编号和付款截图。核实前您的参与状态为待处理。",payFallback:"打开此抽奖的 PayPal 链接",transaction:"PayPal 交易编号 *",screenshot:"付款截图 *",screenshotHint:"JPG、PNG 或 WEBP · 最大 6 MB",submitEntry:"提交以供核实",sending:"正在提交...",invalidPhone:"请输入有效的国际电话号码。",invalidScreenshot:"请选择不超过 6 MB 的 JPG、PNG 或 WEBP 截图。",selectDraw:"请先选择一个抽奖。",popupError:"浏览器阻止了 PayPal，请使用下方链接。",entrySuccess:"感谢您的参与！您的申请已提交并处于待处理状态。Sofia Jenny Taborda 将核实付款并批准您的参与，请耐心等待。",entryError:"无法提交参与申请。",footer:"官方抽奖",footerNote:"所有参与申请在付款核实和批准前均保持待处理状态。",dateTBA:"抽奖日期待公布",prize:"奖品",searchCount:"个抽奖"}
+};
+
+function tr(key){return (T[currentLanguage]&&T[currentLanguage][key])||T.en[key]||key;}
+function setLanguage(language){
+ currentLanguage=T[language]?language:"en";
+ document.documentElement.lang=currentLanguage;
+ document.documentElement.dir=["ur","ar"].includes(currentLanguage)?"rtl":"ltr";
+ document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(tr(key))el.textContent=tr(key);});
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{const key=el.dataset.i18nPlaceholder;el.placeholder=tr(key);});
+ try{localStorage.setItem("sjtLuckyLanguage",currentLanguage);}catch(e){}
+ renderDraws();
+ updateEntryTotal();
+}
+$("languageSelect").addEventListener("change",e=>setLanguage(e.target.value));
+try{const saved=localStorage.getItem("sjtLuckyLanguage");if(saved&&T[saved]){$("languageSelect").value=saved;setLanguage(saved);}}catch(e){}
+$("year").textContent=new Date().getFullYear();
+
+function jsonp(params){
+ return new Promise((resolve,reject)=>{
+  const callback="sjtLuckyCb_"+Date.now()+"_"+Math.floor(Math.random()*1000000);
+  const script=document.createElement("script");
+  const timer=setTimeout(()=>{cleanup();reject(new Error("Website service timed out."));},18000);
+  function cleanup(){clearTimeout(timer);try{delete window[callback];}catch(e){window[callback]=undefined;}script.remove();}
+  window[callback]=data=>{cleanup();resolve(data);};
+  script.onerror=()=>{cleanup();reject(new Error("Could not connect to the website service."));};
+  script.src=API_URL+"?"+new URLSearchParams({...params,callback}).toString();
+  document.body.appendChild(script);
+ });
+}
+function formatMoney(value){return "$"+Number(value||0).toFixed(2)+" USD";}
+function safeDate(value){
+ if(!value)return tr("dateTBA");
+ const raw=String(value);
+ const d=/^\d{4}-\d{2}-\d{2}$/.test(raw)?new Date(raw+"T12:00:00"):new Date(raw);
+ if(Number.isNaN(d.getTime()))return raw;
+ try{return new Intl.DateTimeFormat(currentLanguage==="ur"?"ur-PK":currentLanguage,{year:"numeric",month:"long",day:"numeric"}).format(d);}catch(e){return d.toLocaleDateString();}
+}
+function makeMedia(draw,containerClass){
+ const wrap=document.createElement("div");wrap.className=containerClass;
+ if(draw.mediaType==="video"&&draw.mediaUrl){
+  const frame=document.createElement("iframe");frame.src=draw.mediaUrl;frame.title=draw.title||"Lucky Draw video";frame.loading="lazy";frame.allow="autoplay; fullscreen; picture-in-picture";frame.allowFullscreen=true;wrap.appendChild(frame);
+ }else if(draw.mediaUrl){
+  const img=document.createElement("img");img.src=draw.mediaUrl;img.alt=draw.title||"Lucky Draw prize";img.loading="lazy";img.onerror=()=>{wrap.innerHTML="<div class='media-fallback'><span>🎁</span><small>LUCKY DRAW</small></div>";};wrap.appendChild(img);
+ }else{
+  wrap.innerHTML="<div class='media-fallback'><span>🎁</span><small>LUCKY DRAW</small></div>";
+ }
+ return wrap;
+}
+function renderDraws(){
+ const grid=$("drawGrid");const term=$("drawSearch").value.trim().toLowerCase();grid.innerHTML="";
+ const filtered=draws.filter(d=>[d.title,d.prize,d.description].some(v=>String(v||"").toLowerCase().includes(term)));
+ $("drawCount").textContent=filtered.length+" "+tr("searchCount");
+ if(!filtered.length){
+  const box=document.createElement("div");box.className="empty";
+  const icon=document.createElement("div");icon.className="emoji";icon.textContent="🎁";
+  const h=document.createElement("h3");h.textContent=draws.length?tr("noResults"):tr("empty");
+  box.append(icon,h);grid.appendChild(box);return;
+ }
+ filtered.forEach(draw=>{
+  const card=document.createElement("article");card.className="draw-card";
+  card.appendChild(makeMedia(draw,"draw-media"));
+  const info=document.createElement("div");info.className="draw-info";
+  const title=document.createElement("h3");title.textContent=draw.title||"Lucky Draw";
+  const prize=document.createElement("div");prize.className="prize-line";prize.textContent=tr("prize")+": "+(draw.prize||"—");
+  const desc=document.createElement("p");desc.className="draw-description";desc.textContent=draw.description||"";
+  const meta=document.createElement("div");meta.className="draw-meta";
+  const dateBox=document.createElement("div");dateBox.className="meta-box";
+  dateBox.innerHTML="<small>"+tr("drawDate")+"</small>";
+  const date=document.createElement("strong");date.textContent=safeDate(draw.drawDate);dateBox.appendChild(date);
+  const limitBox=document.createElement("div");limitBox.className="meta-box";
+  limitBox.innerHTML="<small>"+tr("maxEntries")+"</small>";
+  const limit=document.createElement("strong");limit.textContent=Number(draw.maxEntries||0)>0?String(draw.maxEntries):tr("unlimited");limitBox.appendChild(limit);
+  meta.append(dateBox,limitBox);
+  const price=document.createElement("div");price.className="entry-price";price.textContent=formatMoney(draw.price)+" ";
+  const small=document.createElement("small");small.textContent="/ "+tr("entryPrice").toLowerCase();price.appendChild(small);
+  const join=document.createElement("button");join.type="button";join.className="join-button";join.textContent=tr("join");join.addEventListener("click",()=>openEntry(draw));
+  info.append(title,prize,desc,meta,price,join);card.appendChild(info);grid.appendChild(card);
+ });
+}
+$("drawSearch").addEventListener("input",renderDraws);
+
+async function loadDraws(){
+ try{
+  const [catalogue,header]=await Promise.all([
+   jsonp({action:"publicContent",category:CATEGORY}),
+   jsonp({action:"pageHeader",pageKey:CATEGORY})
+  ]);
+  if(!catalogue||catalogue.success===false)throw new Error(catalogue&&catalogue.message?catalogue.message:"Could not load Lucky Draws.");
+  draws=Array.isArray(catalogue.content)?catalogue.content:[];
+  if(header&&header.imageUrl){$("luckyBanner").src=header.imageUrl;}
+  renderDraws();
+ }catch(error){
+  $("drawGrid").innerHTML="";
+  const box=document.createElement("div");box.className="empty";
+  const icon=document.createElement("div");icon.className="emoji";icon.textContent="⚠️";
+  const h=document.createElement("h3");h.textContent=tr("loadError");
+  const p=document.createElement("p");p.textContent=error.message||"";
+  box.append(icon,h,p);$("drawGrid").appendChild(box);
+ }
+}
+$("luckyBanner").addEventListener("error",()=>{$("luckyBanner").src="assets/Sofia%20Jenny%20Taborda%20Lucky%20Draw.png";});
+
+function initPhone(){
+ const input=$("customerPhone");
+ if(!window.intlTelInput){input.placeholder="+Country Code Number";$("countryDisplay").textContent=tr("phoneHint");return;}
+ phoneIti=window.intlTelInput(input,{initialCountry:"pk",preferredCountries:["pk","us","gb","ca","au","ae","sa","in"],separateDialCode:true,nationalMode:true,autoPlaceholder:"aggressive",utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"});
+}
+function getFullPhone(){
+ const raw=$("customerPhone").value.trim();if(!raw)return "";
+ if(raw.startsWith("+"))return "+"+raw.replace(/\D/g,"");
+ if(phoneIti){const number=phoneIti.getNumber();if(number)return number;const data=phoneIti.getSelectedCountryData();const digits=raw.replace(/\D/g,"").replace(/^0+/,"");return data.dialCode?"+"+data.dialCode+digits:"";}
+ return raw;
+}
+function updateEntryTotal(){
+ if(!selectedDraw)return;
+ const qty=Number($("entryQuantity").value||1);
+ $("entryTotal").textContent=formatMoney(Number(selectedDraw.price||0)*(Number.isFinite(qty)&&qty>0?qty:1));
+}
+$("entryQuantity").addEventListener("input",updateEntryTotal);
+
+function openEntry(draw){
+ selectedDraw=draw;pendingEntry=null;
+ $("selectedMedia").innerHTML="";$("selectedMedia").appendChild(makeMedia(draw,"selected-media-inner").firstChild||document.createElement("span"));
+ $("selectedTitle").textContent=draw.title||"Lucky Draw";
+ $("selectedPrize").textContent=tr("prize")+": "+(draw.prize||"");
+ $("selectedDate").textContent=tr("drawDate")+": "+safeDate(draw.drawDate);
+ $("selectedPrice").textContent=formatMoney(draw.price)+" / "+tr("entryPrice").toLowerCase();
+ $("buyerForm").reset();$("entryQuantity").value="1";$("paymentProofForm").reset();
+ $("buyerForm").classList.remove("hidden");$("paymentProofSection").classList.add("hidden");
+ $("entryStatus").className="status";$("entryStatus").textContent="";
+ $("payFallback").style.display="inline-block";$("payFallback").href=draw.paypalLink||"#";
+ $("entryModal").classList.add("open");document.body.style.overflow="hidden";
+ updateEntryTotal();
+}
+function closeEntry(){
+ $("entryModal").classList.remove("open");document.body.style.overflow="";
+}
+$("closeModal").addEventListener("click",closeEntry);
+$("modalBackdrop").addEventListener("click",closeEntry);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("entryModal").classList.contains("open"))closeEntry();});
+function showStatus(message,type){
+ const el=$("entryStatus");el.textContent=message;el.className="status show "+(type||"info");
+}
+
+$("buyerForm").addEventListener("submit",event=>{
+ event.preventDefault();
+ if(!selectedDraw){showStatus(tr("selectDraw"),"error");return;}
+ if(!selectedDraw.paypalLink){showStatus("This Lucky Draw has no PayPal link configured.","error");return;}
+ const phone=getFullPhone();
+ if(!phone||phone.replace(/\D/g,"").length<7){showStatus(tr("invalidPhone"),"error");return;}
+ const quantity=Number($("entryQuantity").value);
+ if(!Number.isInteger(quantity)||quantity<1||quantity>50){showStatus("Entry quantity must be between 1 and 50.","error");return;}
+ pendingEntry={drawId:selectedDraw.id,name:$("customerName").value.trim(),email:$("customerEmail").value.trim(),phone,quantity,paypalLink:selectedDraw.paypalLink};
+ const payWindow=window.open(selectedDraw.paypalLink,"_blank");
+ $("payFallback").href=selectedDraw.paypalLink;
+ if(!payWindow){showStatus(tr("popupError"),"info");}
+ else{try{payWindow.opener=null;}catch(e){}}
+ $("buyerForm").classList.add("hidden");
+ $("paymentProofSection").classList.remove("hidden");
+ if(payWindow)showStatus(tr("paymentStepText"),"info");
+});
+
+function readFile(file){
+ return new Promise((resolve,reject)=>{
+  const reader=new FileReader();reader.onload=()=>resolve(String(reader.result||""));
+  reader.onerror=()=>reject(new Error("Could not read payment screenshot."));
+  reader.readAsDataURL(file);
+ });
+}
+$("paymentProofForm").addEventListener("submit",async event=>{
+ event.preventDefault();
+ if(!pendingEntry||!selectedDraw){showStatus(tr("selectDraw"),"error");return;}
+ const file=$("paymentScreenshot").files[0];
+ if(!file||file.size>6*1024*1024||!/^image\/(jpeg|png|webp)$/i.test(file.type)){showStatus(tr("invalidScreenshot"),"error");return;}
+ const txn=$("transactionId").value.trim();if(!txn){$("transactionId").focus();return;}
+ const button=$("submitEntryButton");button.disabled=true;button.textContent=tr("sending");
+ try{
+  const screenshotData=await readFile(file);
+  $("backendDrawId").value=pendingEntry.drawId;
+  $("backendName").value=pendingEntry.name;
+  $("backendEmail").value=pendingEntry.email;
+  $("backendPhone").value=pendingEntry.phone;
+  $("backendQuantity").value=String(pendingEntry.quantity);
+  $("backendTransactionId").value=txn;
+  $("backendScreenshot").value=screenshotData;
+  const form=$("backendEntryForm");form.action=API_URL;form.submit();
+ }catch(error){
+  button.disabled=false;button.textContent=tr("submitEntry");
+  showStatus(error.message||tr("entryError"),"error");
+ }
+});
+window.addEventListener("message",event=>{
+ if(event.source!==$("luckyEntryFrame").contentWindow)return;
+ const data=event.data||{};
+ if(data.type==="LUCKY_ENTRY_SUCCESS"&&data.success){
+  $("paymentProofSection").classList.add("hidden");
+  $("buyerForm").classList.add("hidden");
+  const entryRef=data.entryId?" Entry ID: "+data.entryId:"";
+  showStatus(tr("entrySuccess")+entryRef,"success");
+  pendingEntry=null;
+ }else if(data.type==="FORM_SUBMISSION_ERROR"||data.type==="LUCKY_ENTRY_ERROR"||data.success===false){
+  const button=$("submitEntryButton");button.disabled=false;button.textContent=tr("submitEntry");
+  showStatus(data.message||tr("entryError"),"error");
+ }
+});
+
+initPhone();
+loadDraws();
+</script>
+</body>
+</html>
