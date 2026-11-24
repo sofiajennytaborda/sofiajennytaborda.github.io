@@ -106,7 +106,11 @@ footer{padding:25px 15px;background:#072b51;color:#fff;text-align:center;font-si
 .status.info{background:#f4effa;color:#61367f;border:1px solid #e0d2ec}
 .hidden{display:none!important}
 .response-frame{display:none;width:0;height:0;border:0}
-html[dir=rtl] body{text-align:right}
+html[dir=rtl] body{direction:rtl;text-align:right}
+html[dir=rtl] .langbar{direction:rtl}
+html[dir=rtl] .navbar .nav-inner{direction:rtl}
+html[dir=rtl] .search-box input{text-align:right}
+html[dir=rtl] .field input,html[dir=rtl] .field textarea{direction:rtl;text-align:right}
 html[dir=rtl] .search-icon{left:auto;right:14px}
 html[dir=rtl] .search-box input{padding:14px 43px 14px 16px}
 html[dir=rtl] .modal-top{flex-direction:row-reverse}
@@ -169,10 +173,18 @@ html[dir=rtl] .field{text-align:right}
 
 <div class="langbar">
   <div class="header-language">
-    <label for="languageSelect">Language:</label>
-    <select id="languageSelect" aria-label="Choose language">
+    <label for="languageSelect" data-i18n="language">Language:</label>
+    <select id="languageSelect" aria-label="Choose language" data-i18n-aria="chooseLanguage">
       <option value="en">🇬🇧 English</option>
       <option value="ur">🇵🇰 اردو</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="pt">🇧🇷 Português</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="zh">🇨🇳 中文</option>
     </select>
   </div>
   <a href="index.html" class="back-link" data-i18n="home">← Back to Home</a>
@@ -180,19 +192,19 @@ html[dir=rtl] .field{text-align:right}
 
 <nav class="navbar" aria-label="Main website navigation">
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="premium-videos.html">Sofia Jenny Taborda Videos</a>
-    <a href="photo-gallery.html">Sofia Jenny Taborda Photos</a>
-    <a href="fashion-store.html">Sofia Jenny Taborda Fashion Store</a>
-    <a class="active" href="visa-passport.html" aria-current="page">Travel &amp; Visa Information</a>
-    <a href="gifts-services.html">Send a Gift to Sofia Jenny Taborda 🎁</a>
-    <a href="long-packages.html">I Want to Meet Sofia Jenny Taborda</a>
-    <a href="herbal-wellness.html">Sofia Jenny Taborda Wellness</a>
-    <a href="whatsapp-premium.html">Sofia Jenny Taborda Personal WhatsApp</a>
-    <a href="work-permit-visa.html">Work Permit Assistance Visa</a>
-    <a href="garments-store.html">Sofia Jenny Taborda Boutique</a>
-    <a href="lucky-draw.html">Sofia Jenny Taborda Lucky Draw</a>
-    <a href="sixey-dolls.html">SIXEY DOLLS</a>
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="premium-videos.html" data-i18n="navVideos">Sofia Jenny Taborda Videos</a>
+    <a href="photo-gallery.html" data-i18n="navPhotos">Sofia Jenny Taborda Photos</a>
+    <a href="fashion-store.html" data-i18n="navFashion">Sofia Jenny Taborda Fashion Store</a>
+    <a class="active" href="visa-passport.html" aria-current="page" data-i18n="navVisa">Travel &amp; Visa Information</a>
+    <a href="gifts-services.html" data-i18n="navGifts">Send a Gift to Sofia Jenny Taborda 🎁</a>
+    <a href="long-packages.html" data-i18n="navMeeting">I Want to Meet Sofia Jenny Taborda</a>
+    <a href="herbal-wellness.html" data-i18n="navWellness">Sofia Jenny Taborda Wellness</a>
+    <a href="whatsapp-premium.html" data-i18n="navWhatsApp">Sofia Jenny Taborda Personal WhatsApp</a>
+    <a href="work-permit-visa.html" data-i18n="navWorkPermit">Work Permit Assistance Visa</a>
+    <a href="garments-store.html" data-i18n="navGarments">Sofia Jenny Taborda Boutique</a>
+    <a href="lucky-draw.html" data-i18n="navLuckyDraw">Sofia Jenny Taborda Lucky Draw</a>
+    <a href="sixey-dolls.html" data-i18n="navSixeyDolls">SIXEY DOLLS</a>
   </div>
 </nav>
 
@@ -237,7 +249,7 @@ html[dir=rtl] .field{text-align:right}
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-top">
       <h2 id="modalTitle" data-i18n="productDetails">Visa & Passport Details and Application</h2>
-      <button type="button" class="close-button" id="closeModal" aria-label="Close">×</button>
+      <button type="button" class="close-button" id="closeModal" aria-label="Close" data-i18n-aria="close">×</button>
     </div>
 
     <div class="modal-product">
@@ -269,11 +281,14 @@ html[dir=rtl] .field{text-align:right}
         <div class="field">
           <label for="gender" data-i18n="gender">Gender *</label>
           <select id="gender" required>
-            <option value="">Select</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option>
+            <option value="" data-i18n="selectGender">Select</option>
+            <option value="Male" data-i18n="male">Male</option>
+            <option value="Female" data-i18n="female">Female</option>
+            <option value="Other" data-i18n="other">Other</option>
           </select>
         </div>
         <div class="field">
-          <label for="applicationCountry" data-i18n="country">Country *</label>
+          <label for="applicationCountry" data-i18n="countryField">Country *</label>
           <input id="applicationCountry" required maxlength="100">
         </div>
         <div class="field">
@@ -282,7 +297,7 @@ html[dir=rtl] .field{text-align:right}
         </div>
         <div class="field">
           <label for="customerPhone" data-i18n="phone">Mobile / WhatsApp Number *</label>
-          <input id="customerPhone" type="tel" required autocomplete="tel" placeholder="Enter your phone number">
+          <input id="customerPhone" type="tel" required autocomplete="tel" placeholder="Enter your phone number" data-i18n-placeholder="phonePlaceholder">
           <span id="countryDisplay" class="country-display"></span>
           <span class="small-note" data-i18n="phoneHint">Select your country code and enter your number.</span>
         </div>
@@ -374,108 +389,148 @@ let selectedListing = null;
 let phoneIti = null;
 let currentLanguage = "en";
 
-const translations = {
-  en: {
-    home:"← Back to Home", eyebrow:"SOFIA JENNY TABORDA · VISA & PASSPORT SERVICES",
-    title:"Visa & Passport Services",
-    subtitle:"Explore country-specific tourist visa, visa filing, passport and sponsorship listings. Choose a service to review its country, processing time, details and fee.",
-    heroNote:"✦ TOURIST VISA · VISA FILING · PASSPORT SERVICES · SPONSORSHIP REQUESTS",
-    collection:"Available Visa & Passport Services",
-    collectionIntro:"Browse active services uploaded by the Admin Dashboard.",
-    searchPlaceholder:"Search country, visa or passport service...",
-    loading:"Loading visa and passport services...", empty:"No active visa or passport services are available yet.",
-    noResults:"No services match your search.", productDetails:"Visa & Passport Details and Application",
-    customerDetails:"Applicant Details & Documents", name:"Full Name *", fatherName:"Father's Name *",
-    gender:"Gender *", country:"Country", email:"Gmail / Email *", phone:"Mobile / WhatsApp Number *",
-    phoneHint:"Select your country code and enter your number.", idFront:"National ID Card — Front *",
-    idBack:"National ID Card — Back *", passport:"Passport Bio Page *", photo:"Applicant Photo *",
-    photoHint:"Your photo will be cropped to a 35 × 45 mm passport-style ratio before secure submission.",
-    privacyNote:"Your ID card, passport and photo are sensitive personal documents. They are submitted to the private customer documents folder for this application and are visible only to the authorized administrator. Do not upload documents unless you trust this service.",
-    consent:"I consent to the secure processing of the documents I submit for this visa or passport application. *",
-    keepPageNote:"After PayPal opens, return to this same page and submit your transaction ID and payment screenshot. Do not close or refresh this page before submitting the application.",
-    processingTime:"Processing Time", serviceTypeLabel:"Service Type",
-    sponsorNote:"Sponsorship by Sofia Jenny Taborda is subject to legal eligibility and destination-country requirements. Selecting this service does not guarantee sponsorship or visa approval.",
-    payNow:"BOOK NOW · CONTINUE TO PAYPAL",
-    paymentStep:"Complete Payment Confirmation",
-    paymentStepText:"PayPal has opened in a new tab. Complete payment, return here, then submit your transaction ID and screenshot.",
-    payFallback:"Open this service's PayPal payment page", transaction:"PayPal Transaction ID *",
-    screenshot:"Payment Screenshot *", screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",
-    submitOrder:"SUBMIT APPLICATION FOR VERIFICATION", sending:"Submitting your application...",
-    orderSuccess:"Your application has been received. Application ID: ",
-    orderError:"Your application could not be submitted. Please try again.",
-    invalidPhone:"Enter a valid international mobile number.",
-    invalidFile:"Choose a valid JPG, PNG or WEBP image up to 6 MB.",
-    selectProduct:"Please select a visa or passport service first.",
-    popupError:"Your browser blocked the PayPal tab. Use the PayPal link shown below.",
-    footer:"Visa & Passport Services",
-    applyNow:"APPLY / BOOK NOW", price:"SERVICE FEE", countryLabel:"COUNTRY", processingLabel:"PROCESSING TIME",
-    dateTBA:"To be confirmed"
-  },
-  ur: {
-    home:"← ہوم پیج پر واپس جائیں", eyebrow:"صوفیہ جینی تبورڈا · ویزا اور پاسپورٹ سروسز",
-    title:"ویزا اور پاسپورٹ سروسز",
-    subtitle:"مختلف ممالک کے ٹورسٹ ویزا، ویزا فائلنگ، پاسپورٹ اور اسپانسرشپ کی دستیاب سروسز دیکھیں۔ ملک، پراسیسنگ ٹائم، تفصیل اور فیس چیک کرنے کے لیے سروس منتخب کریں۔",
-    heroNote:"✦ ٹورسٹ ویزا · ویزا فائلنگ · پاسپورٹ سروسز · اسپانسرشپ درخواستیں",
-    collection:"دستیاب ویزا اور پاسپورٹ سروسز",
-    collectionIntro:"ایڈمن ڈیش بورڈ سے اپ لوڈ کی گئی فعال سروسز دیکھیں۔",
-    searchPlaceholder:"ملک یا ویزا / پاسپورٹ سروس تلاش کریں...",
-    loading:"ویزا اور پاسپورٹ سروسز لوڈ ہو رہی ہیں...", empty:"ابھی کوئی ویزا یا پاسپورٹ سروس اپ لوڈ نہیں کی گئی۔",
-    noResults:"آپ کی تلاش سے کوئی سروس نہیں ملی۔", productDetails:"ویزا اور پاسپورٹ کی تفصیلات اور درخواست",
-    customerDetails:"درخواست گزار کی معلومات اور دستاویزات", name:"پورا نام *", fatherName:"والد کا نام *",
-    gender:"جنس *", country:"ملک", email:"جی میل / ای میل *", phone:"موبائل / واٹس ایپ نمبر *",
-    phoneHint:"اپنے ملک کا کوڈ منتخب کرکے موبائل نمبر درج کریں۔", idFront:"شناختی کارڈ — فرنٹ سائیڈ *",
-    idBack:"شناختی کارڈ — بیک سائیڈ *", passport:"پاسپورٹ کا پہلا صفحہ *", photo:"درخواست گزار کی تصویر *",
-    photoHint:"آپ کی تصویر جمع کرنے سے پہلے پاسپورٹ سائز کے 35 × 45 ملی میٹر تناسب میں بنائی جائے گی۔",
-    privacyNote:"آپ کا شناختی کارڈ، پاسپورٹ اور تصویر حساس ذاتی دستاویزات ہیں۔ یہ درخواست کے لیے نجی کسٹمر ڈاکیومنٹس فولڈر میں محفوظ ہوں گی اور صرف مجاز ایڈمن انہیں دیکھ سکے گا۔",
-    consent:"میں اس ویزا یا پاسپورٹ درخواست کے لیے اپنی دستاویزات کی محفوظ پروسیسنگ کی اجازت دیتا/دیتی ہوں۔ *",
-    keepPageNote:"پے پال کھلنے کے بعد اسی صفحے پر واپس آئیں اور ٹرانزیکشن آئی ڈی اور ادائیگی کا اسکرین شاٹ جمع کروائیں۔ درخواست جمع ہونے سے پہلے صفحہ بند یا ریفریش نہ کریں۔",
-    processingTime:"پراسیسنگ ٹائم", serviceTypeLabel:"سروس کی قسم",
-    sponsorNote:"صوفیہ جینی تبورڈا کی طرف سے اسپانسرشپ قانونی اہلیت اور متعلقہ ملک کے قواعد سے مشروط ہے۔ اس سروس کے انتخاب سے اسپانسرشپ یا ویزا منظوری کی ضمانت نہیں ملتی۔",
-    payNow:"ابھی بک کریں · پے پال پر جائیں",
-    paymentStep:"ادائیگی کی تصدیق مکمل کریں",
-    paymentStepText:"پے پال نئے ٹیب میں کھل گیا ہے۔ ادائیگی مکمل کرکے واپس آئیں اور ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔",
-    payFallback:"اس سروس کا پے پال لنک کھولیں", transaction:"پے پال ٹرانزیکشن آئی ڈی *",
-    screenshot:"ادائیگی کا اسکرین شاٹ *", screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",
-    submitOrder:"درخواست تصدیق کے لیے جمع کروائیں", sending:"آپ کی درخواست جمع ہو رہی ہے...",
-    orderSuccess:"آپ کی درخواست موصول ہوگئی۔ درخواست نمبر: ",
-    orderError:"درخواست جمع نہیں ہوسکی۔ دوبارہ کوشش کریں۔",
-    invalidPhone:"درست بین الاقوامی موبائل نمبر درج کریں۔",
-    invalidFile:"6 MB تک کی درست JPG، PNG یا WEBP تصویر منتخب کریں۔",
-    selectProduct:"پہلے ویزا یا پاسپورٹ سروس منتخب کریں۔",
-    popupError:"براؤزر نے پے پال ٹیب روک دیا ہے۔ نیچے دیا گیا لنک استعمال کریں۔",
-    footer:"ویزا اور پاسپورٹ سروسز",
-    applyNow:"درخواست دیں / بک کریں", price:"سروس فیس", countryLabel:"ملک", processingLabel:"پراسیسنگ ٹائم",
-    dateTBA:"تصدیق ہونا باقی ہے"
-  }
+const LANGUAGE_CODES = ["en","ur","es","it","fr","ar","pt","de","hi","zh"];
+const translationRows = {
+  language:["Language:","زبان:","Idioma:","Lingua:","Langue :","اللغة:","Idioma:","Sprache:","भाषा:","语言："],
+  chooseLanguage:["Choose language","زبان منتخب کریں","Elegir idioma","Scegli la lingua","Choisir la langue","اختر اللغة","Escolher idioma","Sprache auswählen","भाषा चुनें","选择语言"],
+  close:["Close","بند کریں","Cerrar","Chiudi","Fermer","إغلاق","Fechar","Schließen","बंद करें","关闭"],
+  home:["← Back to Home","← ہوم پیج پر واپس جائیں","← Volver al inicio","← Torna alla Home","← Retour à l’accueil","← العودة إلى الصفحة الرئيسية","← Voltar ao início","← Zur Startseite","← होम पेज पर लौटें","← 返回首页"],
+  navHome:["Home","ہوم","Inicio","Home","Accueil","الرئيسية","Início","Startseite","होम","首页"],
+  navVideos:["Videos","ویڈیوز","Videos","Video","Vidéos","الفيديوهات","Vídeos","Videos","वीडियो","视频"],
+  navPhotos:["Photos","تصاویر","Fotos","Foto","Photos","الصور","Fotos","Fotos","तस्वीरें","照片"],
+  navFashion:["Fashion Store","فیشن اسٹور","Tienda de moda","Negozio moda","Boutique mode","متجر الأزياء","Loja de moda","Modegeschäft","फैशन स्टोर","时尚商店"],
+  navVisa:["Travel & Visa","سفر اور ویزا","Viajes y visados","Viaggi e visti","Voyages et visas","السفر والتأشيرات","Viagens e vistos","Reisen & Visa","यात्रा और वीज़ा","旅行与签证"],
+  navGifts:["Gifts & Services","تحائف اور سروسز","Regalos y servicios","Regali e servizi","Cadeaux et services","الهدايا والخدمات","Presentes e serviços","Geschenke & Dienste","उपहार और सेवाएँ","礼物与服务"],
+  navMeeting:["Meeting Packages","ملاقات کے پیکجز","Paquetes de encuentro","Pacchetti incontro","Forfaits de rencontre","باقات اللقاء","Pacotes de encontro","Treffen-Pakete","मुलाक़ात पैकेज","见面套餐"],
+  navWellness:["Herbal Wellness","ہربل ویلنیس","Bienestar herbal","Benessere alle erbe","Bien-être herbal","العافية العشبية","Bem-estar herbal","Pflanzliches Wohlbefinden","हर्बल वेलनेस","草本健康"],
+  navWhatsApp:["Personal WhatsApp","ذاتی واٹس ایپ","WhatsApp personal","WhatsApp personale","WhatsApp personnel","واتساب الشخصي","WhatsApp pessoal","Persönliches WhatsApp","पर्सनल व्हाट्सऐप","个人 WhatsApp"],
+  navWorkPermit:["Work Permit Visa","ورک پرمٹ ویزا","Visa de trabajo","Visto di lavoro","Visa de travail","تأشيرة عمل","Visto de trabalho","Arbeitsvisum","वर्क परमिट वीज़ा","工作签证"],
+  navGarments:["Garments Store","گارمنٹس اسٹور","Tienda de ropa","Negozio abbigliamento","Magasin de vêtements","متجر الملابس","Loja de roupas","Bekleidungsgeschäft","गारमेंट्स स्टोर","服装商店"],
+  navLuckyDraw:["Lucky Draw","لکی ڈرا","Sorteo","Estrazione a premi","Tirage au sort","السحب على الجوائز","Sorteio","Gewinnspiel","लकी ड्रॉ","幸运抽奖"],
+  navSixeyDolls:["SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS","SIXEY DOLLS"],
+  eyebrow:["SOFIA JENNY TABORDA · VISA & PASSPORT SERVICES","صوفیہ جینی تبورڈا · ویزا اور پاسپورٹ سروسز","SOFIA JENNY TABORDA · SERVICIOS DE VISAS Y PASAPORTES","SOFIA JENNY TABORDA · SERVIZI VISTI E PASSAPORTI","SOFIA JENNY TABORDA · SERVICES DE VISA ET PASSEPORT","صوفيا جيني تابوردا · خدمات التأشيرات وجوازات السفر","SOFIA JENNY TABORDA · SERVIÇOS DE VISTO E PASSAPORTE","SOFIA JENNY TABORDA · VISA- UND PASSDIENSTE","सोफिया जेनी तबोर्डा · वीज़ा और पासपोर्ट सेवाएँ","SOFIA JENNY TABORDA · 签证与护照服务"],
+  title:["Visa & Passport Services","ویزا اور پاسپورٹ سروسز","Servicios de visas y pasaportes","Servizi per visti e passaporti","Services de visa et passeport","خدمات التأشيرات وجوازات السفر","Serviços de visto e passaporte","Visa- und Passdienste","वीज़ा और पासपोर्ट सेवाएँ","签证与护照服务"],
+  subtitle:["Explore tourist visa, visa filing, passport and sponsorship services by country. Select a listing to review its details, processing time and fee.","مختلف ممالک کے ٹورسٹ ویزا، ویزا فائلنگ، پاسپورٹ اور اسپانسرشپ سروسز دیکھیں۔ تفصیلات، پراسیسنگ ٹائم اور فیس کے لیے سروس منتخب کریں۔","Explore servicios de visa de turista, tramitación de visas, pasaportes y patrocinio por país. Seleccione un servicio para consultar los detalles, el tiempo de trámite y la tarifa.","Scopri i servizi per visti turistici, pratiche di visto, passaporti e sponsorizzazioni per paese. Seleziona un servizio per vedere dettagli, tempi e costi.","Découvrez les services de visa touristique, de dossier de visa, de passeport et de parrainage par pays. Sélectionnez un service pour consulter les détails, les délais et les frais.","تعرّف على خدمات تأشيرات السياحة وتقديم طلبات التأشيرة وجوازات السفر والكفالة حسب الدولة. اختر الخدمة لمعرفة التفاصيل ومدة المعالجة والرسوم.","Explore serviços de visto de turista, solicitação de visto, passaporte e patrocínio por país. Selecione um serviço para consultar detalhes, prazo de processamento e taxa.","Entdecken Sie je nach Land Touristenvisa, Visumanträge, Pass- und Sponsoringdienste. Wählen Sie einen Eintrag für Details, Bearbeitungszeit und Gebühr.","देश के अनुसार टूरिस्ट वीज़ा, वीज़ा आवेदन, पासपोर्ट और स्पॉन्सरशिप सेवाएँ देखें। विवरण, प्रक्रिया समय और शुल्क जानने के लिए सेवा चुनें।","按国家查看旅游签证、签证申请、护照和担保服务。选择一项服务，查看详情、办理时间和费用。"],
+  heroNote:["✦ TOURIST VISA · VISA FILING · PASSPORT SERVICES · SPONSORSHIP REQUESTS","✦ ٹورسٹ ویزا · ویزا فائلنگ · پاسپورٹ سروسز · اسپانسرشپ درخواستیں","✦ VISA DE TURISTA · TRÁMITE DE VISA · PASAPORTES · SOLICITUDES DE PATROCINIO","✦ VISTO TURISTICO · PRATICHE VISTO · PASSAPORTI · RICHIESTE DI SPONSORIZZAZIONE","✦ VISA TOURISTIQUE · DOSSIER DE VISA · PASSEPORTS · DEMANDES DE PARRAINAGE","✦ تأشيرة سياحية · تقديم طلب التأشيرة · خدمات الجوازات · طلبات الكفالة","✦ VISTO DE TURISTA · SOLICITAÇÃO DE VISTO · PASSAPORTES · PEDIDOS DE PATROCÍNIO","✦ TOURISTENVISA · VISUMANTRAG · PASSSERVICE · SPONSORINGANFRAGEN","✦ टूरिस्ट वीज़ा · वीज़ा आवेदन · पासपोर्ट सेवाएँ · स्पॉन्सरशिप अनुरोध","✦ 旅游签证 · 签证申请 · 护照服务 · 担保申请"],
+  collection:["Available Visa & Passport Services","دستیاب ویزا اور پاسپورٹ سروسز","Servicios de visas y pasaportes disponibles","Servizi disponibili per visti e passaporti","Services de visa et passeport disponibles","خدمات التأشيرات وجوازات السفر المتاحة","Serviços de visto e passaporte disponíveis","Verfügbare Visa- und Passdienste","उपलब्ध वीज़ा और पासपोर्ट सेवाएँ","可用的签证与护照服务"],
+  collectionIntro:["Browse active services uploaded by the Admin Dashboard.","ایڈمن ڈیش بورڈ سے اپ لوڈ کی گئی فعال سروسز دیکھیں۔","Consulte los servicios activos publicados desde el panel de administración.","Consulta i servizi attivi caricati dal pannello di amministrazione.","Parcourez les services actifs ajoutés depuis le tableau d’administration.","تینظیم کے ایڈمن ڈیش بورڈ سے اپ لوڈ کی گئی فعال خدمات دیکھیں۔","Veja os serviços ativos publicados pelo painel de administração.","Durchsuchen Sie die im Admin-Dashboard hochgeladenen aktiven Angebote.","एडमिन डैशबोर्ड से अपलोड की गई सक्रिय सेवाएँ देखें।","浏览管理员面板上传的有效服务。"],
+  searchPlaceholder:["Search country, visa or passport service...","ملک، ویزا یا پاسپورٹ سروس تلاش کریں...","Buscar país, visa o servicio de pasaporte...","Cerca paese, visto o servizio passaporti...","Rechercher un pays, un visa ou un service de passeport...","ابحث عن دولة أو تأشيرة أو خدمة جواز سفر...","Pesquisar país, visto ou serviço de passaporte...","Land, Visum oder Passdienst suchen...","देश, वीज़ा या पासपोर्ट सेवा खोजें...","搜索国家、签证或护照服务..."],
+  loading:["Loading visa and passport services...","ویزا اور پاسپورٹ سروسز لوڈ ہو رہی ہیں...","Cargando servicios de visas y pasaportes...","Caricamento dei servizi per visti e passaporti...","Chargement des services de visa et de passeport...","جارٍ تحميل خدمات التأشيرات وجوازات السفر...","Carregando serviços de visto e passaporte...","Visa- und Passdienste werden geladen...","वीज़ा और पासपोर्ट सेवाएँ लोड हो रही हैं...","正在加载签证与护照服务..."],
+  empty:["No active visa or passport services are available yet.","ابھی کوئی فعال ویزا یا پاسپورٹ سروس دستیاب نہیں ہے۔","Todavía no hay servicios activos de visa o pasaporte.","Al momento non sono disponibili servizi attivi per visti o passaporti.","Aucun service de visa ou de passeport actif n’est disponible pour le moment.","لا تتوفر حاليًا خدمات تأشيرات أو جوازات سفر نشطة.","Ainda não há serviços ativos de visto ou passaporte disponíveis.","Derzeit sind keine aktiven Visa- oder Passdienste verfügbar.","अभी कोई सक्रिय वीज़ा या पासपोर्ट सेवा उपलब्ध नहीं है।","目前暂无可用的签证或护照服务。"],
+  noResults:["No services match your search.","آپ کی تلاش سے کوئی سروس نہیں ملی۔","Ningún servicio coincide con su búsqueda.","Nessun servizio corrisponde alla ricerca.","Aucun service ne correspond à votre recherche.","لا توجد خدمات تطابق بحثك.","Nenhum serviço corresponde à sua pesquisa.","Keine Angebote entsprechen Ihrer Suche.","आपकी खोज से कोई सेवा मेल नहीं खाती।","没有符合搜索条件的服务。"],
+  productDetails:["Visa & Passport Details and Application","ویزا اور پاسپورٹ کی تفصیلات اور درخواست","Detalles y solicitud de visa y pasaporte","Dettagli e richiesta per visto e passaporto","Détails et demande de visa et passeport","تفاصيل وطلب التأشيرة وجواز السفر","Detalhes e solicitação de visto e passaporte","Visa- und Passdetails und Antrag","वीज़ा और पासपोर्ट विवरण और आवेदन","签证与护照详情及申请"],
+  customerDetails:["Applicant Details & Documents","درخواست گزار کی معلومات اور دستاویزات","Datos y documentos del solicitante","Dati e documenti del richiedente","Informations et documents du demandeur","بيانات مقدم الطلب والمستندات","Dados e documentos do requerente","Angaben und Dokumente des Antragstellers","आवेदक का विवरण और दस्तावेज़","申请人信息与文件"],
+  name:["Full Name *","پورا نام *","Nombre completo *","Nome completo *","Nom complet *","الاسم الكامل *","Nome completo *","Vollständiger Name *","पूरा नाम *","姓名 *"],
+  fatherName:["Father's Name *","والد کا نام *","Nombre del padre *","Nome del padre *","Nom du père *","اسم الأب *","Nome do pai *","Name des Vaters *","पिता का नाम *","父亲姓名 *"],
+  gender:["Gender *","جنس *","Género *","Genere *","Genre *","الجنس *","Gênero *","Geschlecht *","लिंग *","性别 *"],
+  selectGender:["Select","منتخب کریں","Seleccionar","Seleziona","Sélectionner","اختر","Selecionar","Auswählen","चुनें","请选择"],
+  male:["Male","مرد","Masculino","Maschile","Homme","ذكر","Masculino","Männlich","पुरुष","男"],
+  female:["Female","عورت","Femenino","Femminile","Femme","أنثى","Feminino","Weiblich","महिला","女"],
+  other:["Other","دیگر","Otro","Altro","Autre","آخر","Outro","Andere","अन्य","其他"],
+  country:["Country","ملک","País","Paese","Pays","الدولة","País","Land","देश","国家"],
+  countryField:["Country *","ملک *","País *","Paese *","Pays *","الدولة *","País *","Land *","देश *","国家 *"],
+  email:["Gmail / Email *","جی میل / ای میل *","Gmail / Correo electrónico *","Gmail / Email *","Gmail / E-mail *","Gmail / البريد الإلكتروني *","Gmail / E-mail *","Gmail / E-Mail *","जीमेल / ईमेल *","Gmail / 电子邮件 *"],
+  phone:["Mobile / WhatsApp Number *","موبائل / واٹس ایپ نمبر *","Móvil / WhatsApp *","Cellulare / WhatsApp *","Mobile / WhatsApp *","رقم الهاتف / واتساب *","Celular / WhatsApp *","Mobil / WhatsApp-Nummer *","मोबाइल / व्हाट्सऐप नंबर *","手机 / WhatsApp 号码 *"],
+  phonePlaceholder:["Enter your phone number","اپنا موبائل نمبر درج کریں","Ingrese su número de teléfono","Inserisci il numero di telefono","Saisissez votre numéro de téléphone","أدخل رقم هاتفك","Digite seu número de telefone","Telefonnummer eingeben","अपना फ़ोन नंबर दर्ज करें","输入您的电话号码"],
+  phoneHint:["Select your country code and enter your number.","اپنے ملک کا کوڈ منتخب کرکے موبائل نمبر درج کریں۔","Seleccione el código de su país e introduzca su número.","Seleziona il prefisso del paese e inserisci il numero.","Sélectionnez l’indicatif de votre pays et saisissez votre numéro.","اختر رمز بلدك وأدخل رقم هاتفك.","Selecione o código do país e digite seu número.","Wählen Sie Ihre Landesvorwahl und geben Sie Ihre Nummer ein.","अपने देश का कोड चुनें और नंबर दर्ज करें।","选择国家代码并输入电话号码。"],
+  idFront:["National ID Card — Front *","قومی شناختی کارڈ — سامنے کی طرف *","Documento nacional de identidad — anverso *","Documento d’identità — fronte *","Carte d’identité nationale — recto *","بطاقة الهوية الوطنية — الوجه الأمامي *","Documento de identidade — frente *","Personalausweis — Vorderseite *","राष्ट्रीय पहचान पत्र — आगे का भाग *","身份证 — 正面 *"],
+  idBack:["National ID Card — Back *","قومی شناختی کارڈ — پچھلی طرف *","Documento nacional de identidad — reverso *","Documento d’identità — retro *","Carte d’identité nationale — verso *","بطاقة الهوية الوطنية — الوجه الخلفي *","Documento de identidade — verso *","Personalausweis — Rückseite *","राष्ट्रीय पहचान पत्र — पीछे का भाग *","身份证 — 背面 *"],
+  passport:["Passport Bio Page *","پاسپورٹ کا بائیو ڈیٹا صفحہ *","Página de datos del pasaporte *","Pagina dei dati del passaporto *","Page d’identité du passeport *","صفحة بيانات جواز السفر *","Página de dados do passaporte *","Pass-Biodatenseite *","पासपोर्ट का बायोडाटा पेज *","护照个人信息页 *"],
+  photo:["Applicant Photo *","درخواست گزار کی تصویر *","Foto del solicitante *","Foto del richiedente *","Photo du demandeur *","صورة مقدم الطلب *","Foto do requerente *","Foto des Antragstellers *","आवेदक की तस्वीर *","申请人照片 *"],
+  photoHint:["Your photo will be cropped to a 35 × 45 mm passport-style ratio before secure submission.","آپ کی تصویر محفوظ طریقے سے جمع کرنے سے پہلے 35 × 45 ملی میٹر پاسپورٹ سائز کے تناسب میں کاٹی جائے گی۔","Antes del envío seguro, su foto se ajustará a la proporción de pasaporte de 35 × 45 mm.","Prima dell’invio sicuro, la foto verrà ritagliata nel formato passaporto 35 × 45 mm.","Avant l’envoi sécurisé, votre photo sera recadrée au format passeport 35 × 45 mm.","سيتم قص صورتك بنسبة صورة جواز السفر 35 × 45 مم قبل الإرسال الآمن.","Antes do envio seguro, sua foto será cortada na proporção de passaporte de 35 × 45 mm.","Vor der sicheren Übermittlung wird Ihr Foto auf das Passbildformat 35 × 45 mm zugeschnitten.","सुरक्षित रूप से भेजने से पहले आपकी तस्वीर 35 × 45 मिमी पासपोर्ट अनुपात में क्रॉप की जाएगी।","安全提交前，您的照片将裁剪为 35 × 45 毫米护照照片比例。"],
+  privacyNote:["Your ID card, passport and photo are sensitive personal documents. They are submitted to the private customer documents folder for this application and are visible only to the authorized administrator. Do not upload documents unless you trust this service.","آپ کا شناختی کارڈ، پاسپورٹ اور تصویر حساس ذاتی دستاویزات ہیں۔ یہ اس درخواست کے نجی کسٹمر ڈاکیومنٹس فولڈر میں محفوظ ہوں گی اور صرف مجاز ایڈمن انہیں دیکھ سکے گا۔ صرف اسی صورت میں دستاویزات اپ لوڈ کریں جب آپ اس سروس پر اعتماد کرتے ہوں۔","Su documento de identidad, pasaporte y foto son documentos personales sensibles. Se guardan en la carpeta privada de documentos de esta solicitud y solo el administrador autorizado puede verlos. No los cargue si no confía en este servicio.","Carta d’identità, passaporto e foto sono documenti personali sensibili. Saranno conservati nella cartella privata della richiesta e saranno visibili solo all’amministratore autorizzato. Non caricare documenti se non ti fidi del servizio.","Votre carte d’identité, votre passeport et votre photo sont des documents personnels sensibles. Ils sont enregistrés dans le dossier privé de cette demande et seul l’administrateur autorisé peut les consulter. Ne les envoyez que si vous faites confiance à ce service.","بطاقة هويتك وجواز سفرك وصورتك مستندات شخصية حساسة. تُحفظ في مجلد المستندات الخاص بهذا الطلب ولا يراها إلا المسؤول المخوّل. لا ترفع المستندات إلا إذا كنت تثق بهذه الخدمة.","Seu documento de identidade, passaporte e foto são documentos pessoais sensíveis. Eles serão armazenados na pasta privada desta solicitação e só poderão ser vistos pelo administrador autorizado. Não envie documentos se não confiar neste serviço.","Ihr Ausweis, Reisepass und Foto sind sensible persönliche Dokumente. Sie werden im privaten Dokumentenordner dieses Antrags gespeichert und sind nur für den autorisierten Administrator sichtbar. Laden Sie Dokumente nur hoch, wenn Sie diesem Dienst vertrauen.","आपका पहचान पत्र, पासपोर्ट और फोटो संवेदनशील निजी दस्तावेज़ हैं। इन्हें इस आवेदन के निजी दस्तावेज़ फ़ोल्डर में रखा जाएगा और केवल अधिकृत एडमिन देख सकेगा। सेवा पर भरोसा न हो तो दस्तावेज़ अपलोड न करें।","您的身份证、护照和照片属于敏感个人文件。这些文件将保存在本申请的私人文件夹中，仅授权管理员可以查看。请仅在信任此服务时上传文件。"],
+  consent:["I consent to the secure processing of the documents I submit for this visa or passport application. *","میں اس ویزا یا پاسپورٹ درخواست کے لیے اپنی جمع کروائی گئی دستاویزات کی محفوظ پروسیسنگ کی اجازت دیتا/دیتی ہوں۔ *","Doy mi consentimiento para el tratamiento seguro de los documentos que envío para esta solicitud de visa o pasaporte. *","Acconsento al trattamento sicuro dei documenti inviati per questa richiesta di visto o passaporto. *","Je consens au traitement sécurisé des documents transmis pour cette demande de visa ou de passeport. *","أوافق على المعالجة الآمنة للمستندات التي أقدمها لطلب التأشيرة أو جواز السفر هذا. *","Autorizo o processamento seguro dos documentos enviados para esta solicitação de visto ou passaporte. *","Ich stimme der sicheren Verarbeitung der für diesen Visa- oder Passantrag eingereichten Dokumente zu. *","मैं इस वीज़ा या पासपोर्ट आवेदन के लिए जमा किए गए दस्तावेज़ों के सुरक्षित उपयोग की सहमति देता/देती हूँ। *","我同意对本签证或护照申请中提交的文件进行安全处理。 *"],
+  keepPageNote:["After PayPal opens, return to this same page and submit your transaction ID and payment screenshot. Do not close or refresh this page before submitting the application.","پے پال کھلنے کے بعد اسی صفحے پر واپس آئیں اور ٹرانزیکشن آئی ڈی اور ادائیگی کا اسکرین شاٹ جمع کروائیں۔ درخواست جمع ہونے سے پہلے یہ صفحہ بند یا ریفریش نہ کریں۔","Cuando se abra PayPal, vuelva a esta página y envíe el ID de transacción y una captura del pago. No cierre ni actualice la página antes de enviar la solicitud.","Dopo l’apertura di PayPal, torna a questa pagina e invia l’ID della transazione e uno screenshot del pagamento. Non chiudere né aggiornare la pagina prima di inviare la richiesta.","Lorsque PayPal s’ouvre, revenez sur cette page et envoyez l’identifiant de transaction ainsi qu’une capture du paiement. Ne fermez pas et n’actualisez pas la page avant l’envoi de la demande.","بعد فتح PayPal، عُد إلى هذه الصفحة وأرسل رقم المعاملة ولقطة شاشة للدفع. لا تغلق الصفحة أو تحدّثها قبل إرسال الطلب.","Quando o PayPal abrir, volte a esta página e envie o ID da transação e uma captura do pagamento. Não feche nem atualize esta página antes de enviar a solicitação.","Kehren Sie nach dem Öffnen von PayPal zu dieser Seite zurück und senden Sie die Transaktions-ID sowie einen Zahlungs-Screenshot. Schließen oder aktualisieren Sie die Seite nicht vor dem Absenden.","PayPal खुलने के बाद इसी पेज पर लौटें और ट्रांज़ैक्शन आईडी तथा भुगतान का स्क्रीनशॉट भेजें। आवेदन भेजने से पहले पेज बंद या रीफ़्रेश न करें।","PayPal 打开后，请返回此页面并提交交易编号和付款截图。提交申请前请勿关闭或刷新此页面。"],
+  processingTime:["Processing Time","پراسیسنگ کا وقت","Tiempo de procesamiento","Tempo di elaborazione","Délai de traitement","مدة المعالجة","Prazo de processamento","Bearbeitungszeit","प्रक्रिया समय","处理时间"],
+  serviceTypeLabel:["Service Type","سروس کی قسم","Tipo de servicio","Tipo di servizio","Type de service","نوع الخدمة","Tipo de serviço","Dienstleistung","सेवा का प्रकार","服务类型"],
+  sponsorNote:["Sponsorship by Sofia Jenny Taborda is subject to legal eligibility and destination-country requirements. Selecting this service does not guarantee sponsorship or visa approval.","صوفیہ جینی تبورڈا کی طرف سے اسپانسرشپ قانونی اہلیت اور متعلقہ ملک کے قوانین سے مشروط ہے۔ اس سروس کے انتخاب سے اسپانسرشپ یا ویزا منظوری کی ضمانت نہیں ملتی۔","El patrocinio de Sofia Jenny Taborda está sujeto a la elegibilidad legal y a los requisitos del país de destino. Esta opción no garantiza el patrocinio ni la aprobación de la visa.","La sponsorizzazione di Sofia Jenny Taborda è soggetta ai requisiti legali e alle norme del paese di destinazione. La selezione non garantisce sponsorizzazione né approvazione del visto.","Le parrainage par Sofia Jenny Taborda dépend de l’éligibilité légale et des exigences du pays de destination. Ce choix ne garantit ni parrainage ni approbation du visa.","تخضع كفالة صوفيا جيني تابوردا للأهلية القانونية ومتطلبات بلد الوجهة. اختيار هذه الخدمة لا يضمن الكفالة أو الموافقة على التأشيرة.","O patrocínio por Sofia Jenny Taborda depende da elegibilidade legal e dos requisitos do país de destino. A seleção não garante patrocínio nem aprovação do visto.","Ein Sponsoring durch Sofia Jenny Taborda hängt von der rechtlichen Berechtigung und den Anforderungen des Ziellandes ab. Die Auswahl garantiert weder Sponsoring noch eine Visumerteilung.","सोफिया जेनी तबोर्डा द्वारा स्पॉन्सरशिप कानूनी पात्रता और गंतव्य देश की शर्तों पर निर्भर है। इस सेवा को चुनने से स्पॉन्सरशिप या वीज़ा मंज़ूरी की गारंटी नहीं मिलती।","Sofia Jenny Taborda 的担保须符合当地法律资格及目的地国家要求。选择此服务并不保证获得担保或签证批准。"],
+  payNow:["BOOK NOW · CONTINUE TO PAYPAL","ابھی بک کریں · پے پال پر جائیں","RESERVAR AHORA · CONTINUAR A PAYPAL","PRENOTA ORA · CONTINUA SU PAYPAL","RÉSERVER · CONTINUER VERS PAYPAL","احجز الآن · المتابعة إلى PayPal","RESERVAR AGORA · CONTINUAR PARA O PAYPAL","JETZT BUCHEN · WEITER ZU PAYPAL","अभी बुक करें · PayPal पर जाएँ","立即预订 · 前往 PayPal"],
+  paymentStep:["Complete Payment Confirmation","ادائیگی کی تصدیق مکمل کریں","Completar la confirmación del pago","Completa la conferma del pagamento","Finaliser la confirmation du paiement","إكمال تأكيد الدفع","Concluir a confirmação do pagamento","Zahlungsbestätigung abschließen","भुगतान की पुष्टि पूरी करें","完成付款确认"],
+  paymentStepText:["PayPal has opened in a new tab. Complete payment, return here, then submit your transaction ID and screenshot.","پے پال نئے ٹیب میں کھل گیا ہے۔ ادائیگی مکمل کرکے واپس آئیں اور ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔","PayPal se abrió en una nueva pestaña. Complete el pago, vuelva aquí y envíe el ID de transacción y la captura de pantalla.","PayPal si è aperto in una nuova scheda. Completa il pagamento, torna qui e invia l’ID della transazione e lo screenshot.","PayPal s’est ouvert dans un nouvel onglet. Effectuez le paiement, revenez ici et envoyez l’identifiant de transaction et la capture d’écran.","تم فتح PayPal في علامة تبويب جديدة. أكمل الدفع ثم عُد إلى هنا وأرسل رقم المعاملة ولقطة الشاشة.","O PayPal foi aberto em uma nova aba. Conclua o pagamento, volte aqui e envie o ID da transação e a captura de tela.","PayPal wurde in einem neuen Tab geöffnet. Schließen Sie die Zahlung ab, kehren Sie hierher zurück und senden Sie Transaktions-ID und Screenshot.","PayPal नए टैब में खुल गया है। भुगतान पूरा करें, यहाँ लौटें और ट्रांज़ैक्शन आईडी व स्क्रीनशॉट भेजें।","PayPal 已在新标签页打开。完成付款后返回此处，提交交易编号和截图。"],
+  payFallback:["Open this service's PayPal payment page","اس سروس کا پے پال ادائیگی صفحہ کھولیں","Abrir la página de pago de PayPal de este servicio","Apri la pagina PayPal di pagamento per questo servizio","Ouvrir la page de paiement PayPal de ce service","افتح صفحة الدفع عبر PayPal لهذه الخدمة","Abrir a página de pagamento PayPal deste serviço","PayPal-Zahlungsseite für diesen Dienst öffnen","इस सेवा का PayPal भुगतान पेज खोलें","打开此服务的 PayPal 付款页面"],
+  transaction:["PayPal Transaction ID *","پے پال ٹرانزیکشن آئی ڈی *","ID de transacción de PayPal *","ID transazione PayPal *","ID de transaction PayPal *","رقم معاملة PayPal *","ID da transação PayPal *","PayPal-Transaktions-ID *","PayPal ट्रांज़ैक्शन आईडी *","PayPal 交易编号 *"],
+  screenshot:["Payment Screenshot *","ادائیگی کا اسکرین شاٹ *","Captura de pantalla del pago *","Screenshot del pagamento *","Capture d’écran du paiement *","لقطة شاشة للدفع *","Captura de tela do pagamento *","Zahlungs-Screenshot *","भुगतान का स्क्रीनशॉट *","付款截图 *"],
+  screenshotHint:["JPG, PNG or WEBP · Maximum 6 MB","JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB","JPG, PNG o WEBP · Máximo 6 MB","JPG, PNG o WEBP · Massimo 6 MB","JPG, PNG ou WEBP · 6 Mo maximum","JPG أو PNG أو WEBP · بحد أقصى 6 ميجابايت","JPG, PNG ou WEBP · Máximo de 6 MB","JPG, PNG oder WEBP · Maximal 6 MB","JPG, PNG या WEBP · अधिकतम 6 MB","JPG、PNG 或 WEBP · 最大 6 MB"],
+  submitOrder:["SUBMIT APPLICATION FOR VERIFICATION","درخواست تصدیق کے لیے جمع کروائیں","ENVIAR SOLICITUD PARA VERIFICACIÓN","INVIA LA RICHIESTA PER LA VERIFICA","ENVOYER LA DEMANDE POUR VÉRIFICATION","إرسال الطلب للتحقق","ENVIAR SOLICITAÇÃO PARA VERIFICAÇÃO","ANTRAG ZUR PRÜFUNG SENDEN","सत्यापन के लिए आवेदन भेजें","提交申请以供审核"],
+  sending:["Submitting your application...","آپ کی درخواست جمع ہو رہی ہے...","Enviando su solicitud...","Invio della richiesta...","Envoi de votre demande...","جارٍ إرسال طلبك...","Enviando sua solicitação...","Ihr Antrag wird gesendet...","आपका आवेदन भेजा जा रहा है...","正在提交您的申请..."],
+  orderSuccess:["Your application has been received. Application ID: ","آپ کی درخواست موصول ہوگئی۔ درخواست نمبر: ","Hemos recibido su solicitud. ID de solicitud: ","La tua richiesta è stata ricevuta. ID richiesta: ","Votre demande a été reçue. Numéro de demande : ","تم استلام طلبك. رقم الطلب: ","Sua solicitação foi recebida. ID da solicitação: ","Ihr Antrag ist eingegangen. Antrags-ID: ","आपका आवेदन प्राप्त हो गया है। आवेदन आईडी: ","已收到您的申请。申请编号："],
+  orderError:["Your application could not be submitted. Please try again.","آپ کی درخواست جمع نہیں ہوسکی۔ دوبارہ کوشش کریں۔","No se pudo enviar su solicitud. Inténtelo de nuevo.","Non è stato possibile inviare la richiesta. Riprova.","Votre demande n’a pas pu être envoyée. Veuillez réessayer.","تعذر إرسال طلبك. يرجى المحاولة مرة أخرى.","Não foi possível enviar sua solicitação. Tente novamente.","Ihr Antrag konnte nicht gesendet werden. Bitte versuchen Sie es erneut.","आपका आवेदन जमा नहीं हो सका। कृपया फिर कोशिश करें।","无法提交申请。请重试。"],
+  invalidPhone:["Enter a valid international mobile number.","درست بین الاقوامی موبائل نمبر درج کریں۔","Introduzca un número móvil internacional válido.","Inserisci un numero di cellulare internazionale valido.","Saisissez un numéro de mobile international valide.","أدخل رقم هاتف دولي صحيح.","Digite um número de celular internacional válido.","Geben Sie eine gültige internationale Mobilnummer ein.","मान्य अंतरराष्ट्रीय मोबाइल नंबर दर्ज करें।","请输入有效的国际手机号码。"],
+  invalidFile:["Choose a valid JPG, PNG or WEBP image up to 6 MB.","6 MB تک کی درست JPG، PNG یا WEBP تصویر منتخب کریں۔","Seleccione una imagen JPG, PNG o WEBP válida de hasta 6 MB.","Scegli un’immagine JPG, PNG o WEBP valida fino a 6 MB.","Choisissez une image JPG, PNG ou WEBP valide de 6 Mo maximum.","اختر صورة JPG أو PNG أو WEBP صالحة بحجم لا يتجاوز 6 ميجابايت.","Escolha uma imagem JPG, PNG ou WEBP válida de até 6 MB.","Wählen Sie ein gültiges JPG-, PNG- oder WEBP-Bild bis 6 MB.","6 MB तक की मान्य JPG, PNG या WEBP तस्वीर चुनें।","请选择不超过 6 MB 的有效 JPG、PNG 或 WEBP 图片。"],
+  selectProduct:["Please select a visa or passport service first.","پہلے ویزا یا پاسپورٹ سروس منتخب کریں۔","Primero seleccione un servicio de visa o pasaporte.","Seleziona prima un servizio per visto o passaporto.","Veuillez d’abord sélectionner un service de visa ou de passeport.","يرجى اختيار خدمة تأشيرة أو جواز سفر أولاً.","Selecione primeiro um serviço de visto ou passaporte.","Bitte wählen Sie zuerst einen Visa- oder Passdienst aus.","पहले वीज़ा या पासपोर्ट सेवा चुनें।","请先选择签证或护照服务。"],
+  popupError:["Your browser blocked the PayPal tab. Use the PayPal link shown below.","آپ کے براؤزر نے پے پال ٹیب روک دیا ہے۔ نیچے دیا گیا پے پال لنک استعمال کریں۔","Su navegador bloqueó la pestaña de PayPal. Use el enlace que aparece abajo.","Il browser ha bloccato la scheda PayPal. Usa il link mostrato qui sotto.","Votre navigateur a bloqué l’onglet PayPal. Utilisez le lien ci-dessous.","حظر متصفحك علامة تبويب PayPal. استخدم الرابط الظاهر أدناه.","Seu navegador bloqueou a aba do PayPal. Use o link exibido abaixo.","Ihr Browser hat den PayPal-Tab blockiert. Verwenden Sie den unten angezeigten Link.","आपके ब्राउज़र ने PayPal टैब रोक दिया। नीचे दिया गया लिंक इस्तेमाल करें।","浏览器阻止了 PayPal 标签页。请使用下方显示的链接。"],
+  footer:["Visa & Passport Services","ویزا اور پاسپورٹ سروسز","Servicios de visas y pasaportes","Servizi per visti e passaporti","Services de visa et passeport","خدمات التأشيرات وجوازات السفر","Serviços de visto e passaporte","Visa- und Passdienste","वीज़ा और पासपोर्ट सेवाएँ","签证与护照服务"],
+  applyNow:["APPLY / BOOK NOW","درخواست دیں / ابھی بک کریں","SOLICITAR / RESERVAR","RICHIEDI / PRENOTA ORA","DEMANDER / RÉSERVER","قدّم الطلب / احجز الآن","SOLICITAR / RESERVAR AGORA","BEWERBEN / JETZT BUCHEN","आवेदन करें / अभी बुक करें","申请 / 立即预订"],
+  price:["SERVICE FEE","سروس فیس","TARIFA DEL SERVICIO","COSTO DEL SERVIZIO","FRAIS DE SERVICE","رسوم الخدمة","TAXA DO SERVIÇO","SERVICEGEBÜHR","सेवा शुल्क","服务费用"],
+  countryLabel:["COUNTRY","ملک","PAÍS","PAESE","PAYS","الدولة","PAÍS","LAND","देश","国家"],
+  processingLabel:["PROCESSING TIME","پراسیسنگ کا وقت","TIEMPO DE TRÁMITE","TEMPO DI ELABORAZIONE","DÉLAI DE TRAITEMENT","مدة المعالجة","PRAZO DE PROCESSAMENTO","BEARBEITUNGSZEIT","प्रक्रिया समय","办理时间"],
+  dateTBA:["To be confirmed","تصدیق ہونا باقی ہے","Por confirmar","Da confermare","À confirmer","سيتم التأكيد لاحقًا","A confirmar","Noch zu bestätigen","पुष्टि होना बाकी है","待确认"],
+  serviceCount:["{count} visa and passport services available","{count} ویزا اور پاسپورٹ سروسز دستیاب ہیں","{count} servicios de visa y pasaporte disponibles","{count} servizi per visti e passaporti disponibili","{count} services de visa et de passeport disponibles","{count} خدمة تأشيرة وجواز سفر متاحة","{count} serviços de visto e passaporte disponíveis","{count} Visa- und Passdienste verfügbar","{count} वीज़ा और पासपोर्ट सेवाएँ उपलब्ध हैं","有 {count} 项签证与护照服务"],
+  serviceFallback:["Visa / Passport Service","ویزا / پاسپورٹ سروس","Servicio de visa / pasaporte","Servizio visto / passaporto","Service visa / passeport","خدمة تأشيرة / جواز سفر","Serviço de visto / passaporte","Visa- / Passdienst","वीज़ा / पासपोर्ट सेवा","签证 / 护照服务"],
+  countryUnknown:["Country details on request","ملک کی تفصیل درخواست پر","Detalles del país disponibles a petición","Dettagli del paese su richiesta","Détails du pays sur demande","تفاصيل الدولة عند الطلب","Detalhes do país sob consulta","Länderdetails auf Anfrage","देश का विवरण अनुरोध पर","国家详情可按需提供"],
+  errorTimeout:["The website service timed out. Please try again.","ویب سائٹ سروس کا وقت ختم ہوگیا۔ دوبارہ کوشش کریں۔","La conexión con el servicio agotó el tiempo. Inténtelo de nuevo.","La richiesta al servizio è scaduta. Riprova.","Le service a dépassé le délai d’attente. Veuillez réessayer.","انتهت مهلة خدمة الموقع. يرجى المحاولة مرة أخرى.","O serviço do site excedeu o tempo limite. Tente novamente.","Zeitüberschreitung beim Webdienst. Bitte versuchen Sie es erneut.","वेबसाइट सेवा का समय समाप्त हो गया। कृपया फिर कोशिश करें।","网站服务请求超时。请重试。"],
+  errorConnection:["Could not connect to the website service.","ویب سائٹ سروس سے رابطہ نہیں ہوسکا۔","No se pudo conectar con el servicio del sitio web.","Impossibile connettersi al servizio del sito.","Impossible de se connecter au service du site.","تعذر الاتصال بخدمة الموقع.","Não foi possível conectar ao serviço do site.","Verbindung zum Webdienst fehlgeschlagen.","वेबसाइट सेवा से कनेक्ट नहीं हो सका।","无法连接网站服务。"],
+  errorReadImage:["Could not read the selected image.","منتخب کردہ تصویر پڑھی نہیں جاسکی۔","No se pudo leer la imagen seleccionada.","Impossibile leggere l’immagine selezionata.","Impossible de lire l’image sélectionnée.","تعذرت قراءة الصورة المحددة.","Não foi possível ler a imagem selecionada.","Das ausgewählte Bild konnte nicht gelesen werden.","चुनी गई तस्वीर पढ़ी नहीं जा सकी।","无法读取所选图片。"],
+  missingPaypal:["This listing does not have a PayPal payment link yet. Please contact the administrator.","اس سروس کا پے پال لنک ابھی موجود نہیں۔ براہ کرم ایڈمن سے رابطہ کریں۔","Este servicio aún no tiene un enlace de pago de PayPal. Contacte con el administrador.","Questo servizio non ha ancora un link di pagamento PayPal. Contatta l’amministratore.","Cette offre ne dispose pas encore de lien de paiement PayPal. Contactez l’administrateur.","لا يتوفر رابط دفع PayPal لهذه الخدمة حتى الآن. يرجى التواصل مع المسؤول.","Este serviço ainda não tem um link de pagamento PayPal. Entre em contato com o administrador.","Für diesen Eintrag ist noch kein PayPal-Zahlungslink hinterlegt. Bitte wenden Sie sich an den Administrator.","इस सेवा का PayPal भुगतान लिंक अभी उपलब्ध नहीं है। एडमिन से संपर्क करें।","此服务尚未设置 PayPal 付款链接。请联系管理员。"],
+  loadingError:["Could not load the services. Please refresh the page or try again later.","سروسز لوڈ نہیں ہوسکیں۔ صفحہ ریفریش کریں یا بعد میں دوبارہ کوشش کریں۔","No se pudieron cargar los servicios. Actualice la página o inténtelo más tarde.","Impossibile caricare i servizi. Aggiorna la pagina o riprova più tardi.","Impossible de charger les services. Actualisez la page ou réessayez plus tard.","تعذر تحميل الخدمات. يرجى تحديث الصفحة أو المحاولة لاحقًا.","Não foi possível carregar os serviços. Atualize a página ou tente mais tarde.","Die Dienste konnten nicht geladen werden. Aktualisieren Sie die Seite oder versuchen Sie es später erneut.","सेवाएँ लोड नहीं हो सकीं। पेज रीफ़्रेश करें या बाद में फिर कोशिश करें।","无法加载服务。请刷新页面或稍后重试。"],
+  serviceTouristVisa:["Tourist Visa","ٹورسٹ ویزا","Visa de turista","Visto turistico","Visa touristique","تأشيرة سياحية","Visto de turista","Touristenvisum","टूरिस्ट वीज़ा","旅游签证"],
+  serviceVisaFiling:["Visa Filing","ویزا فائلنگ","Tramitación de visa","Pratica del visto","Dossier de visa","تقديم طلب التأشيرة","Solicitação de visto","Visumantrag","वीज़ा आवेदन","签证申请"],
+  servicePassport:["Passport Application","پاسپورٹ درخواست","Solicitud de pasaporte","Richiesta passaporto","Demande de passeport","طلب جواز سفر","Solicitação de passaporte","Passantrag","पासपोर्ट आवेदन","护照申请"],
+  serviceSponsorship:["Sponsorship by Sofia Jenny Taborda (subject to eligibility)","صوفیہ جینی تبورڈا کی اسپانسرشپ (قانونی اہلیت سے مشروط)","Patrocinio de Sofia Jenny Taborda (sujeto a elegibilidad)","Sponsorizzazione di Sofia Jenny Taborda (soggetta a idoneità)","Parrainage par Sofia Jenny Taborda (sous réserve d’éligibilité)","كفالة من صوفيا جيني تابوردا (وفقًا للأهلية)","Patrocínio por Sofia Jenny Taborda (sujeito à elegibilidade)","Sponsoring durch Sofia Jenny Taborda (vorbehaltlich der Berechtigung)","सोफिया जेनी तबोर्डा द्वारा स्पॉन्सरशिप (पात्रता के अधीन)","Sofia Jenny Taborda 提供担保（须符合资格）"],
+  serviceWorkPermit:["Work Permit","ورک پرمٹ","Permiso de trabajo","Permesso di lavoro","Permis de travail","تصريح عمل","Permissão de trabalho","Arbeitserlaubnis","वर्क परमिट","工作许可"]
 };
 
-function tr(key) {
-  return (translations[currentLanguage] || translations.en)[key] || translations.en[key] || key;
+const translations = Object.fromEntries(LANGUAGE_CODES.map((code, index) => [
+  code,
+  Object.fromEntries(Object.entries(translationRows).map(([key, values]) => [key, values[index]]))
+]));
+
+function tr(key, values = {}) {
+  const template = (translations[currentLanguage] || translations.en)[key] || translations.en[key] || key;
+  return String(template).replace(/\{(\w+)\}/g, (_, name) => values[name] == null ? "" : String(values[name]));
 }
+
+function translateServiceType(value) {
+  const raw = String(value || "").trim();
+  const normalized = raw.toLowerCase();
+  if (!raw) return tr("serviceFallback");
+  if (normalized.includes("tourist")) return tr("serviceTouristVisa");
+  if (normalized.includes("filing")) return tr("serviceVisaFiling");
+  if (normalized.includes("passport")) return tr("servicePassport");
+  if (normalized.includes("sponsor")) return tr("serviceSponsorship");
+  if (normalized.includes("work permit")) return tr("serviceWorkPermit");
+  return raw;
+}
+
 function applyLanguage(lang) {
   currentLanguage = translations[lang] ? lang : "en";
   document.documentElement.lang = currentLanguage;
-  document.documentElement.dir = currentLanguage === "ur" ? "rtl" : "ltr";
+  document.documentElement.dir = ["ur", "ar"].includes(currentLanguage) ? "rtl" : "ltr";
   $("languageSelect").value = currentLanguage;
-  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = tr(el.dataset.i18n));
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => el.placeholder = tr(el.dataset.i18nPlaceholder));
-  try { localStorage.setItem("sofia-language", currentLanguage); } catch(e) {}
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    el.textContent = tr(el.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    el.placeholder = tr(el.dataset.i18nPlaceholder);
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    el.setAttribute("aria-label", tr(el.dataset.i18nAria));
+  });
+  try { localStorage.setItem("sofia-language", currentLanguage); } catch (e) {}
+  if (typeof renderProducts === "function") renderProducts();
+  if (selectedListing) $("modalServiceType").textContent = translateServiceType(selectedListing.serviceType);
 }
-$("languageSelect").addEventListener("change", e => applyLanguage(e.target.value));
-try {
-  const saved = localStorage.getItem("sofia-language");
-  if (saved && translations[saved]) $("languageSelect").value = saved;
-  applyLanguage($("languageSelect").value || "en");
-} catch(e) { applyLanguage("en"); }
+
+$("languageSelect").addEventListener("change", event => applyLanguage(event.target.value));
 
 function jsonp(params) {
   return new Promise((resolve, reject) => {
     const callback = "sjtVisaPassport_" + Date.now() + "_" + Math.floor(Math.random()*999999);
     const script = document.createElement("script");
-    const timer = setTimeout(() => { cleanup(); reject(new Error("Website service timed out.")); }, 18000);
+    const timer = setTimeout(() => { cleanup(); reject(new Error(tr("errorTimeout"))); }, 18000);
     function cleanup() { clearTimeout(timer); try { delete window[callback]; } catch(e) { window[callback] = undefined; } script.remove(); }
     window[callback] = data => { cleanup(); resolve(data); };
-    script.onerror = () => { cleanup(); reject(new Error("Could not connect to the website service.")); };
+    script.onerror = () => { cleanup(); reject(new Error(tr("errorConnection"))); };
     script.src = API_URL + "?" + new URLSearchParams({...params, callback}).toString();
     document.body.appendChild(script);
   });
@@ -567,7 +622,7 @@ function readDataUrl(file) {
     if (!validImage(file)) return reject(new Error(tr("invalidFile")));
     const reader=new FileReader();
     reader.onload=()=>resolve(String(reader.result||""));
-    reader.onerror=()=>reject(new Error("Could not read selected image."));
+    reader.onerror=()=>reject(new Error(tr("errorReadImage")));
     reader.readAsDataURL(file);
   });
 }
@@ -581,7 +636,7 @@ function renderProducts() {
     return [item.title,item.description,item.serviceType,meta.country,meta.processingTime]
       .some(v=>String(v||"").toLowerCase().includes(term));
   });
-  $("productCount").textContent=filtered.length+" "+(currentLanguage==="ur"?"ویزا اور پاسپورٹ سروسز دستیاب":"visa and passport services available");
+  $("productCount").textContent=tr("serviceCount", {count: filtered.length});
   if (!filtered.length) {
     const box=document.createElement("div"); box.className="empty";
     const icon=document.createElement("div"); icon.className="emoji"; icon.textContent="🛂";
@@ -603,12 +658,12 @@ function renderProducts() {
     const info=document.createElement("div"); info.className="product-info";
     const title=document.createElement("h3"); title.textContent=item.title||"Visa / Passport Service";
     const metaRow=document.createElement("div"); metaRow.className="work-meta";
-    const type=document.createElement("span"); type.textContent="✈ "+(item.serviceType||"Visa / Passport");
-    const country=document.createElement("span"); country.textContent="🌍 "+(meta.country||"Country details on request");
-    const time=document.createElement("span"); time.textContent="⏱ "+(meta.processingTime||tr("dateTBA"));
+    const type=document.createElement("span"); type.textContent="✈ "+tr("serviceTypeLabel")+": "+translateServiceType(item.serviceType);
+    const country=document.createElement("span"); country.textContent="🌍 "+tr("countryLabel")+": "+(meta.country||tr("countryUnknown"));
+    const time=document.createElement("span"); time.textContent="⏱ "+tr("processingLabel")+": "+(meta.processingTime||tr("dateTBA"));
     metaRow.append(type,country,time);
     const description=document.createElement("p"); description.textContent=meta.description||"";
-    const price=document.createElement("div"); price.className="product-price"; price.textContent=money(item.price);
+    const price=document.createElement("div"); price.className="product-price"; price.textContent=tr("price")+": "+money(item.price);
     const button=document.createElement("button"); button.type="button"; button.className="buy-button work-apply-button"; button.textContent=tr("applyNow");
     button.addEventListener("click",()=>openProduct(item));
     info.append(title,metaRow,description,price,button);
@@ -621,13 +676,13 @@ function openProduct(item) {
   selectedListing=item;
   const meta=parseVisaPassportDescription(item.description);
   $("modalImage").src=item.thumbnailUrl||item.mediaUrl||"";
-  $("modalProductTitle").textContent=item.title||"Visa / Passport Service";
+  $("modalProductTitle").textContent=item.title||tr("serviceFallback");
   $("modalProductDescription").textContent=meta.description||"";
-  $("modalServiceType").textContent=item.serviceType||"Visa / Passport";
+  $("modalServiceType").textContent=translateServiceType(item.serviceType);
   $("sponsorshipNote").classList.toggle("hidden", !/sponsor/i.test(String(item.serviceType||"")));
   $("modalCountry").textContent=meta.country||"";
   $("modalProcessingTime").textContent=meta.processingTime||tr("dateTBA");
-  $("modalProductPrice").textContent=money(item.price);
+  $("modalProductPrice").textContent=tr("price")+": "+money(item.price);
   $("buyerForm").reset();
   $("paymentProofForm").reset();
   $("buyerForm").classList.remove("hidden");
@@ -670,7 +725,7 @@ $("applicantPhotoFile").addEventListener("change",async()=>{
 $("buyerForm").addEventListener("submit",event=>{
   event.preventDefault();
   if(!selectedListing){showStatus(tr("selectProduct"),"error");return;}
-  if(!selectedListing.paypalLink){showStatus("This listing has no PayPal link configured.","error");return;}
+  if(!selectedListing.paypalLink){showStatus(tr("missingPaypal"),"error");return;}
   const phone=getFullPhone();
   if(!phone||phone.replace(/\D/g,"").length<7){showStatus(tr("invalidPhone"),"error");return;}
   const files=[
@@ -733,17 +788,17 @@ window.addEventListener("message",event=>{
     $("buyerForm").classList.add("hidden");
     $("paymentProofSection").classList.add("hidden");
     const ref=data.applicationId?" "+data.applicationId:"";
-    showStatus(tr("orderSuccess")+ref+" — "+(data.message||""),"success");
+    showStatus(tr("orderSuccess")+ref,"success");
   }else if(data.type==="FORM_SUBMISSION_ERROR"||data.success===false){
     const button=$("submitOrderButton");button.disabled=false;button.textContent=tr("submitOrder");
-    showStatus(data.message||tr("orderError"),"error");
+    showStatus(tr("orderError"),"error");
   }
 });
 
 function loadListings() {
   jsonp({action:"publicContent",category:CATEGORY})
     .then(result=>{
-      if(!result||result.success===false)throw new Error(result&&result.message?result.message:"Could not load listings.");
+      if(!result||result.success===false)throw new Error(tr("loadingError"));
       listings=Array.isArray(result.content)?result.content:[];
       renderProducts();
     })
