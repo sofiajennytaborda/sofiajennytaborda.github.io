@@ -77,19 +77,30 @@ main{max-width:1240px;margin:27px auto;padding:0 18px}
  color:#f1e6f6;font-size:15px;
  line-height:1.8;max-width:540px
 }
-.hero-image{
- display:block;width:100%;overflow:hidden;
- border:3px solid #f4c0e7;border-radius:15px;
- box-shadow:0 12px 30px #0005
-}
 
-.hero-image img{
+.hero-image{
+  display:block;
   width:100%;
   height:auto;
-  max-height:none;
-  aspect-ratio:auto;
-  object-fit:contain;
-  display:block;
+  min-height:0;
+  overflow:visible;
+  box-sizing:border-box;
+  border:3px solid #f4c0e7;
+  border-radius:15px;
+  box-shadow:0 12px 30px #0005;
+}
+
+
+
+.hero-image img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+
 }
 
 .hero-bottom{
