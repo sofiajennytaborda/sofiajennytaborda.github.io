@@ -1,0 +1,1636 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#35145f">
+<title>Sofia Jenny Taborda Fashion Store</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#f8f6fb;color:#35145f;
+ font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+header{
+ display:flex;align-items:center;justify-content:space-between;
+ flex-wrap:wrap;gap:14px;padding:12px clamp(14px,4vw,55px);
+ background:#fff;box-shadow:0 3px 17px #35145f12
+}
+.brand{
+ display:flex;align-items:center;gap:11px;
+ text-decoration:none;color:#35145f
+}
+.brand img{
+ width:48px;height:48px;object-fit:contain;border-radius:50%
+}
+.brand strong{font-size:clamp(15px,2vw,21px);font-weight:900}
+.header-actions{display:flex;align-items:center;gap:14px}
+#languageSelect{
+ max-width:175px;padding:10px;
+ border:1px solid #e2d6eb;border-radius:9px;
+ background:#fff;color:#35145f
+}
+.back-home{
+ color:#743b94;font-weight:900;font-size:13px;
+ text-decoration:none
+}
+.accent-line{
+ height:5px;
+ background:linear-gradient(90deg,#542475,#e7a7d9,#ffd47b,#542475)
+}
+
+main{max-width:1240px;margin:27px auto;padding:0 18px}
+
+.hero{
+ display:grid;grid-template-columns:1fr 1fr;
+ align-items:center;gap:30px;
+ padding:clamp(22px,4vw,45px);
+ background:linear-gradient(120deg,#24103f,#572577 58%,#a53d8b);
+ border-radius:19px;overflow:hidden;
+ box-shadow:0 12px 32px #35145f20;color:white
+}
+.hero-tag{
+ color:#ffdc9c;font-size:11px;
+ letter-spacing:2px;font-weight:900
+}
+.hero h1{
+ font-size:clamp(31px,4.4vw,53px);
+ font-weight:900;line-height:1.13;
+ margin:15px 0;
+ color:#fff;
+ text-shadow:0 2px 12px #0003
+}
+.hero h1 span{
+ color:#ffd47b;
+ display:block
+}
+.hero p{
+ color:#f1e6f6;font-size:15px;
+ line-height:1.8;max-width:540px
+}
+.hero-image{
+ display:block;width:100%;overflow:hidden;
+ border:3px solid #f4c0e7;border-radius:15px;
+ box-shadow:0 12px 30px #0005
+}
+.hero-image img{
+ width:100%;height:100%;max-height:370px;
+ aspect-ratio:16/11;object-fit:cover;display:block
+}
+.hero-bottom{
+ margin-top:18px;color:#ffe2a6;
+ font-weight:800;font-size:12px
+}
+
+.shop-toolbar{
+ margin-top:24px;padding:23px;
+ background:#fff;border:1px solid #e9dff0;
+ border-radius:15px;
+ display:flex;align-items:center;
+ justify-content:space-between;gap:17px;flex-wrap:wrap
+}
+.shop-heading h2{
+ margin:0;color:#542475;
+ font-size:clamp(22px,3vw,30px);
+ font-weight:900
+}
+.shop-heading p{
+ margin:4px 0 0;color:#82738e;font-size:13px
+}
+.search-box{
+ position:relative;width:min(100%,360px)
+}
+.search-box input{
+ width:100%;padding:14px 16px 14px 43px;
+ border:1px solid #dfd1e9;border-radius:10px;
+ background:#fcfaff;color:#35145f;outline:none
+}
+.search-box input:focus{
+ border-color:#984ba9;box-shadow:0 0 0 3px #984ba91a
+}
+.search-icon{
+ position:absolute;left:14px;top:13px;font-size:18px
+}
+.product-count{
+ margin:18px 3px 12px;color:#816e91;
+ font-size:13px;font-weight:700
+}
+.product-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:20px
+}
+.product-card{
+ min-width:0;background:white;
+ border:1px solid #e8ddec;border-radius:15px;
+ overflow:hidden;
+ box-shadow:0 5px 19px #35145f0c;
+ transition:transform .22s,box-shadow .22s
+}
+.product-card:hover{
+ transform:translateY(-5px);
+ box-shadow:0 12px 28px #35145f18
+}
+.product-image{
+ display:block;width:100%;aspect-ratio:4/5;
+ overflow:hidden;background:#f1e9f6;
+ border:0;padding:0;position:relative
+}
+.product-image img{
+ width:100%;height:100%;display:block;
+ object-fit:cover;transition:transform .35s
+}
+.product-card:hover .product-image img{transform:scale(1.035)}
+.product-info{padding:17px}
+.product-info h3{
+ margin:0 0 7px;color:#542475;
+ font-size:18px;font-weight:900;line-height:1.35
+}
+.product-info p{
+ margin:0 0 14px;color:#82738e;
+ font-size:13px;line-height:1.65;
+ min-height:42px;overflow-wrap:anywhere
+}
+.product-price{
+ color:#b04491;font-size:24px;
+ font-weight:900;margin:8px 0 14px
+}
+.product-price small{
+ color:#81728e;font-size:11px;font-weight:700
+}
+.buy-button{
+ width:100%;padding:13px 15px;
+ border:0;border-radius:9px;
+ color:#35145f;
+ background:linear-gradient(100deg,#ffd16e,#ffe8b4);
+ font-weight:900;font-size:14px;
+ box-shadow:0 4px 12px #9a682522;
+ transition:.2s
+}
+.buy-button:hover{
+ background:linear-gradient(100deg,#ffbd4c,#ffdf91);
+ transform:translateY(-2px)
+}
+
+.empty{
+ padding:45px 15px;text-align:center;
+ background:white;border:1px dashed #d9c5e4;
+ border-radius:14px;color:#82738e;
+ grid-column:1/-1
+}
+.empty .emoji{font-size:38px}
+.empty h3{color:#542475}
+
+footer{
+ margin-top:40px;padding:25px 15px;
+ background:#35145f;color:#fff;
+ text-align:center;font-size:12px
+}
+
+/* PRODUCT ORDER MODAL */
+
+.modal{
+ display:none;position:fixed;inset:0;
+ z-index:9999;align-items:center;
+ justify-content:center;padding:15px
+}
+.modal.open{display:flex}
+.modal-backdrop{
+ position:absolute;inset:0;background:#170c26d9;
+ backdrop-filter:blur(4px)
+}
+.modal-panel{
+ position:relative;z-index:2;
+ width:100%;max-width:760px;
+ max-height:92vh;overflow-y:auto;
+ padding:25px;background:#fff;
+ border-radius:17px;
+ box-shadow:0 20px 60px #0005
+}
+.modal-top{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:12px;margin-bottom:18px
+}
+.modal-top h2{
+ color:#542475;margin:0;font-size:23px;font-weight:900
+}
+.close-button{
+ width:37px;height:37px;border:0;
+ border-radius:50%;background:#f2e9f7;
+ color:#542475;font-size:22px;font-weight:900
+}
+.modal-product{
+ display:grid;grid-template-columns:150px 1fr;
+ gap:18px;align-items:center;
+ padding:13px;background:#faf7fd;
+ border:1px solid #e9deef;border-radius:12px;
+ margin-bottom:20px
+}
+.modal-product img{
+ width:100%;aspect-ratio:4/5;object-fit:cover;
+ border-radius:9px
+}
+.modal-product h3{
+ margin:0 0 7px;color:#542475;
+ font-size:19px;font-weight:900
+}
+.modal-product p{
+ margin:0;color:#82738e;font-size:13px;
+ overflow-wrap:anywhere
+}
+.modal-product .price{
+ color:#b04491;font-size:24px;
+ font-weight:900;margin-top:9px
+}
+.form-title{
+ color:#542475;font-size:17px;
+ font-weight:900;margin:18px 0 14px
+}
+.form-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:15px
+}
+.field{min-width:0}
+.field.full{grid-column:1/-1}
+.field label{
+ display:block;margin-bottom:7px;
+ color:#503469;font-size:13px;font-weight:900
+}
+.field input,.field textarea{
+ width:100%;min-width:0;
+ padding:12px;border:1px solid #dfd1e9;
+ border-radius:9px;background:#fff;
+ color:#35145f;outline:none
+}
+.field textarea{min-height:90px;resize:vertical}
+.field input:focus,.field textarea:focus{
+ border-color:#984ba9;box-shadow:0 0 0 3px #984ba91a
+}
+.iti{width:100%}
+.iti__country-list{
+ z-index:10005;max-width:300px;
+ color:#333
+}
+.iti__search-input{
+ padding:10px!important;
+ border:1px solid #ddd!important;
+ border-radius:7px!important
+}
+.country-display{
+ margin-top:7px;color:#754391;
+ font-size:11px;font-weight:800
+}
+.small-note{
+ display:block;margin-top:6px;
+ color:#82738e;font-size:11px;line-height:1.6
+}
+.modal-action{
+ width:100%;margin-top:19px;
+ padding:15px;border:0;border-radius:10px;
+ color:white;background:linear-gradient(100deg,#542475,#9c4191);
+ font-size:14px;font-weight:900;
+ box-shadow:0 5px 15px #54247525
+}
+.modal-action:hover{filter:brightness(1.12)}
+.modal-action:disabled{opacity:.55;cursor:wait}
+
+.payment-step{
+ margin-top:20px;padding:19px;
+ background:#faf7fd;border:1px solid #e5d8ed;
+ border-radius:12px
+}
+.payment-step h3{
+ margin:0 0 8px;color:#542475;font-size:18px
+}
+.payment-step p{
+ color:#82738e;font-size:13px;line-height:1.7
+}
+.pay-fallback{
+ display:none;margin:12px 0;
+ padding:12px;background:#fff0ce;
+ border-radius:8px;color:#593c12;
+ font-weight:800;font-size:13px
+}
+.pay-fallback a{color:#164b91}
+.status{
+ display:none;margin-top:14px;padding:13px;
+ border-radius:9px;font-size:13px;line-height:1.7;
+ overflow-wrap:anywhere
+}
+.status.show{display:block}
+.status.success{background:#eaf7ef;color:#145f39;border:1px solid #c4e6d0}
+.status.error{background:#fff0f0;color:#9d2c2c;border:1px solid #f0caca}
+.status.info{background:#f4effa;color:#61367f;border:1px solid #e0d2ec}
+.hidden{display:none!important}
+.response-frame{display:none;width:0;height:0;border:0}
+
+html[dir=rtl] body{text-align:right}
+html[dir=rtl] .hero{direction:rtl}
+html[dir=rtl] .brand{flex-direction:row-reverse}
+html[dir=rtl] .search-icon{left:auto;right:14px}
+html[dir=rtl] .search-box input{padding:14px 43px 14px 16px}
+html[dir=rtl] .modal-top{flex-direction:row-reverse}
+html[dir=rtl] .field{text-align:right}
+
+@media(max-width:850px){
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero{gap:20px}
+}
+@media(max-width:650px){
+ header{padding:11px 13px}
+ .header-actions{width:100%;justify-content:space-between}
+ #languageSelect{max-width:57%;font-size:12px}
+ .back-home{font-size:12px}
+ main{margin:16px auto;padding:0 12px}
+ .hero{grid-template-columns:1fr;padding:21px 16px}
+ .hero-image{grid-row:1}
+ .hero-image img{max-height:260px;aspect-ratio:16/10}
+ .hero h1{font-size:34px}
+ .hero p{font-size:14px}
+ .shop-toolbar{padding:17px}
+ .search-box{width:100%}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .product-info{padding:11px}
+ .product-info h3{font-size:14px}
+ .product-info p{font-size:11px;min-height:35px}
+ .product-price{font-size:19px}
+ .buy-button{padding:11px 7px;font-size:11px}
+ .modal-panel{padding:17px 14px}
+ .modal-product{grid-template-columns:100px 1fr;gap:12px}
+ .modal-product h3{font-size:16px}
+ .modal-product p{font-size:11px}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+}
+@media(max-width:380px){
+ .product-grid{grid-template-columns:1fr}
+ .product-card{max-width:390px;width:100%;margin:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{
+  scroll-behavior:auto!important;
+  transition:none!important
+ }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <a class="brand" href="index.html">
+  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
+  <strong>Sofia Jenny Taborda</strong>
+ </a>
+
+ <div class="header-actions">
+  <select id="languageSelect" aria-label="Choose language">
+   <option value="en">🇬🇧 English</option>
+   <option value="ur">🇵🇰 اردو</option>
+   <option value="es">🇪🇸 Español</option>
+   <option value="it">🇮🇹 Italiano</option>
+   <option value="fr">🇫🇷 Français</option>
+   <option value="ar">🇸🇦 العربية</option>
+   <option value="pt">🇧🇷 Português</option>
+   <option value="de">🇩🇪 Deutsch</option>
+   <option value="hi">🇮🇳 हिन्दी</option>
+   <option value="zh">🇨🇳 中文</option>
+  </select>
+  <a href="index.html" class="back-home" data-i18n="home">
+   ← Back to Home
+  </a>
+ </div>
+</header>
+
+<div class="accent-line"></div>
+
+<main>
+
+<section class="hero">
+
+ <div>
+  <div class="hero-tag" data-i18n="eyebrow">
+   SOFIA JENNY TABORDA · PREMIUM FASHION
+  </div>
+
+  <h1>
+   <span data-i18n="title">Sofia Jenny Taborda</span>
+   <span>Fashion Store</span>
+  </h1>
+
+  <p data-i18n="subtitle">
+   Discover fashion, clothing, shoes, bags and accessories.
+   Shop your favourite products directly through PayPal.
+  </p>
+
+  <div class="hero-bottom" data-i18n="heroNote">
+   ✦ UNIQUE PRODUCTS · INDIVIDUAL PRICES · DIRECT PAYPAL
+  </div>
+ </div>
+
+ <div class="hero-image">
+  <img
+   id="fashionBanner"
+   src="assets/Trendy%20Fashion%20Store%20Poster.png"
+   alt="Sofia Jenny Taborda Fashion Store">
+ </div>
+
+</section>
+
+<section class="shop-toolbar">
+
+ <div class="shop-heading">
+  <h2 data-i18n="collection">Shop Fashion Collection</h2>
+  <p data-i18n="collectionIntro">
+   Browse all products uploaded by Sofia's Admin Panel.
+  </p>
+ </div>
+
+ <div class="search-box">
+  <span class="search-icon">⌕</span>
+  <input
+   type="search"
+   id="productSearch"
+   data-i18n-placeholder="searchPlaceholder"
+   placeholder="Search products by name...">
+ </div>
+
+</section>
+
+<div id="productCount" class="product-count"></div>
+
+<section id="productGrid" class="product-grid" aria-live="polite">
+ <div class="empty">
+  <div class="emoji">🛍️</div>
+  <h3 data-i18n="loading">Loading Fashion Collection...</h3>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ © 2026 Sofia Jenny Taborda ·
+ <span data-i18n="footer">Official Fashion Store</span>
+</footer>
+
+<!-- PRODUCT DETAILS AND BUY NOW -->
+
+<div class="modal" id="productModal" aria-hidden="true">
+
+ <div class="modal-backdrop" id="modalBackdrop"></div>
+
+ <div class="modal-panel" role="dialog" aria-modal="true">
+
+  <div class="modal-top">
+   <h2 data-i18n="productDetails">Product Details</h2>
+   <button type="button" class="close-button" id="closeModal" aria-label="Close">×</button>
+  </div>
+
+  <div class="modal-product">
+   <img id="modalImage" src="" alt="Selected product">
+   <div>
+    <h3 id="modalProductTitle"></h3>
+    <p id="modalProductDescription"></p>
+    <div class="price" id="modalProductPrice"></div>
+   </div>
+  </div>
+
+  <!-- CUSTOMER INFORMATION -->
+
+  <form id="buyerForm">
+
+   <h3 class="form-title" data-i18n="customerDetails">
+    Customer & Delivery Information
+   </h3>
+
+   <div class="form-grid">
+
+    <div class="field">
+     <label for="customerName" data-i18n="name">Full Name *</label>
+     <input id="customerName" required maxlength="100"
+      autocomplete="name">
+    </div>
+
+    <div class="field">
+     <label for="customerEmail" data-i18n="email">Gmail / Email *</label>
+     <input id="customerEmail" type="email" required maxlength="160"
+      autocomplete="email">
+    </div>
+
+    <div class="field full">
+     <label for="customerPhone" data-i18n="phone">
+      Mobile / WhatsApp Number *
+     </label>
+
+     <input id="customerPhone" type="tel" required
+      autocomplete="tel" placeholder="Enter your phone number">
+
+     <span id="countryDisplay" class="country-display"></span>
+
+     <span class="small-note" data-i18n="phoneHint">
+      Click the country flag, search your country name and select its code.
+     </span>
+    </div>
+
+    <div class="field full">
+     <label for="customerAddress" data-i18n="address">
+      Complete Delivery Address *
+     </label>
+     <textarea id="customerAddress" required maxlength="700"
+      autocomplete="street-address"></textarea>
+    </div>
+
+    <div class="field">
+     <label for="productOption" data-i18n="option">
+      Size / Colour / Product Notes
+     </label>
+     <input id="productOption" maxlength="200"
+      placeholder="e.g. Size M, Black">
+    </div>
+
+    <div class="field">
+     <label for="quantity" data-i18n="quantity">Quantity *</label>
+     <input id="quantity" type="number" min="1" max="20"
+      value="1" required>
+    </div>
+
+   </div>
+
+   <button type="submit" id="buyNowButton" class="modal-action"
+    data-i18n="payNow">
+    BUY NOW · CONTINUE TO PAYPAL
+   </button>
+
+  </form>
+
+  <!-- AFTER PAYPAL PAYMENT -->
+
+  <section id="paymentProofSection" class="payment-step hidden">
+
+   <h3 data-i18n="paymentStep">
+    Complete Payment Confirmation
+   </h3>
+
+   <p data-i18n="paymentStepText">
+    PayPal has opened in a new tab. Complete your payment there,
+    return to this page, and enter your transaction details below.
+   </p>
+
+   <a id="payFallback" class="pay-fallback"
+    href="#" target="_blank" rel="noopener noreferrer"
+    data-i18n="payFallback">
+    Open this product's PayPal payment page
+   </a>
+
+   <form id="paymentProofForm">
+
+    <div class="form-grid">
+
+     <div class="field full">
+      <label for="transactionId" data-i18n="transaction">
+       PayPal Transaction ID *
+      </label>
+      <input id="transactionId" required maxlength="120">
+     </div>
+
+     <div class="field full">
+      <label for="paymentScreenshot" data-i18n="screenshot">
+       Payment Screenshot *
+      </label>
+      <input id="paymentScreenshot" type="file"
+       accept="image/jpeg,image/png,image/webp" required>
+      <span class="small-note" data-i18n="screenshotHint">
+       JPG, PNG or WEBP · Maximum 6 MB
+      </span>
+     </div>
+
+    </div>
+
+    <button id="submitOrderButton" type="submit"
+     class="modal-action" data-i18n="submitOrder">
+     SUBMIT ORDER FOR VERIFICATION
+    </button>
+
+   </form>
+
+  </section>
+
+  <div id="orderStatus" class="status" aria-live="polite"></div>
+
+ </div>
+</div>
+
+<!-- HIDDEN GOOGLE APPS SCRIPT ORDER FORM -->
+
+<form id="backendOrderForm" method="POST" target="orderFrame"
+ style="display:none">
+
+ <input type="hidden" name="action" value="productOrder">
+ <input type="hidden" name="productId" id="backendProductId">
+ <input type="hidden" name="name" id="backendName">
+ <input type="hidden" name="email" id="backendEmail">
+ <input type="hidden" name="phone" id="backendPhone">
+ <input type="hidden" name="address" id="backendAddress">
+ <input type="hidden" name="quantity" id="backendQuantity">
+ <input type="hidden" name="transactionId" id="backendTransactionId">
+ <input type="hidden" name="screenshotData" id="backendScreenshot">
+
+</form>
+
+<iframe id="orderFrame" name="orderFrame"
+ class="response-frame" title="Order submission response"></iframe>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+<script>
+"use strict";
+
+/* EXISTING SOFIA WEBSITE API */
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+
+const CATEGORY = "Fashion Store";
+
+const $ = id => document.getElementById(id);
+
+let products = [];
+let selectedProduct = null;
+let pendingOrder = null;
+let phoneIti = null;
+let currentLanguage = "en";
+
+const translations = {
+
+en:{
+ home:"← Back to Home",
+ eyebrow:"SOFIA JENNY TABORDA · PREMIUM FASHION",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Discover fashion, clothing, shoes, bags and accessories. Shop your favourite products directly through PayPal.",
+ heroNote:"✦ UNIQUE PRODUCTS · INDIVIDUAL PRICES · DIRECT PAYPAL",
+ collection:"Shop Fashion Collection",
+ collectionIntro:"Browse all products uploaded by Sofia's Admin Panel.",
+ searchPlaceholder:"Search products by name...",
+ loading:"Loading Fashion Collection...",
+ empty:"No products have been uploaded yet.",
+ noResults:"No products match your search.",
+ productDetails:"Product Details",
+ customerDetails:"Customer & Delivery Information",
+ name:"Full Name *",
+ email:"Gmail / Email *",
+ phone:"Mobile / WhatsApp Number *",
+ phoneHint:"Click the country flag, search your country name and select its code.",
+ address:"Complete Delivery Address *",
+ option:"Size / Colour / Product Notes",
+ quantity:"Quantity *",
+ payNow:"BUY NOW · CONTINUE TO PAYPAL",
+ paymentStep:"Complete Payment Confirmation",
+ paymentStepText:"PayPal has opened in a new tab. Complete your payment there, return to this page, and enter your transaction details below.",
+ payFallback:"Open this product's PayPal payment page",
+ transaction:"PayPal Transaction ID *",
+ screenshot:"Payment Screenshot *",
+ screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",
+ submitOrder:"SUBMIT ORDER FOR VERIFICATION",
+ sending:"Submitting your order...",
+ orderSuccess:"Your order has been submitted successfully. Order ID: ",
+ orderError:"Your order could not be submitted. Please try again.",
+ invalidPhone:"Enter a valid international phone number.",
+ invalidScreenshot:"Choose a valid JPG, PNG or WEBP screenshot up to 6 MB.",
+ selectProduct:"Please select a product first.",
+ popupError:"Your browser blocked the PayPal tab. Use the PayPal link shown below.",
+ footer:"Official Fashion Store",
+ buy:"BUY NOW",
+ price:"PRICE"
+},
+
+ur:{
+ home:"← ہوم پیج پر واپس جائیں",
+ eyebrow:"صوفیہ جینی تبورڈا · پریمیم فیشن",
+ title:"صوفیہ جینی تبورڈا",
+ subtitle:"خوبصورت ملبوسات، جوتے، بیگز اور فیشن کی دیگر اشیاء خریدیں۔ ہر پروڈکٹ کی اپنی قیمت اور اپنا پے پال لنک ہے۔",
+ heroNote:"✦ منفرد مصنوعات · الگ قیمتیں · براہ راست پے پال",
+ collection:"فیشن کلیکشن خریدیں",
+ collectionIntro:"ایڈمن ڈیش بورڈ سے اپ لوڈ کی گئی تمام مصنوعات دیکھیں۔",
+ searchPlaceholder:"پروڈکٹ کا نام تلاش کریں...",
+ loading:"فیشن کلیکشن لوڈ ہو رہا ہے...",
+ empty:"ابھی کوئی پروڈکٹ اپ لوڈ نہیں کی گئی۔",
+ noResults:"آپ کی تلاش سے کوئی پروڈکٹ نہیں ملی۔",
+ productDetails:"پروڈکٹ کی تفصیلات",
+ customerDetails:"کسٹمر اور ڈیلیوری کی معلومات",
+ name:"پورا نام *",
+ email:"جی میل / ای میل *",
+ phone:"موبائل / واٹس ایپ نمبر *",
+ phoneHint:"ملک کے جھنڈے پر کلک کریں، ملک کا نام تلاش کریں اور اس کا کوڈ منتخب کریں۔",
+ address:"مکمل ڈیلیوری پتہ *",
+ option:"سائز / رنگ / پروڈکٹ کی تفصیل",
+ quantity:"تعداد *",
+ payNow:"ابھی خریدیں · پے پال پر جائیں",
+ paymentStep:"ادائیگی کی تصدیق مکمل کریں",
+ paymentStepText:"پے پال نئے ٹیب میں کھل گیا ہے۔ ادائیگی مکمل کریں، اس صفحے پر واپس آئیں اور ٹرانزیکشن کی تفصیلات درج کریں۔",
+ payFallback:"اس پروڈکٹ کا پے پال پیج کھولیں",
+ transaction:"پے پال ٹرانزیکشن آئی ڈی *",
+ screenshot:"ادائیگی کا اسکرین شاٹ *",
+ screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",
+ submitOrder:"آرڈر تصدیق کے لیے جمع کروائیں",
+ sending:"آپ کا آرڈر جمع ہو رہا ہے...",
+ orderSuccess:"آپ کا آرڈر کامیابی سے جمع ہوگیا۔ آرڈر نمبر: ",
+ orderError:"آرڈر جمع نہیں ہوسکا۔ دوبارہ کوشش کریں۔",
+ invalidPhone:"درست بین الاقوامی فون نمبر درج کریں۔",
+ invalidScreenshot:"6 MB تک کا درست JPG، PNG یا WEBP اسکرین شاٹ منتخب کریں۔",
+ selectProduct:"پہلے پروڈکٹ منتخب کریں۔",
+ popupError:"براؤزر نے پے پال ٹیب روک دیا ہے۔ نیچے دیا گیا لنک استعمال کریں۔",
+ footer:"آفیشل فیشن اسٹور",
+ buy:"ابھی خریدیں",
+ price:"قیمت"
+},
+
+es:{
+ home:"← Volver al inicio",
+ eyebrow:"SOFIA JENNY TABORDA · MODA PREMIUM",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Descubre ropa, zapatos, bolsos y accesorios. Compra tus productos favoritos directamente con PayPal.",
+ heroNote:"✦ PRODUCTOS ÚNICOS · PRECIOS INDIVIDUALES · PAYPAL DIRECTO",
+ collection:"Comprar colección de moda",
+ collectionIntro:"Explora todos los productos publicados desde el panel de administración.",
+ searchPlaceholder:"Buscar productos...",
+ loading:"Cargando colección...",
+ empty:"Todavía no se han publicado productos.",
+ noResults:"No hay productos que coincidan con tu búsqueda.",
+ productDetails:"Detalles del producto",
+ customerDetails:"Datos del cliente y entrega",
+ name:"Nombre completo *",
+ email:"Gmail / Correo electrónico *",
+ phone:"Móvil / WhatsApp *",
+ phoneHint:"Haz clic en la bandera, busca tu país y selecciona su código.",
+ address:"Dirección completa de entrega *",
+ option:"Talla / Color / Notas",
+ quantity:"Cantidad *",
+ payNow:"COMPRAR · CONTINUAR A PAYPAL",
+ paymentStep:"Confirmar el pago",
+ paymentStepText:"PayPal se ha abierto en otra pestaña. Completa el pago y vuelve aquí para introducir los datos de la transacción.",
+ payFallback:"Abrir el enlace de PayPal del producto",
+ transaction:"ID de transacción PayPal *",
+ screenshot:"Captura del pago *",
+ screenshotHint:"JPG, PNG o WEBP · Máximo 6 MB",
+ submitOrder:"ENVIAR PEDIDO PARA VERIFICACIÓN",
+ sending:"Enviando pedido...",
+ orderSuccess:"Pedido enviado correctamente. ID del pedido: ",
+ orderError:"No se pudo enviar el pedido. Inténtalo de nuevo.",
+ invalidPhone:"Introduce un número internacional válido.",
+ invalidScreenshot:"Selecciona una imagen JPG, PNG o WEBP de hasta 6 MB.",
+ selectProduct:"Primero selecciona un producto.",
+ popupError:"El navegador bloqueó PayPal. Usa el enlace que aparece abajo.",
+ footer:"Tienda oficial de moda",
+ buy:"COMPRAR",
+ price:"PRECIO"
+},
+
+it:{
+ home:"← Torna alla Home",
+ eyebrow:"SOFIA JENNY TABORDA · MODA PREMIUM",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Scopri abbigliamento, scarpe, borse e accessori. Acquista i prodotti direttamente tramite PayPal.",
+ heroNote:"✦ PRODOTTI UNICI · PREZZI INDIVIDUALI · PAYPAL DIRETTO",
+ collection:"Acquista la collezione moda",
+ collectionIntro:"Scopri tutti i prodotti caricati dal pannello amministrativo.",
+ searchPlaceholder:"Cerca prodotti...",
+ loading:"Caricamento collezione...",
+ empty:"Nessun prodotto è stato ancora caricato.",
+ noResults:"Nessun prodotto corrisponde alla ricerca.",
+ productDetails:"Dettagli prodotto",
+ customerDetails:"Informazioni cliente e consegna",
+ name:"Nome completo *",
+ email:"Gmail / Email *",
+ phone:"Cellulare / WhatsApp *",
+ phoneHint:"Clicca sulla bandiera, cerca il paese e seleziona il prefisso.",
+ address:"Indirizzo completo di consegna *",
+ option:"Taglia / Colore / Note",
+ quantity:"Quantità *",
+ payNow:"ACQUISTA · CONTINUA CON PAYPAL",
+ paymentStep:"Conferma del pagamento",
+ paymentStepText:"PayPal si è aperto in una nuova scheda. Completa il pagamento e torna qui per inserire i dati della transazione.",
+ payFallback:"Apri il link PayPal del prodotto",
+ transaction:"ID transazione PayPal *",
+ screenshot:"Screenshot del pagamento *",
+ screenshotHint:"JPG, PNG o WEBP · Massimo 6 MB",
+ submitOrder:"INVIA ORDINE PER VERIFICA",
+ sending:"Invio ordine...",
+ orderSuccess:"Ordine inviato correttamente. ID ordine: ",
+ orderError:"Impossibile inviare l'ordine. Riprova.",
+ invalidPhone:"Inserisci un numero internazionale valido.",
+ invalidScreenshot:"Scegli un'immagine JPG, PNG o WEBP fino a 6 MB.",
+ selectProduct:"Seleziona prima un prodotto.",
+ popupError:"Il browser ha bloccato PayPal. Usa il link qui sotto.",
+ footer:"Negozio ufficiale di moda",
+ buy:"ACQUISTA",
+ price:"PREZZO"
+},
+
+fr:{
+ home:"← Retour à l'accueil",
+ eyebrow:"SOFIA JENNY TABORDA · MODE PREMIUM",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Découvrez vêtements, chaussures, sacs et accessoires. Achetez directement avec PayPal.",
+ heroNote:"✦ PRODUITS UNIQUES · PRIX INDIVIDUELS · PAYPAL DIRECT",
+ collection:"Acheter la collection mode",
+ collectionIntro:"Découvrez tous les produits ajoutés depuis le panneau d'administration.",
+ searchPlaceholder:"Rechercher des produits...",
+ loading:"Chargement de la collection...",
+ empty:"Aucun produit n'a encore été ajouté.",
+ noResults:"Aucun produit ne correspond à votre recherche.",
+ productDetails:"Détails du produit",
+ customerDetails:"Informations client et livraison",
+ name:"Nom complet *",
+ email:"Gmail / E-mail *",
+ phone:"Mobile / WhatsApp *",
+ phoneHint:"Cliquez sur le drapeau, recherchez votre pays et choisissez son indicatif.",
+ address:"Adresse complète de livraison *",
+ option:"Taille / Couleur / Notes",
+ quantity:"Quantité *",
+ payNow:"ACHETER · CONTINUER AVEC PAYPAL",
+ paymentStep:"Confirmation du paiement",
+ paymentStepText:"PayPal s'est ouvert dans un nouvel onglet. Effectuez le paiement puis revenez ici pour saisir les informations de transaction.",
+ payFallback:"Ouvrir le lien PayPal de ce produit",
+ transaction:"Identifiant de transaction PayPal *",
+ screenshot:"Capture du paiement *",
+ screenshotHint:"JPG, PNG ou WEBP · Maximum 6 MB",
+ submitOrder:"ENVOYER LA COMMANDE POUR VÉRIFICATION",
+ sending:"Envoi de la commande...",
+ orderSuccess:"Commande envoyée avec succès. Numéro de commande : ",
+ orderError:"Impossible d'envoyer la commande. Réessayez.",
+ invalidPhone:"Saisissez un numéro international valide.",
+ invalidScreenshot:"Choisissez une image JPG, PNG ou WEBP jusqu'à 6 MB.",
+ selectProduct:"Veuillez d'abord choisir un produit.",
+ popupError:"Le navigateur a bloqué PayPal. Utilisez le lien ci-dessous.",
+ footer:"Boutique officielle de mode",
+ buy:"ACHETER",
+ price:"PRIX"
+},
+
+ar:{
+ home:"العودة إلى الصفحة الرئيسية ←",
+ eyebrow:"صوفيا جيني تابوردا · أزياء فاخرة",
+ title:"Sofia Jenny Taborda",
+ subtitle:"اكتشف الملابس والأحذية والحقائب والإكسسوارات. اشترِ منتجاتك مباشرة عبر باي بال.",
+ heroNote:"✦ منتجات مميزة · أسعار منفصلة · باي بال مباشر",
+ collection:"تسوق مجموعة الأزياء",
+ collectionIntro:"تصفح المنتجات التي تم رفعها من لوحة الإدارة.",
+ searchPlaceholder:"ابحث عن المنتجات...",
+ loading:"جارٍ تحميل مجموعة الأزياء...",
+ empty:"لم يتم رفع أي منتجات بعد.",
+ noResults:"لا توجد منتجات تطابق بحثك.",
+ productDetails:"تفاصيل المنتج",
+ customerDetails:"معلومات العميل والتوصيل",
+ name:"الاسم الكامل *",
+ email:"البريد الإلكتروني *",
+ phone:"رقم الهاتف / واتساب *",
+ phoneHint:"اضغط على علم الدولة وابحث عن اسم بلدك واختر رمز الاتصال.",
+ address:"عنوان التوصيل الكامل *",
+ option:"المقاس / اللون / ملاحظات",
+ quantity:"الكمية *",
+ payNow:"اشترِ الآن · تابع إلى باي بال",
+ paymentStep:"تأكيد الدفع",
+ paymentStepText:"تم فتح باي بال في علامة تبويب جديدة. أكمل الدفع ثم عد إلى هذه الصفحة وأدخل بيانات المعاملة.",
+ payFallback:"افتح رابط باي بال لهذا المنتج",
+ transaction:"رقم معاملة باي بال *",
+ screenshot:"صورة إثبات الدفع *",
+ screenshotHint:"JPG أو PNG أو WEBP · بحد أقصى 6 MB",
+ submitOrder:"إرسال الطلب للتحقق",
+ sending:"جارٍ إرسال الطلب...",
+ orderSuccess:"تم إرسال طلبك بنجاح. رقم الطلب: ",
+ orderError:"تعذر إرسال الطلب. حاول مرة أخرى.",
+ invalidPhone:"أدخل رقم هاتف دولي صحيح.",
+ invalidScreenshot:"اختر صورة JPG أو PNG أو WEBP بحجم لا يتجاوز 6 MB.",
+ selectProduct:"يرجى اختيار منتج أولاً.",
+ popupError:"المتصفح منع فتح باي بال. استخدم الرابط أدناه.",
+ footer:"متجر الأزياء الرسمي",
+ buy:"اشترِ الآن",
+ price:"السعر"
+},
+
+pt:{
+ home:"← Voltar ao início",
+ eyebrow:"SOFIA JENNY TABORDA · MODA PREMIUM",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Descubra roupas, sapatos, bolsas e acessórios. Compre diretamente pelo PayPal.",
+ heroNote:"✦ PRODUTOS EXCLUSIVOS · PREÇOS INDIVIDUAIS · PAYPAL DIRETO",
+ collection:"Comprar coleção de moda",
+ collectionIntro:"Explore todos os produtos enviados pelo painel administrativo.",
+ searchPlaceholder:"Pesquisar produtos...",
+ loading:"Carregando coleção...",
+ empty:"Nenhum produto foi enviado ainda.",
+ noResults:"Nenhum produto corresponde à sua pesquisa.",
+ productDetails:"Detalhes do produto",
+ customerDetails:"Informações do cliente e entrega",
+ name:"Nome completo *",
+ email:"Gmail / E-mail *",
+ phone:"Celular / WhatsApp *",
+ phoneHint:"Clique na bandeira, pesquise seu país e selecione o código.",
+ address:"Endereço completo de entrega *",
+ option:"Tamanho / Cor / Observações",
+ quantity:"Quantidade *",
+ payNow:"COMPRAR · CONTINUAR PARA PAYPAL",
+ paymentStep:"Confirmação do pagamento",
+ paymentStepText:"O PayPal abriu em uma nova aba. Conclua o pagamento e volte para inserir os dados da transação.",
+ payFallback:"Abrir o link PayPal deste produto",
+ transaction:"ID da transação PayPal *",
+ screenshot:"Captura do pagamento *",
+ screenshotHint:"JPG, PNG ou WEBP · Máximo 6 MB",
+ submitOrder:"ENVIAR PEDIDO PARA VERIFICAÇÃO",
+ sending:"Enviando pedido...",
+ orderSuccess:"Pedido enviado com sucesso. ID do pedido: ",
+ orderError:"Não foi possível enviar o pedido. Tente novamente.",
+ invalidPhone:"Digite um número internacional válido.",
+ invalidScreenshot:"Escolha uma imagem JPG, PNG ou WEBP de até 6 MB.",
+ selectProduct:"Selecione um produto primeiro.",
+ popupError:"O navegador bloqueou o PayPal. Use o link abaixo.",
+ footer:"Loja oficial de moda",
+ buy:"COMPRAR",
+ price:"PREÇO"
+},
+
+de:{
+ home:"← Zurück zur Startseite",
+ eyebrow:"SOFIA JENNY TABORDA · PREMIUM-MODE",
+ title:"Sofia Jenny Taborda",
+ subtitle:"Entdecken Sie Kleidung, Schuhe, Taschen und Accessoires. Kaufen Sie direkt über PayPal.",
+ heroNote:"✦ EINZIGARTIGE PRODUKTE · EINZELPREISE · DIREKTES PAYPAL",
+ collection:"Modekollektion entdecken",
+ collectionIntro:"Alle Produkte aus dem Admin-Dashboard ansehen.",
+ searchPlaceholder:"Produkte suchen...",
+ loading:"Kollektion wird geladen...",
+ empty:"Es wurden noch keine Produkte hochgeladen.",
+ noResults:"Keine passenden Produkte gefunden.",
+ productDetails:"Produktdetails",
+ customerDetails:"Kunden- und Lieferinformationen",
+ name:"Vollständiger Name *",
+ email:"Gmail / E-Mail *",
+ phone:"Mobil / WhatsApp *",
+ phoneHint:"Klicken Sie auf die Flagge, suchen Sie Ihr Land und wählen Sie die Vorwahl.",
+ address:"Vollständige Lieferadresse *",
+ option:"Größe / Farbe / Hinweise",
+ quantity:"Menge *",
+ payNow:"JETZT KAUFEN · WEITER ZU PAYPAL",
+ paymentStep:"Zahlung bestätigen",
+ paymentStepText:"PayPal wurde in einem neuen Tab geöffnet. Schließen Sie die Zahlung ab und kehren Sie zurück, um die Transaktionsdaten einzugeben.",
+ payFallback:"PayPal-Link dieses Produkts öffnen",
+ transaction:"PayPal-Transaktions-ID *",
+ screenshot:"Zahlungs-Screenshot *",
+ screenshotHint:"JPG, PNG oder WEBP · Maximal 6 MB",
+ submitOrder:"BESTELLUNG ZUR PRÜFUNG SENDEN",
+ sending:"Bestellung wird gesendet...",
+ orderSuccess:"Bestellung erfolgreich gesendet. Bestellnummer: ",
+ orderError:"Bestellung konnte nicht gesendet werden. Bitte erneut versuchen.",
+ invalidPhone:"Geben Sie eine gültige internationale Telefonnummer ein.",
+ invalidScreenshot:"Wählen Sie ein JPG-, PNG- oder WEBP-Bild bis 6 MB.",
+ selectProduct:"Bitte wählen Sie zuerst ein Produkt.",
+ popupError:"Der Browser hat PayPal blockiert. Verwenden Sie den Link unten.",
+ footer:"Offizieller Fashion Store",
+ buy:"JETZT KAUFEN",
+ price:"PREIS"
+},
+
+hi:{
+ home:"← होम पेज पर वापस जाएँ",
+ eyebrow:"सोफिया जेनी तबोर्डा · प्रीमियम फैशन",
+ title:"Sofia Jenny Taborda",
+ subtitle:"कपड़े, जूते, बैग और एक्सेसरीज़ देखें। अपनी पसंद के उत्पाद सीधे PayPal से खरीदें।",
+ heroNote:"✦ खास उत्पाद · अलग-अलग कीमतें · डायरेक्ट पेपाल",
+ collection:"फैशन कलेक्शन खरीदें",
+ collectionIntro:"एडमिन डैशबोर्ड से अपलोड किए गए सभी उत्पाद देखें।",
+ searchPlaceholder:"उत्पाद खोजें...",
+ loading:"फैशन कलेक्शन लोड हो रहा है...",
+ empty:"अभी कोई उत्पाद अपलोड नहीं किया गया है।",
+ noResults:"आपकी खोज से कोई उत्पाद नहीं मिला।",
+ productDetails:"उत्पाद विवरण",
+ customerDetails:"ग्राहक और डिलीवरी जानकारी",
+ name:"पूरा नाम *",
+ email:"Gmail / ईमेल *",
+ phone:"मोबाइल / WhatsApp नंबर *",
+ phoneHint:"देश का झंडा दबाएँ, देश का नाम खोजें और उसका कोड चुनें।",
+ address:"पूरा डिलीवरी पता *",
+ option:"साइज़ / रंग / नोट्स",
+ quantity:"मात्रा *",
+ payNow:"अभी खरीदें · PayPal पर जाएँ",
+ paymentStep:"भुगतान की पुष्टि",
+ paymentStepText:"PayPal नए टैब में खुल गया है। भुगतान पूरा करें और ट्रांज़ैक्शन विवरण भरने के लिए यहाँ वापस आएँ।",
+ payFallback:"इस उत्पाद का PayPal लिंक खोलें",
+ transaction:"PayPal ट्रांज़ैक्शन ID *",
+ screenshot:"भुगतान स्क्रीनशॉट *",
+ screenshotHint:"JPG, PNG या WEBP · अधिकतम 6 MB",
+ submitOrder:"सत्यापन के लिए ऑर्डर भेजें",
+ sending:"ऑर्डर भेजा जा रहा है...",
+ orderSuccess:"आपका ऑर्डर सफलतापूर्वक भेज दिया गया। ऑर्डर ID: ",
+ orderError:"ऑर्डर नहीं भेजा जा सका। दोबारा कोशिश करें।",
+ invalidPhone:"सही अंतरराष्ट्रीय फोन नंबर दर्ज करें।",
+ invalidScreenshot:"6 MB तक की JPG, PNG या WEBP तस्वीर चुनें।",
+ selectProduct:"पहले उत्पाद चुनें।",
+ popupError:"ब्राउज़र ने PayPal को रोका है। नीचे दिया गया लिंक खोलें।",
+ footer:"आधिकारिक फैशन स्टोर",
+ buy:"अभी खरीदें",
+ price:"कीमत"
+},
+
+zh:{
+ home:"← 返回首页",
+ eyebrow:"SOFIA JENNY TABORDA · 高端时尚",
+ title:"Sofia Jenny Taborda",
+ subtitle:"探索服装、鞋子、包袋和配饰。通过 PayPal 直接购买您喜欢的商品。",
+ heroNote:"✦ 精选商品 · 独立定价 · 直接 PayPal",
+ collection:"选购时尚系列",
+ collectionIntro:"浏览管理员上传的所有商品。",
+ searchPlaceholder:"搜索商品...",
+ loading:"正在加载时尚商品...",
+ empty:"尚未上传任何商品。",
+ noResults:"没有找到符合条件的商品。",
+ productDetails:"商品详情",
+ customerDetails:"客户及配送信息",
+ name:"姓名 *",
+ email:"Gmail / 电子邮箱 *",
+ phone:"手机 / WhatsApp 号码 *",
+ phoneHint:"点击国家旗帜，搜索您的国家名称并选择区号。",
+ address:"完整配送地址 *",
+ option:"尺码 / 颜色 / 备注",
+ quantity:"数量 *",
+ payNow:"立即购买 · 前往 PayPal",
+ paymentStep:"付款确认",
+ paymentStepText:"PayPal 已在新标签页打开。完成付款后返回此页面填写交易信息。",
+ payFallback:"打开此商品的 PayPal 付款链接",
+ transaction:"PayPal 交易编号 *",
+ screenshot:"付款截图 *",
+ screenshotHint:"JPG、PNG 或 WEBP · 最大 6 MB",
+ submitOrder:"提交订单以供核实",
+ sending:"正在提交订单...",
+ orderSuccess:"订单已成功提交。订单编号：",
+ orderError:"无法提交订单，请重试。",
+ invalidPhone:"请输入有效的国际电话号码。",
+ invalidScreenshot:"请选择不超过 6 MB 的 JPG、PNG 或 WEBP 图片。",
+ selectProduct:"请先选择商品。",
+ popupError:"浏览器阻止了 PayPal，请使用下方链接。",
+ footer:"官方时尚商店",
+ buy:"立即购买",
+ price:"价格"
+}
+
+};
+
+/* LANGUAGE */
+
+function tr(key){
+ return (translations[currentLanguage]||translations.en)[key]
+ || translations.en[key] || key;
+}
+
+function applyLanguage(lang){
+ currentLanguage=translations[lang]?lang:"en";
+
+ document.documentElement.lang=currentLanguage;
+ document.documentElement.dir=
+  ["ur","ar"].includes(currentLanguage)?"rtl":"ltr";
+
+ $("languageSelect").value=currentLanguage;
+
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+  el.textContent=tr(el.dataset.i18n);
+ });
+
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+  el.placeholder=tr(el.dataset.i18nPlaceholder);
+ });
+
+ try{
+  localStorage.setItem("sofia-language",currentLanguage);
+ }catch(e){}
+}
+
+$("languageSelect").addEventListener("change",e=>{
+ applyLanguage(e.target.value);
+});
+
+/* JSONP CONNECTION */
+
+function jsonp(params){
+ return new Promise((resolve,reject)=>{
+
+  const callback=
+   "sjtFashion_"+Date.now()+"_"+
+   Math.floor(Math.random()*999999);
+
+  const script=document.createElement("script");
+
+  const timer=setTimeout(()=>{
+   cleanup();
+   reject(new Error("Website service timed out."));
+  },18000);
+
+  function cleanup(){
+   clearTimeout(timer);
+   try{delete window[callback]}
+   catch(e){window[callback]=undefined}
+   script.remove();
+  }
+
+  window[callback]=data=>{
+   cleanup();
+   resolve(data);
+  };
+
+  script.onerror=()=>{
+   cleanup();
+   reject(new Error("Could not connect to the website service."));
+  };
+
+  script.src=API_URL+"?"+
+   new URLSearchParams({...params,callback}).toString();
+
+  document.body.appendChild(script);
+ });
+}
+
+/* LOAD ADMIN-UPLOADED FASHION PRODUCTS */
+
+async function loadProducts(){
+
+ try{
+
+  const result=await jsonp({
+   action:"publicContent",
+   category:CATEGORY
+  });
+
+  if(!result||result.success===false){
+   throw new Error(result&&result.message?
+    result.message:"Could not load products.");
+  }
+
+  products=Array.isArray(result.content)?
+   result.content:[];
+
+  renderProducts();
+
+ }catch(error){
+
+  $("productGrid").innerHTML="";
+
+  const box=document.createElement("div");
+  box.className="empty";
+  box.innerHTML="<div class='emoji'>⚠️</div>";
+
+  const heading=document.createElement("h3");
+  heading.textContent=tr("loadError")||
+   "Could not load products.";
+
+  box.appendChild(heading);
+  $("productGrid").appendChild(box);
+
+ }
+}
+
+/* PRODUCT CARDS */
+
+function money(value){
+ return "$"+Number(value||0).toFixed(2)+" USD";
+}
+
+function renderProducts(){
+
+ const grid=$("productGrid");
+ const term=$("productSearch").value.trim().toLowerCase();
+
+ grid.innerHTML="";
+
+ const filtered=products.filter(p=>
+  String(p.title||"").toLowerCase().includes(term)||
+  String(p.description||"").toLowerCase().includes(term)
+ );
+
+ $("productCount").textContent=
+  filtered.length+" "+tr("price").toLowerCase()+" items";
+
+ if(!filtered.length){
+
+  const box=document.createElement("div");
+  box.className="empty";
+
+  const icon=document.createElement("div");
+  icon.className="emoji";
+  icon.textContent="🛍️";
+
+  const h=document.createElement("h3");
+  h.textContent=products.length?tr("noResults"):tr("empty");
+
+  box.append(icon,h);
+  grid.appendChild(box);
+  return;
+ }
+
+ filtered.forEach(product=>{
+
+  const card=document.createElement("article");
+  card.className="product-card";
+
+  const imageButton=document.createElement("button");
+  imageButton.type="button";
+  imageButton.className="product-image";
+  imageButton.setAttribute("aria-label",product.title||"Product");
+
+  const image=document.createElement("img");
+  image.src=product.thumbnailUrl||product.mediaUrl||"";
+  image.alt=product.title||"Fashion product";
+  image.loading="lazy";
+
+  image.onerror=()=>{
+   image.style.display="none";
+   imageButton.textContent="🛍️";
+  };
+
+  imageButton.appendChild(image);
+  imageButton.addEventListener("click",()=>openProduct(product));
+
+  const info=document.createElement("div");
+  info.className="product-info";
+
+  const title=document.createElement("h3");
+  title.textContent=product.title||"Fashion Product";
+
+  const description=document.createElement("p");
+  description.textContent=product.description||"";
+
+  const price=document.createElement("div");
+  price.className="product-price";
+  price.textContent=money(product.price);
+
+  const buy=document.createElement("button");
+  buy.type="button";
+  buy.className="buy-button";
+  buy.textContent=tr("buy")+" · "+money(product.price);
+  buy.addEventListener("click",()=>openProduct(product));
+
+  info.append(title,description,price,buy);
+  card.append(imageButton,info);
+  grid.appendChild(card);
+
+ });
+
+}
+
+$("productSearch").addEventListener("input",renderProducts);
+
+/* COUNTRY SEARCH AND PHONE COUNTRY CODE */
+
+let phoneSyncing=false;
+
+function initPhone(){
+
+ const input=$("customerPhone");
+
+ if(!window.intlTelInput){
+
+  input.placeholder="+Country Code Number";
+  $("countryDisplay").textContent=
+   "Enter your full international number including country code.";
+
+  return;
+ }
+
+ phoneIti=window.intlTelInput(input,{
+  initialCountry:"pk",
+  preferredCountries:["pk","us","gb","ca","au","ae","sa","in"],
+  separateDialCode:true,
+  nationalMode:true,
+  autoPlaceholder:"aggressive",
+  utilsScript:
+   "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
+ });
+
+ input.addEventListener("countrychange",updateCountryDisplay);
+
+ updateCountryDisplay();
+}
+
+function updateCountryDisplay(){
+
+ if(!phoneIti)return;
+
+ const data=phoneIti.getSelectedCountryData();
+
+ $("countryDisplay").textContent=
+  (data.name||"")+
+  (data.dialCode?" (+"+data.dialCode+")":"");
+}
+
+function getFullPhone(){
+
+ const raw=$("customerPhone").value.trim();
+
+ if(!raw)return "";
+
+ if(raw.startsWith("+")){
+  return "+"+raw.replace(/\D/g,"");
+ }
+
+ if(phoneIti){
+
+  const data=phoneIti.getSelectedCountryData();
+
+  const digits=raw.replace(/\D/g,"").replace(/^0+/,"");
+
+  return data.dialCode?
+   "+"+data.dialCode+digits:"";
+ }
+
+ return raw;
+}
+
+/* OPEN PRODUCT DETAILS */
+
+function openProduct(product){
+
+ selectedProduct=product;
+ pendingOrder=null;
+
+ $("modalImage").src=
+  product.thumbnailUrl||product.mediaUrl||"";
+
+ $("modalProductTitle").textContent=
+  product.title||"Fashion Product";
+
+ $("modalProductDescription").textContent=
+  product.description||"";
+
+ $("modalProductPrice").textContent=
+  money(product.price);
+
+ $("buyerForm").reset();
+ $("paymentProofForm").reset();
+
+ $("buyerForm").classList.remove("hidden");
+ $("paymentProofSection").classList.add("hidden");
+
+ $("orderStatus").className="status";
+ $("orderStatus").textContent="";
+
+ $("payFallback").style.display="none";
+ $("buyNowButton").disabled=false;
+ $("buyNowButton").textContent=tr("payNow");
+
+ if(phoneIti){
+  phoneIti.setCountry("pk");
+  updateCountryDisplay();
+ }
+
+ $("productModal").classList.add("open");
+ $("productModal").setAttribute("aria-hidden","false");
+
+ document.body.style.overflow="hidden";
+}
+
+/* CLOSE MODAL */
+
+function closeModal(){
+
+ $("productModal").classList.remove("open");
+ $("productModal").setAttribute("aria-hidden","true");
+
+ document.body.style.overflow="";
+
+ selectedProduct=null;
+ pendingOrder=null;
+}
+
+$("closeModal").addEventListener("click",closeModal);
+$("modalBackdrop").addEventListener("click",closeModal);
+
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"&&$("productModal").classList.contains("open")){
+  closeModal();
+ }
+});
+
+/* CUSTOMER DETAILS → DIRECT PRODUCT PAYPAL LINK */
+
+$("buyerForm").addEventListener("submit",event=>{
+
+ event.preventDefault();
+
+ if(!selectedProduct){
+  showStatus("orderStatus",tr("selectProduct"),"error");
+  return;
+ }
+
+ if(!selectedProduct.paypalLink){
+  showStatus("orderStatus","This product has no PayPal link configured.","error");
+  return;
+ }
+
+ const phone=getFullPhone();
+
+ if(!phone||phone.replace(/\D/g,"").length<7){
+  showStatus("orderStatus",tr("invalidPhone"),"error");
+  return;
+ }
+
+ const quantity=Number($("quantity").value);
+
+ if(!Number.isInteger(quantity)||quantity<1||quantity>20){
+  showStatus("orderStatus","Quantity must be between 1 and 20.","error");
+  return;
+ }
+
+ const countryName=phoneIti?
+  phoneIti.getSelectedCountryData().name:"International";
+
+ const options=$("productOption").value.trim();
+
+ let address=
+  "Country: "+countryName+
+  "\nDelivery Address: "+$("customerAddress").value.trim();
+
+ if(options){
+  address+="\nProduct Size / Colour / Notes: "+options;
+ }
+
+ pendingOrder={
+  productId:selectedProduct.id,
+  name:$("customerName").value.trim(),
+  email:$("customerEmail").value.trim(),
+  phone:phone,
+  address:address,
+  quantity:quantity,
+  paypalLink:selectedProduct.paypalLink
+ };
+
+ /* OPEN THIS PRODUCT'S OWN PAYPAL LINK */
+
+ const payWindow=window.open(
+  selectedProduct.paypalLink,
+  "_blank"
+ );
+
+ $("payFallback").href=selectedProduct.paypalLink;
+ $("payFallback").style.display="block";
+
+ if(!payWindow){
+  showStatus("orderStatus",tr("popupError"),"info");
+ }else{
+  try{payWindow.opener=null}catch(e){}
+  showStatus("orderStatus",tr("paymentStepText"),"success");
+ }
+
+ $("buyerForm").classList.add("hidden");
+ $("paymentProofSection").classList.remove("hidden");
+
+});
+
+/* READ PAYMENT SCREENSHOT */
+
+function readFile(file){
+ return new Promise((resolve,reject)=>{
+
+  const reader=new FileReader();
+
+  reader.onload=()=>resolve(String(reader.result||""));
+
+  reader.onerror=()=>reject(
+   new Error("Could not read payment screenshot.")
+  );
+
+  reader.readAsDataURL(file);
+
+ });
+}
+
+/* SUBMIT PRODUCT ORDER TO EXISTING ADMIN BACKEND */
+
+$("paymentProofForm").addEventListener("submit",async event=>{
+
+ event.preventDefault();
+
+ if(!pendingOrder||!selectedProduct){
+  showStatus("orderStatus",tr("selectProduct"),"error");
+  return;
+ }
+
+ const file=$("paymentScreenshot").files[0];
+
+ if(
+  !file||
+  file.size>6*1024*1024||
+  !/^image\/(jpeg|png|webp)$/i.test(file.type)
+ ){
+  showStatus("orderStatus",tr("invalidScreenshot"),"error");
+  return;
+ }
+
+ const button=$("submitOrderButton");
+
+ button.disabled=true;
+ button.textContent=tr("sending");
+
+ try{
+
+  const screenshotData=await readFile(file);
+
+  $("backendProductId").value=pendingOrder.productId;
+  $("backendName").value=pendingOrder.name;
+  $("backendEmail").value=pendingOrder.email;
+  $("backendPhone").value=pendingOrder.phone;
+  $("backendAddress").value=pendingOrder.address;
+  $("backendQuantity").value=pendingOrder.quantity;
+
+  $("backendTransactionId").value=
+   $("transactionId").value.trim();
+
+  $("backendScreenshot").value=screenshotData;
+
+  const form=$("backendOrderForm");
+  form.action=API_URL;
+  form.submit();
+
+ }catch(error){
+
+  button.disabled=false;
+  button.textContent=tr("submitOrder");
+
+  showStatus(
+   "orderStatus",
+   error.message||tr("orderError"),
+   "error"
+  );
+
+ }
+
+});
+
+/* RECEIVE ORDER RESULT FROM GOOGLE APPS SCRIPT */
+
+window.addEventListener("message",event=>{
+
+ if(event.source!==$("orderFrame").contentWindow)return;
+
+ const data=event.data||{};
+
+ if(data.type==="PRODUCT_ORDER_SUCCESS"&&data.success){
+
+  showStatus(
+   "orderStatus",
+   tr("orderSuccess")+(data.orderId||""),
+   "success"
+  );
+
+  $("paymentProofForm").classList.add("hidden");
+  $("submitOrderButton").disabled=true;
+
+  pendingOrder=null;
+
+ }else if(
+  data.type==="FORM_SUBMISSION_ERROR"||
+  data.type==="PRODUCT_ORDER_ERROR"
+ ){
+
+  $("submitOrderButton").disabled=false;
+  $("submitOrderButton").textContent=tr("submitOrder");
+
+  showStatus(
+   "orderStatus",
+   data.message||tr("orderError"),
+   "error"
+  );
+
+ }
+
+});
+
+/* START WEBSITE */
+
+async function startStore(){
+
+ let saved="en";
+
+ try{
+  saved=localStorage.getItem("sofia-language")||"en";
+ }catch(e){}
+
+ applyLanguage(saved);
+
+ initPhone();
+
+ await loadProducts();
+
+}
+
+startStore();
+
+</script>
+
+</body>
+</html>
