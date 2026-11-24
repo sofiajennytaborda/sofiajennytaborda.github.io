@@ -1,10 +1,1399 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Purchase WhatsApp Premium access. Your personal WhatsApp contact stays hidden on this page until Sofia verifies your payment and approves your request."><title>Sofia Jenny Taborda Personal WhatsApp | Sofia Jenny Taborda</title><link rel="stylesheet" href="paid-folder.css"><script src="paid-folder.js" defer></script></head>
-<body data-category="WhatsApp Premium">
-<header><a class="brand" href="index.html"><span class="brand-mark">💬</span><span>Sofia Jenny Taborda</span></a><div class="header-actions"><select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="ur">اردو</option></select><a class="back-home" href="index.html" data-i18n="back">← Back to Home</a></div></header>
-<div class="green-line"></div><main>
-<section class="hero"><div class="hero-copy"><span class="eyebrow">PRIVATE WHATSAPP PREMIUM ACCESS</span><h1>Sofia Jenny Taborda Personal WhatsApp</h1><p>Purchase WhatsApp Premium access. Your personal WhatsApp contact stays hidden on this page until Sofia verifies your payment and approves your request.</p><div class="price-row"><div class="price" id="priceValue">Loading price…</div><span class="pill" data-i18n="oneTime">ONE-TIME PAYMENT</span></div><a id="payButton" class="pay-button disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span class="paypal-mark">PayPal</span><span data-i18n="pay">PAY WITH PAYPAL</span></a><p class="note" data-i18n="payNote">Pay through PayPal. Then submit your transaction ID and payment screenshot. Access is granted only after Sofia verifies the payment.</p><p class="note" data-i18n="waPrivate">Your WhatsApp contact is hidden until your payment is approved.</p><div id="setupStatus" class="status"></div></div><div class="hero-image"><img src="assets/WhatsApp%20Premium%20Subscription%20Banner.png" alt="Sofia Jenny Taborda Personal WhatsApp" onerror="this.style.display='none'"></div></section>
 
-<section class="section"><h2 data-i18n="payment">Payment Confirmation Request</h2><p class="section-intro" data-i18n="paymentIntro">After completing PayPal payment, enter your details below and submit your request.</p><form id="paymentForm" target="paymentFrame" method="post"><input type="hidden" name="action" value="whatsappPayment"><input type="hidden" id="screenshotData" name="screenshotData" value=""><div class="form-grid"><div class="field"><label for="customerName" data-i18n="name">Your Name</label><input id="customerName" name="name" required maxlength="100" autocomplete="name"></div><div class="field"><label for="customerEmail" data-i18n="email">Gmail / Email</label><input id="customerEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div><div class="field full"><label for="customerWhatsapp" data-i18n="phone">Your WhatsApp Number (optional)</label><input id="customerWhatsapp" name="whatsapp" type="tel" maxlength="35" placeholder="+country code and number"></div><div class="field full"><label for="transactionId" data-i18n="txn">PayPal Transaction ID</label><input id="transactionId" name="transactionId" required maxlength="120" autocomplete="off"></div><div class="field full"><label for="screenshotFile" data-i18n="shot">Payment Screenshot</label><input id="screenshotFile" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small">JPG, PNG or WEBP · Maximum 6 MB</span></div></div><div class="button-row"><button id="submitPayment" type="submit" data-i18n="submit">Submit Payment Details</button><span class="small" data-i18n="submitNote">Sofia will verify the transaction in PayPal before approval.</span></div><div id="paymentStatus" class="status" aria-live="polite"></div></form><iframe id="paymentFrame" name="paymentFrame" title="Payment request response"></iframe></section>
-<section class="section"><h2 data-i18n="check">Check My Access</h2><p class="section-intro" data-i18n="checkIntro">Use the same Gmail address entered in your payment request.</p><form id="accessForm"><div class="form-grid"><div class="field full"><label for="accessRequestId" data-i18n="checkId">Enter your WhatsApp request ID</label><input id="accessRequestId" type="text" placeholder="WAP-..." autocomplete="off"></div></div><div class="button-row"><button type="submit" data-i18n="checkBtn">Check Status</button></div></form><div id="accessStatus" class="status" aria-live="polite"></div><div id="accessResult"></div></section>
-</main><footer>© 2026 Sofia Jenny Taborda · Official Website</footer></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#082d52">
+<meta name="description" content="Sofia Jenny Taborda Personal WhatsApp Premium Membership">
+<title>Sofia Jenny Taborda Personal WhatsApp</title>
+
+<style>
+:root {
+  --navy:#082d52;
+  --blue:#125b92;
+  --green:#168b56;
+  --gold:#ffc439;
+  --ink:#18324b;
+  --muted:#718096;
+  --line:#dfe8f0;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:#f3f6fa;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+header {
+  background:#fff;
+  padding:13px max(18px,calc((100% - 1160px)/2));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:900;
+}
+.brand img {
+  width:43px;
+  height:43px;
+  object-fit:contain;
+}
+.header-actions {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+select,input,textarea {
+  font:inherit;
+}
+.header-actions select {
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+}
+.back-home {
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+}
+.green-line {
+  height:5px;
+  background:linear-gradient(90deg,#10a66b,#91d6b4,#10a66b);
+}
+main {
+  max-width:1160px;
+  margin:30px auto;
+  padding:0 18px;
+}
+.hero {
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:32px;
+  align-items:center;
+  padding:42px;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(120deg,#082440,#164c78 70%,#12644e);
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+.hero-copy {color:#fff}
+.eyebrow {
+  color:#ffd16a;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.hero h1 {
+  color:#fff;
+  font-family:Georgia,serif;
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.15;
+  margin:17px 0;
+}
+.hero-copy p {
+  color:#e5edf6;
+  font-size:15px;
+  line-height:1.8;
+}
+.price-row {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:23px 0;
+}
+.price {
+  color:#fff;
+  font-size:35px;
+  font-weight:900;
+}
+.pill {
+  padding:8px 12px;
+  border-radius:30px;
+  background:#ffffff18;
+  border:1px solid #ffffff55;
+  color:#ffdc8a;
+  font-size:11px;
+  font-weight:900;
+}
+.pay-button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height:56px;
+  padding:14px 20px;
+  border-radius:10px;
+  background:var(--gold);
+  color:#082d52;
+  font-size:15px;
+  font-weight:900;
+  text-decoration:none;
+  transition:.2s;
+}
+.pay-button:hover {
+  background:#ffda70;
+  transform:translateY(-2px);
+}
+.paypal-mark {
+  font-size:19px;
+  font-weight:900;
+  font-style:italic;
+}
+.note {
+  margin-top:17px;
+  color:#e0eaf4;
+  font-size:12px!important;
+}
+.hero-image {
+  overflow:hidden;
+  border-radius:15px;
+  background:#fff;
+}
+.hero-image img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:380px;
+  object-fit:contain;
+}
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:25px 0;
+}
+.step {
+  padding:19px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#fff;
+  text-align:center;
+}
+.step-icon {
+  font-size:27px;
+  margin-bottom:9px;
+}
+.step strong {
+  display:block;
+  color:var(--navy);
+  font-size:14px;
+  margin-bottom:6px;
+}
+.step p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  margin:0;
+}
+.section {
+  margin:25px 0;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:#fff;
+  box-shadow:0 7px 25px rgba(8,45,82,.055);
+}
+.section h2 {
+  margin:0 0 10px;
+  color:var(--navy);
+  font-family:Georgia,serif;
+  font-size:27px;
+}
+.section-intro {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  margin:0 0 23px;
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:19px;
+}
+.field {
+  min-width:0;
+}
+.field.full {
+  grid-column:1/-1;
+}
+.field label {
+  display:block;
+  margin-bottom:8px;
+  color:#183b5b;
+  font-size:13px;
+  font-weight:800;
+}
+.field input,
+.field textarea,
+.field select {
+  display:block;
+  width:100%;
+  min-height:48px;
+  padding:12px 13px;
+  border:1px solid #cfdae6;
+  border-radius:9px;
+  outline:none;
+  background:#fbfdff;
+  color:#18324b;
+  font-size:14px;
+}
+.field textarea {
+  min-height:95px;
+  resize:vertical;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color:#168b56;
+  box-shadow:0 0 0 3px #168b561a;
+}
+.small {
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.6;
+}
+.button-row {
+  margin-top:22px;
+}
+button {
+  min-height:49px;
+  padding:12px 22px;
+  border:0;
+  border-radius:9px;
+  background:var(--green);
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  cursor:pointer;
+}
+button:hover {background:#107345}
+button:disabled {
+  opacity:.6;
+  cursor:wait;
+}
+.status {
+  display:none;
+  margin-top:17px;
+  padding:14px;
+  border-radius:9px;
+  font-size:13px;
+  line-height:1.7;
+  overflow-wrap:anywhere;
+}
+.status.show {display:block}
+.status.success {
+  background:#e8f7ee;
+  color:#14643b;
+  border:1px solid #b8e4c8;
+}
+.status.info {
+  background:#edf5ff;
+  color:#18528a;
+  border:1px solid #c9def7;
+}
+.status.error {
+  background:#fff0f0;
+  color:#a52d2d;
+  border:1px solid #f0caca;
+}
+.access-link {
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 17px;
+  border-radius:8px;
+  background:#168b56;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+}
+.hidden-frame {
+  position:absolute;
+  width:1px;
+  height:1px;
+  border:0;
+  opacity:0;
+  pointer-events:none;
+}
+.security-note {
+  margin-top:18px;
+  padding:14px;
+  border-left:4px solid var(--green);
+  border-radius:5px;
+  background:#eff8f2;
+  color:#426653;
+  font-size:12px;
+  line-height:1.7;
+}
+footer {
+  margin-top:40px;
+  padding:27px 15px;
+  background:#082d52;
+  color:#fff;
+  text-align:center;
+  font-size:13px;
+  line-height:1.8;
+}
+html[dir="rtl"] body {text-align:right}
+html[dir="rtl"] .security-note {
+  border-left:0;
+  border-right:4px solid var(--green);
+}
+@media(max-width:760px) {
+  header {padding:12px 15px}
+  .header-actions {width:100%;justify-content:space-between}
+  main {margin:18px auto;padding:0 12px}
+  .hero {
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:23px 18px;
+  }
+  .hero-image img {max-height:290px}
+  .steps {grid-template-columns:1fr}
+  .section {padding:21px 16px}
+  .section h2 {font-size:23px}
+  .form-grid {grid-template-columns:1fr}
+  .field.full {grid-column:auto}
+  .price {font-size:30px}
+  .pay-button {font-size:13px}
+  button {width:100%}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    transition:none!important;
+    animation:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda">
+    <span>Sofia Jenny Taborda</span>
+  </a>
+
+  <div class="header-actions">
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">🇬🇧 English</option>
+      <option value="ur">🇵🇰 اردو</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="pt">🇧🇷 Português</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="zh">🇨🇳 中文</option>
+    </select>
+
+    <a class="back-home" href="index.html" data-i18n="back">
+      ← Back to Home
+    </a>
+  </div>
+</header>
+
+<div class="green-line"></div>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-copy">
+
+      <span class="eyebrow" data-i18n="badge">
+        PRIVATE CONTACT MEMBERSHIP
+      </span>
+
+      <h1 data-i18n="title">
+        Sofia Jenny Taborda Personal WhatsApp
+      </h1>
+
+      <p data-i18n="heroText">
+        Get private WhatsApp contact after a one-time payment
+        and manual payment approval.
+      </p>
+
+      <div class="price-row">
+        <div class="price">$60.00 USD</div>
+        <span class="pill" data-i18n="priceTag">
+          ONE-TIME PAYMENT
+        </span>
+      </div>
+
+      <a class="pay-button"
+         href="https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <span class="paypal-mark">PayPal</span>
+        <span data-i18n="pay">PAY $60 WITH PAYPAL</span>
+
+      </a>
+
+      <p class="note" data-i18n="payNote">
+        Pay $60 through PayPal. Then submit your transaction
+        ID and payment screenshot. Access is granted after
+        manual verification.
+      </p>
+
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="assets/WhatsApp%20Premium%20Subscription%20Banner.png"
+        alt="WhatsApp Premium Membership">
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="steps">
+
+    <article class="step">
+      <div class="step-icon">💳</div>
+      <strong>01 · Pay $60</strong>
+      <p>Complete your payment through PayPal.</p>
+    </article>
+
+    <article class="step">
+      <div class="step-icon">📝</div>
+      <strong>02 · Submit Details</strong>
+      <p>Enter your information and payment proof.</p>
+    </article>
+
+    <article class="step">
+      <div class="step-icon">🔐</div>
+      <strong>03 · Get Approved</strong>
+      <p>Receive private contact after administrator approval.</p>
+    </article>
+
+  </section>
+
+  <!-- PAYMENT FORM -->
+
+  <section class="section" id="paymentRequest">
+
+    <h2 data-i18n="formTitle">
+      Payment Confirmation Request
+    </h2>
+
+    <p class="section-intro" data-i18n="formIntro">
+      Complete all fields after paying through PayPal.
+      Your details will be reviewed before approval.
+    </p>
+
+    <form id="paymentForm"
+          method="post"
+          target="paymentFrame">
+
+      <input type="hidden" name="action" value="whatsappPayment">
+
+      <input type="hidden"
+             id="screenshotData"
+             name="screenshotData">
+
+      <input type="hidden"
+             id="preferredLanguage"
+             name="preferredLanguage"
+             value="en">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="customerName" data-i18n="name">
+            Your Full Name *
+          </label>
+          <input id="customerName"
+                 name="name"
+                 required
+                 maxlength="100"
+                 autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="customerEmail" data-i18n="email">
+            Gmail / Email *
+          </label>
+          <input id="customerEmail"
+                 name="email"
+                 type="email"
+                 required
+                 maxlength="160"
+                 autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="customerCountry" data-i18n="country">
+            Country *
+          </label>
+          <input id="customerCountry"
+                 name="country"
+                 required
+                 maxlength="100"
+                 autocomplete="country-name">
+        </div>
+
+        <div class="field">
+          <label for="customerWhatsApp" data-i18n="whatsapp">
+            Your WhatsApp Number *
+          </label>
+          <input id="customerWhatsApp"
+                 name="whatsapp"
+                 type="tel"
+                 required
+                 maxlength="30"
+                 placeholder="+Country Code Number"
+                 autocomplete="tel">
+        </div>
+
+        <div class="field full">
+          <label for="customerAddress" data-i18n="address">
+            Complete Residential Address *
+          </label>
+          <textarea id="customerAddress"
+                    name="address"
+                    required
+                    maxlength="500"
+                    autocomplete="street-address"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="customerLanguage" data-i18n="language">
+            Preferred Communication Language *
+          </label>
+
+          <select id="customerLanguage" required>
+            <option value="en">English</option>
+            <option value="ur">اردو</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+            <option value="ar">العربية</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="hi">हिन्दी</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="transactionId" data-i18n="transaction">
+            PayPal Transaction ID *
+          </label>
+          <input id="transactionId"
+                 name="transactionId"
+                 required
+                 maxlength="120"
+                 autocomplete="off">
+        </div>
+
+        <div class="field full">
+          <label for="screenshotFile" data-i18n="screenshot">
+            PayPal Payment Screenshot *
+          </label>
+
+          <input id="screenshotFile"
+                 type="file"
+                 accept="image/jpeg,image/png,image/webp"
+                 required>
+
+          <span class="small" data-i18n="screenshotHint">
+            JPG, PNG or WEBP · Maximum 6 MB
+          </span>
+        </div>
+
+      </div>
+
+      <div class="button-row">
+
+        <button id="submitPayment"
+                type="submit"
+                data-i18n="submit">
+          SUBMIT PAYMENT DETAILS
+        </button>
+
+        <span class="small" data-i18n="submitNote">
+          Your WhatsApp contact remains private until approval.
+        </span>
+
+      </div>
+
+      <div id="paymentStatus"
+           class="status"
+           aria-live="polite"></div>
+
+    </form>
+
+    <iframe id="paymentFrame"
+            name="paymentFrame"
+            class="hidden-frame"
+            title="Payment submission response">
+    </iframe>
+
+    <div class="security-note" data-i18n="hidden">
+      🔒 Sofia's personal WhatsApp contact will remain hidden
+      until your payment has been manually approved.
+    </div>
+
+  </section>
+
+  <!-- ACCESS CHECK -->
+
+  <section class="section" id="accessSection">
+
+    <h2 data-i18n="checkTitle">
+      Check Your WhatsApp Premium Access
+    </h2>
+
+    <p class="section-intro" data-i18n="checkIntro">
+      Enter your WhatsApp request ID (WAP-...) to check
+      whether your payment has been approved.
+    </p>
+
+    <form id="accessForm">
+
+      <div class="field">
+        <label for="accessRequestId" data-i18n="requestId">
+          WhatsApp Request ID
+        </label>
+
+        <input id="accessRequestId"
+               type="text"
+               required
+               placeholder="WAP-XXXXXXXX"
+               autocomplete="off">
+      </div>
+
+      <div class="button-row">
+        <button id="checkButton"
+                type="submit"
+                data-i18n="checkBtn">
+          CHECK MY ACCESS
+        </button>
+      </div>
+
+    </form>
+
+    <div id="accessStatus"
+         class="status"
+         aria-live="polite"></div>
+
+    <div id="accessResult"></div>
+
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Sofia Jenny Taborda
+  · <span data-i18n="footer">WhatsApp Premium Membership</span>
+</footer>
+
+<script>
+"use strict";
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+
+const translations = {
+
+en:{
+back:"← Back to Home",
+badge:"PRIVATE CONTACT MEMBERSHIP",
+title:"Sofia Jenny Taborda Personal WhatsApp",
+heroText:"Get private WhatsApp contact after a one-time payment and manual payment approval.",
+priceTag:"ONE-TIME PAYMENT",
+pay:"PAY $60 WITH PAYPAL",
+payNote:"Pay $60 through PayPal. Then submit your transaction ID and payment screenshot.",
+formTitle:"Payment Confirmation Request",
+formIntro:"Complete all fields after paying through PayPal.",
+name:"Your Full Name *",
+email:"Gmail / Email *",
+country:"Country *",
+address:"Complete Residential Address *",
+whatsapp:"Your WhatsApp Number *",
+language:"Preferred Communication Language *",
+transaction:"PayPal Transaction ID *",
+screenshot:"PayPal Payment Screenshot *",
+screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",
+submit:"SUBMIT PAYMENT DETAILS",
+submitNote:"Your WhatsApp contact remains private until approval.",
+hidden:"🔒 Sofia's personal WhatsApp contact remains hidden until your payment is manually approved.",
+checkTitle:"Check Your WhatsApp Premium Access",
+checkIntro:"Enter your WhatsApp request ID to check your payment status.",
+requestId:"WhatsApp Request ID",
+checkBtn:"CHECK MY ACCESS",
+waiting:"Your payment request has been received. Please wait for manual verification.",
+pending:"Your request is still waiting for approval.",
+approved:"Your payment has been approved!",
+rejected:"Your payment request was not approved. Please contact support.",
+notFound:"No request was found. Please check your request ID.",
+contactReady:"You can now contact Sofia through WhatsApp.",
+noContact:"Your payment is approved, but contact details are not configured yet.",
+sending:"SUBMITTING YOUR REQUEST...",
+invalid:"Upload a valid JPG, PNG or WEBP screenshot up to 6 MB.",
+footer:"WhatsApp Premium Membership"
+},
+
+ur:{
+back:"← ہوم پیج پر واپس",
+badge:"نجی رابطے کی ممبرشپ",
+title:"صوفیہ جینی تبورڈا کا ذاتی واٹس ایپ",
+heroText:"ایک مرتبہ ادائیگی اور منظوری کے بعد نجی واٹس ایپ رابطہ حاصل کریں۔",
+priceTag:"ایک مرتبہ ادائیگی",
+pay:"پے پال سے 60 ڈالر ادا کریں",
+payNote:"پے پال سے 60 ڈالر ادا کریں، پھر ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔",
+formTitle:"ادائیگی کی تصدیق کی درخواست",
+formIntro:"پے پال ادائیگی کے بعد تمام معلومات مکمل کریں۔",
+name:"آپ کا پورا نام *",
+email:"جی میل / ای میل *",
+country:"ملک *",
+address:"مکمل رہائشی پتہ *",
+whatsapp:"آپ کا واٹس ایپ نمبر *",
+language:"رابطے کی پسندیدہ زبان *",
+transaction:"پے پال ٹرانزیکشن آئی ڈی *",
+screenshot:"پے پال ادائیگی کا اسکرین شاٹ *",
+screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",
+submit:"ادائیگی کی تفصیلات جمع کروائیں",
+submitNote:"منظوری تک صوفیہ کا واٹس ایپ رابطہ پوشیدہ رہے گا۔",
+hidden:"🔒 صوفیہ کا ذاتی واٹس ایپ نمبر ادائیگی کی دستی منظوری تک پوشیدہ رہے گا۔",
+checkTitle:"اپنی واٹس ایپ پریمیم رسائی چیک کریں",
+checkIntro:"ادائیگی کی حالت معلوم کرنے کے لیے اپنا درخواست نمبر درج کریں۔",
+requestId:"واٹس ایپ درخواست نمبر",
+checkBtn:"رسائی چیک کریں",
+waiting:"آپ کی ادائیگی کی درخواست موصول ہوگئی ہے۔ منظوری کا انتظار کریں۔",
+pending:"آپ کی درخواست ابھی منظوری کے انتظار میں ہے۔",
+approved:"آپ کی ادائیگی منظور ہوگئی ہے!",
+rejected:"آپ کی درخواست منظور نہیں ہوئی۔ سپورٹ سے رابطہ کریں۔",
+notFound:"درخواست نہیں ملی۔ اپنا درخواست نمبر چیک کریں۔",
+contactReady:"اب آپ صوفیہ سے واٹس ایپ پر رابطہ کرسکتے ہیں۔",
+noContact:"ادائیگی منظور ہے لیکن رابطے کی معلومات ابھی سیٹ نہیں ہیں۔",
+sending:"درخواست جمع ہو رہی ہے...",
+invalid:"6 MB تک درست JPG، PNG یا WEBP اسکرین شاٹ اپ لوڈ کریں۔",
+footer:"واٹس ایپ پریمیم ممبرشپ"
+},
+
+es:{
+back:"← Volver al inicio",
+badge:"MEMBRESÍA DE CONTACTO PRIVADO",
+title:"WhatsApp personal de Sofia Jenny Taborda",
+heroText:"Obtén contacto privado por WhatsApp después del pago único y la aprobación manual.",
+priceTag:"PAGO ÚNICO",
+pay:"PAGAR 60 USD CON PAYPAL",
+payNote:"Paga 60 USD con PayPal y envía tu ID de transacción y comprobante.",
+formTitle:"Solicitud de confirmación de pago",
+formIntro:"Completa todos los campos después de pagar.",
+name:"Nombre completo *",
+email:"Correo electrónico *",
+country:"País *",
+address:"Dirección residencial completa *",
+whatsapp:"Tu número de WhatsApp *",
+language:"Idioma de comunicación preferido *",
+transaction:"ID de transacción de PayPal *",
+screenshot:"Captura del pago de PayPal *",
+screenshotHint:"JPG, PNG o WEBP · Máximo 6 MB",
+submit:"ENVIAR DATOS DE PAGO",
+submitNote:"El contacto de Sofia permanecerá privado hasta la aprobación.",
+hidden:"🔒 El contacto personal de Sofia permanecerá oculto hasta la aprobación manual.",
+checkTitle:"Consultar acceso Premium de WhatsApp",
+checkIntro:"Introduce tu ID de solicitud para consultar el estado.",
+requestId:"ID de solicitud de WhatsApp",
+checkBtn:"COMPROBAR ACCESO",
+waiting:"Tu solicitud de pago ha sido recibida. Espera la verificación.",
+pending:"Tu solicitud está pendiente de aprobación.",
+approved:"¡Tu pago ha sido aprobado!",
+rejected:"Tu solicitud no ha sido aprobada. Contacta con soporte.",
+notFound:"No se encontró la solicitud. Comprueba el ID.",
+contactReady:"Ya puedes contactar con Sofia por WhatsApp.",
+noContact:"El pago está aprobado, pero el contacto aún no está configurado.",
+sending:"ENVIANDO SOLICITUD...",
+invalid:"Sube una imagen JPG, PNG o WEBP de hasta 6 MB.",
+footer:"Membresía WhatsApp Premium"
+},
+
+it:{
+back:"← Torna alla home",
+badge:"ABBONAMENTO CONTATTO PRIVATO",
+title:"WhatsApp personale di Sofia Jenny Taborda",
+heroText:"Ottieni il contatto WhatsApp privato dopo il pagamento e l'approvazione manuale.",
+priceTag:"PAGAMENTO UNICO",
+pay:"PAGA 60 USD CON PAYPAL",
+payNote:"Paga 60 USD tramite PayPal e invia ID transazione e screenshot.",
+formTitle:"Richiesta di conferma pagamento",
+formIntro:"Completa tutti i campi dopo il pagamento.",
+name:"Nome completo *",
+email:"Email *",
+country:"Paese *",
+address:"Indirizzo completo *",
+whatsapp:"Il tuo numero WhatsApp *",
+language:"Lingua di comunicazione preferita *",
+transaction:"ID transazione PayPal *",
+screenshot:"Screenshot del pagamento *",
+screenshotHint:"JPG, PNG o WEBP · Massimo 6 MB",
+submit:"INVIA I DATI DI PAGAMENTO",
+submitNote:"Il contatto di Sofia rimane privato fino all'approvazione.",
+hidden:"🔒 Il contatto personale di Sofia rimane nascosto fino all'approvazione manuale.",
+checkTitle:"Controlla l'accesso WhatsApp Premium",
+checkIntro:"Inserisci il tuo ID richiesta per controllare lo stato.",
+requestId:"ID richiesta WhatsApp",
+checkBtn:"CONTROLLA ACCESSO",
+waiting:"La richiesta di pagamento è stata ricevuta. Attendi la verifica.",
+pending:"La richiesta è in attesa di approvazione.",
+approved:"Pagamento approvato!",
+rejected:"Richiesta non approvata. Contatta il supporto.",
+notFound:"Richiesta non trovata. Controlla l'ID.",
+contactReady:"Ora puoi contattare Sofia su WhatsApp.",
+noContact:"Pagamento approvato, ma i contatti non sono ancora configurati.",
+sending:"INVIO IN CORSO...",
+invalid:"Carica un'immagine JPG, PNG o WEBP fino a 6 MB.",
+footer:"Abbonamento WhatsApp Premium"
+},
+
+fr:{
+back:"← Retour à l'accueil",
+badge:"ABONNEMENT DE CONTACT PRIVÉ",
+title:"WhatsApp personnel de Sofia Jenny Taborda",
+heroText:"Obtenez un contact WhatsApp privé après paiement et approbation manuelle.",
+priceTag:"PAIEMENT UNIQUE",
+pay:"PAYER 60 USD AVEC PAYPAL",
+payNote:"Payez 60 USD avec PayPal et envoyez votre ID de transaction et votre capture.",
+formTitle:"Demande de confirmation de paiement",
+formIntro:"Remplissez tous les champs après le paiement.",
+name:"Nom complet *",
+email:"Adresse e-mail *",
+country:"Pays *",
+address:"Adresse complète *",
+whatsapp:"Votre numéro WhatsApp *",
+language:"Langue de communication préférée *",
+transaction:"ID de transaction PayPal *",
+screenshot:"Capture du paiement PayPal *",
+screenshotHint:"JPG, PNG ou WEBP · Maximum 6 MB",
+submit:"ENVOYER LES INFORMATIONS",
+submitNote:"Le contact de Sofia reste privé jusqu'à l'approbation.",
+hidden:"🔒 Le contact personnel de Sofia reste caché jusqu'à l'approbation manuelle.",
+checkTitle:"Vérifier votre accès WhatsApp Premium",
+checkIntro:"Saisissez votre identifiant de demande pour vérifier le statut.",
+requestId:"Identifiant de demande WhatsApp",
+checkBtn:"VÉRIFIER MON ACCÈS",
+waiting:"Votre demande de paiement a été reçue. Attendez la vérification.",
+pending:"Votre demande est en attente d'approbation.",
+approved:"Votre paiement a été approuvé !",
+rejected:"Demande non approuvée. Contactez le support.",
+notFound:"Demande introuvable. Vérifiez votre identifiant.",
+contactReady:"Vous pouvez maintenant contacter Sofia sur WhatsApp.",
+noContact:"Paiement approuvé, mais les coordonnées ne sont pas configurées.",
+sending:"ENVOI EN COURS...",
+invalid:"Envoyez une image JPG, PNG ou WEBP de 6 MB maximum.",
+footer:"Abonnement WhatsApp Premium"
+},
+
+ar:{
+back:"العودة إلى الصفحة الرئيسية ←",
+badge:"عضوية التواصل الخاص",
+title:"واتساب صوفيا جيني تابوردا الشخصي",
+heroText:"احصل على التواصل الخاص عبر واتساب بعد الدفع والموافقة اليدوية.",
+priceTag:"دفعة واحدة",
+pay:"ادفع 60 دولاراً عبر باي بال",
+payNote:"ادفع 60 دولاراً عبر باي بال ثم أرسل رقم المعاملة وصورة إثبات الدفع.",
+formTitle:"طلب تأكيد الدفع",
+formIntro:"أكمل جميع الحقول بعد الدفع.",
+name:"الاسم الكامل *",
+email:"البريد الإلكتروني *",
+country:"الدولة *",
+address:"العنوان السكني الكامل *",
+whatsapp:"رقم واتساب الخاص بك *",
+language:"لغة التواصل المفضلة *",
+transaction:"رقم معاملة باي بال *",
+screenshot:"صورة إثبات الدفع *",
+screenshotHint:"JPG أو PNG أو WEBP · بحد أقصى 6 MB",
+submit:"إرسال تفاصيل الدفع",
+submitNote:"سيظل رقم واتساب صوفيا مخفياً حتى الموافقة.",
+hidden:"🔒 سيظل رقم صوفيا الشخصي مخفياً حتى الموافقة اليدوية على الدفع.",
+checkTitle:"تحقق من وصول واتساب بريميوم",
+checkIntro:"أدخل رقم طلبك للتحقق من حالة الدفع.",
+requestId:"رقم طلب واتساب",
+checkBtn:"تحقق من الوصول",
+waiting:"تم استلام طلب الدفع. يرجى انتظار التحقق.",
+pending:"طلبك لا يزال بانتظار الموافقة.",
+approved:"تمت الموافقة على الدفع!",
+rejected:"لم تتم الموافقة على طلبك. تواصل مع الدعم.",
+notFound:"لم يتم العثور على الطلب. تحقق من الرقم.",
+contactReady:"يمكنك الآن التواصل مع صوفيا عبر واتساب.",
+noContact:"تمت الموافقة على الدفع لكن بيانات الاتصال غير جاهزة.",
+sending:"جارٍ إرسال الطلب...",
+invalid:"ارفع صورة JPG أو PNG أو WEBP بحجم لا يتجاوز 6 MB.",
+footer:"عضوية واتساب بريميوم"
+},
+
+pt:{
+back:"← Voltar ao início",
+badge:"ASSINATURA DE CONTATO PRIVADO",
+title:"WhatsApp pessoal de Sofia Jenny Taborda",
+heroText:"Obtenha contato privado pelo WhatsApp após o pagamento e aprovação manual.",
+priceTag:"PAGAMENTO ÚNICO",
+pay:"PAGAR 60 USD COM PAYPAL",
+payNote:"Pague 60 USD pelo PayPal e envie o ID da transação e a captura do pagamento.",
+formTitle:"Solicitação de confirmação de pagamento",
+formIntro:"Preencha todos os campos após o pagamento.",
+name:"Nome completo *",
+email:"E-mail *",
+country:"País *",
+address:"Endereço residencial completo *",
+whatsapp:"Seu número de WhatsApp *",
+language:"Idioma de comunicação preferido *",
+transaction:"ID da transação PayPal *",
+screenshot:"Captura do pagamento PayPal *",
+screenshotHint:"JPG, PNG ou WEBP · Máximo 6 MB",
+submit:"ENVIAR DADOS DO PAGAMENTO",
+submitNote:"O contato de Sofia ficará privado até a aprovação.",
+hidden:"🔒 O WhatsApp pessoal de Sofia ficará oculto até a aprovação manual.",
+checkTitle:"Verificar acesso ao WhatsApp Premium",
+checkIntro:"Digite seu ID de solicitação para verificar o status.",
+requestId:"ID da solicitação WhatsApp",
+checkBtn:"VERIFICAR ACESSO",
+waiting:"Sua solicitação foi recebida. Aguarde a verificação.",
+pending:"Sua solicitação está aguardando aprovação.",
+approved:"Seu pagamento foi aprovado!",
+rejected:"Solicitação não aprovada. Entre em contato com o suporte.",
+notFound:"Solicitação não encontrada. Verifique o ID.",
+contactReady:"Agora você pode entrar em contato com Sofia pelo WhatsApp.",
+noContact:"Pagamento aprovado, mas os dados de contato não estão configurados.",
+sending:"ENVIANDO SOLICITAÇÃO...",
+invalid:"Envie uma imagem JPG, PNG ou WEBP de até 6 MB.",
+footer:"Assinatura WhatsApp Premium"
+},
+
+de:{
+back:"← Zurück zur Startseite",
+badge:"PRIVATE KONTAKT-MITGLIEDSCHAFT",
+title:"Persönliches WhatsApp von Sofia Jenny Taborda",
+heroText:"Erhalte privaten WhatsApp-Kontakt nach einmaliger Zahlung und manueller Genehmigung.",
+priceTag:"EINMALIGE ZAHLUNG",
+pay:"60 USD MIT PAYPAL ZAHLEN",
+payNote:"Zahle 60 USD über PayPal und sende deine Transaktions-ID und den Zahlungsbeleg.",
+formTitle:"Zahlungsbestätigung",
+formIntro:"Fülle nach der Zahlung alle Felder aus.",
+name:"Vollständiger Name *",
+email:"E-Mail *",
+country:"Land *",
+address:"Vollständige Wohnadresse *",
+whatsapp:"Deine WhatsApp-Nummer *",
+language:"Bevorzugte Kommunikationssprache *",
+transaction:"PayPal-Transaktions-ID *",
+screenshot:"PayPal-Zahlungsbeleg *",
+screenshotHint:"JPG, PNG oder WEBP · Maximal 6 MB",
+submit:"ZAHLUNGSDATEN SENDEN",
+submitNote:"Sofias WhatsApp-Kontakt bleibt bis zur Genehmigung privat.",
+hidden:"🔒 Sofias persönliche WhatsApp-Nummer bleibt bis zur manuellen Genehmigung verborgen.",
+checkTitle:"WhatsApp-Premium-Zugang prüfen",
+checkIntro:"Gib deine Anforderungs-ID ein, um den Status zu prüfen.",
+requestId:"WhatsApp-Anforderungs-ID",
+checkBtn:"ZUGANG PRÜFEN",
+waiting:"Deine Zahlungsanfrage wurde empfangen. Bitte warte auf die Prüfung.",
+pending:"Deine Anfrage wartet noch auf Genehmigung.",
+approved:"Deine Zahlung wurde genehmigt!",
+rejected:"Anfrage nicht genehmigt. Bitte kontaktiere den Support.",
+notFound:"Anfrage nicht gefunden. Überprüfe deine ID.",
+contactReady:"Du kannst Sofia jetzt über WhatsApp kontaktieren.",
+noContact:"Zahlung genehmigt, aber Kontaktdaten sind noch nicht eingerichtet.",
+sending:"ANFRAGE WIRD GESENDET...",
+invalid:"Lade ein JPG-, PNG- oder WEBP-Bild bis 6 MB hoch.",
+footer:"WhatsApp-Premium-Mitgliedschaft"
+},
+
+hi:{
+back:"← होम पेज पर वापस जाएँ",
+badge:"निजी संपर्क सदस्यता",
+title:"सोफिया जेनी तबोर्डा का व्यक्तिगत व्हाट्सऐप",
+heroText:"एक बार भुगतान और मैन्युअल स्वीकृति के बाद निजी व्हाट्सऐप संपर्क प्राप्त करें।",
+priceTag:"एक बार भुगतान",
+pay:"PAYPAL से 60 USD भुगतान करें",
+payNote:"PayPal से 60 USD भुगतान करें और ट्रांज़ैक्शन ID तथा स्क्रीनशॉट भेजें।",
+formTitle:"भुगतान पुष्टि अनुरोध",
+formIntro:"भुगतान के बाद सभी जानकारी भरें।",
+name:"पूरा नाम *",
+email:"ईमेल *",
+country:"देश *",
+address:"पूरा आवासीय पता *",
+whatsapp:"आपका व्हाट्सऐप नंबर *",
+language:"पसंदीदा संपर्क भाषा *",
+transaction:"PayPal ट्रांज़ैक्शन ID *",
+screenshot:"PayPal भुगतान स्क्रीनशॉट *",
+screenshotHint:"JPG, PNG या WEBP · अधिकतम 6 MB",
+submit:"भुगतान विवरण जमा करें",
+submitNote:"स्वीकृति तक सोफिया का व्हाट्सऐप संपर्क निजी रहेगा।",
+hidden:"🔒 मैन्युअल भुगतान स्वीकृति तक सोफिया का निजी नंबर छिपा रहेगा।",
+checkTitle:"व्हाट्सऐप प्रीमियम एक्सेस जाँचें",
+checkIntro:"भुगतान की स्थिति देखने के लिए अपना अनुरोध ID दर्ज करें।",
+requestId:"व्हाट्सऐप अनुरोध ID",
+checkBtn:"एक्सेस जाँचें",
+waiting:"आपका भुगतान अनुरोध प्राप्त हो गया है। सत्यापन की प्रतीक्षा करें।",
+pending:"आपका अनुरोध अभी स्वीकृति की प्रतीक्षा में है।",
+approved:"आपका भुगतान स्वीकृत हो गया है!",
+rejected:"आपका अनुरोध स्वीकृत नहीं हुआ। सहायता से संपर्क करें।",
+notFound:"अनुरोध नहीं मिला। अपना ID जाँचें।",
+contactReady:"अब आप सोफिया से व्हाट्सऐप पर संपर्क कर सकते हैं।",
+noContact:"भुगतान स्वीकृत है, लेकिन संपर्क विवरण अभी सेट नहीं हैं।",
+sending:"अनुरोध भेजा जा रहा है...",
+invalid:"6 MB तक की JPG, PNG या WEBP तस्वीर अपलोड करें।",
+footer:"व्हाट्सऐप प्रीमियम सदस्यता"
+},
+
+zh:{
+back:"← 返回首页",
+badge:"私人联系会员",
+title:"Sofia Jenny Taborda 个人 WhatsApp",
+heroText:"一次付款并经人工审核后，即可获得私人 WhatsApp 联系方式。",
+priceTag:"一次性付款",
+pay:"通过 PAYPAL 支付 60 美元",
+payNote:"通过 PayPal 支付 60 美元，然后提交交易编号和付款截图。",
+formTitle:"付款确认申请",
+formIntro:"付款后请填写所有信息。",
+name:"您的全名 *",
+email:"电子邮箱 *",
+country:"国家 *",
+address:"完整居住地址 *",
+whatsapp:"您的 WhatsApp 号码 *",
+language:"首选沟通语言 *",
+transaction:"PayPal 交易编号 *",
+screenshot:"PayPal 付款截图 *",
+screenshotHint:"JPG、PNG 或 WEBP · 最大 6 MB",
+submit:"提交付款信息",
+submitNote:"在获得批准之前，Sofia 的 WhatsApp 联系方式将保持隐藏。",
+hidden:"🔒 Sofia 的私人 WhatsApp 号码将在人工批准付款前保持隐藏。",
+checkTitle:"检查 WhatsApp Premium 访问权限",
+checkIntro:"输入您的申请编号以查看付款状态。",
+requestId:"WhatsApp 申请编号",
+checkBtn:"检查访问权限",
+waiting:"已收到您的付款申请，请等待人工核实。",
+pending:"您的申请仍在等待批准。",
+approved:"您的付款已获批准！",
+rejected:"您的申请未获批准，请联系支持团队。",
+notFound:"未找到申请，请检查申请编号。",
+contactReady:"您现在可以通过 WhatsApp 联系 Sofia。",
+noContact:"付款已批准，但联系信息尚未配置。",
+sending:"正在提交申请...",
+invalid:"请上传不超过 6 MB 的 JPG、PNG 或 WEBP 图片。",
+footer:"WhatsApp Premium 会员"
+}
+
+};
+
+const $ = id => document.getElementById(id);
+
+function currentLanguage() {
+  return translations[$("languageSelect").value] || translations.en;
+}
+
+function tr(key) {
+  return currentLanguage()[key] || translations.en[key] || key;
+}
+
+function applyLanguage() {
+  const lang = $("languageSelect").value;
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir =
+    ["ur","ar"].includes(lang) ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    el.textContent = tr(el.dataset.i18n);
+  });
+
+  $("preferredLanguage").value = lang;
+}
+
+$("languageSelect").addEventListener("change",applyLanguage);
+$("customerLanguage").addEventListener("change",() => {
+  $("preferredLanguage").value = $("customerLanguage").value;
+  $("languageSelect").value = $("customerLanguage").value;
+  applyLanguage();
+});
+
+function showStatus(id,message,type="info") {
+  const el = $(id);
+  el.textContent = message;
+  el.className = "status show " + type;
+}
+
+function readFile(file) {
+  return new Promise((resolve,reject) => {
+    const reader = new FileReader();
+
+    reader.onload = () => resolve(String(reader.result || ""));
+
+    reader.onerror = () =>
+      reject(new Error("Could not read the payment screenshot."));
+
+    reader.readAsDataURL(file);
+  });
+}
+
+/* SUBMIT WHATSAPP PAYMENT REQUEST */
+
+const paymentForm = $("paymentForm");
+const paymentFrame = $("paymentFrame");
+
+paymentForm.action = API_URL;
+
+paymentForm.addEventListener("submit",async event => {
+
+  event.preventDefault();
+
+  if (!paymentForm.reportValidity()) return;
+
+  const file = $("screenshotFile").files[0];
+
+  if (
+    !file ||
+    file.size > 6 * 1024 * 1024 ||
+    !/^image\/(jpeg|png|webp)$/i.test(file.type)
+  ) {
+    showStatus("paymentStatus",tr("invalid"),"error");
+    return;
+  }
+
+  const button = $("submitPayment");
+
+  button.disabled = true;
+  button.textContent = tr("sending");
+
+  try {
+
+    $("preferredLanguage").value =
+      $("customerLanguage").value;
+
+    $("screenshotData").value = await readFile(file);
+
+    paymentForm.submit();
+
+  } catch(error) {
+
+    button.disabled = false;
+    button.textContent = tr("submit");
+
+    showStatus(
+      "paymentStatus",
+      error.message,
+      "error"
+    );
+  }
+});
+
+/* RECEIVE GOOGLE APPS SCRIPT RESPONSE */
+
+window.addEventListener("message",event => {
+
+  if (event.source !== paymentFrame.contentWindow) return;
+
+  const data = event.data || {};
+
+  if (
+    data.type !== "FOLDER_PAYMENT_SUCCESS" &&
+    data.type !== "FORM_SUBMISSION_ERROR"
+  ) return;
+
+  const button = $("submitPayment");
+
+  button.disabled = false;
+  button.textContent = tr("submit");
+
+  if (data.success) {
+
+    const id = data.paymentId || "";
+
+    if (id) {
+
+      $("accessRequestId").value = id;
+
+      try {
+        localStorage.setItem("sjtWhatsAppRequestId",id);
+      } catch(error) {}
+    }
+
+    showStatus(
+      "paymentStatus",
+      tr("waiting") + (id ? " " + tr("requestId") + ": " + id : ""),
+      "success"
+    );
+
+  } else {
+
+    showStatus(
+      "paymentStatus",
+      data.message || "Request could not be submitted.",
+      "error"
+    );
+  }
+});
+
+/* JSONP STATUS CHECK */
+
+function jsonp(action,params={}) {
+
+  return new Promise((resolve,reject) => {
+
+    const callback =
+      "sjtcb_" + Date.now() + "_" +
+      Math.floor(Math.random()*999999);
+
+    const script = document.createElement("script");
+
+    let finished = false;
+
+    function cleanup() {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      delete window[callback];
+      script.remove();
+    }
+
+    const timer = setTimeout(() => {
+      cleanup();
+      reject(new Error("Request timed out. Please try again."));
+    },18000);
+
+    window[callback] = data => {
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error("Could not connect to the website service."));
+    };
+
+    const query = new URLSearchParams({
+      ...params,
+      action,
+      callback
+    });
+
+    script.src = API_URL + "?" + query.toString();
+
+    document.head.appendChild(script);
+  });
+}
+
+/* CHECK CUSTOMER ACCESS */
+
+$("accessForm").addEventListener("submit",async event => {
+
+  event.preventDefault();
+
+  const button = $("checkButton");
+  const id =
+    $("accessRequestId").value.trim();
+
+  $("accessResult").innerHTML = "";
+
+  if (!id) {
+    showStatus("accessStatus",tr("notFound"),"error");
+    return;
+  }
+
+  button.disabled = true;
+
+  try {
+
+    const data = await jsonp("whatsappStatus",{
+      paymentId:id
+    });
+
+    if (!data || !data.found) {
+      throw new Error(tr("notFound"));
+    }
+
+    const state = String(data.status || "pending").toLowerCase();
+
+    if (state !== "approved") {
+
+      if (state === "failed" || state === "rejected") {
+        showStatus("accessStatus",tr("rejected"),"error");
+      } else {
+        showStatus("accessStatus",tr("pending"),"info");
+      }
+
+      return;
+    }
+
+    showStatus("accessStatus",tr("approved"),"success");
+
+    if (data.number) {
+
+      const number = String(data.number);
+
+      const link = document.createElement("a");
+
+      link.className = "access-link";
+
+      link.href =
+        "https://wa.me/" + number.replace(/\D/g,"");
+
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = tr("contactReady") + " · " + number;
+
+      $("accessResult").appendChild(link);
+
+    } else if (data.username) {
+
+      const p = document.createElement("p");
+      p.textContent = data.username;
+
+      $("accessResult").appendChild(p);
+
+    } else {
+
+      showStatus("accessStatus",tr("noContact"),"info");
+    }
+
+  } catch(error) {
+
+    showStatus(
+      "accessStatus",
+      error.message || tr("notFound"),
+      "error"
+    );
+
+  } finally {
+
+    button.disabled = false;
+  }
+});
+
+/* INITIALIZE */
+
+$("year").textContent = new Date().getFullYear();
+
+try {
+  $("accessRequestId").value =
+    localStorage.getItem("sjtWhatsAppRequestId") || "";
+} catch(error) {}
+
+applyLanguage();
+
+</script>
+
+</body>
+</html>
