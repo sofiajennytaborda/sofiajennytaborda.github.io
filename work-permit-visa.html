@@ -198,7 +198,7 @@ html[dir=rtl] .field{text-align:right}
 
 <div class="hero-banner-wrap">
   <img id="workPermitBanner" class="hero-banner"
-       src="assets/work-permit-visa.jpg"
+       src="assets/Work%20Permit%20Visa%20Abroad%20Ad.png"
        alt="Work Permit Visa">
 </div>
 
@@ -230,7 +230,6 @@ html[dir=rtl] .field{text-align:right}
 
 <footer>
   © 2026 Sofia Jenny Taborda · <span data-i18n="footer">Work Permit Assistance</span>
-  <div class="small-note" style="color:#dce8f5;margin-top:7px" data-i18n="legalNote">Application assistance only. Work permits and visas are issued solely by the relevant government authorities. Approval is not guaranteed.</div>
 </footer>
 
 <div class="modal" id="productModal" aria-hidden="true">
@@ -492,7 +491,8 @@ function parseWorkPermitDescription(raw) {
 // The Work Permit page uses the same category image as its Home Page card.
 // Keep the separate website-wide header above unchanged.
 $("workPermitBanner").addEventListener("error", () => {
-  $("workPermitBanner").alt = "Work Permit Visa image could not be loaded";
+  $("workPermitBanner").style.display = "none";
+  console.error("Work Permit image missing: assets/Work Permit Visa Abroad Ad.png");
 });
 
 function money(value) { return "$" + Number(value || 0).toFixed(2) + " USD"; }
