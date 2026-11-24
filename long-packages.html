@@ -210,13 +210,18 @@ main {
   cursor:pointer;
 }
 
+
 .hero-image-link img {
   display:block;
   width:100%;
-  height:310px;
-  object-fit:cover;
-  transition:transform .3s;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  transition:none;
 }
+
 
 .hero-image-link:hover img {
   transform:scale(1.035);
