@@ -198,8 +198,8 @@ html[dir=rtl] .field{text-align:right}
 
 <div class="hero-banner-wrap">
   <img id="workPermitBanner" class="hero-banner"
-       src="assets/sofia-header-banner.png"
-       alt="Work Permit Visa Assistance">
+       src="assets/work-permit-visa.jpg"
+       alt="Work Permit Visa">
 </div>
 
 <section class="intro">
@@ -489,16 +489,10 @@ function parseWorkPermitDescription(raw) {
   };
 }
 
-async function loadHeader() {
-  try {
-    const result = await jsonp({action:"pageHeader", pageKey:CATEGORY});
-    if (result && result.imageUrl && /^https:\/\/[^\s]+$/i.test(result.imageUrl)) {
-      $("workPermitBanner").src = result.imageUrl;
-    }
-  } catch(e) {}
-}
+// The Work Permit page uses the same category image as its Home Page card.
+// Keep the separate website-wide header above unchanged.
 $("workPermitBanner").addEventListener("error", () => {
-  $("workPermitBanner").src = "assets/sofia-header-banner.png";
+  $("workPermitBanner").alt = "Work Permit Visa image could not be loaded";
 });
 
 function money(value) { return "$" + Number(value || 0).toFixed(2) + " USD"; }
@@ -770,7 +764,6 @@ function setLanguageFromStorage() {
 setPhone();
 setLanguageFromStorage();
 $("year") && ($("year").textContent=new Date().getFullYear());
-loadHeader();
 loadListings();
 </script>
 </body>
