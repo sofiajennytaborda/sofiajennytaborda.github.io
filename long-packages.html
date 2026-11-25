@@ -1,781 +1,118 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="I Want to Meet Sofia Jenny Taborda - Exclusive Long Package">
+<meta name="theme-color" content="#101426">
+<meta name="description" content="Explore the Long Package System collection. Pay the fixed one-time price, submit your PayPal transaction ID and screenshot, and receive access to the private package folder after manual approval.">
 <title>I Want to Meet Sofia Jenny Taborda | Sofia Jenny Taborda</title>
-
-<link rel="stylesheet" href="paid-folder.css">
-<script src="paid-folder.js" defer></script>
-<script src="long-packages-language-fix.js?v=20261124" defer></script>
 <style>
-:root {
-  --navy:#082d52;
-  --blue:#125b92;
-  --gold:#ffc439;
-  --green:#12a36a;
-  --ink:#18324b;
-  --muted:#6d7f91;
-  --line:#dfe8f0;
-}
-
-* {box-sizing:border-box}
-
-body {
-  margin:0;
-  background:#f3f6fa;
-  color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-header {
-  background:#fff;
-  padding:13px max(18px,calc((100% - 1160px)/2));
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  text-decoration:none;
-  color:var(--navy);
-  font-weight:900;
-}
-
-.brand-logo {
-  width:43px;
-  height:43px;
-  object-fit:contain;
-}
-
-.header-actions {
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.header-actions select {
-  padding:10px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:#fff;
-}
-
-.back-home {
-  color:var(--blue);
-  text-decoration:none;
-  font-size:13px;
-  font-weight:800;
-}
-
-.green-line {
-  height:5px;
-  background:linear-gradient(90deg,#10a66b,#91d6b4,#10a66b);
-}
-
-main {
-  max-width:1160px;
-  margin:30px auto;
-  padding:0 18px;
-}
-
-/* PREMIUM HERO */
-
-.hero {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-  padding:45px;
-  border-radius:20px;
-  overflow:hidden;
-  background:linear-gradient(115deg,#082440,#164c78 58%,#4c302c);
-  box-shadow:0 12px 35px rgba(0,0,0,.12);
-}
-
-.hero-copy {
-  color:#fff;
-}
-
-.eyebrow {
-  color:#ffd16a;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.hero h1 {
-  color:#fff !important;
-  -webkit-text-fill-color:#fff !important;
-  font-family:Georgia,serif;
-  font-size:clamp(34px,4vw,52px);
-  line-height:1.15;
-  margin:17px 0;
-  text-shadow:0 2px 9px #0005;
-}
-
-.hero-copy p {
-  color:#e5edf6;
-  font-size:16px;
-  line-height:1.8;
-}
-
-.price-row {
-  display:flex;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin:28px 0 20px;
-}
-
-.price {
-  color:#ffd36d;
-  font-size:36px;
-  font-weight:900;
-}
-
-.pill {
-  background:#e7f7ef;
-  color:#137447;
-  padding:10px 15px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:900;
-}
-
-/* PAYPAL BUTTON */
-
-.pay-button {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  width:100%;
-  max-width:430px;
-  min-height:64px;
-  background:linear-gradient(100deg,#ffc439,#ffe6a2);
-  color:#082d52;
-  text-decoration:none;
-  border-radius:12px;
-  font-size:16px;
-  font-weight:900;
-  box-shadow:0 5px 0 #d49c27;
-  transition:.2s;
-}
-
-.pay-button:hover {
-  transform:translateY(-3px);
-  box-shadow:0 8px 15px #0003;
-}
-
-.paypal-mark {
-  background:#fff;
-  color:#064b88;
-  border-radius:6px;
-  padding:7px 12px;
-  font-size:16px;
-}
-
-.note {
-  color:#e1eaf4;
-  font-size:12px;
-  margin-top:17px;
-  line-height:1.7;
-}
-
-/* CLICKABLE HERO PHOTO */
-
-.hero-image {
-  width:100%;
-  min-height:0;
-  padding:0;
-  border:2px solid #d6a849;
-  border-radius:20px;
-  overflow:hidden;
-  background:#10263c;
-  display:block;
-}
-
-.hero-image-link {
-  display:block;
-  width:100%;
-  text-decoration:none;
-  cursor:pointer;
-}
-
-
-.hero-image-link img {
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:none;
-  aspect-ratio:auto;
-  object-fit:contain;
-  object-position:center;
-  transition:none;
-}
-
-
-.hero-image-link:hover img {
-  transform:scale(1.035);
-}
-
-.hero-image-cta {
-  display:block;
-  background:#071d32;
-  color:#fff;
-  padding:15px 10px;
-  text-align:center;
-  font-weight:900;
-  font-size:13px;
-  letter-spacing:1px;
-}
-
-/* COLLECTION AND FORMS */
-
-.section {
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:25px;
-  margin-top:24px;
-}
-
-.section h2 {
-  color:var(--navy);
-  margin:0 0 8px;
-  font-size:23px;
-}
-
-.section-intro {
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:18px;
-}
-
-.preview-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:15px;
-}
-
-.empty {
-  padding:24px;
-  text-align:center;
-  background:#f7fafc;
-  border:1px dashed #cbd8e4;
-  border-radius:12px;
-  color:var(--muted);
-}
-
-.form-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
-}
-
-.field {
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.field.full {
-  grid-column:1/-1;
-}
-
-.field label {
-  font-size:13px;
-  font-weight:800;
-  color:#29445e;
-}
-
-.field input {
-  width:100%;
-  padding:13px;
-  border:1px solid #cbd8e4;
-  border-radius:9px;
-  background:#fff;
-  font-size:14px;
-}
-
-.field input:focus {
-  outline:2px solid #a9d7c2;
-  border-color:#46a77b;
-}
-
-.button-row {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.button-row button {
-  padding:14px 20px;
-  background:var(--navy);
-  color:#fff;
-  border:0;
-  border-radius:9px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-.button-row button:disabled {
-  opacity:.55;
-  cursor:wait;
-}
-
-.small {
-  font-size:12px;
-  color:var(--muted);
-}
-
-.status {
-  display:none;
-  margin-top:14px;
-  padding:13px;
-  border-radius:9px;
-  font-size:14px;
-}
-
-.status.show {display:block}
-.status.success {background:#e8f7ee;color:#145f39}
-.status.error {background:#fff0f0;color:#9d2c2c}
-.status.info {background:#edf5fc;color:#24557d}
-
-.access-link {
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 18px;
-  background:#087a4b;
-  color:#fff;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:900;
-}
-
-footer {
-  text-align:center;
-  padding:28px 15px;
-  color:#8090a0;
-  font-size:12px;
-}
-
-#paymentFrame {display:none}
-
-/* MOBILE */
-
-@media(max-width:760px) {
-  main {
-    margin:18px auto;
-    padding:0 11px;
-  }
-
-  .hero {
-    grid-template-columns:1fr;
-    padding:22px;
-    gap:22px;
-  }
-
-  .hero-image {
-    order:-1;
-  }
-
-  .hero-image-link img {
-    height:240px;
-  }
-
-  .hero h1 {
-    font-size:34px;
-  }
-
-  .price {
-    font-size:30px;
-  }
-
-  .pay-button {
-    max-width:100%;
-    min-height:60px;
-    font-size:14px;
-  }
-
-  .preview-grid,
-  .form-grid {
-    grid-template-columns:1fr;
-  }
-
-  .section {
-    padding:18px;
-  }
-
-  .field.full {
-    grid-column:auto;
-  }
-
-  .header-actions {
-    width:100%;
-    justify-content:space-between;
-  }
-}
-
-html[dir="rtl"] body {
-  text-align:right;
-}
+:root{--bg:#0d1222;--panel:#171f35;--panel2:#202b45;--text:#f5f6fb;--muted:#b8c2d5;--gold:#f0c76b;--pink:#e98ab6;--line:rgba(255,255,255,.12);--green:#36c99a;--danger:#ff7777;--shadow:0 18px 50px rgba(0,0,0,.25)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% 0%,#1a2440 0,#0d1222 40%);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.55}a{color:inherit}button,input,textarea{font:inherit}header{max-width:1240px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.2px}.brand img{width:45px;height:45px;object-fit:contain;border-radius:50%;background:#fff;padding:4px}.header-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.header-actions a{text-decoration:none;color:var(--muted);font-size:14px}select{background:#202b45;color:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:10px}.gold-line{height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--pink),transparent);opacity:.8}
+main{max-width:1240px;margin:auto;padding:28px 24px 70px}.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:28px;align-items:center;background:linear-gradient(135deg,rgba(34,46,75,.96),rgba(20,28,49,.92));border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:var(--shadow);overflow:hidden}.eyebrow{display:inline-block;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(32px,4.3vw,54px);line-height:1.1;margin:13px 0 15px;letter-spacing:-1.5px}.hero-copy>p{color:var(--muted);max-width:650px;margin:0 0 20px}.price-row{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:20px 0 15px}.price{font-size:34px;font-weight:900;color:var(--gold)}.pill{font-size:10px;font-weight:900;letter-spacing:1.1px;padding:7px 11px;border-radius:999px;background:rgba(240,199,107,.13);border:1px solid rgba(240,199,107,.35);color:var(--gold)}.pay-button,.button-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;padding:14px 22px;background:linear-gradient(120deg,#f0c76b,#e99cba);color:#1a2032;text-decoration:none;font-weight:900;cursor:pointer;box-shadow:0 9px 24px rgba(233,156,186,.18)}.pay-button[aria-disabled="true"]{opacity:.45;pointer-events:none}.pay-note{font-size:13px;color:var(--muted);margin:12px 0 0}.hero-image{min-height:310px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#11182a}.hero-image img{width:100%;height:100%;min-height:310px;max-height:430px;display:block;object-fit:cover}.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}.status.show{display:block}.status.success{background:rgba(54,201,154,.14);border:1px solid rgba(54,201,154,.35);color:#a5f1d8}.status.error{background:rgba(255,119,119,.13);border:1px solid rgba(255,119,119,.3);color:#ffc0c0}.status.info{background:rgba(119,167,255,.12);border:1px solid rgba(119,167,255,.3);color:#c9dcff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 34px}.step{background:rgba(23,31,53,.88);border:1px solid var(--line);border-radius:16px;padding:18px}.step-icon{font-size:25px;margin-bottom:8px}.step strong{display:block;font-size:15px}.step p{font-size:13px;color:var(--muted);margin:6px 0 0}.section{margin-top:24px;padding:26px;background:rgba(23,31,53,.92);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.section-heading h2,.section h2{font-size:25px;margin:7px 0 6px}.section-heading p,.section-intro{color:var(--muted);margin:0 0 18px}.content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.content-card{background:#202b45;border:1px solid var(--line);border-radius:14px;overflow:hidden}.content-card img{width:100%;height:190px;object-fit:cover;display:block;background:#121a2c}.content-card .placeholder{height:190px;display:grid;place-items:center;background:linear-gradient(135deg,#273553,#141c30);font-size:36px}.content-card .content-copy{padding:14px}.content-card h3{font-size:16px;margin:0 0 5px}.content-card p{font-size:13px;color:var(--muted);margin:0}.loading-card,.empty-card{padding:22px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);grid-column:1/-1}.info-card{display:flex;gap:16px;align-items:flex-start;background:#202b45;border:1px solid var(--line);border-radius:15px;padding:18px}.info-icon{font-size:35px}.info-card p{color:var(--muted);margin:5px 0 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-size:13px;font-weight:800;margin:0 0 7px}input,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:#10182b;color:#fff;outline:none}input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(240,199,107,.1)}input[type=file]{padding:10px;background:#10182b}.small{display:block;color:var(--muted);font-size:12px;margin-top:6px}.form-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}.form-actions .button-primary{min-width:240px}.button-secondary{border:1px solid rgba(240,199,107,.4);background:rgba(240,199,107,.12);color:var(--gold);padding:12px 18px;border-radius:11px;font-weight:900;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.inline-form{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.inline-form .grow{flex:1;min-width:230px}.private-result{margin-top:16px}.private-link{display:inline-flex;padding:12px 17px;border-radius:10px;background:rgba(54,201,154,.16);border:1px solid rgba(54,201,154,.4);color:#a5f1d8;text-decoration:none;font-weight:800}.video-card{background:#202b45;border:1px solid var(--line);border-radius:14px;overflow:hidden}.video-card iframe{width:100%;aspect-ratio:16/9;border:0;background:#080c15}.video-card .content-copy{padding:13px}.video-card h3{margin:0 0 5px;font-size:15px}.video-card p{margin:0;color:var(--muted);font-size:13px}.security{margin-top:15px;padding:13px;border-radius:10px;background:rgba(240,199,107,.08);border:1px solid rgba(240,199,107,.2);color:#e8d6a7;font-size:13px}footer{border-top:1px solid var(--line);text-align:center;padding:24px;color:#8d9bb5;font-size:12px}.hidden-frame{display:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding:24px}.hero-image,.hero-image img{min-height:230px;max-height:330px}.content-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){header{padding:14px 16px}main{padding:18px 14px 50px}.hero{padding:20px;border-radius:18px}.steps{grid-template-columns:1fr}.section{padding:20px 15px}.content-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-actions .button-primary{width:100%}.inline-form{align-items:stretch}.inline-form .grow{min-width:100%}.price{font-size:29px}}
 </style>
 </head>
-
-<body data-category="Long Package System">
-
+<body>
 <header>
-  <a class="brand" href="index.html">
-    <img class="brand-logo"
-         src="assets/sofia-logo.png"
-         alt="Sofia Jenny Taborda Logo">
-    <span>Sofia Jenny Taborda</span>
-  </a>
-
+  <a class="brand" href="index.html"><img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda"><span>Sofia Jenny Taborda</span></a>
   <div class="header-actions">
-  <select id="languageSelect" aria-label="Choose language">
-  <option value="en">🇬🇧 English</option>
-  <option value="ur">🇵🇰 اردو</option>
-  <option value="es">🇪🇸 Español</option>
-  <option value="it">🇮🇹 Italiano</option>
-  <option value="fr">🇫🇷 Français</option>
-  <option value="ar">🇸🇦 العربية</option>
-  <option value="pt">🇧🇷 Português</option>
-  <option value="de">🇩🇪 Deutsch</option>
-  <option value="hi">🇮🇳 हिन्दी</option>
-  <option value="zh">🇨🇳 中文</option>
-</select>
-
-    <a class="back-home" href="index.html" data-i18n="back">
-      ← Back to Home
-    </a>
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">🇬🇧 English</option><option value="ur">🇵🇰 اردو</option><option value="es">🇪🇸 Español</option><option value="it">🇮🇹 Italiano</option><option value="fr">🇫🇷 Français</option><option value="ar">🇸🇦 العربية</option><option value="pt">🇧🇷 Português</option><option value="de">🇩🇪 Deutsch</option><option value="hi">🇮🇳 हिन्दी</option><option value="zh">🇨🇳 中文</option>
+    </select>
+    <a href="index.html" data-i18n="back">← Back to Home</a>
   </div>
 </header>
-
-<div class="green-line"></div>
-
+<div class="gold-line"></div>
 <main>
-
-  <!-- LONG PACKAGE HERO -->
-
   <section class="hero">
-
     <div class="hero-copy">
-
-      <span class="eyebrow">
-        EXCLUSIVE LONG PACKAGE
-      </span>
-
+      <span class="eyebrow">LONG PACKAGE SYSTEM</span>
       <h1>I Want to Meet Sofia Jenny Taborda</h1>
-
-      <p>
-        Discover the exclusive Long Package collection.
-        Explore available package details and submit your
-        payment request for private access.
-      </p>
-
-      <div class="price-row">
-        <div class="price" id="priceValue">$80.00 USD</div>
-
-        <span class="pill" data-i18n="oneTime">
-          ONE-TIME PAYMENT
-        </span>
-      </div>
-
-      <!-- PAYPAL BUTTON -->
-
-      <a id="payButton"
-         class="pay-button"
-         href="https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-disabled="false">
-
-        <span class="paypal-mark">PayPal</span>
-
-        <span data-i18n="pay">
-          PAY WITH PAYPAL
-        </span>
-
-      </a>
-
-      <p class="note" data-i18n="payNote">
-        Pay through PayPal. Then submit your transaction ID
-        and payment screenshot. Access is granted only after
-        Sofia verifies the payment.
-      </p>
-
-      <div id="setupStatus" class="status"></div>
-
+      <p>Explore the Long Package System collection. Pay the fixed one-time price, submit your PayPal transaction ID and screenshot, and receive access to the private package folder after manual approval.</p>
+      <div class="price-row"><div class="price" id="priceValue">$80.00 USD</div><span class="pill" data-i18n="price">ONE-TIME PAYMENT</span></div>
+      <a id="payButton" class="pay-button" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span>PayPal</span><span data-i18n="pay">PAY WITH PAYPAL</span></a>
+      <p class="pay-note" id="payNote" data-i18n="payNote">Complete the payment, then submit your transaction ID and screenshot. Access is granted only after manual verification.</p>
+      <div id="setupStatus" class="status" aria-live="polite"></div>
     </div>
-
-    <!-- PHOTO ALSO OPENS PAYPAL -->
-
-    <div class="hero-image">
-
-      <a id="heroPayLink"
-         class="hero-image-link"
-         href="https://www.paypal.com/ncp/payment/SXBWF86BKWNF2"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Pay for Long Package through PayPal">
-
-        <img
-          src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png"
-          alt="Sofia Jenny Taborda Long Package"
-          onerror="this.style.display='none'">
-
-        <span class="hero-image-cta">
-          VIEW LONG PACKAGE DETAILS
-        </span>
-
-      </a>
-
-    </div>
-
+    <div class="hero-image"><img id="pageHeaderImage" src="assets/Glossy%20Red-Gold%20Premium%20Package%20Banner.png" alt="I Want to Meet Sofia Jenny Taborda banner"></div>
   </section>
-
-  <!-- COLLECTION -->
-
+  <section class="steps" aria-label="Payment steps"><article class="step"><div class="step-icon">💳</div><strong>01 · Pay with PayPal</strong><p>Complete the one-time Long Package System payment.</p></article>
+<article class="step"><div class="step-icon">🧾</div><strong>02 · Submit Your Proof</strong><p>Enter your transaction ID and upload the payment screenshot.</p></article>
+<article class="step"><div class="step-icon">📦</div><strong>03 · Open Your Package</strong><p>After approval, use your payment email to open the private package folder.</p></article></section>
   <section class="section">
-
-    <h2 data-i18n="items">
-      Collection
-    </h2>
-
-    <p class="section-intro" data-i18n="itemsIntro">
-      Previews uploaded through the Admin Panel appear here.
-      Full content remains private until approval.
-    </p>
-
-    <div id="previewGrid" class="preview-grid"></div>
-
-    <div id="previewEmpty" class="empty">
-      Loading collection...
-    </div>
-
-  </section>
-
-  <!-- PAYMENT CONFIRMATION -->
-
+      <div class="section-heading"><div><span class="eyebrow">PREVIEW</span><h2>Long Package Preview</h2><p>Preview the available package titles and cover images. Full private files are available after approval.</p></div></div>
+      <div id="publicContent" class="content-grid"><div class="loading-card" data-i18n="loading">Loading…</div></div>
+    </section>
   <section class="section" id="paymentRequest">
-
-    <h2 data-i18n="payment">
-      Payment Confirmation Request
-    </h2>
-
-    <p class="section-intro" data-i18n="paymentIntro">
-      After completing PayPal payment, enter your details below
-      and submit your request.
-    </p>
-
-    <form id="paymentForm"
-          target="paymentFrame"
-          method="post">
-
+    <span class="eyebrow">SECURE PAYMENT REVIEW</span>
+    <h2 data-i18n="form">Payment Confirmation Request</h2>
+    <p class="section-intro">Use the email address of the Google account that should receive access to the private Long Package folder.</p>
+    <form id="paymentForm" method="post" target="paymentFrame">
       <input type="hidden" name="action" value="folderPayment">
-
-      <input type="hidden"
-             name="category"
-             value="Long Package System">
-
-      <input type="hidden"
-             id="screenshotData"
-             name="screenshotData"
-             value="">
-
+      <input type="hidden" name="category" value="Long Package System">
+      <input type="hidden" id="screenshotData" name="screenshotData">
       <div class="form-grid">
-
-        <div class="field">
-
-          <label for="customerName" data-i18n="name">
-            Your Name
-          </label>
-
-          <input id="customerName"
-                 name="name"
-                 required
-                 maxlength="100"
-                 autocomplete="name">
-
-        </div>
-
-        <div class="field">
-
-          <label for="customerEmail" data-i18n="email">
-            Gmail / Email
-          </label>
-
-          <input id="customerEmail"
-                 name="email"
-                 type="email"
-                 required
-                 maxlength="160"
-                 autocomplete="email">
-
-        </div>
-
-        <div class="field full">
-
-          <label for="transactionId" data-i18n="txn">
-            PayPal Transaction ID
-          </label>
-
-          <input id="transactionId"
-                 name="transactionId"
-                 required
-                 maxlength="120"
-                 autocomplete="off">
-
-        </div>
-
-        <div class="field full">
-
-          <label for="screenshotFile" data-i18n="shot">
-            Payment Screenshot
-          </label>
-
-          <input id="screenshotFile"
-                 type="file"
-                 accept="image/jpeg,image/png,image/webp"
-                 required>
-
-          <span class="small">
-            JPG, PNG or WEBP · Maximum 6 MB
-          </span>
-
-        </div>
-
+        <div class="field"><label for="customerName" data-i18n="name">Your Full Name *</label><input id="customerName" name="name" required maxlength="100" autocomplete="name"></div>
+        <div class="field"><label for="customerEmail" data-i18n="email">Gmail / Email *</label><input id="customerEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="customerPhone" data-i18n="phone">WhatsApp / Phone (optional)</label><input id="customerPhone" name="phone" type="tel" maxlength="35" autocomplete="tel"></div>
+        <div class="field"><label for="transactionId" data-i18n="txn">PayPal Transaction ID *</label><input id="transactionId" name="transactionId" required maxlength="120" autocomplete="off"></div>
+        <div class="field full"><label for="screenshotFile" data-i18n="shot">Payment Screenshot *</label><input id="screenshotFile" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small" data-i18n="shotHint">JPG, PNG or WEBP · Maximum 6 MB</span></div>
       </div>
-
-      <div class="button-row">
-
-        <button id="submitPayment"
-                type="submit"
-                data-i18n="submit">
-          Submit Payment Details
-        </button>
-
-        <span class="small" data-i18n="submitNote">
-          Sofia will verify the transaction in PayPal before approval.
-        </span>
-
-      </div>
-
-      <div id="paymentStatus"
-           class="status"
-           aria-live="polite">
-      </div>
-
+      <div class="form-actions"><button id="submitPayment" class="button-primary" type="submit" data-i18n="submit">SUBMIT PAYMENT DETAILS</button><span class="small">Your request stays pending until the administrator checks the payment in PayPal.</span></div>
+      <div id="paymentStatus" class="status" aria-live="polite"></div>
     </form>
-
-    <iframe id="paymentFrame"
-            name="paymentFrame"
-            title="Payment request response">
-    </iframe>
-
+    <iframe id="paymentFrame" name="paymentFrame" class="hidden-frame" title="Payment request response"></iframe>
+    <div class="security">🔒 Payment screenshots are stored privately in the existing Google Drive customer-documents area. Approval is always manual.</div>
   </section>
-
-  <!-- CUSTOMER ACCESS CHECK -->
-
-  <section class="section">
-
-    <h2 data-i18n="check">
-      Check My Access
-    </h2>
-
-    <p class="section-intro" data-i18n="checkIntro">
-      Use the same Gmail address entered in your payment request.
-    </p>
-
-    <form id="accessForm">
-
-      <div class="form-grid">
-
-        <div class="field full">
-
-          <label for="accessEmail" data-i18n="checkEmail">
-            Enter your Gmail / Email
-          </label>
-
-          <input id="accessEmail"
-                 type="email"
-                 placeholder="Same Gmail used for payment"
-                 autocomplete="email"
-                 required>
-
-        </div>
-
-      </div>
-
-      <div class="button-row">
-
-        <button type="submit" data-i18n="checkBtn">
-          Check Status
-        </button>
-
-      </div>
-
+  <section class="section" id="statusSection">
+    <span class="eyebrow">REQUEST TRACKING</span>
+    <h2 data-i18n="statusTitle">Check Your Payment Status</h2>
+    <p class="section-intro">Enter your request ID to see whether your payment is pending, approved or rejected.</p>
+    <form id="statusForm" class="inline-form"><div class="field grow"><label for="requestId" data-i18n="request">Request ID</label><input id="requestId" maxlength="100" autocomplete="off" placeholder="FOLDERPAY-…"></div><button type="submit" class="button-secondary" data-i18n="check">CHECK STATUS</button></form>
+    <div id="requestStatus" class="status" aria-live="polite"></div>
+  </section>
+  <section class="section" id="accessSection" >
+    <span class="eyebrow">MEMBER ACCESS</span>
+    <h2 data-i18n="access">Check Your Long Package Access</h2>
+    <p class="section-intro">Enter the same email address used for payment. Approved customers can open the private package folder.</p>
+    <form id="accessForm" class="inline-form">
+      <div class="field grow"><label for="accessEmail" data-i18n="accessEmail">Email used for payment *</label><input id="accessEmail" type="email" required autocomplete="email"></div>
+      <button type="submit" class="button-secondary" data-i18n="open">CHECK MY ACCESS</button>
     </form>
-
-    <div id="accessStatus"
-         class="status"
-         aria-live="polite">
-    </div>
-
-    <div id="accessResult"></div>
-
+    <div id="accessStatus" class="status" aria-live="polite"></div>
+    <div id="privateFolderResult" class="private-result"></div>
   </section>
-
 </main>
-
-<footer>
-  © 2026 Sofia Jenny Taborda · Official Website
-</footer>
-
-<!-- Keep the hero photo synced with the PayPal link
-     returned by the existing Admin/Backend settings. -->
-
+<footer>© <span id="year"></span> Sofia Jenny Taborda · <span data-i18n="footer">Private access is provided only after manual payment approval.</span></footer>
 <script>
-(function() {
-  const button = document.getElementById("payButton");
-  const photoLink = document.getElementById("heroPayLink");
-
-  if (!button || !photoLink) return;
-
-  function syncPayPalLink() {
-    const currentLink = button.getAttribute("href");
-
-    if (
-      currentLink &&
-      currentLink !== "#" &&
-      currentLink.startsWith("https://www.paypal.com/")
-    ) {
-      photoLink.href = currentLink;
-    }
-  }
-
-  const observer = new MutationObserver(syncPayPalLink);
-
-  observer.observe(button, {
-    attributes:true,
-    attributeFilter:["href"]
-  });
-
-  syncPayPalLink();
-})();
+"use strict";
+const API_URL = "https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+const PAGE = {category:"Long Package System",slug:"long-packages",mode:"folder",action:"folderPayment",fallbackPrice:80};
+const I18N = {"en":{"back":"← Back to Home","price":"ONE-TIME PAYMENT","pay":"PAY WITH PAYPAL","payNote":"Complete the payment, then submit your transaction ID and screenshot. Access is granted only after manual verification.","steps":"How It Works","preview":"Collection","form":"Payment Confirmation Request","name":"Your Full Name *","email":"Gmail / Email *","phone":"WhatsApp / Phone (optional)","txn":"PayPal Transaction ID *","shot":"Payment Screenshot *","shotHint":"JPG, PNG or WEBP · Maximum 6 MB","submit":"SUBMIT PAYMENT DETAILS","request":"Request ID","check":"CHECK STATUS","access":"Check Access","accessEmail":"Email used for payment *","open":"CHECK MY ACCESS","pending":"Your payment request is waiting for manual verification.","approved":"Your payment has been approved.","rejected":"This payment request was not approved. Please contact support.","notFound":"No request was found. Check the request ID and folder.","loading":"Loading…","noContent":"No preview items have been added yet.","footer":"Private access is provided only after manual payment approval.","statusTitle":"Check Your Payment Status"},"ur":{"back":"← ہوم پیج پر واپس","price":"ایک مرتبہ ادائیگی","pay":"پے پال سے ادائیگی کریں","payNote":"ادائیگی کے بعد ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔ منظوری دستی تصدیق کے بعد ملے گی۔","steps":"طریقۂ کار","preview":"کلیکشن","form":"ادائیگی کی تصدیق کی درخواست","name":"پورا نام *","email":"جی میل / ای میل *","phone":"واٹس ایپ / فون (اختیاری)","txn":"پے پال ٹرانزیکشن آئی ڈی *","shot":"ادائیگی کا اسکرین شاٹ *","shotHint":"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB","submit":"ادائیگی کی تفصیل جمع کروائیں","request":"درخواست آئی ڈی","check":"اسٹیٹس چیک کریں","access":"رسائی چیک کریں","accessEmail":"ادائیگی والی ای میل *","open":"میری رسائی چیک کریں","pending":"آپ کی ادائیگی کی درخواست دستی تصدیق کے انتظار میں ہے۔","approved":"آپ کی ادائیگی منظور ہو گئی ہے۔","rejected":"ادائیگی کی درخواست منظور نہیں ہوئی۔ سپورٹ سے رابطہ کریں۔","notFound":"درخواست نہیں ملی۔ آئی ڈی اور فولڈر چیک کریں۔","loading":"لوڈ ہو رہا ہے…","noContent":"ابھی کوئی پری ویو شامل نہیں کیا گیا۔","footer":"نجی رسائی صرف ادائیگی کی دستی منظوری کے بعد ملتی ہے۔","statusTitle":"ادائیگی کا اسٹیٹس چیک کریں"},"es":{"back":"← Volver al inicio","price":"PAGO ÚNICO","pay":"PAGAR CON PAYPAL","payNote":"Realiza el pago y envía el ID de transacción y la captura. El acceso requiere verificación manual.","steps":"Cómo funciona","preview":"Colección","form":"Confirmación de pago","name":"Nombre completo *","email":"Correo electrónico *","phone":"WhatsApp / Teléfono (opcional)","txn":"ID de transacción PayPal *","shot":"Captura del pago *","shotHint":"JPG, PNG o WEBP · Máximo 6 MB","submit":"ENVIAR DATOS DE PAGO","request":"ID de solicitud","check":"COMPROBAR ESTADO","access":"Comprobar acceso","accessEmail":"Correo usado para pagar *","open":"COMPROBAR MI ACCESO","pending":"Tu solicitud espera verificación manual.","approved":"Tu pago ha sido aprobado.","rejected":"La solicitud no fue aprobada.","notFound":"No se encontró la solicitud.","loading":"Cargando…","noContent":"Todavía no hay elementos de vista previa.","footer":"El acceso privado requiere aprobación manual.","statusTitle":"Consultar estado del pago"},"it":{"back":"← Torna alla home","price":"PAGAMENTO UNA TANTUM","pay":"PAGA CON PAYPAL","payNote":"Paga e invia ID transazione e screenshot. L'accesso richiede verifica manuale.","steps":"Come funziona","preview":"Raccolta","form":"Conferma pagamento","name":"Nome completo *","email":"Email *","phone":"WhatsApp / Telefono (facoltativo)","txn":"ID transazione PayPal *","shot":"Screenshot del pagamento *","shotHint":"JPG, PNG o WEBP · Massimo 6 MB","submit":"INVIA I DATI DI PAGAMENTO","request":"ID richiesta","check":"CONTROLLA STATO","access":"Controlla accesso","accessEmail":"Email usata per il pagamento *","open":"CONTROLLA IL MIO ACCESSO","pending":"La richiesta è in attesa di verifica manuale.","approved":"Pagamento approvato.","rejected":"La richiesta non è stata approvata.","notFound":"Richiesta non trovata.","loading":"Caricamento…","noContent":"Nessun elemento di anteprima disponibile.","footer":"L'accesso privato richiede approvazione manuale.","statusTitle":"Controlla lo stato del pagamento"},"fr":{"back":"← Retour à l'accueil","price":"PAIEMENT UNIQUE","pay":"PAYER AVEC PAYPAL","payNote":"Payez puis envoyez l'identifiant de transaction et la capture. L'accès nécessite une vérification manuelle.","steps":"Fonctionnement","preview":"Collection","form":"Confirmation du paiement","name":"Nom complet *","email":"E-mail *","phone":"WhatsApp / Téléphone (facultatif)","txn":"ID de transaction PayPal *","shot":"Capture du paiement *","shotHint":"JPG, PNG ou WEBP · 6 Mo maximum","submit":"ENVOYER LES INFORMATIONS","request":"ID de demande","check":"VÉRIFIER LE STATUT","access":"Vérifier l'accès","accessEmail":"E-mail utilisé pour payer *","open":"VÉRIFIER MON ACCÈS","pending":"Votre demande attend une vérification manuelle.","approved":"Votre paiement est approuvé.","rejected":"La demande n'a pas été approuvée.","notFound":"Demande introuvable.","loading":"Chargement…","noContent":"Aucun aperçu n'a encore été ajouté.","footer":"L'accès privé nécessite une approbation manuelle.","statusTitle":"Vérifier le statut du paiement"},"ar":{"back":"العودة إلى الصفحة الرئيسية ←","price":"دفعة لمرة واحدة","pay":"الدفع عبر باي بال","payNote":"أكمل الدفع ثم أرسل رقم المعاملة وصورة الإيصال. يتطلب الوصول موافقة يدوية.","steps":"طريقة العمل","preview":"المجموعة","form":"تأكيد الدفع","name":"الاسم الكامل *","email":"البريد الإلكتروني *","phone":"واتساب / الهاتف (اختياري)","txn":"رقم معاملة باي بال *","shot":"لقطة شاشة الدفع *","shotHint":"JPG أو PNG أو WEBP · بحد أقصى 6 MB","submit":"إرسال بيانات الدفع","request":"رقم الطلب","check":"تحقق من الحالة","access":"التحقق من الوصول","accessEmail":"البريد المستخدم للدفع *","open":"تحقق من وصولي","pending":"طلبك ينتظر التحقق اليدوي.","approved":"تمت الموافقة على الدفع.","rejected":"لم تتم الموافقة على الطلب.","notFound":"لم يتم العثور على الطلب.","loading":"جارٍ التحميل…","noContent":"لا توجد معاينات بعد.","footer":"يتم منح الوصول الخاص بعد الموافقة اليدوية فقط.","statusTitle":"تحقق من حالة الدفع"},"pt":{"back":"← Voltar ao início","price":"PAGAMENTO ÚNICO","pay":"PAGAR COM PAYPAL","payNote":"Pague e envie o ID da transação e a captura. O acesso depende de verificação manual.","steps":"Como funciona","preview":"Coleção","form":"Confirmação de pagamento","name":"Nome completo *","email":"E-mail *","phone":"WhatsApp / Telefone (opcional)","txn":"ID da transação PayPal *","shot":"Captura do pagamento *","shotHint":"JPG, PNG ou WEBP · Máximo 6 MB","submit":"ENVIAR DADOS DE PAGAMENTO","request":"ID da solicitação","check":"VERIFICAR STATUS","access":"Verificar acesso","accessEmail":"E-mail usado no pagamento *","open":"VERIFICAR MEU ACESSO","pending":"Sua solicitação aguarda verificação manual.","approved":"Seu pagamento foi aprovado.","rejected":"A solicitação não foi aprovada.","notFound":"Solicitação não encontrada.","loading":"Carregando…","noContent":"Nenhuma prévia foi adicionada ainda.","footer":"O acesso privado exige aprovação manual.","statusTitle":"Verificar status do pagamento"},"de":{"back":"← Zur Startseite","price":"EINMALIGE ZAHLUNG","pay":"MIT PAYPAL ZAHLEN","payNote":"Zahlen Sie und senden Sie Transaktions-ID und Screenshot. Zugriff erfolgt nach manueller Prüfung.","steps":"So funktioniert es","preview":"Sammlung","form":"Zahlungsbestätigung","name":"Vollständiger Name *","email":"E-Mail *","phone":"WhatsApp / Telefon (optional)","txn":"PayPal-Transaktions-ID *","shot":"Zahlungs-Screenshot *","shotHint":"JPG, PNG oder WEBP · Maximal 6 MB","submit":"ZAHLUNGSDATEN SENDEN","request":"Anfrage-ID","check":"STATUS PRÜFEN","access":"Zugriff prüfen","accessEmail":"Für die Zahlung verwendete E-Mail *","open":"MEINEN ZUGRIFF PRÜFEN","pending":"Ihre Anfrage wartet auf manuelle Prüfung.","approved":"Ihre Zahlung wurde genehmigt.","rejected":"Die Anfrage wurde nicht genehmigt.","notFound":"Anfrage nicht gefunden.","loading":"Wird geladen…","noContent":"Noch keine Vorschau verfügbar.","footer":"Privater Zugriff erfordert eine manuelle Genehmigung.","statusTitle":"Zahlungsstatus prüfen"},"hi":{"back":"← होम पर वापस जाएँ","price":"एक बार का भुगतान","pay":"PAYPAL से भुगतान करें","payNote":"भुगतान के बाद ट्रांज़ैक्शन आईडी और स्क्रीनशॉट भेजें। एक्सेस मैन्युअल जाँच के बाद मिलेगा।","steps":"यह कैसे काम करता है","preview":"कलेक्शन","form":"भुगतान की पुष्टि","name":"पूरा नाम *","email":"ईमेल *","phone":"WhatsApp / फ़ोन (वैकल्पिक)","txn":"PayPal ट्रांज़ैक्शन आईडी *","shot":"भुगतान स्क्रीनशॉट *","shotHint":"JPG, PNG या WEBP · अधिकतम 6 MB","submit":"भुगतान विवरण भेजें","request":"रिक्वेस्ट आईडी","check":"स्टेटस जाँचें","access":"एक्सेस जाँचें","accessEmail":"भुगतान में इस्तेमाल ईमेल *","open":"मेरा एक्सेस जाँचें","pending":"आपकी रिक्वेस्ट मैन्युअल जाँच की प्रतीक्षा में है।","approved":"आपका भुगतान स्वीकृत हो गया है।","rejected":"रिक्वेस्ट स्वीकृत नहीं हुई।","notFound":"रिक्वेस्ट नहीं मिली।","loading":"लोड हो रहा है…","noContent":"अभी कोई प्रीव्यू नहीं जोड़ा गया।","footer":"निजी एक्सेस मैन्युअल स्वीकृति के बाद मिलता है।","statusTitle":"भुगतान की स्थिति जाँचें"},"zh":{"back":"← 返回首页","price":"一次性付款","pay":"使用 PAYPAL 付款","payNote":"付款后提交交易编号和付款截图。管理员人工核实后才会开放访问。","steps":"使用流程","preview":"内容预览","form":"付款确认申请","name":"姓名 *","email":"电子邮箱 *","phone":"WhatsApp / 电话（可选）","txn":"PayPal 交易编号 *","shot":"付款截图 *","shotHint":"JPG、PNG 或 WEBP · 最大 6 MB","submit":"提交付款信息","request":"申请编号","check":"检查状态","access":"检查访问权限","accessEmail":"付款时使用的邮箱 *","open":"检查我的访问权限","pending":"申请正在等待人工核实。","approved":"付款已获批准。","rejected":"申请未获批准。","notFound":"未找到申请。","loading":"正在加载…","noContent":"暂时没有预览内容。","footer":"只有人工批准后才会开放私人访问。","statusTitle":"检查付款状态"}};
+const $ = id => document.getElementById(id);
+function tr(key) { const lang = ($("languageSelect") && $("languageSelect").value) || "en"; return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || key; }
+function applyLanguage() { document.querySelectorAll("[data-i18n]").forEach(node => { const key=node.getAttribute("data-i18n"); if(I18N[$("languageSelect").value] && I18N[$("languageSelect").value][key]) node.textContent=tr(key); }); document.documentElement.lang=$("languageSelect").value; document.documentElement.dir=$("languageSelect").value==="ar"||$("languageSelect").value==="ur"?"rtl":"ltr"; }
+$("languageSelect").addEventListener("change",applyLanguage);
+function showStatus(id,message,type="info") { const el=$(id); el.textContent=message; el.className="status show "+type; }
+function jsonp(action,params={}) { return new Promise((resolve,reject)=>{ const callback="sjtcb_"+Date.now()+"_"+Math.floor(Math.random()*999999); const script=document.createElement("script"); let finished=false; function cleanup(){if(finished)return;finished=true;clearTimeout(timer);delete window[callback];script.remove();} const timer=setTimeout(()=>{cleanup();reject(new Error("Request timed out. Please try again."));},18000); window[callback]=data=>{cleanup();resolve(data);}; script.onerror=()=>{cleanup();reject(new Error("Could not connect to the website service."));}; const query=new URLSearchParams({...params,action,callback}); script.src=API_URL+"?"+query.toString(); document.head.appendChild(script); }); }
+function safeUrl(value) { const u=String(value||""); return /^https:\/\/drive\.google\.com\//i.test(u)?u:""; }
+function money(n) { return "$"+Number(n).toFixed(2)+" USD"; }
+async function loadPaymentSettings() { const button=$("payButton"); button.href="#"; button.setAttribute("aria-disabled","true"); try { const data=await jsonp("folderInfo",{category:PAGE.category}); const price=Number(data&&data.price); const link=String(data&&data.paypalLink||"").trim(); if(!data||data.success!==true||!Number.isFinite(price)||price<=0||!/^https:\/\/(www\.)?paypal\.com\//i.test(link)) throw new Error("Payment settings are not ready. Please contact the website owner."); $("priceValue").textContent=money(price); button.href=link; button.setAttribute("aria-disabled","false"); } catch(e) { showStatus("setupStatus",e.message||"Payment settings are unavailable.","error"); } }
+$("payButton").addEventListener("click",e=>{if($("payButton").getAttribute("aria-disabled")==="true"){e.preventDefault();showStatus("setupStatus","Payment settings are not ready. Please refresh or contact the website owner.","error");}});
+async function loadPageHeader() { try { const data=await jsonp("pageHeader",{pageKey:PAGE.category}); const url=data&&data.success===true?safeUrl(data.imageUrl):""; if(url)$("pageHeaderImage").src=url; } catch(e) { /* Keep the bundled fallback banner. */ } }
+function renderPublicContent(items) { const wrap=$("publicContent"); if(!wrap)return; wrap.innerHTML=""; if(!items||!items.length){wrap.innerHTML='<div class="empty-card">'+tr("noContent")+'</div>';return;} items.forEach(item=>{ const card=document.createElement("article"); card.className="content-card"; const imageUrl=safeUrl(item.thumbnailUrl||""); if(imageUrl){const img=document.createElement("img");img.src=imageUrl;img.alt=item.title||"Collection preview";img.loading="lazy";card.appendChild(img);}else{const placeholder=document.createElement("div");placeholder.className="placeholder";placeholder.textContent=PAGE.mode==="videos"?"▶":"✦";card.appendChild(placeholder);} const copy=document.createElement("div");copy.className="content-copy";const title=document.createElement("h3");title.textContent=item.title||"Collection item";const desc=document.createElement("p");desc.textContent=item.description||"";copy.append(title,desc);card.appendChild(copy);wrap.appendChild(card); }); }
+async function loadPublicContent() { if(PAGE.mode==="paymentOnly")return; const wrap=$("publicContent"); try { if(wrap)wrap.innerHTML='<div class="loading-card">'+tr("loading")+'</div>'; const data=PAGE.mode==="videos"?await jsonp("videosList",{}):await jsonp("folderContents",{category:PAGE.category}); const items=PAGE.mode==="videos"?(data&&data.videos||[]):(data&&data.items||[]); renderPublicContent(items); } catch(e) { if(wrap)wrap.innerHTML='<div class="empty-card">'+(e.message||"Unable to load collection.")+'</div>'; } }
+function readFile(file) { return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result||""));reader.onerror=()=>reject(new Error("Could not read the payment screenshot."));reader.readAsDataURL(file);}); }
+const paymentForm=$("paymentForm"),paymentFrame=$("paymentFrame"); paymentForm.action=API_URL;
+paymentForm.addEventListener("submit",async event=>{event.preventDefault();if(!paymentForm.reportValidity())return;const file=$("screenshotFile").files[0];if(!file||file.size>6*1024*1024||!/^image\/(jpeg|png|webp)$/i.test(file.type)){showStatus("paymentStatus","Upload a JPG, PNG or WEBP screenshot up to 6 MB.","error");return;}const button=$("submitPayment");button.disabled=true;button.textContent="SUBMITTING…";try{$("screenshotData").value=await readFile(file);paymentForm.submit();}catch(e){button.disabled=false;button.textContent=tr("submit");showStatus("paymentStatus",e.message,"error");}});
+window.addEventListener("message",event=>{if(event.source!==paymentFrame.contentWindow)return;const data=event.data||{};if(data.type!=="FOLDER_PAYMENT_SUCCESS"&&data.type!=="FORM_SUBMISSION_ERROR")return;const button=$("submitPayment");button.disabled=false;button.textContent=tr("submit");if(data.success){const id=data.paymentId||"";if(id){$("requestId").value=id;try{localStorage.setItem("sjtPaidFolderRequestId_"+PAGE.slug,id);}catch(e){}}showStatus("paymentStatus",(data.message||tr("pending"))+(id?" · "+tr("request")+": "+id:""),"success");}else showStatus("paymentStatus",data.message||"The request could not be submitted.","error");});
+$("statusForm").addEventListener("submit",async event=>{event.preventDefault();const id=$("requestId").value.trim();if(!id){showStatus("requestStatus",tr("notFound"),"error");return;}try{const data=await jsonp("folderPaymentStatus",{paymentId:id,category:PAGE.category});if(!data||!data.found)throw new Error(tr("notFound"));const status=String(data.status||"pending").toLowerCase();if(status==="approved")showStatus("requestStatus",tr("approved"),"success");else if(status==="rejected"||status==="failed")showStatus("requestStatus",tr("rejected"),"error");else showStatus("requestStatus",tr("pending"),"info");}catch(e){showStatus("requestStatus",e.message||tr("notFound"),"error");}});
+if(PAGE.mode==="videos"){$("accessForm").addEventListener("submit",async event=>{event.preventDefault();const email=$("accessEmail").value.trim();const wrap=$("privateVideos");wrap.innerHTML="";try{const data=await jsonp("videosAccess",{email});if(!data||!data.access)throw new Error((data&&data.message)||"No active Premium Videos access was found for this email.");const videos=data.videos||[];if(!videos.length){wrap.innerHTML='<div class="empty-card">No videos have been uploaded yet.</div>';return;}videos.forEach(v=>{const card=document.createElement("article");card.className="video-card";const url=safeUrl(v.previewUrl);if(url){const frame=document.createElement("iframe");frame.src=url;frame.allow="autoplay; encrypted-media; picture-in-picture";frame.allowFullscreen=true;frame.title=v.title||"Premium video";card.appendChild(frame);}const copy=document.createElement("div");copy.className="content-copy";const title=document.createElement("h3");title.textContent=v.title||"Premium Video";const desc=document.createElement("p");desc.textContent=v.description||"";copy.append(title,desc);card.appendChild(copy);wrap.appendChild(card);});showStatus("accessStatus","Premium Videos access approved. Sign in to Google Drive with the same email if asked.","success");}catch(e){showStatus("accessStatus",e.message,"error");}});} else if(PAGE.mode==="folder"){$("accessForm").addEventListener("submit",async event=>{event.preventDefault();$("privateFolderResult").innerHTML="";try{const data=await jsonp("folderAccess",{category:PAGE.category,email:$("accessEmail").value.trim()});if(!data||data.access!==true)throw new Error((data&&data.message)||"Your folder access is still awaiting approval.");const url=safeUrl(data.folderUrl);if(!url)throw new Error("The private folder link is unavailable.");const a=document.createElement("a");a.className="private-link";a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="OPEN YOUR PRIVATE GOOGLE DRIVE FOLDER";$("privateFolderResult").appendChild(a);showStatus("accessStatus","Access approved. Open the folder while signed in with the payment email.","success");}catch(e){showStatus("accessStatus",e.message,"error");}});}
+try{const saved=localStorage.getItem("sjtPaidFolderRequestId_"+PAGE.slug);if(saved)$("requestId").value=saved;}catch(e){}
+$("year").textContent=new Date().getFullYear();applyLanguage();loadPaymentSettings();loadPageHeader();loadPublicContent();
 </script>
-
 </body>
 </html>
