@@ -1180,6 +1180,18 @@ function jsonp(params){
  });
 }
 
+/* LOAD THE SIXEY DOLLS FOLDER HEADER FROM THE ADMIN DASHBOARD */
+async function loadHeader(){
+  try{
+    const result=await jsonp({action:"pageHeader",pageKey:CATEGORY});
+    if(result&&result.imageUrl&&/^https:\/\/[^\s]+$/i.test(result.imageUrl)){
+      $("dollsBanner").src=result.imageUrl;
+    }
+  }catch(error){
+    // Keep the original SIXEY DOLLS banner if no custom header is saved.
+  }
+}
+
 /* LOAD ADMIN-UPLOADED SIXEY DOLLS PRODUCTS */
 
 async function loadProducts(){
@@ -1647,6 +1659,8 @@ async function startStore(){
  applyLanguage(saved);
 
  initPhone();
+
+ loadHeader();
 
  await loadProducts();
 
