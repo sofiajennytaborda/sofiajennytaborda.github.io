@@ -795,6 +795,17 @@ window.addEventListener("message",event=>{
   }
 });
 
+async function loadHeader() {
+  try {
+    const result = await jsonp({action:"pageHeader",pageKey:CATEGORY});
+    if(result && result.imageUrl && /^https:\/\/[^\s]+$/i.test(result.imageUrl)) {
+      $("visaPassportBanner").src = result.imageUrl;
+    }
+  } catch(error) {
+    // Keep the original Visa & Passport banner if no custom header is saved.
+  }
+}
+
 function loadListings() {
   jsonp({action:"publicContent",category:CATEGORY})
     .then(result=>{
@@ -820,6 +831,7 @@ function setLanguageFromStorage() {
 setPhone();
 setLanguageFromStorage();
 $("year") && ($("year").textContent=new Date().getFullYear());
+loadHeader();
 loadListings();
 </script>
 </body>
