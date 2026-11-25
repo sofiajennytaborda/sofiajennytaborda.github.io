@@ -1,680 +1,113 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#35145f">
-<meta name="description" content="Send a gift to Sofia Jenny Taborda through PayPal.">
-<title>Send a Gift to Sofia Jenny Taborda</title>
-
+<meta name="theme-color" content="#101426">
+<meta name="description" content="Use this page to make a gift or service payment. Each request is checked manually. Submit your PayPal transaction ID and payment screenshot, then wait for the confirmation email after approval.">
+<title>Send a Gift to Sofia Jenny Taborda 🎁 | Sofia Jenny Taborda</title>
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#f7f5fb;color:#35145f;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px clamp(14px,4vw,55px);background:#fff;box-shadow:0 3px 16px #35145f10;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.brand img{width:49px;height:49px;object-fit:contain;border-radius:50%}
-.brand strong{font-size:clamp(15px,2vw,21px);color:#35145f}
-.header-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
-#languageSelect{padding:10px 12px;border:1px solid #ded2ec;border-radius:9px;background:#fff;color:#35145f;max-width:175px}
-.back-home{font-size:14px;font-weight:800;color:#743a9e;text-decoration:none}
-.purple-line{height:4px;background:linear-gradient(90deg,#6c2d91,#edb8e7,#6c2d91)}
-main{max-width:1200px;margin:30px auto;padding:0 18px}
-
-.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;padding:clamp(25px,4vw,55px);border-radius:19px;overflow:hidden;background:linear-gradient(120deg,#24103f,#51236f 55%,#a43e8e);color:#fff;box-shadow:0 12px 35px #35145f20}
-.tag{font-size:11px;letter-spacing:2px;font-weight:900;color:#ffd6ed}
-.hero h1{font-size:clamp(31px,4.5vw,52px);line-height:1.12;margin:15px 0}
-.hero-copy{font-size:16px;line-height:1.75;color:#f0e5f7;max-width:540px}
-.price-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:23px 0}
-.price{font-size:clamp(28px,3.5vw,39px);font-weight:900;color:#ffe0a0}
-.duration{padding:7px 12px;border:1px solid #ffffff65;border-radius:30px;font-size:11px;font-weight:800}
-.pay-button{display:flex;align-items:center;justify-content:center;gap:12px;width:min(100%,440px);min-height:59px;padding:14px 20px;background:linear-gradient(100deg,#ffd16d,#fff0c2);border-radius:12px;color:#35145f;text-decoration:none;font-weight:900;font-size:15px;box-shadow:0 7px 20px #0003;transition:.2s}
-.pay-button:hover{transform:translateY(-3px)}
-.paypal-mark{background:#fff;color:#07539b;padding:5px 9px;border-radius:5px}
-.payment-note{font-size:12px;color:#f0e5f7;max-width:440px;margin-top:13px}
-
-.hero-art{min-height:310px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border:2px solid #f0b3e7;border-radius:18px;background:#59266f;text-decoration:none;box-shadow:0 12px 35px #0004;padding:0}
-.hero-art:before,.hero-art:after{display:none;content:none}
-.gift-poster{display:block;width:100%;height:auto;max-height:470px;object-fit:contain}
-.disabled-link{pointer-events:none;opacity:.55;cursor:not-allowed}
-
-.section{background:#fff;border:1px solid #e5dced;border-radius:17px;padding:clamp(19px,3vw,30px);margin-top:23px;box-shadow:0 6px 24px #35145f08}
-.section-heading{text-align:center;max-width:750px;margin:0 auto 25px}
-.section-heading h2{font-size:clamp(22px,3vw,31px);margin:0 0 7px;color:#35145f}
-.section-heading p{color:#81728e;font-size:14px;margin:0}
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.step{padding:21px 16px;background:#faf7fd;border:1px solid #eadff1;border-radius:13px;text-align:center}
-.step-icon{font-size:32px}
-.step-number{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;margin:10px auto;background:#542475;color:#fff;font-size:13px;font-weight:900}
-.step h3{font-size:15px;margin:8px 0;color:#35145f}
-.step p{font-size:12px;line-height:1.65;color:#81728e;margin:0}
-.gift-highlight{margin-top:20px;padding:16px 20px;border-radius:12px;background:#fff8e9;border:1px solid #f2dfb8;color:#67451a;font-size:13px;text-align:center}
-
-.payment-form{width:100%;max-width:760px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field{display:flex;flex-direction:column;gap:7px;min-width:0}
-.field.full{grid-column:1/-1}
-.field label{font-size:13px;font-weight:800;color:#503469}
-.field input{width:100%;padding:13px;border:1px solid #ddcfe9;border-radius:9px;background:#fff;color:#35145f;min-width:0}
-.field input:focus{outline:2px solid #d5a9e4;border-color:#9146a8}
-.field input[type=file]{font-size:12px}
-.small{font-size:11px;color:#81728e}
-.submit-button{background:#542475;color:#fff;border:0;border-radius:10px;padding:14px 21px;font-weight:900;cursor:pointer;transition:.2s}
-.submit-button:hover{background:#7a399e}
-.submit-button:disabled{opacity:.55;cursor:wait}
-.status{display:none;margin-top:15px;padding:13px 15px;border-radius:9px;font-size:13px;overflow-wrap:anywhere}
-.status.show{display:block}
-.status.success{background:#eaf7ef;color:#145f39;border:1px solid #c4e6d0}
-.status.error{background:#fff0f0;color:#9d2c2c;border:1px solid #f0caca}
-.status.info{background:#f4effa;color:#61367f;border:1px solid #e0d2ec}
-footer{margin-top:35px;padding:24px 15px;text-align:center;background:#35145f;color:#fff;font-size:12px}
-.response-frame{display:none;width:0;height:0;border:0}
-html[dir=rtl] body{text-align:right}
-html[dir=rtl] .hero{direction:rtl}
-html[dir=rtl] .brand{flex-direction:row-reverse}
-html[dir=rtl] .field{text-align:right}
-
-@media(max-width:760px){
- main{margin:17px auto;padding:0 12px}
- .hero{grid-template-columns:1fr;padding:24px 18px;gap:20px}
- .hero-art{grid-row:1;min-height:245px}
- .gift-poster{max-height:350px}
- .section{padding:19px 15px}
- .steps{grid-template-columns:1fr;gap:12px}
- .step{padding:17px}
-}
-@media(max-width:520px){
- header{padding:11px 13px}
- .brand img{width:43px;height:43px}
- .header-actions{width:100%;justify-content:space-between}
- #languageSelect{max-width:57%;font-size:12px}
- .back-home{font-size:12px}
- .hero{padding:20px 15px}
- .hero h1{font-size:32px}
- .hero-copy{font-size:14px}
- .pay-button{width:100%;font-size:13px}
- .payment-form{grid-template-columns:1fr}
- .field.full{grid-column:auto}
- .hero-art{min-height:245px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
-}
+:root{--bg:#0d1222;--panel:#171f35;--panel2:#202b45;--text:#f5f6fb;--muted:#b8c2d5;--gold:#f0c76b;--pink:#e98ab6;--line:rgba(255,255,255,.12);--green:#36c99a;--danger:#ff7777;--shadow:0 18px 50px rgba(0,0,0,.25)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% 0%,#1a2440 0,#0d1222 40%);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.55}a{color:inherit}button,input,textarea{font:inherit}header{max-width:1240px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:.2px}.brand img{width:45px;height:45px;object-fit:contain;border-radius:50%;background:#fff;padding:4px}.header-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.header-actions a{text-decoration:none;color:var(--muted);font-size:14px}select{background:#202b45;color:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:10px}.gold-line{height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--pink),transparent);opacity:.8}
+main{max-width:1240px;margin:auto;padding:28px 24px 70px}.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:28px;align-items:center;background:linear-gradient(135deg,rgba(34,46,75,.96),rgba(20,28,49,.92));border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:var(--shadow);overflow:hidden}.eyebrow{display:inline-block;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(32px,4.3vw,54px);line-height:1.1;margin:13px 0 15px;letter-spacing:-1.5px}.hero-copy>p{color:var(--muted);max-width:650px;margin:0 0 20px}.price-row{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:20px 0 15px}.price{font-size:34px;font-weight:900;color:var(--gold)}.pill{font-size:10px;font-weight:900;letter-spacing:1.1px;padding:7px 11px;border-radius:999px;background:rgba(240,199,107,.13);border:1px solid rgba(240,199,107,.35);color:var(--gold)}.pay-button,.button-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;padding:14px 22px;background:linear-gradient(120deg,#f0c76b,#e99cba);color:#1a2032;text-decoration:none;font-weight:900;cursor:pointer;box-shadow:0 9px 24px rgba(233,156,186,.18)}.pay-button[aria-disabled="true"]{opacity:.45;pointer-events:none}.pay-note{font-size:13px;color:var(--muted);margin:12px 0 0}.hero-image{min-height:310px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#11182a}.hero-image img{width:100%;height:100%;min-height:310px;max-height:430px;display:block;object-fit:cover}.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}.status.show{display:block}.status.success{background:rgba(54,201,154,.14);border:1px solid rgba(54,201,154,.35);color:#a5f1d8}.status.error{background:rgba(255,119,119,.13);border:1px solid rgba(255,119,119,.3);color:#ffc0c0}.status.info{background:rgba(119,167,255,.12);border:1px solid rgba(119,167,255,.3);color:#c9dcff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 34px}.step{background:rgba(23,31,53,.88);border:1px solid var(--line);border-radius:16px;padding:18px}.step-icon{font-size:25px;margin-bottom:8px}.step strong{display:block;font-size:15px}.step p{font-size:13px;color:var(--muted);margin:6px 0 0}.section{margin-top:24px;padding:26px;background:rgba(23,31,53,.92);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.section-heading h2,.section h2{font-size:25px;margin:7px 0 6px}.section-heading p,.section-intro{color:var(--muted);margin:0 0 18px}.content-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.content-card{background:#202b45;border:1px solid var(--line);border-radius:14px;overflow:hidden}.content-card img{width:100%;height:190px;object-fit:cover;display:block;background:#121a2c}.content-card .placeholder{height:190px;display:grid;place-items:center;background:linear-gradient(135deg,#273553,#141c30);font-size:36px}.content-card .content-copy{padding:14px}.content-card h3{font-size:16px;margin:0 0 5px}.content-card p{font-size:13px;color:var(--muted);margin:0}.loading-card,.empty-card{padding:22px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);grid-column:1/-1}.info-card{display:flex;gap:16px;align-items:flex-start;background:#202b45;border:1px solid var(--line);border-radius:15px;padding:18px}.info-icon{font-size:35px}.info-card p{color:var(--muted);margin:5px 0 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-size:13px;font-weight:800;margin:0 0 7px}input,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:#10182b;color:#fff;outline:none}input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(240,199,107,.1)}input[type=file]{padding:10px;background:#10182b}.small{display:block;color:var(--muted);font-size:12px;margin-top:6px}.form-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}.form-actions .button-primary{min-width:240px}.button-secondary{border:1px solid rgba(240,199,107,.4);background:rgba(240,199,107,.12);color:var(--gold);padding:12px 18px;border-radius:11px;font-weight:900;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.inline-form{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.inline-form .grow{flex:1;min-width:230px}.private-result{margin-top:16px}.private-link{display:inline-flex;padding:12px 17px;border-radius:10px;background:rgba(54,201,154,.16);border:1px solid rgba(54,201,154,.4);color:#a5f1d8;text-decoration:none;font-weight:800}.video-card{background:#202b45;border:1px solid var(--line);border-radius:14px;overflow:hidden}.video-card iframe{width:100%;aspect-ratio:16/9;border:0;background:#080c15}.video-card .content-copy{padding:13px}.video-card h3{margin:0 0 5px;font-size:15px}.video-card p{margin:0;color:var(--muted);font-size:13px}.security{margin-top:15px;padding:13px;border-radius:10px;background:rgba(240,199,107,.08);border:1px solid rgba(240,199,107,.2);color:#e8d6a7;font-size:13px}footer{border-top:1px solid var(--line);text-align:center;padding:24px;color:#8d9bb5;font-size:12px}.hidden-frame{display:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding:24px}.hero-image,.hero-image img{min-height:230px;max-height:330px}.content-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){header{padding:14px 16px}main{padding:18px 14px 50px}.hero{padding:20px;border-radius:18px}.steps{grid-template-columns:1fr}.section{padding:20px 15px}.content-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-actions .button-primary{width:100%}.inline-form{align-items:stretch}.inline-form .grow{min-width:100%}.price{font-size:29px}}
 </style>
 </head>
-
 <body>
-
 <header>
- <a class="brand" href="index.html">
-  <img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda Logo">
-  <strong>Sofia Jenny Taborda</strong>
- </a>
- <div class="header-actions">
-  <select id="languageSelect" aria-label="Choose language">
-   <option value="en">🇬🇧 English</option>
-   <option value="ur">🇵🇰 اردو</option>
-   <option value="es">🇪🇸 Español</option>
-   <option value="it">🇮🇹 Italiano</option>
-   <option value="fr">🇫🇷 Français</option>
-   <option value="ar">🇸🇦 العربية</option>
-   <option value="pt">🇧🇷 Português</option>
-   <option value="de">🇩🇪 Deutsch</option>
-   <option value="hi">🇮🇳 हिन्दी</option>
-   <option value="zh">🇨🇳 中文</option>
-  </select>
-  <a class="back-home" href="index.html" data-i18n="backHome">← Back to Home</a>
- </div>
+  <a class="brand" href="index.html"><img src="assets/sofia-logo.png" alt="Sofia Jenny Taborda"><span>Sofia Jenny Taborda</span></a>
+  <div class="header-actions">
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">🇬🇧 English</option><option value="ur">🇵🇰 اردو</option><option value="es">🇪🇸 Español</option><option value="it">🇮🇹 Italiano</option><option value="fr">🇫🇷 Français</option><option value="ar">🇸🇦 العربية</option><option value="pt">🇧🇷 Português</option><option value="de">🇩🇪 Deutsch</option><option value="hi">🇮🇳 हिन्दी</option><option value="zh">🇨🇳 中文</option>
+    </select>
+    <a href="index.html" data-i18n="back">← Back to Home</a>
+  </div>
 </header>
-
-<div class="purple-line"></div>
-
+<div class="gold-line"></div>
 <main>
-
-<section class="hero">
- <div>
-  <div class="tag" data-i18n="tag">SOFIA JENNY TABORDA · SEND A GIFT</div>
-  <h1 data-i18n="heroTitle">Send a Gift to Sofia Jenny Taborda 🎁</h1>
-  <p class="hero-copy" data-i18n="heroText">A thoughtful gift is a beautiful way to show your appreciation. Send your gift securely through PayPal and receive an email confirmation after verification.</p>
-
-  <div class="price-row">
-   <div class="price" id="priceValue">$10.00 USD</div>
-   <div class="duration" data-i18n="duration">ONE-TIME GIFT PAYMENT</div>
-  </div>
-
-  <a id="payButton" class="pay-button paypal-link disabled-link" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">
-   <span class="paypal-mark">PayPal</span>
-   <span id="payButtonText" data-i18n="payButton">SEND A $10.00 GIFT</span>
-  </a>
-
-  <p class="payment-note" data-i18n="paymentNote">Complete your PayPal payment, then submit your transaction details below. Your gift payment will be confirmed after administrator verification.</p>
-  <div id="setupStatus" class="status" aria-live="polite"></div>
- </div>
-
-
-<a class="hero-art paypal-link disabled-link"
-   href="#"
-   aria-disabled="true"
-   target="_blank"
-   rel="noopener noreferrer">
-  <img
-    src="/assets/Gifts%20%26%20Services%20Promotional%20Poster.png"
-    alt="Gifts & Services Promotional Poster"
-    class="gift-poster"
-    style="display:block;width:100%;height:auto;max-height:470px;object-fit:contain;"
-    onerror="this.alt='Gift poster image not found';this.style.minHeight='250px'">
-</a>
-
-</section>
-
-<section class="section">
- <div class="section-heading">
-  <h2 data-i18n="stepsTitle">How to Send Your Gift</h2>
-  <p data-i18n="stepsIntro">Follow these three simple steps to complete your gift payment.</p>
- </div>
- <div class="steps">
-  <article class="step">
-   <div class="step-icon">💳</div><div class="step-number">1</div>
-   <h3 data-i18n="step1Title">Make Your Payment</h3>
-   <p data-i18n="step1Text">Click the PayPal button and complete your gift payment securely.</p>
-  </article>
-  <article class="step">
-   <div class="step-icon">📋</div><div class="step-number">2</div>
-   <h3 data-i18n="step2Title">Submit Your Details</h3>
-   <p data-i18n="step2Text">Enter your name, email, transaction ID and payment screenshot.</p>
-  </article>
-  <article class="step">
-   <div class="step-icon">💌</div><div class="step-number">3</div>
-   <h3 data-i18n="step3Title">Receive Confirmation</h3>
-   <p data-i18n="step3Text">Sofia will verify your payment and send a confirmation email.</p>
-  </article>
- </div>
- <div class="gift-highlight" data-i18n="giftNote">🎁 Thank you for your thoughtful gift and support.</div>
-</section>
-
-<section class="section" id="paymentSection">
- <div class="section-heading">
-  <h2 data-i18n="paymentTitle">Gift Payment Confirmation</h2>
-  <p data-i18n="paymentIntro">After completing your PayPal payment, submit your details for verification.</p>
- </div>
-
- <form id="paymentForm" class="payment-form" method="POST" target="paymentFrame">
-  <input type="hidden" name="action" value="folderPayment">
-  <input type="hidden" name="category" value="Gifts & Services">
-  <input type="hidden" name="screenshotData" id="screenshotData" value="">
-
-  <div class="field">
-   <label for="customerName" data-i18n="name">Your Name</label>
-   <input id="customerName" name="name" type="text" required maxlength="100" autocomplete="name" placeholder="Enter your name" data-i18n-placeholder="namePlaceholder">
-  </div>
-  <div class="field">
-   <label for="customerEmail" data-i18n="email">Gmail / Email</label>
-   <input id="customerEmail" name="email" type="email" required maxlength="160" autocomplete="email" placeholder="Enter your Gmail" data-i18n-placeholder="emailPlaceholder">
-  </div>
-  <div class="field full">
-   <label for="transactionId" data-i18n="txn">PayPal Transaction ID</label>
-   <input id="transactionId" name="transactionId" type="text" required maxlength="120" autocomplete="off" placeholder="Enter your PayPal Transaction ID" data-i18n-placeholder="txnPlaceholder">
-  </div>
-  <div class="field full">
-   <label for="screenshotFile" data-i18n="screenshot">Payment Screenshot</label>
-   <input id="screenshotFile" type="file" accept="image/jpeg,image/png,image/webp" required>
-   <span class="small" data-i18n="screenshotHint">JPG, PNG or WEBP · Maximum 6 MB</span>
-  </div>
-  <div class="field full">
-   <button id="submitPayment" class="submit-button" type="submit" data-i18n="submit">Submit Gift Payment Details</button>
-   <span class="small" data-i18n="submitNote">Your payment request will be sent to the Admin Dashboard for verification.</span>
-  </div>
- </form>
- <div id="paymentStatus" class="status" aria-live="polite"></div>
-</section>
-
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">GIFTS &amp; PERSONALIZED SERVICES</span>
+      <h1>Send a Gift to Sofia Jenny Taborda 🎁</h1>
+      <p>Use this page to make a gift or service payment. Each request is checked manually. Submit your PayPal transaction ID and payment screenshot, then wait for the confirmation email after approval.</p>
+      <div class="price-row"><div class="price" id="priceValue">$10.00 USD</div><span class="pill" data-i18n="price">ONE-TIME PAYMENT</span></div>
+      <a id="payButton" class="pay-button" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><span>PayPal</span><span data-i18n="pay">PAY WITH PAYPAL</span></a>
+      <p class="pay-note" id="payNote" data-i18n="payNote">Complete the payment, then submit your transaction ID and screenshot. Access is granted only after manual verification.</p>
+      <div id="setupStatus" class="status" aria-live="polite"></div>
+    </div>
+    <div class="hero-image"><img id="pageHeaderImage" src="assets/Gifts%20%26%20Services%20Promotional%20Poster.png" alt="Send a Gift to Sofia Jenny Taborda 🎁 banner"></div>
+  </section>
+  <section class="steps" aria-label="Payment steps"><article class="step"><div class="step-icon">🎁</div><strong>01 · Choose the Payment</strong><p>The displayed amount is the fixed one-time payment for this service.</p></article>
+<article class="step"><div class="step-icon">🧾</div><strong>02 · Submit Payment Proof</strong><p>Send your PayPal transaction ID and payment screenshot.</p></article>
+<article class="step"><div class="step-icon">✉️</div><strong>03 · Receive Confirmation</strong><p>After manual verification, a confirmation email will be sent.</p></article></section>
+  <section class="section info-section">
+      <div class="section-heading"><div><span class="eyebrow">PAYMENT-ONLY SERVICE</span><h2>Gift &amp; Service Information</h2><p>Your payment is reviewed by the website owner. No private Drive folder is unlocked by this payment.</p></div></div>
+      <div class="info-card"><span class="info-icon">🎁</span><div><strong>Manual verification</strong><p>After you submit your transaction ID and screenshot, the administrator checks the payment in PayPal. A confirmation email is sent after approval. This payment does not unlock a private media folder.</p></div></div>
+    </section>
+  <section class="section" id="paymentRequest">
+    <span class="eyebrow">SECURE PAYMENT REVIEW</span>
+    <h2 data-i18n="form">Payment Confirmation Request</h2>
+    <p class="section-intro">Enter your contact details and PayPal payment proof. This is a payment-only service and does not unlock a media folder.</p>
+    <form id="paymentForm" method="post" target="paymentFrame">
+      <input type="hidden" name="action" value="folderPayment">
+      <input type="hidden" name="category" value="Gifts &amp; Services">
+      <input type="hidden" id="screenshotData" name="screenshotData">
+      <div class="form-grid">
+        <div class="field"><label for="customerName" data-i18n="name">Your Full Name *</label><input id="customerName" name="name" required maxlength="100" autocomplete="name"></div>
+        <div class="field"><label for="customerEmail" data-i18n="email">Gmail / Email *</label><input id="customerEmail" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="customerPhone" data-i18n="phone">WhatsApp / Phone (optional)</label><input id="customerPhone" name="phone" type="tel" maxlength="35" autocomplete="tel"></div>
+        <div class="field"><label for="transactionId" data-i18n="txn">PayPal Transaction ID *</label><input id="transactionId" name="transactionId" required maxlength="120" autocomplete="off"></div>
+        <div class="field full"><label for="screenshotFile" data-i18n="shot">Payment Screenshot *</label><input id="screenshotFile" type="file" accept="image/jpeg,image/png,image/webp" required><span class="small" data-i18n="shotHint">JPG, PNG or WEBP · Maximum 6 MB</span></div>
+      </div>
+      <div class="form-actions"><button id="submitPayment" class="button-primary" type="submit" data-i18n="submit">SUBMIT PAYMENT DETAILS</button><span class="small">Your request stays pending until the administrator checks the payment in PayPal.</span></div>
+      <div id="paymentStatus" class="status" aria-live="polite"></div>
+    </form>
+    <iframe id="paymentFrame" name="paymentFrame" class="hidden-frame" title="Payment request response"></iframe>
+    <div class="security">🔒 Payment screenshots are stored privately in the existing Google Drive customer-documents area. Approval is always manual.</div>
+  </section>
+  <section class="section" id="statusSection">
+    <span class="eyebrow">REQUEST TRACKING</span>
+    <h2 data-i18n="statusTitle">Check Your Payment Status</h2>
+    <p class="section-intro">Enter your request ID to see whether your payment is pending, approved or rejected.</p>
+    <form id="statusForm" class="inline-form"><div class="field grow"><label for="requestId" data-i18n="request">Request ID</label><input id="requestId" maxlength="100" autocomplete="off" placeholder="FOLDERPAY-…"></div><button type="submit" class="button-secondary" data-i18n="check">CHECK STATUS</button></form>
+    <div id="requestStatus" class="status" aria-live="polite"></div>
+  </section>
+  <section class="section" id="accessSection" hidden>
+    <span class="eyebrow">MEMBER ACCESS</span>
+    <h2 data-i18n="access">Check Your Gift Payment Status</h2>
+    <p class="section-intro">Enter the request ID shown after submitting your payment details.</p>
+    
+  </section>
 </main>
-
-<footer>
- © 2026 Sofia Jenny Taborda ·
- <span data-i18n="footer">Thank you for your kind support.</span>
-</footer>
-
-<iframe id="paymentFrame" name="paymentFrame" class="response-frame" title="Payment response"></iframe>
-
+<footer>© <span id="year"></span> Sofia Jenny Taborda · <span data-i18n="footer">Private access is provided only after manual payment approval.</span></footer>
 <script>
 "use strict";
-
-const API_URL =
-"https://script.google.com/macros/s/AKfycbxxJZJTZ6qQttwMyYp1ab4SKKTF4r6SXdaxPj8a6x6QcKn4cduxXrte4Ujwz5R_1P4X/exec";
-
-const CATEGORY = "Gifts & Services";
-
-let paypalUrl = "";
-let currentPrice = 10;
-let currentLanguage = "en";
-
+const API_URL = "https://script.google.com/macros/s/AKfycbwcWQwI_Otseu_5iAoTLp_vd1kWvSxtI32ghWiZO9lqJTXqLY1Q8P9vaTcSpNTvssXN-A/exec";
+const PAGE = {category:"Gifts & Services",slug:"gifts-services",mode:"paymentOnly",action:"folderPayment",fallbackPrice:10};
+const I18N = {"en":{"back":"← Back to Home","price":"ONE-TIME PAYMENT","pay":"PAY WITH PAYPAL","payNote":"Complete the payment, then submit your transaction ID and screenshot. Access is granted only after manual verification.","steps":"How It Works","preview":"Collection","form":"Payment Confirmation Request","name":"Your Full Name *","email":"Gmail / Email *","phone":"WhatsApp / Phone (optional)","txn":"PayPal Transaction ID *","shot":"Payment Screenshot *","shotHint":"JPG, PNG or WEBP · Maximum 6 MB","submit":"SUBMIT PAYMENT DETAILS","request":"Request ID","check":"CHECK STATUS","access":"Check Access","accessEmail":"Email used for payment *","open":"CHECK MY ACCESS","pending":"Your payment request is waiting for manual verification.","approved":"Your payment has been approved.","rejected":"This payment request was not approved. Please contact support.","notFound":"No request was found. Check the request ID and folder.","loading":"Loading…","noContent":"No preview items have been added yet.","footer":"Private access is provided only after manual payment approval.","statusTitle":"Check Your Payment Status"},"ur":{"back":"← ہوم پیج پر واپس","price":"ایک مرتبہ ادائیگی","pay":"پے پال سے ادائیگی کریں","payNote":"ادائیگی کے بعد ٹرانزیکشن آئی ڈی اور اسکرین شاٹ جمع کروائیں۔ منظوری دستی تصدیق کے بعد ملے گی۔","steps":"طریقۂ کار","preview":"کلیکشن","form":"ادائیگی کی تصدیق کی درخواست","name":"پورا نام *","email":"جی میل / ای میل *","phone":"واٹس ایپ / فون (اختیاری)","txn":"پے پال ٹرانزیکشن آئی ڈی *","shot":"ادائیگی کا اسکرین شاٹ *","shotHint":"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB","submit":"ادائیگی کی تفصیل جمع کروائیں","request":"درخواست آئی ڈی","check":"اسٹیٹس چیک کریں","access":"رسائی چیک کریں","accessEmail":"ادائیگی والی ای میل *","open":"میری رسائی چیک کریں","pending":"آپ کی ادائیگی کی درخواست دستی تصدیق کے انتظار میں ہے۔","approved":"آپ کی ادائیگی منظور ہو گئی ہے۔","rejected":"ادائیگی کی درخواست منظور نہیں ہوئی۔ سپورٹ سے رابطہ کریں۔","notFound":"درخواست نہیں ملی۔ آئی ڈی اور فولڈر چیک کریں۔","loading":"لوڈ ہو رہا ہے…","noContent":"ابھی کوئی پری ویو شامل نہیں کیا گیا۔","footer":"نجی رسائی صرف ادائیگی کی دستی منظوری کے بعد ملتی ہے۔","statusTitle":"ادائیگی کا اسٹیٹس چیک کریں"},"es":{"back":"← Volver al inicio","price":"PAGO ÚNICO","pay":"PAGAR CON PAYPAL","payNote":"Realiza el pago y envía el ID de transacción y la captura. El acceso requiere verificación manual.","steps":"Cómo funciona","preview":"Colección","form":"Confirmación de pago","name":"Nombre completo *","email":"Correo electrónico *","phone":"WhatsApp / Teléfono (opcional)","txn":"ID de transacción PayPal *","shot":"Captura del pago *","shotHint":"JPG, PNG o WEBP · Máximo 6 MB","submit":"ENVIAR DATOS DE PAGO","request":"ID de solicitud","check":"COMPROBAR ESTADO","access":"Comprobar acceso","accessEmail":"Correo usado para pagar *","open":"COMPROBAR MI ACCESO","pending":"Tu solicitud espera verificación manual.","approved":"Tu pago ha sido aprobado.","rejected":"La solicitud no fue aprobada.","notFound":"No se encontró la solicitud.","loading":"Cargando…","noContent":"Todavía no hay elementos de vista previa.","footer":"El acceso privado requiere aprobación manual.","statusTitle":"Consultar estado del pago"},"it":{"back":"← Torna alla home","price":"PAGAMENTO UNA TANTUM","pay":"PAGA CON PAYPAL","payNote":"Paga e invia ID transazione e screenshot. L'accesso richiede verifica manuale.","steps":"Come funziona","preview":"Raccolta","form":"Conferma pagamento","name":"Nome completo *","email":"Email *","phone":"WhatsApp / Telefono (facoltativo)","txn":"ID transazione PayPal *","shot":"Screenshot del pagamento *","shotHint":"JPG, PNG o WEBP · Massimo 6 MB","submit":"INVIA I DATI DI PAGAMENTO","request":"ID richiesta","check":"CONTROLLA STATO","access":"Controlla accesso","accessEmail":"Email usata per il pagamento *","open":"CONTROLLA IL MIO ACCESSO","pending":"La richiesta è in attesa di verifica manuale.","approved":"Pagamento approvato.","rejected":"La richiesta non è stata approvata.","notFound":"Richiesta non trovata.","loading":"Caricamento…","noContent":"Nessun elemento di anteprima disponibile.","footer":"L'accesso privato richiede approvazione manuale.","statusTitle":"Controlla lo stato del pagamento"},"fr":{"back":"← Retour à l'accueil","price":"PAIEMENT UNIQUE","pay":"PAYER AVEC PAYPAL","payNote":"Payez puis envoyez l'identifiant de transaction et la capture. L'accès nécessite une vérification manuelle.","steps":"Fonctionnement","preview":"Collection","form":"Confirmation du paiement","name":"Nom complet *","email":"E-mail *","phone":"WhatsApp / Téléphone (facultatif)","txn":"ID de transaction PayPal *","shot":"Capture du paiement *","shotHint":"JPG, PNG ou WEBP · 6 Mo maximum","submit":"ENVOYER LES INFORMATIONS","request":"ID de demande","check":"VÉRIFIER LE STATUT","access":"Vérifier l'accès","accessEmail":"E-mail utilisé pour payer *","open":"VÉRIFIER MON ACCÈS","pending":"Votre demande attend une vérification manuelle.","approved":"Votre paiement est approuvé.","rejected":"La demande n'a pas été approuvée.","notFound":"Demande introuvable.","loading":"Chargement…","noContent":"Aucun aperçu n'a encore été ajouté.","footer":"L'accès privé nécessite une approbation manuelle.","statusTitle":"Vérifier le statut du paiement"},"ar":{"back":"العودة إلى الصفحة الرئيسية ←","price":"دفعة لمرة واحدة","pay":"الدفع عبر باي بال","payNote":"أكمل الدفع ثم أرسل رقم المعاملة وصورة الإيصال. يتطلب الوصول موافقة يدوية.","steps":"طريقة العمل","preview":"المجموعة","form":"تأكيد الدفع","name":"الاسم الكامل *","email":"البريد الإلكتروني *","phone":"واتساب / الهاتف (اختياري)","txn":"رقم معاملة باي بال *","shot":"لقطة شاشة الدفع *","shotHint":"JPG أو PNG أو WEBP · بحد أقصى 6 MB","submit":"إرسال بيانات الدفع","request":"رقم الطلب","check":"تحقق من الحالة","access":"التحقق من الوصول","accessEmail":"البريد المستخدم للدفع *","open":"تحقق من وصولي","pending":"طلبك ينتظر التحقق اليدوي.","approved":"تمت الموافقة على الدفع.","rejected":"لم تتم الموافقة على الطلب.","notFound":"لم يتم العثور على الطلب.","loading":"جارٍ التحميل…","noContent":"لا توجد معاينات بعد.","footer":"يتم منح الوصول الخاص بعد الموافقة اليدوية فقط.","statusTitle":"تحقق من حالة الدفع"},"pt":{"back":"← Voltar ao início","price":"PAGAMENTO ÚNICO","pay":"PAGAR COM PAYPAL","payNote":"Pague e envie o ID da transação e a captura. O acesso depende de verificação manual.","steps":"Como funciona","preview":"Coleção","form":"Confirmação de pagamento","name":"Nome completo *","email":"E-mail *","phone":"WhatsApp / Telefone (opcional)","txn":"ID da transação PayPal *","shot":"Captura do pagamento *","shotHint":"JPG, PNG ou WEBP · Máximo 6 MB","submit":"ENVIAR DADOS DE PAGAMENTO","request":"ID da solicitação","check":"VERIFICAR STATUS","access":"Verificar acesso","accessEmail":"E-mail usado no pagamento *","open":"VERIFICAR MEU ACESSO","pending":"Sua solicitação aguarda verificação manual.","approved":"Seu pagamento foi aprovado.","rejected":"A solicitação não foi aprovada.","notFound":"Solicitação não encontrada.","loading":"Carregando…","noContent":"Nenhuma prévia foi adicionada ainda.","footer":"O acesso privado exige aprovação manual.","statusTitle":"Verificar status do pagamento"},"de":{"back":"← Zur Startseite","price":"EINMALIGE ZAHLUNG","pay":"MIT PAYPAL ZAHLEN","payNote":"Zahlen Sie und senden Sie Transaktions-ID und Screenshot. Zugriff erfolgt nach manueller Prüfung.","steps":"So funktioniert es","preview":"Sammlung","form":"Zahlungsbestätigung","name":"Vollständiger Name *","email":"E-Mail *","phone":"WhatsApp / Telefon (optional)","txn":"PayPal-Transaktions-ID *","shot":"Zahlungs-Screenshot *","shotHint":"JPG, PNG oder WEBP · Maximal 6 MB","submit":"ZAHLUNGSDATEN SENDEN","request":"Anfrage-ID","check":"STATUS PRÜFEN","access":"Zugriff prüfen","accessEmail":"Für die Zahlung verwendete E-Mail *","open":"MEINEN ZUGRIFF PRÜFEN","pending":"Ihre Anfrage wartet auf manuelle Prüfung.","approved":"Ihre Zahlung wurde genehmigt.","rejected":"Die Anfrage wurde nicht genehmigt.","notFound":"Anfrage nicht gefunden.","loading":"Wird geladen…","noContent":"Noch keine Vorschau verfügbar.","footer":"Privater Zugriff erfordert eine manuelle Genehmigung.","statusTitle":"Zahlungsstatus prüfen"},"hi":{"back":"← होम पर वापस जाएँ","price":"एक बार का भुगतान","pay":"PAYPAL से भुगतान करें","payNote":"भुगतान के बाद ट्रांज़ैक्शन आईडी और स्क्रीनशॉट भेजें। एक्सेस मैन्युअल जाँच के बाद मिलेगा।","steps":"यह कैसे काम करता है","preview":"कलेक्शन","form":"भुगतान की पुष्टि","name":"पूरा नाम *","email":"ईमेल *","phone":"WhatsApp / फ़ोन (वैकल्पिक)","txn":"PayPal ट्रांज़ैक्शन आईडी *","shot":"भुगतान स्क्रीनशॉट *","shotHint":"JPG, PNG या WEBP · अधिकतम 6 MB","submit":"भुगतान विवरण भेजें","request":"रिक्वेस्ट आईडी","check":"स्टेटस जाँचें","access":"एक्सेस जाँचें","accessEmail":"भुगतान में इस्तेमाल ईमेल *","open":"मेरा एक्सेस जाँचें","pending":"आपकी रिक्वेस्ट मैन्युअल जाँच की प्रतीक्षा में है।","approved":"आपका भुगतान स्वीकृत हो गया है।","rejected":"रिक्वेस्ट स्वीकृत नहीं हुई।","notFound":"रिक्वेस्ट नहीं मिली।","loading":"लोड हो रहा है…","noContent":"अभी कोई प्रीव्यू नहीं जोड़ा गया।","footer":"निजी एक्सेस मैन्युअल स्वीकृति के बाद मिलता है।","statusTitle":"भुगतान की स्थिति जाँचें"},"zh":{"back":"← 返回首页","price":"一次性付款","pay":"使用 PAYPAL 付款","payNote":"付款后提交交易编号和付款截图。管理员人工核实后才会开放访问。","steps":"使用流程","preview":"内容预览","form":"付款确认申请","name":"姓名 *","email":"电子邮箱 *","phone":"WhatsApp / 电话（可选）","txn":"PayPal 交易编号 *","shot":"付款截图 *","shotHint":"JPG、PNG 或 WEBP · 最大 6 MB","submit":"提交付款信息","request":"申请编号","check":"检查状态","access":"检查访问权限","accessEmail":"付款时使用的邮箱 *","open":"检查我的访问权限","pending":"申请正在等待人工核实。","approved":"付款已获批准。","rejected":"申请未获批准。","notFound":"未找到申请。","loading":"正在加载…","noContent":"暂时没有预览内容。","footer":"只有人工批准后才会开放私人访问。","statusTitle":"检查付款状态"}};
 const $ = id => document.getElementById(id);
-
-const paypalLocales = {
- en:"en_US",ur:"ur_PK",es:"es_ES",it:"it_IT",
- fr:"fr_FR",ar:"ar_QA",pt:"pt_BR",de:"de_DE",
- hi:"hi_IN",zh:"zh_CN"
-};
-
-const translations = {
-en:{
-backHome:"← Back to Home",tag:"SOFIA JENNY TABORDA · SEND A GIFT",
-heroTitle:"Send a Gift to Sofia Jenny Taborda 🎁",
-heroText:"A thoughtful gift is a beautiful way to show your appreciation. Send your gift securely through PayPal and receive an email confirmation after verification.",
-duration:"ONE-TIME GIFT PAYMENT",payButton:"SEND A {amount} GIFT",
-paymentNote:"Complete your PayPal payment, then submit your transaction details below. Your gift payment will be confirmed after administrator verification.",
-stepsTitle:"How to Send Your Gift",stepsIntro:"Follow these three simple steps to complete your gift payment.",
-step1Title:"Make Your Payment",step1Text:"Click the PayPal button and complete your gift payment securely.",
-step2Title:"Submit Your Details",step2Text:"Enter your name, email, transaction ID and payment screenshot.",
-step3Title:"Receive Confirmation",step3Text:"Sofia will verify your payment and send a confirmation email.",
-giftNote:"🎁 Thank you for your thoughtful gift and support.",
-paymentTitle:"Gift Payment Confirmation",paymentIntro:"After completing your PayPal payment, submit your details for verification.",
-name:"Your Name",email:"Gmail / Email",txn:"PayPal Transaction ID",screenshot:"Payment Screenshot",
-screenshotHint:"JPG, PNG or WEBP · Maximum 6 MB",submit:"Submit Gift Payment Details",
-submitNote:"Your payment request will be sent to the Admin Dashboard for verification.",
-sending:"Submitting your gift request...",success:"Your gift payment request has been received. Please wait while Sofia verifies your payment.",
-requestId:"Request ID",invalidScreenshot:"Choose a valid JPG, PNG or WEBP screenshot up to 6 MB.",
-setupError:"Payment service could not be reached. Please try again.",
-namePlaceholder:"Enter your name",emailPlaceholder:"Enter your Gmail",
-txnPlaceholder:"Enter your PayPal Transaction ID",footer:"Thank you for your kind support."
-},
-ur:{
-backHome:"← ہوم پیج پر واپس جائیں",tag:"صوفیہ جینی تبورڈا · تحفہ بھیجیں",
-heroTitle:"صوفیہ جینی تبورڈا کو تحفہ بھیجیں 🎁",
-heroText:"آپ کا پیارا سا تحفہ آپ کی محبت اور قدر دانی کا خوبصورت اظہار ہے۔ پے پال کے ذریعے ادائیگی کریں اور تصدیق کے بعد ای میل پر رسید حاصل کریں۔",
-duration:"ایک بار تحفے کی ادائیگی",payButton:"{amount} ڈالر کا تحفہ بھیجیں",
-paymentNote:"پے پال ادائیگی مکمل کریں اور نیچے اپنی ٹرانزیکشن کی تفصیلات جمع کروائیں۔ ایڈمن کی تصدیق کے بعد ادائیگی کنفرم ہوگی۔",
-stepsTitle:"تحفہ بھیجنے کا طریقہ",stepsIntro:"اپنی ادائیگی مکمل کرنے کے لیے یہ تین آسان مراحل پورے کریں۔",
-step1Title:"ادائیگی کریں",step1Text:"پے پال بٹن پر کلک کریں اور محفوظ طریقے سے تحفے کی ادائیگی مکمل کریں۔",
-step2Title:"تفصیلات جمع کروائیں",step2Text:"اپنا نام، ای میل، ٹرانزیکشن آئی ڈی اور ادائیگی کا اسکرین شاٹ دیں۔",
-step3Title:"تصدیق حاصل کریں",step3Text:"صوفیہ آپ کی ادائیگی کی تصدیق کرکے ای میل بھیجیں گی۔",
-giftNote:"🎁 آپ کے خوبصورت تحفے اور تعاون کا بہت شکریہ۔",
-paymentTitle:"تحفے کی ادائیگی کی تصدیق",paymentIntro:"پے پال ادائیگی مکمل کرنے کے بعد تصدیق کے لیے اپنی تفصیلات جمع کروائیں۔",
-name:"آپ کا نام",email:"جی میل / ای میل",txn:"پے پال ٹرانزیکشن آئی ڈی",screenshot:"ادائیگی کا اسکرین شاٹ",
-screenshotHint:"JPG، PNG یا WEBP · زیادہ سے زیادہ 6 MB",
-submit:"تحفے کی ادائیگی کی تفصیلات جمع کروائیں",
-submitNote:"آپ کی درخواست تصدیق کے لیے ایڈمن ڈیش بورڈ میں پہنچے گی۔",
-sending:"آپ کی درخواست جمع ہو رہی ہے...",
-success:"آپ کی تحفے کی ادائیگی کی درخواست موصول ہوگئی ہے۔ صوفیہ کی تصدیق کا انتظار کریں۔",
-requestId:"درخواست نمبر",invalidScreenshot:"6 MB تک درست JPG، PNG یا WEBP اسکرین شاٹ منتخب کریں۔",
-setupError:"ادائیگی کا نظام دستیاب نہیں۔ دوبارہ کوشش کریں۔",
-namePlaceholder:"اپنا نام درج کریں",emailPlaceholder:"اپنا جی میل درج کریں",
-txnPlaceholder:"پے پال ٹرانزیکشن آئی ڈی درج کریں",footer:"آپ کے تعاون کا شکریہ۔"
-},
-es:{
-backHome:"← Volver al inicio",tag:"SOFIA JENNY TABORDA · ENVÍA UN REGALO",
-heroTitle:"Envía un regalo a Sofia Jenny Taborda 🎁",
-heroText:"Un regalo especial es una bonita forma de mostrar tu aprecio. Envía tu regalo mediante PayPal y recibe una confirmación por correo después de la verificación.",
-duration:"PAGO ÚNICO DE REGALO",payButton:"ENVIAR UN REGALO DE {amount}",
-paymentNote:"Completa el pago PayPal y envía los datos de la transacción. El pago será confirmado después de la verificación del administrador.",
-stepsTitle:"Cómo enviar tu regalo",stepsIntro:"Sigue estos tres sencillos pasos para completar el pago.",
-step1Title:"Realiza el pago",step1Text:"Haz clic en PayPal y completa tu pago de forma segura.",
-step2Title:"Envía tus datos",step2Text:"Introduce tu nombre, correo, ID de transacción y captura del pago.",
-step3Title:"Recibe la confirmación",step3Text:"Sofia verificará el pago y enviará un correo de confirmación.",
-giftNote:"🎁 Gracias por tu regalo y apoyo.",paymentTitle:"Confirmación del pago del regalo",
-paymentIntro:"Después de pagar con PayPal, envía tus datos para su verificación.",
-name:"Tu nombre",email:"Gmail / Correo",txn:"ID de transacción PayPal",screenshot:"Captura del pago",
-screenshotHint:"JPG, PNG o WEBP · Máximo 6 MB",submit:"Enviar datos del regalo",
-submitNote:"Tu solicitud se enviará al panel de administración para su verificación.",
-sending:"Enviando solicitud...",success:"Hemos recibido tu solicitud. Espera a que Sofia verifique el pago.",
-requestId:"ID de solicitud",invalidScreenshot:"Selecciona una imagen JPG, PNG o WEBP de hasta 6 MB.",
-setupError:"No se pudo conectar con el servicio de pago.",
-namePlaceholder:"Introduce tu nombre",emailPlaceholder:"Introduce tu Gmail",
-txnPlaceholder:"Introduce el ID de PayPal",footer:"Gracias por tu apoyo."
-},
-it:{
-backHome:"← Torna alla home",tag:"SOFIA JENNY TABORDA · INVIA UN REGALO",
-heroTitle:"Invia un regalo a Sofia Jenny Taborda 🎁",
-heroText:"Un regalo speciale è un bel modo per dimostrare il tuo apprezzamento. Invia il tuo regalo tramite PayPal e ricevi una conferma via email dopo la verifica.",
-duration:"PAGAMENTO REGALO UNA TANTUM",payButton:"INVIA UN REGALO DI {amount}",
-paymentNote:"Completa il pagamento PayPal e invia i dettagli della transazione. Il pagamento sarà confermato dopo la verifica amministrativa.",
-stepsTitle:"Come inviare il tuo regalo",stepsIntro:"Segui questi tre semplici passaggi.",
-step1Title:"Effettua il pagamento",step1Text:"Clicca sul pulsante PayPal e completa il pagamento in sicurezza.",
-step2Title:"Invia i tuoi dati",step2Text:"Inserisci nome, email, ID transazione e screenshot del pagamento.",
-step3Title:"Ricevi la conferma",step3Text:"Sofia verificherà il pagamento e invierà una email di conferma.",
-giftNote:"🎁 Grazie per il tuo regalo e il tuo supporto.",
-paymentTitle:"Conferma del pagamento del regalo",paymentIntro:"Dopo il pagamento PayPal, invia i tuoi dati per la verifica.",
-name:"Il tuo nome",email:"Gmail / Email",txn:"ID transazione PayPal",screenshot:"Screenshot del pagamento",
-screenshotHint:"JPG, PNG o WEBP · Massimo 6 MB",submit:"Invia i dati del regalo",
-submitNote:"La richiesta verrà inviata al pannello amministrativo.",
-sending:"Invio della richiesta...",success:"La richiesta di pagamento è stata ricevuta. Attendi la verifica di Sofia.",
-requestId:"ID richiesta",invalidScreenshot:"Seleziona un'immagine JPG, PNG o WEBP fino a 6 MB.",
-setupError:"Impossibile collegarsi al servizio di pagamento.",
-namePlaceholder:"Inserisci il tuo nome",emailPlaceholder:"Inserisci il tuo Gmail",
-txnPlaceholder:"Inserisci l'ID PayPal",footer:"Grazie per il tuo supporto."
-},
-fr:{
-backHome:"← Retour à l'accueil",tag:"SOFIA JENNY TABORDA · ENVOYER UN CADEAU",
-heroTitle:"Envoyer un cadeau à Sofia Jenny Taborda 🎁",
-heroText:"Un cadeau attentionné est une belle façon de montrer votre appréciation. Envoyez votre cadeau avec PayPal et recevez une confirmation par e-mail après vérification.",
-duration:"PAIEMENT UNIQUE POUR UN CADEAU",payButton:"ENVOYER UN CADEAU DE {amount}",
-paymentNote:"Effectuez votre paiement PayPal et envoyez les détails de la transaction. Le paiement sera confirmé après vérification.",
-stepsTitle:"Comment envoyer votre cadeau",stepsIntro:"Suivez ces trois étapes simples.",
-step1Title:"Effectuer le paiement",step1Text:"Cliquez sur le bouton PayPal et effectuez le paiement en toute sécurité.",
-step2Title:"Envoyer vos informations",step2Text:"Saisissez votre nom, votre e-mail, l'identifiant de transaction et la capture d'écran.",
-step3Title:"Recevoir la confirmation",step3Text:"Sofia vérifiera votre paiement et vous enverra un e-mail de confirmation.",
-giftNote:"🎁 Merci pour votre cadeau et votre soutien.",
-paymentTitle:"Confirmation du paiement du cadeau",paymentIntro:"Après votre paiement PayPal, envoyez vos informations pour vérification.",
-name:"Votre nom",email:"Gmail / E-mail",txn:"Identifiant de transaction PayPal",screenshot:"Capture d'écran du paiement",
-screenshotHint:"JPG, PNG ou WEBP · Maximum 6 Mo",submit:"Envoyer les informations du cadeau",
-submitNote:"Votre demande sera envoyée au tableau de bord administrateur.",
-sending:"Envoi de votre demande...",success:"Votre demande a été reçue. Attendez la vérification de Sofia.",
-requestId:"ID de demande",invalidScreenshot:"Choisissez une image JPG, PNG ou WEBP de 6 Mo maximum.",
-setupError:"Impossible de contacter le service de paiement.",
-namePlaceholder:"Entrez votre nom",emailPlaceholder:"Entrez votre Gmail",
-txnPlaceholder:"Entrez votre identifiant PayPal",footer:"Merci pour votre soutien."
-},
-ar:{
-backHome:"العودة إلى الصفحة الرئيسية ←",tag:"صوفيا جيني تابوردا · أرسل هدية",
-heroTitle:"أرسل هدية إلى صوفيا جيني تابوردا 🎁",
-heroText:"الهدية الجميلة طريقة رائعة للتعبير عن التقدير. أرسل هديتك عبر PayPal واحصل على تأكيد عبر البريد الإلكتروني بعد التحقق.",
-duration:"دفعة واحدة للهدية",payButton:"أرسل هدية بقيمة {amount}",
-paymentNote:"أكمل الدفع عبر PayPal ثم أرسل تفاصيل المعاملة أدناه. سيتم تأكيد الدفع بعد التحقق الإداري.",
-stepsTitle:"كيفية إرسال هديتك",stepsIntro:"اتبع هذه الخطوات الثلاث البسيطة.",
-step1Title:"أكمل الدفع",step1Text:"اضغط على زر PayPal وأكمل الدفع بأمان.",
-step2Title:"أرسل بياناتك",step2Text:"أدخل اسمك وبريدك الإلكتروني ورقم المعاملة وصورة الدفع.",
-step3Title:"استلم التأكيد",step3Text:"ستتحقق صوفيا من الدفع وترسل رسالة تأكيد عبر البريد.",
-giftNote:"🎁 شكرًا لك على هديتك ودعمك.",paymentTitle:"تأكيد دفع الهدية",
-paymentIntro:"بعد إتمام الدفع عبر PayPal، أرسل بياناتك للتحقق منها.",
-name:"اسمك",email:"Gmail / البريد الإلكتروني",txn:"رقم معاملة PayPal",screenshot:"لقطة شاشة الدفع",
-screenshotHint:"JPG أو PNG أو WEBP · بحد أقصى 6 ميجابايت",submit:"إرسال تفاصيل الهدية",
-submitNote:"سيتم إرسال طلبك إلى لوحة الإدارة للتحقق.",
-sending:"جارٍ إرسال الطلب...",success:"تم استلام طلبك. يرجى انتظار تحقق صوفيا من الدفع.",
-requestId:"رقم الطلب",invalidScreenshot:"اختر صورة JPG أو PNG أو WEBP بحجم لا يتجاوز 6 ميجابايت.",
-setupError:"تعذر الاتصال بخدمة الدفع.",
-namePlaceholder:"أدخل اسمك",emailPlaceholder:"أدخل بريدك الإلكتروني",
-txnPlaceholder:"أدخل رقم معاملة PayPal",footer:"شكرًا لدعمك."
-},
-pt:{
-backHome:"← Voltar ao início",tag:"SOFIA JENNY TABORDA · ENVIE UM PRESENTE",
-heroTitle:"Envie um presente para Sofia Jenny Taborda 🎁",
-heroText:"Um presente especial é uma forma bonita de demonstrar carinho. Envie seu presente pelo PayPal e receba uma confirmação por e-mail após a verificação.",
-duration:"PAGAMENTO ÚNICO DE PRESENTE",payButton:"ENVIAR UM PRESENTE DE {amount}",
-paymentNote:"Conclua o pagamento PayPal e envie os dados da transação. O pagamento será confirmado após a verificação.",
-stepsTitle:"Como enviar seu presente",stepsIntro:"Siga estes três passos simples.",
-step1Title:"Faça o pagamento",step1Text:"Clique no botão PayPal e conclua o pagamento com segurança.",
-step2Title:"Envie seus dados",step2Text:"Informe seu nome, e-mail, ID da transação e captura do pagamento.",
-step3Title:"Receba a confirmação",step3Text:"Sofia verificará o pagamento e enviará um e-mail de confirmação.",
-giftNote:"🎁 Obrigado pelo seu presente e apoio.",
-paymentTitle:"Confirmação do pagamento do presente",paymentIntro:"Após concluir o pagamento PayPal, envie seus dados para verificação.",
-name:"Seu nome",email:"Gmail / E-mail",txn:"ID da transação PayPal",screenshot:"Captura do pagamento",
-screenshotHint:"JPG, PNG ou WEBP · Máximo 6 MB",submit:"Enviar dados do presente",
-submitNote:"Sua solicitação será enviada ao painel administrativo.",
-sending:"Enviando solicitação...",success:"Sua solicitação foi recebida. Aguarde a verificação de Sofia.",
-requestId:"ID da solicitação",invalidScreenshot:"Escolha uma imagem JPG, PNG ou WEBP de até 6 MB.",
-setupError:"Não foi possível conectar ao serviço de pagamento.",
-namePlaceholder:"Digite seu nome",emailPlaceholder:"Digite seu Gmail",
-txnPlaceholder:"Digite seu ID PayPal",footer:"Obrigado pelo seu apoio."
-},
-de:{
-backHome:"← Zurück zur Startseite",tag:"SOFIA JENNY TABORDA · EIN GESCHENK SENDEN",
-heroTitle:"Senden Sie Sofia Jenny Taborda ein Geschenk 🎁",
-heroText:"Ein aufmerksames Geschenk ist eine schöne Möglichkeit, Wertschätzung zu zeigen. Senden Sie Ihr Geschenk über PayPal und erhalten Sie nach der Prüfung eine Bestätigung per E-Mail.",
-duration:"EINMALIGE GESCHENKZAHLUNG",payButton:"EIN GESCHENK IM WERT VON {amount} SENDEN",
-paymentNote:"Schließen Sie Ihre PayPal-Zahlung ab und senden Sie anschließend Ihre Transaktionsdaten. Nach der Prüfung wird die Zahlung bestätigt.",
-stepsTitle:"So senden Sie Ihr Geschenk",stepsIntro:"Befolgen Sie diese drei einfachen Schritte.",
-step1Title:"Zahlung durchführen",step1Text:"Klicken Sie auf PayPal und schließen Sie die Zahlung sicher ab.",
-step2Title:"Daten übermitteln",step2Text:"Geben Sie Ihren Namen, Ihre E-Mail, Transaktions-ID und den Zahlungs-Screenshot ein.",
-step3Title:"Bestätigung erhalten",step3Text:"Sofia prüft Ihre Zahlung und sendet eine Bestätigungs-E-Mail.",
-giftNote:"🎁 Vielen Dank für Ihr Geschenk und Ihre Unterstützung.",
-paymentTitle:"Bestätigung der Geschenkzahlung",paymentIntro:"Senden Sie nach Ihrer PayPal-Zahlung Ihre Daten zur Überprüfung.",
-name:"Ihr Name",email:"Gmail / E-Mail",txn:"PayPal-Transaktions-ID",screenshot:"Zahlungs-Screenshot",
-screenshotHint:"JPG, PNG oder WEBP · Maximal 6 MB",submit:"Geschenkdaten senden",
-submitNote:"Ihre Anfrage wird zur Überprüfung an das Admin-Dashboard gesendet.",
-sending:"Anfrage wird gesendet...",success:"Ihre Anfrage wurde erhalten. Bitte warten Sie auf Sofias Zahlungsprüfung.",
-requestId:"Anfrage-ID",invalidScreenshot:"Wählen Sie ein JPG-, PNG- oder WEBP-Bild bis 6 MB.",
-setupError:"Der Zahlungsdienst konnte nicht erreicht werden.",
-namePlaceholder:"Geben Sie Ihren Namen ein",emailPlaceholder:"Geben Sie Ihr Gmail ein",
-txnPlaceholder:"Geben Sie Ihre PayPal-ID ein",footer:"Vielen Dank für Ihre Unterstützung."
-},
-hi:{
-backHome:"← होम पेज पर वापस जाएँ",tag:"सोफिया जेनी तबोर्डा · उपहार भेजें",
-heroTitle:"सोफिया जेनी तबोर्डा को उपहार भेजें 🎁",
-heroText:"एक प्यारा उपहार आपकी सराहना दिखाने का सुंदर तरीका है। PayPal के माध्यम से उपहार भेजें और सत्यापन के बाद ईमेल पर पुष्टि प्राप्त करें।",
-duration:"एक बार उपहार भुगतान",payButton:"{amount} का उपहार भेजें",
-paymentNote:"PayPal भुगतान पूरा करें और नीचे अपनी ट्रांजैक्शन जानकारी भेजें। एडमिन सत्यापन के बाद भुगतान की पुष्टि होगी।",
-stepsTitle:"उपहार कैसे भेजें",stepsIntro:"भुगतान पूरा करने के लिए ये तीन आसान चरण अपनाएँ।",
-step1Title:"भुगतान करें",step1Text:"PayPal बटन पर क्लिक करें और सुरक्षित रूप से भुगतान पूरा करें।",
-step2Title:"अपनी जानकारी भेजें",step2Text:"अपना नाम, ईमेल, ट्रांजैक्शन ID और भुगतान का स्क्रीनशॉट दें।",
-step3Title:"पुष्टि प्राप्त करें",step3Text:"Sofia भुगतान की जाँच करके पुष्टि वाला ईमेल भेजेंगी।",
-giftNote:"🎁 आपके उपहार और सहयोग के लिए धन्यवाद।",paymentTitle:"उपहार भुगतान की पुष्टि",
-paymentIntro:"PayPal भुगतान के बाद सत्यापन के लिए अपनी जानकारी भेजें।",
-name:"आपका नाम",email:"Gmail / ईमेल",txn:"PayPal ट्रांजैक्शन ID",screenshot:"भुगतान का स्क्रीनशॉट",
-screenshotHint:"JPG, PNG या WEBP · अधिकतम 6 MB",submit:"उपहार भुगतान विवरण भेजें",
-submitNote:"आपका अनुरोध सत्यापन के लिए Admin Dashboard में जाएगा.",
-sending:"अनुरोध भेजा जा रहा है...",success:"आपका अनुरोध प्राप्त हो गया है। Sofia के भुगतान सत्यापन की प्रतीक्षा करें।",
-requestId:"अनुरोध ID",invalidScreenshot:"6 MB तक की JPG, PNG या WEBP छवि चुनें।",
-setupError:"भुगतान सेवा से संपर्क नहीं हो सका।",
-namePlaceholder:"अपना नाम लिखें",emailPlaceholder:"अपना Gmail लिखें",
-txnPlaceholder:"PayPal ट्रांजैक्शन ID लिखें",footer:"आपके सहयोग के लिए धन्यवाद।"
-},
-zh:{
-backHome:"← 返回首页",tag:"SOFIA JENNY TABORDA · 赠送礼物",
-heroTitle:"向 Sofia Jenny Taborda 赠送礼物 🎁",
-heroText:"一份贴心的礼物是表达感谢的美好方式。通过 PayPal 发送礼物，管理员验证后您将收到电子邮件确认。",
-duration:"一次性礼物付款",payButton:"赠送价值 {amount} 的礼物",
-paymentNote:"完成 PayPal 付款，然后提交您的交易信息。管理员验证后将确认付款。",
-stepsTitle:"如何发送礼物",stepsIntro:"按照以下三个简单步骤完成付款。",
-step1Title:"完成付款",step1Text:"点击 PayPal 按钮并安全完成付款。",
-step2Title:"提交您的信息",step2Text:"填写姓名、电子邮箱、交易编号和付款截图。",
-step3Title:"收到确认",step3Text:"Sofia 将验证付款并发送确认邮件。",
-giftNote:"🎁 感谢您的礼物和支持。",paymentTitle:"礼物付款确认",
-paymentIntro:"完成 PayPal 付款后，请提交您的信息以供验证。",
-name:"您的姓名",email:"Gmail / 电子邮箱",txn:"PayPal 交易编号",screenshot:"付款截图",
-screenshotHint:"JPG、PNG 或 WEBP · 最大 6 MB",submit:"提交礼物付款信息",
-submitNote:"您的申请将发送至管理后台进行验证。",
-sending:"正在提交申请...",success:"已收到您的礼物付款申请。请等待 Sofia 验证。",
-requestId:"申请编号",invalidScreenshot:"请选择不超过 6 MB 的 JPG、PNG 或 WEBP 图片。",
-setupError:"无法连接付款服务，请重试。",
-namePlaceholder:"请输入您的姓名",emailPlaceholder:"请输入您的 Gmail",
-txnPlaceholder:"请输入 PayPal 交易编号",footer:"感谢您的支持。"
-}
-};
-
-function tr(key){
- return (translations[currentLanguage]||translations.en)[key]||translations.en[key]||key;
-}
-
-function money(){
- return Number(currentPrice).toFixed(2);
-}
-
-function updatePayPalLinks(){
- const locale=paypalLocales[currentLanguage]||"en_US";
-
- document.querySelectorAll(".paypal-link").forEach(link=>{
-  if(!paypalUrl){
-   link.href="#";
-   link.classList.add("disabled-link");
-   link.setAttribute("aria-disabled","true");
-   return;
-  }
-
-  const separator=paypalUrl.includes("?")?"&":"?";
-  link.href=paypalUrl+separator+"locale.x="+encodeURIComponent(locale);
-  link.classList.remove("disabled-link");
-  link.removeAttribute("aria-disabled");
- });
-
- $("payButtonText").textContent=tr("payButton").replace("{amount}",money());
-}
-
-function applyLanguage(lang){
- currentLanguage=translations[lang]?lang:"en";
- document.documentElement.lang=currentLanguage;
- document.documentElement.dir=["ur","ar"].includes(currentLanguage)?"rtl":"ltr";
- $("languageSelect").value=currentLanguage;
-
- document.querySelectorAll("[data-i18n]").forEach(el=>{
-  el.textContent=tr(el.dataset.i18n);
- });
-
- document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
-  el.placeholder=tr(el.dataset.i18nPlaceholder);
- });
-
- try{localStorage.setItem("sj_gifts_language",currentLanguage)}catch(e){}
- updatePayPalLinks();
-}
-
-function jsonp(params){
- return new Promise((resolve,reject)=>{
-  const callback="sjGift_"+Date.now()+"_"+Math.floor(Math.random()*999999);
-  const script=document.createElement("script");
-
-  const timer=setTimeout(()=>{
-   cleanup();
-   reject(new Error(tr("setupError")));
-  },18000);
-
-  function cleanup(){
-   clearTimeout(timer);
-   try{delete window[callback]}catch(e){window[callback]=undefined}
-   script.remove();
-  }
-
-  window[callback]=data=>{
-   cleanup();
-   resolve(data);
-  };
-
-  script.onerror=()=>{
-   cleanup();
-   reject(new Error(tr("setupError")));
-  };
-
-  script.src=API_URL+"?"+new URLSearchParams({...params,callback}).toString();
-  document.body.appendChild(script);
- });
-}
-
-function showStatus(element,message,type="info"){
- element.textContent=message;
- element.className="status show "+type;
-}
-
-async function loadGiftInfo(){
- try{
-  const d=await jsonp({action:"folderInfo",category:CATEGORY});
-
-  if(!d||!d.success)throw new Error(d?.message||tr("setupError"));
-  if(Number(d.price)<=0)throw new Error(tr("setupError"));
-
-  if(!d.paypalLink||!/^https:\/\/www\.paypal\.com\//i.test(d.paypalLink)){
-   throw new Error(tr("setupError"));
-  }
-
-  currentPrice=Number(d.price);
-  paypalUrl=d.paypalLink;
-
-  $("priceValue").textContent="$"+money()+" USD";
-  updatePayPalLinks();
-
- }catch(e){
-  paypalUrl="";
-  updatePayPalLinks();
-  showStatus($("setupStatus"),e.message||tr("setupError"),"error");
- }
-}
-
-/* COMPLETE SCREENSHOT READER */
-
-function readFile(file){
- return new Promise((resolve,reject)=>{
-  const reader=new FileReader();
-
-  reader.onload=()=>{
-   resolve(String(reader.result||""));
-  };
-
-  reader.onerror=()=>{
-   reject(new Error("Could not read payment screenshot."));
-  };
-
-  reader.readAsDataURL(file);
- });
-}
-
-function setupPayment(){
- const form=$("paymentForm");
- const frame=$("paymentFrame");
-
- form.action=API_URL;
-
- form.addEventListener("submit",async e=>{
-  e.preventDefault();
-
-  if(!form.reportValidity())return;
-
-  const file=$("screenshotFile").files[0];
-
-  if(!file||file.size>6*1024*1024||!/^image\/(jpeg|png|webp)$/i.test(file.type)){
-   showStatus($("paymentStatus"),tr("invalidScreenshot"),"error");
-   return;
-  }
-
-  const button=$("submitPayment");
-  button.disabled=true;
-  button.textContent=tr("sending");
-
-  try{
-   $("screenshotData").value=await readFile(file);
-
-   try{
-    localStorage.setItem("sj_gifts_email",$("customerEmail").value.trim());
-   }catch(err){}
-
-   form.submit();
-
-  }catch(err){
-   button.disabled=false;
-   button.textContent=tr("submit");
-   showStatus($("paymentStatus"),err.message,"error");
-  }
- });
-
- window.addEventListener("message",e=>{
-  if(e.source!==frame.contentWindow)return;
-
-  const d=e.data||{};
-
-  if(d.type!=="FOLDER_PAYMENT_SUCCESS"&&d.type!=="FORM_SUBMISSION_ERROR")return;
-
-  const button=$("submitPayment");
-  button.disabled=false;
-  button.textContent=tr("submit");
-
-  if(d.success){
-   showStatus(
-    $("paymentStatus"),
-    tr("success")+" "+tr("requestId")+": "+(d.paymentId||""),
-    "success"
-   );
-
-   form.reset();
-   $("screenshotData").value="";
-
-  }else{
-   showStatus($("paymentStatus"),d.message||tr("setupError"),"error");
-  }
- });
-}
-
-$("languageSelect").addEventListener("change",e=>{
- applyLanguage(e.target.value);
-});
-
-let savedLanguage="en";
-
-try{
- savedLanguage=localStorage.getItem("sj_gifts_language")||"en";
-}catch(e){}
-
-applyLanguage(savedLanguage);
-setupPayment();
-loadGiftInfo();
-
+function tr(key) { const lang = ($("languageSelect") && $("languageSelect").value) || "en"; return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || key; }
+function applyLanguage() { document.querySelectorAll("[data-i18n]").forEach(node => { const key=node.getAttribute("data-i18n"); if(I18N[$("languageSelect").value] && I18N[$("languageSelect").value][key]) node.textContent=tr(key); }); document.documentElement.lang=$("languageSelect").value; document.documentElement.dir=$("languageSelect").value==="ar"||$("languageSelect").value==="ur"?"rtl":"ltr"; }
+$("languageSelect").addEventListener("change",applyLanguage);
+function showStatus(id,message,type="info") { const el=$(id); el.textContent=message; el.className="status show "+type; }
+function jsonp(action,params={}) { return new Promise((resolve,reject)=>{ const callback="sjtcb_"+Date.now()+"_"+Math.floor(Math.random()*999999); const script=document.createElement("script"); let finished=false; function cleanup(){if(finished)return;finished=true;clearTimeout(timer);delete window[callback];script.remove();} const timer=setTimeout(()=>{cleanup();reject(new Error("Request timed out. Please try again."));},18000); window[callback]=data=>{cleanup();resolve(data);}; script.onerror=()=>{cleanup();reject(new Error("Could not connect to the website service."));}; const query=new URLSearchParams({...params,action,callback}); script.src=API_URL+"?"+query.toString(); document.head.appendChild(script); }); }
+function safeUrl(value) { const u=String(value||""); return /^https:\/\/drive\.google\.com\//i.test(u)?u:""; }
+function money(n) { return "$"+Number(n).toFixed(2)+" USD"; }
+async function loadPaymentSettings() { const button=$("payButton"); button.href="#"; button.setAttribute("aria-disabled","true"); try { const data=await jsonp("folderInfo",{category:PAGE.category}); const price=Number(data&&data.price); const link=String(data&&data.paypalLink||"").trim(); if(!data||data.success!==true||!Number.isFinite(price)||price<=0||!/^https:\/\/(www\.)?paypal\.com\//i.test(link)) throw new Error("Payment settings are not ready. Please contact the website owner."); $("priceValue").textContent=money(price); button.href=link; button.setAttribute("aria-disabled","false"); } catch(e) { showStatus("setupStatus",e.message||"Payment settings are unavailable.","error"); } }
+$("payButton").addEventListener("click",e=>{if($("payButton").getAttribute("aria-disabled")==="true"){e.preventDefault();showStatus("setupStatus","Payment settings are not ready. Please refresh or contact the website owner.","error");}});
+async function loadPageHeader() { try { const data=await jsonp("pageHeader",{pageKey:PAGE.category}); const url=data&&data.success===true?safeUrl(data.imageUrl):""; if(url)$("pageHeaderImage").src=url; } catch(e) { /* Keep the bundled fallback banner. */ } }
+function renderPublicContent(items) { const wrap=$("publicContent"); if(!wrap)return; wrap.innerHTML=""; if(!items||!items.length){wrap.innerHTML='<div class="empty-card">'+tr("noContent")+'</div>';return;} items.forEach(item=>{ const card=document.createElement("article"); card.className="content-card"; const imageUrl=safeUrl(item.thumbnailUrl||""); if(imageUrl){const img=document.createElement("img");img.src=imageUrl;img.alt=item.title||"Collection preview";img.loading="lazy";card.appendChild(img);}else{const placeholder=document.createElement("div");placeholder.className="placeholder";placeholder.textContent=PAGE.mode==="videos"?"▶":"✦";card.appendChild(placeholder);} const copy=document.createElement("div");copy.className="content-copy";const title=document.createElement("h3");title.textContent=item.title||"Collection item";const desc=document.createElement("p");desc.textContent=item.description||"";copy.append(title,desc);card.appendChild(copy);wrap.appendChild(card); }); }
+async function loadPublicContent() { if(PAGE.mode==="paymentOnly")return; const wrap=$("publicContent"); try { if(wrap)wrap.innerHTML='<div class="loading-card">'+tr("loading")+'</div>'; const data=PAGE.mode==="videos"?await jsonp("videosList",{}):await jsonp("folderContents",{category:PAGE.category}); const items=PAGE.mode==="videos"?(data&&data.videos||[]):(data&&data.items||[]); renderPublicContent(items); } catch(e) { if(wrap)wrap.innerHTML='<div class="empty-card">'+(e.message||"Unable to load collection.")+'</div>'; } }
+function readFile(file) { return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result||""));reader.onerror=()=>reject(new Error("Could not read the payment screenshot."));reader.readAsDataURL(file);}); }
+const paymentForm=$("paymentForm"),paymentFrame=$("paymentFrame"); paymentForm.action=API_URL;
+paymentForm.addEventListener("submit",async event=>{event.preventDefault();if(!paymentForm.reportValidity())return;const file=$("screenshotFile").files[0];if(!file||file.size>6*1024*1024||!/^image\/(jpeg|png|webp)$/i.test(file.type)){showStatus("paymentStatus","Upload a JPG, PNG or WEBP screenshot up to 6 MB.","error");return;}const button=$("submitPayment");button.disabled=true;button.textContent="SUBMITTING…";try{$("screenshotData").value=await readFile(file);paymentForm.submit();}catch(e){button.disabled=false;button.textContent=tr("submit");showStatus("paymentStatus",e.message,"error");}});
+window.addEventListener("message",event=>{if(event.source!==paymentFrame.contentWindow)return;const data=event.data||{};if(data.type!=="FOLDER_PAYMENT_SUCCESS"&&data.type!=="FORM_SUBMISSION_ERROR")return;const button=$("submitPayment");button.disabled=false;button.textContent=tr("submit");if(data.success){const id=data.paymentId||"";if(id){$("requestId").value=id;try{localStorage.setItem("sjtPaidFolderRequestId_"+PAGE.slug,id);}catch(e){}}showStatus("paymentStatus",(data.message||tr("pending"))+(id?" · "+tr("request")+": "+id:""),"success");}else showStatus("paymentStatus",data.message||"The request could not be submitted.","error");});
+$("statusForm").addEventListener("submit",async event=>{event.preventDefault();const id=$("requestId").value.trim();if(!id){showStatus("requestStatus",tr("notFound"),"error");return;}try{const data=await jsonp("folderPaymentStatus",{paymentId:id,category:PAGE.category});if(!data||!data.found)throw new Error(tr("notFound"));const status=String(data.status||"pending").toLowerCase();if(status==="approved")showStatus("requestStatus",tr("approved"),"success");else if(status==="rejected"||status==="failed")showStatus("requestStatus",tr("rejected"),"error");else showStatus("requestStatus",tr("pending"),"info");}catch(e){showStatus("requestStatus",e.message||tr("notFound"),"error");}});
+if(PAGE.mode==="videos"){$("accessForm").addEventListener("submit",async event=>{event.preventDefault();const email=$("accessEmail").value.trim();const wrap=$("privateVideos");wrap.innerHTML="";try{const data=await jsonp("videosAccess",{email});if(!data||!data.access)throw new Error((data&&data.message)||"No active Premium Videos access was found for this email.");const videos=data.videos||[];if(!videos.length){wrap.innerHTML='<div class="empty-card">No videos have been uploaded yet.</div>';return;}videos.forEach(v=>{const card=document.createElement("article");card.className="video-card";const url=safeUrl(v.previewUrl);if(url){const frame=document.createElement("iframe");frame.src=url;frame.allow="autoplay; encrypted-media; picture-in-picture";frame.allowFullscreen=true;frame.title=v.title||"Premium video";card.appendChild(frame);}const copy=document.createElement("div");copy.className="content-copy";const title=document.createElement("h3");title.textContent=v.title||"Premium Video";const desc=document.createElement("p");desc.textContent=v.description||"";copy.append(title,desc);card.appendChild(copy);wrap.appendChild(card);});showStatus("accessStatus","Premium Videos access approved. Sign in to Google Drive with the same email if asked.","success");}catch(e){showStatus("accessStatus",e.message,"error");}});} else if(PAGE.mode==="folder"){$("accessForm").addEventListener("submit",async event=>{event.preventDefault();$("privateFolderResult").innerHTML="";try{const data=await jsonp("folderAccess",{category:PAGE.category,email:$("accessEmail").value.trim()});if(!data||data.access!==true)throw new Error((data&&data.message)||"Your folder access is still awaiting approval.");const url=safeUrl(data.folderUrl);if(!url)throw new Error("The private folder link is unavailable.");const a=document.createElement("a");a.className="private-link";a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="OPEN YOUR PRIVATE GOOGLE DRIVE FOLDER";$("privateFolderResult").appendChild(a);showStatus("accessStatus","Access approved. Open the folder while signed in with the payment email.","success");}catch(e){showStatus("accessStatus",e.message,"error");}});}
+try{const saved=localStorage.getItem("sjtPaidFolderRequestId_"+PAGE.slug);if(saved)$("requestId").value=saved;}catch(e){}
+$("year").textContent=new Date().getFullYear();applyLanguage();loadPaymentSettings();loadPageHeader();loadPublicContent();
 </script>
 </body>
 </html>
