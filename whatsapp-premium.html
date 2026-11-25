@@ -146,6 +146,11 @@ main {
   background:#ffda70;
   transform:translateY(-2px);
 }
+.pay-button[aria-disabled="true"] {
+  opacity:.55;
+  cursor:not-allowed;
+  pointer-events:none;
+}
 .paypal-mark {
   font-size:19px;
   font-weight:900;
@@ -432,32 +437,35 @@ html[dir="rtl"] .security-note {
       </p>
 
       <div class="price-row">
-        <div class="price">$60.00 USD</div>
+        <div class="price" id="priceValue">$60.00 USD</div>
         <span class="pill" data-i18n="priceTag">
           ONE-TIME PAYMENT
         </span>
       </div>
 
-      <a class="pay-button"
-         href="https://www.paypal.com/ncp/payment/L5M55CXRW5YH4"
+      <a id="payButton" class="pay-button"
+         href="#"
          target="_blank"
-         rel="noopener noreferrer">
+         rel="noopener noreferrer"
+         aria-disabled="true">
 
         <span class="paypal-mark">PayPal</span>
         <span data-i18n="pay">PAY $60 WITH PAYPAL</span>
 
       </a>
 
-      <p class="note" data-i18n="payNote">
+      <p class="note" data-i18n="payNote" id="payNote">
         Pay $60 through PayPal. Then submit your transaction
         ID and payment screenshot. Access is granted after
         manual verification.
       </p>
 
+      <div id="setupStatus" class="status" aria-live="polite"></div>
+
     </div>
 
     <div class="hero-image">
-      <img
+      <img id="whatsappHeaderImage"
         src="assets/WhatsApp%20Premium%20Subscription%20Banner.png"
         alt="WhatsApp Premium Membership">
     </div>
@@ -470,7 +478,7 @@ html[dir="rtl"] .security-note {
 
     <article class="step">
       <div class="step-icon">💳</div>
-      <strong>01 · Pay $60</strong>
+      <strong id="stepPayTitle">01 · Pay $60</strong>
       <p>Complete your payment through PayPal.</p>
     </article>
 
@@ -751,7 +759,8 @@ contactReady:"You can now contact Sofia through WhatsApp.",
 noContact:"Your payment is approved, but contact details are not configured yet.",
 sending:"SUBMITTING YOUR REQUEST...",
 invalid:"Upload a valid JPG, PNG or WEBP screenshot up to 6 MB.",
-footer:"WhatsApp Premium Membership"
+setup:"Payment settings are unavailable. Please refresh the page and try again.",
+ footer:"WhatsApp Premium Membership"
 },
 
 ur:{
@@ -789,7 +798,8 @@ contactReady:"اب آپ صوفیہ سے واٹس ایپ پر رابطہ کرسک
 noContact:"ادائیگی منظور ہے لیکن رابطے کی معلومات ابھی سیٹ نہیں ہیں۔",
 sending:"درخواست جمع ہو رہی ہے...",
 invalid:"6 MB تک درست JPG، PNG یا WEBP اسکرین شاٹ اپ لوڈ کریں۔",
-footer:"واٹس ایپ پریمیم ممبرشپ"
+setup:"ادائیگی کی سیٹنگز دستیاب نہیں ہیں۔ براہِ کرم صفحہ ریفریش کرکے دوبارہ کوشش کریں۔",
+ footer:"واٹس ایپ پریمیم ممبرشپ"
 },
 
 es:{
@@ -827,7 +837,8 @@ contactReady:"Ya puedes contactar con Sofia por WhatsApp.",
 noContact:"El pago está aprobado, pero el contacto aún no está configurado.",
 sending:"ENVIANDO SOLICITUD...",
 invalid:"Sube una imagen JPG, PNG o WEBP de hasta 6 MB.",
-footer:"Membresía WhatsApp Premium"
+setup:"La configuración de pago no está disponible. Actualiza la página e inténtalo de nuevo.",
+ footer:"Membresía WhatsApp Premium"
 },
 
 it:{
@@ -865,7 +876,8 @@ contactReady:"Ora puoi contattare Sofia su WhatsApp.",
 noContact:"Pagamento approvato, ma i contatti non sono ancora configurati.",
 sending:"INVIO IN CORSO...",
 invalid:"Carica un'immagine JPG, PNG o WEBP fino a 6 MB.",
-footer:"Abbonamento WhatsApp Premium"
+setup:"Le impostazioni di pagamento non sono disponibili. Aggiorna la pagina e riprova.",
+ footer:"Abbonamento WhatsApp Premium"
 },
 
 fr:{
@@ -903,7 +915,8 @@ contactReady:"Vous pouvez maintenant contacter Sofia sur WhatsApp.",
 noContact:"Paiement approuvé, mais les coordonnées ne sont pas configurées.",
 sending:"ENVOI EN COURS...",
 invalid:"Envoyez une image JPG, PNG ou WEBP de 6 MB maximum.",
-footer:"Abonnement WhatsApp Premium"
+setup:"Les paramètres de paiement ne sont pas disponibles. Actualisez la page et réessayez.",
+ footer:"Abonnement WhatsApp Premium"
 },
 
 ar:{
@@ -941,7 +954,8 @@ contactReady:"يمكنك الآن التواصل مع صوفيا عبر واتس
 noContact:"تمت الموافقة على الدفع لكن بيانات الاتصال غير جاهزة.",
 sending:"جارٍ إرسال الطلب...",
 invalid:"ارفع صورة JPG أو PNG أو WEBP بحجم لا يتجاوز 6 MB.",
-footer:"عضوية واتساب بريميوم"
+setup:"إعدادات الدفع غير متاحة. يرجى تحديث الصفحة والمحاولة مرة أخرى.",
+ footer:"عضوية واتساب بريميوم"
 },
 
 pt:{
@@ -979,7 +993,8 @@ contactReady:"Agora você pode entrar em contato com Sofia pelo WhatsApp.",
 noContact:"Pagamento aprovado, mas os dados de contato não estão configurados.",
 sending:"ENVIANDO SOLICITAÇÃO...",
 invalid:"Envie uma imagem JPG, PNG ou WEBP de até 6 MB.",
-footer:"Assinatura WhatsApp Premium"
+setup:"As configurações de pagamento não estão disponíveis. Atualize a página e tente novamente.",
+ footer:"Assinatura WhatsApp Premium"
 },
 
 de:{
@@ -1017,7 +1032,8 @@ contactReady:"Du kannst Sofia jetzt über WhatsApp kontaktieren.",
 noContact:"Zahlung genehmigt, aber Kontaktdaten sind noch nicht eingerichtet.",
 sending:"ANFRAGE WIRD GESENDET...",
 invalid:"Lade ein JPG-, PNG- oder WEBP-Bild bis 6 MB hoch.",
-footer:"WhatsApp-Premium-Mitgliedschaft"
+setup:"Zahlungseinstellungen sind nicht verfügbar. Bitte aktualisiere die Seite und versuche es erneut.",
+ footer:"WhatsApp-Premium-Mitgliedschaft"
 },
 
 hi:{
@@ -1055,7 +1071,8 @@ contactReady:"अब आप सोफिया से व्हाट्सऐ�
 noContact:"भुगतान स्वीकृत है, लेकिन संपर्क विवरण अभी सेट नहीं हैं।",
 sending:"अनुरोध भेजा जा रहा है...",
 invalid:"6 MB तक की JPG, PNG या WEBP तस्वीर अपलोड करें।",
-footer:"व्हाट्सऐप प्रीमियम सदस्यता"
+setup:"भुगतान सेटिंग उपलब्ध नहीं हैं। कृपया पेज रीफ़्रेश करके फिर कोशिश करें।",
+ footer:"व्हाट्सऐप प्रीमियम सदस्यता"
 },
 
 zh:{
@@ -1093,7 +1110,8 @@ contactReady:"您现在可以通过 WhatsApp 联系 Sofia。",
 noContact:"付款已批准，但联系信息尚未配置。",
 sending:"正在提交申请...",
 invalid:"请上传不超过 6 MB 的 JPG、PNG 或 WEBP 图片。",
-footer:"WhatsApp Premium 会员"
+setup:"付款设置暂不可用。请刷新页面后重试。",
+ footer:"WhatsApp Premium 会员"
 }
 
 };
@@ -1108,6 +1126,32 @@ function tr(key) {
   return currentLanguage()[key] || translations.en[key] || key;
 }
 
+let whatsappPremiumPrice = 60;
+
+function currentPriceText() {
+  return Number.isInteger(whatsappPremiumPrice)
+    ? String(whatsappPremiumPrice)
+    : whatsappPremiumPrice.toFixed(2);
+}
+
+function withCurrentPrice(value) {
+  return String(value || "").replace(/\b60(?:\.00)?\b/g, currentPriceText());
+}
+
+function updatePriceLabels() {
+  const amount = Number(whatsappPremiumPrice);
+  $("priceValue").textContent = "$" + amount.toFixed(2) + " USD";
+
+  const payLabel = document.querySelector('#payButton [data-i18n="pay"]');
+  if (payLabel) payLabel.textContent = withCurrentPrice(tr("pay"));
+
+  const payNote = $("payNote");
+  if (payNote) payNote.textContent = withCurrentPrice(tr("payNote"));
+
+  const stepPayTitle = $("stepPayTitle");
+  if (stepPayTitle) stepPayTitle.textContent = withCurrentPrice("01 · Pay $60");
+}
+
 function applyLanguage() {
   const lang = $("languageSelect").value;
 
@@ -1120,6 +1164,12 @@ function applyLanguage() {
   });
 
   $("preferredLanguage").value = lang;
+  updatePriceLabels();
+
+  const payButton = $("payButton");
+  if (payButton && payButton.getAttribute("aria-disabled") === "true") {
+    payButton.setAttribute("aria-label", tr("setup"));
+  }
 }
 
 $("languageSelect").addEventListener("change",applyLanguage);
@@ -1295,6 +1345,80 @@ function jsonp(action,params={}) {
   });
 }
 
+/* LOAD THE WHATSAPP PREMIUM PRICE AND PAYPAL LINK FROM ADMIN SETTINGS */
+
+async function loadPaymentSettings() {
+  const button = $("payButton");
+
+  button.href = "#";
+  button.setAttribute("aria-disabled", "true");
+
+  try {
+    const data = await jsonp("folderInfo", {
+      category: "WhatsApp Premium"
+    });
+
+    const price = Number(data && data.price);
+    const paypalLink = String(data && data.paypalLink || "").trim();
+
+    if (
+      !data ||
+      data.success !== true ||
+      !Number.isFinite(price) ||
+      price <= 0 ||
+      !/^https:\/\/www\.paypal\.com\//i.test(paypalLink)
+    ) {
+      throw new Error(tr("setup"));
+    }
+
+    whatsappPremiumPrice = price;
+    button.href = paypalLink;
+    button.setAttribute("aria-disabled", "false");
+    button.removeAttribute("aria-label");
+
+    $("setupStatus").className = "status";
+    $("setupStatus").textContent = "";
+
+    updatePriceLabels();
+
+  } catch (error) {
+    showStatus("setupStatus", tr("setup"), "error");
+  }
+}
+
+$("payButton").addEventListener("click", event => {
+  if ($("payButton").getAttribute("aria-disabled") === "true") {
+    event.preventDefault();
+    showStatus("setupStatus", tr("setup"), "error");
+  }
+});
+
+
+/* LOAD THE WHATSAPP PREMIUM HEADER IMAGE SAVED IN THE ADMIN DASHBOARD.
+   The local banner remains visible as a fallback if no Admin image is set. */
+
+async function loadPageHeader() {
+  try {
+    const data = await jsonp("pageHeader", {
+      pageKey: "WhatsApp Premium"
+    });
+
+    if (
+      data &&
+      data.success === true &&
+      data.category === "WhatsApp Premium" &&
+      typeof data.imageUrl === "string" &&
+      /^https:\/\/drive\.google\.com\//i.test(data.imageUrl)
+    ) {
+      $("whatsappHeaderImage").src = data.imageUrl;
+      $("whatsappHeaderImage").dataset.adminHeaderLoaded = "true";
+    }
+  } catch (error) {
+    // Keep the local banner when the Admin header is not configured.
+  }
+}
+
+
 /* CHECK CUSTOMER ACCESS */
 
 $("accessForm").addEventListener("submit",async event => {
@@ -1392,6 +1516,8 @@ try {
 } catch(error) {}
 
 applyLanguage();
+loadPaymentSettings();
+loadPageHeader();
 
 </script>
 
