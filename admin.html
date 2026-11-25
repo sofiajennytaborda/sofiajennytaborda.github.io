@@ -1,183 +1,20 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sofia Jenny Admin Dashboard</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f2f5fb;color:#082e59}
-header{background:#082e59;color:white;padding:22px}
-header h1{margin:0}
-.container{max-width:1100px;margin:25px auto;padding:15px}
-.card{background:white;padding:22px;border-radius:12px;border:1px solid #dce5f2;margin:16px 0}
-input{width:100%;padding:13px;border:1px solid #cbd6e5;border-radius:7px;margin:8px 0}
-button{background:#082e59;color:white;border:0;padding:12px 18px;border-radius:7px;cursor:pointer;margin:5px}
-button:hover{background:#1769aa}
-.approve{background:#16834b}
-.reject{background:#b52d37}
-.hidden{display:none}
-.status{padding:12px;background:#eaf2fc;border-radius:8px;margin:12px 0}
-.payment{border:1px solid #dce5f2;padding:17px;border-radius:10px;margin:12px 0;background:#fff}
-small{color:#667b96}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Private Admin Dashboard</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#f3f6fa;color:#14243a;font:16px/1.6 Arial,sans-serif}
+    main{max-width:620px;background:#fff;border:1px solid #e4eaf1;border-radius:16px;padding:32px;box-shadow:0 8px 28px rgba(20,36,58,.08)}
+    h1{margin:0 0 12px;font-size:24px}p{margin:0;color:#526174}
+  </style>
 </head>
 <body>
-
-<header>
-<h1>SOFIA JENNY TABORDA</h1>
-<p>ADMIN CONTROL DASHBOARD</p>
-</header>
-
-<div class="container">
-
-<div class="card" id="loginBox">
-<h2>Administrator Login</h2>
-<input type="password" id="password" placeholder="Enter admin password">
-<button onclick="login()">Login</button>
-<div id="loginMessage"></div>
-</div>
-
-<div id="dashboard" class="hidden">
-
-<div class="card">
-<h2>Sofia Jenny Videos</h2>
-<p><b>Monthly price:</b> $40 USD</p>
-<p><b>Membership:</b> 30 days after approval</p>
-<p><b>Payment link:</b>
-<a href="https://www.paypal.com/ncp/payment/VCTNZZT7KR8X4" target="_blank">Open PayPal</a></p>
-<button onclick="loadPayments()">Refresh Payment Requests</button>
-<button onclick="logout()">Logout</button>
-<div id="message" class="status">Loading...</div>
-</div>
-
-<div class="card">
-<h2>Pending Video Payments</h2>
-<div id="payments">Loading payment requests...</div>
-</div>
-
-</div>
-</div>
-
-<script>
-let adminToken = "";
-
-function showMessage(id,message){
- document.getElementById(id).textContent=message;
-}
-
-function login(){
- const password=document.getElementById("password").value;
- showMessage("loginMessage","Checking login...");
-
- google.script.run
- .withSuccessHandler(result=>{
-   if(!result || !result.success){
-     showMessage("loginMessage",result?.message || "Login failed.");
-     return;
-   }
-   adminToken=result.token;
-   document.getElementById("loginBox").classList.add("hidden");
-   document.getElementById("dashboard").classList.remove("hidden");
-   loadPayments();
- })
- .withFailureHandler(error=>{
-   showMessage("loginMessage",error.message || "Login error");
- })
- .loginAdmin(password);
-}
-
-function loadPayments(){
- const area=document.getElementById("payments");
- area.textContent="Loading...";
-
- google.script.run
- .withSuccessHandler(items=>{
-   area.innerHTML="";
-
-   if(!items || items.length===0){
-     area.textContent="No pending Sofia Jenny Videos payments.";
-     showMessage("message","Payment list updated.");
-     return;
-   }
-
-   items.forEach(item=>{
-     const card=document.createElement("div");
-     card.className="payment";
-
-     const title=document.createElement("h3");
-     title.textContent=item.customerName || "Customer";
-
-     const details=document.createElement("p");
-     details.textContent=
-       "Email: "+item.email+
-       " | Amount: $"+item.amount+
-       " | Transaction ID: "+item.transactionId;
-
-     const id=document.createElement("small");
-     id.textContent="Request ID: "+item.paymentId;
-
-     const verify=document.createElement("label");
-     const checkbox=document.createElement("input");
-     checkbox.type="checkbox";
-     checkbox.style.width="auto";
-     verify.appendChild(checkbox);
-     verify.appendChild(document.createTextNode(
-       " I have independently verified this payment in PayPal."
-     ));
-
-     const approve=document.createElement("button");
-     approve.className="approve";
-     approve.textContent="Approve 30-Day Access";
-     approve.onclick=()=>{
-       if(!checkbox.checked){
-         alert("Verify the payment in PayPal first.");
-         return;
-       }
-       approvePayment(item.paymentId,approve);
-     };
-
-     card.append(title,details,id,verify,approve);
-     area.appendChild(card);
-   });
-
-   showMessage("message",items.length+" pending payment(s) found.");
- })
- .withFailureHandler(error=>{
-   area.textContent=error.message || "Could not load payments.";
- })
- .getPendingVideosPayments(adminToken);
-}
-
-function approvePayment(paymentId,button){
- if(!confirm("Have you verified this transaction in PayPal? Approve 30-day access?")) return;
-
- button.disabled=true;
- button.textContent="Approving...";
-
- google.script.run
- .withSuccessHandler(result=>{
-   alert(result.message || "Membership approved.");
-   loadPayments();
- })
- .withFailureHandler(error=>{
-   alert(error.message || "Approval failed.");
-   button.disabled=false;
-   button.textContent="Approve 30-Day Access";
- })
- .approveVideosPayment(adminToken,paymentId,true);
-}
-
-function logout(){
- if(adminToken){
-   google.script.run.logoutAdmin(adminToken);
- }
- adminToken="";
- document.getElementById("dashboard").classList.add("hidden");
- document.getElementById("loginBox").classList.remove("hidden");
- document.getElementById("password").value="";
-}
-</script>
+  <main>
+    <h1>Private Admin Dashboard</h1>
+    <p>This page is not the administration portal. The Sofia Jenny Taborda Admin Dashboard is hosted in a separate, private Google Apps Script Web App and is available only to the authorized Google account. Please use the private Admin URL provided by the site owner.</p>
+  </main>
 </body>
 </html>
